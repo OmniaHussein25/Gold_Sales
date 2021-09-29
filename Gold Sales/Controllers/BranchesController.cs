@@ -17,6 +17,7 @@ namespace Gold_Sales.Controllers
         // GET: Branches
         public ActionResult Index()
         {
+            //hii
             var branches = db.Branches.Include(b => b.City).Include(b => b.Company);
             return View(branches.ToList());
         }
