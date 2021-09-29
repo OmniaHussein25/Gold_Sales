@@ -4,4 +4,5 @@
 
 /Gold Sales/bin
 /Gold Sales.sln
-/Gold Sales/obj/Debug
+/Gold Sales/obj/
+/.vs/
