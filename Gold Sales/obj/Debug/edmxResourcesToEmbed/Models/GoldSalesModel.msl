@@ -1,0 +1,1993 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="Gold_SalesModelStoreContainer" CdmEntityContainer="Gold_SalesEntities">
+    <EntitySetMapping Name="Accounts">
+      <EntityTypeMapping TypeName="Gold_SalesModel.Account">
+        <MappingFragment StoreEntitySet="Account">
+          <ScalarProperty Name="AccountID" ColumnName="AccountID" />
+          <ScalarProperty Name="AccountTypeID" ColumnName="AccountTypeID" />
+          <ScalarProperty Name="AccountName" ColumnName="AccountName" />
+          <ScalarProperty Name="AccountDesc" ColumnName="AccountDesc" />
+          <ScalarProperty Name="Leaf" ColumnName="Leaf" />
+          <ScalarProperty Name="ParentAccountID" ColumnName="ParentAccountID" />
+          <ScalarProperty Name="active" ColumnName="active" />
+          <ScalarProperty Name="rowcreateddate" ColumnName="rowcreateddate" />
+          <ScalarProperty Name="MachineIP" ColumnName="MachineIP" />
+          <ScalarProperty Name="MachineName" ColumnName="MachineName" />
+          <ScalarProperty Name="MachineUser" ColumnName="MachineUser" />
+          <ScalarProperty Name="userid" ColumnName="userid" />
+          <ScalarProperty Name="rowupdateddate" ColumnName="rowupdateddate" />
+          <ScalarProperty Name="Machineipupdated" ColumnName="Machineipupdated" />
+          <ScalarProperty Name="Machinenameupdated" ColumnName="Machinenameupdated" />
+          <ScalarProperty Name="Machineuserupdated" ColumnName="Machineuserupdated" />
+          <ScalarProperty Name="useridupdated" ColumnName="useridupdated" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AccountDimensions">
+      <EntityTypeMapping TypeName="Gold_SalesModel.AccountDimension">
+        <MappingFragment StoreEntitySet="AccountDimensions">
+          <ScalarProperty Name="AccountID" ColumnName="AccountID" />
+          <ScalarProperty Name="AccountName" ColumnName="AccountName" />
+          <ScalarProperty Name="DimensionID" ColumnName="DimensionID" />
+          <ScalarProperty Name="DimensionName" ColumnName="DimensionName" />
+          <ScalarProperty Name="DimensionTypeID" ColumnName="DimensionTypeID" />
+          <ScalarProperty Name="DimensionTypeName" ColumnName="DimensionTypeName" />
+          <ScalarProperty Name="DimensionAccountDesc" ColumnName="DimensionAccountDesc" />
+          <ScalarProperty Name="active" ColumnName="active" />
+          <ScalarProperty Name="rowcreateddate" ColumnName="rowcreateddate" />
+          <ScalarProperty Name="MachineIP" ColumnName="MachineIP" />
+          <ScalarProperty Name="MachineName" ColumnName="MachineName" />
+          <ScalarProperty Name="MachineUser" ColumnName="MachineUser" />
+          <ScalarProperty Name="userid" ColumnName="userid" />
+          <ScalarProperty Name="rowupdateddate" ColumnName="rowupdateddate" />
+          <ScalarProperty Name="Machineipupdated" ColumnName="Machineipupdated" />
+          <ScalarProperty Name="Machinenameupdated" ColumnName="Machinenameupdated" />
+          <ScalarProperty Name="Machineuserupdated" ColumnName="Machineuserupdated" />
+          <ScalarProperty Name="useridupdated" ColumnName="useridupdated" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AccountTypes">
+      <EntityTypeMapping TypeName="Gold_SalesModel.AccountType">
+        <MappingFragment StoreEntitySet="AccountType">
+          <ScalarProperty Name="AccountTypeID" ColumnName="AccountTypeID" />
+          <ScalarProperty Name="AccountTypeName" ColumnName="AccountTypeName" />
+          <ScalarProperty Name="AccountTypeDesc" ColumnName="AccountTypeDesc" />
+          <ScalarProperty Name="active" ColumnName="active" />
+          <ScalarProperty Name="rowcreateddate" ColumnName="rowcreateddate" />
+          <ScalarProperty Name="MachineIP" ColumnName="MachineIP" />
+          <ScalarProperty Name="MachineName" ColumnName="MachineName" />
+          <ScalarProperty Name="MachineUser" ColumnName="MachineUser" />
+          <ScalarProperty Name="userid" ColumnName="userid" />
+          <ScalarProperty Name="rowupdateddate" ColumnName="rowupdateddate" />
+          <ScalarProperty Name="Machineipupdated" ColumnName="Machineipupdated" />
+          <ScalarProperty Name="Machinenameupdated" ColumnName="Machinenameupdated" />
+          <ScalarProperty Name="Machineuserupdated" ColumnName="Machineuserupdated" />
+          <ScalarProperty Name="useridupdated" ColumnName="useridupdated" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Branches">
+      <EntityTypeMapping TypeName="Gold_SalesModel.Branch">
+        <MappingFragment StoreEntitySet="Branch">
+          <ScalarProperty Name="BranchID" ColumnName="BranchID" />
+          <ScalarProperty Name="CompanyID" ColumnName="CompanyID" />
+          <ScalarProperty Name="BranchName" ColumnName="BranchName" />
+          <ScalarProperty Name="CityID" ColumnName="CityID" />
+          <ScalarProperty Name="active" ColumnName="active" />
+          <ScalarProperty Name="rowcreateddate" ColumnName="rowcreateddate" />
+          <ScalarProperty Name="MachineIP" ColumnName="MachineIP" />
+          <ScalarProperty Name="MachineName" ColumnName="MachineName" />
+          <ScalarProperty Name="MachineUser" ColumnName="MachineUser" />
+          <ScalarProperty Name="userid" ColumnName="userid" />
+          <ScalarProperty Name="rowupdateddate" ColumnName="rowupdateddate" />
+          <ScalarProperty Name="Machineipupdated" ColumnName="Machineipupdated" />
+          <ScalarProperty Name="Machinenameupdated" ColumnName="Machinenameupdated" />
+          <ScalarProperty Name="Machineuserupdated" ColumnName="Machineuserupdated" />
+          <ScalarProperty Name="useridupdated" ColumnName="useridupdated" />
+          <ScalarProperty Name="iabc" ColumnName="iabc" />
+          <ScalarProperty Name="idef" ColumnName="idef" />
+          <ScalarProperty Name="ighi" ColumnName="ighi" />
+          <ScalarProperty Name="ijkl" ColumnName="ijkl" />
+          <ScalarProperty Name="Sabc" ColumnName="Sabc" />
+          <ScalarProperty Name="Sdef" ColumnName="Sdef" />
+          <ScalarProperty Name="Sghi" ColumnName="Sghi" />
+          <ScalarProperty Name="Sjkl" ColumnName="Sjkl" />
+          <ScalarProperty Name="Dabc" ColumnName="Dabc" />
+          <ScalarProperty Name="Ddef" ColumnName="Ddef" />
+          <ScalarProperty Name="Dghi" ColumnName="Dghi" />
+          <ScalarProperty Name="Djkl" ColumnName="Djkl" />
+          <ScalarProperty Name="DECabc" ColumnName="DECabc" />
+          <ScalarProperty Name="DECdef" ColumnName="DECdef" />
+          <ScalarProperty Name="DECghi" ColumnName="DECghi" />
+          <ScalarProperty Name="DECjkl" ColumnName="DECjkl" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Cities">
+      <EntityTypeMapping TypeName="Gold_SalesModel.City">
+        <MappingFragment StoreEntitySet="City">
+          <ScalarProperty Name="CityID" ColumnName="CityID" />
+          <ScalarProperty Name="CityName" ColumnName="CityName" />
+          <ScalarProperty Name="CountryName" ColumnName="CountryName" />
+          <ScalarProperty Name="active" ColumnName="active" />
+          <ScalarProperty Name="rowcreateddate" ColumnName="rowcreateddate" />
+          <ScalarProperty Name="MachineIP" ColumnName="MachineIP" />
+          <ScalarProperty Name="MachineName" ColumnName="MachineName" />
+          <ScalarProperty Name="MachineUser" ColumnName="MachineUser" />
+          <ScalarProperty Name="userid" ColumnName="userid" />
+          <ScalarProperty Name="rowupdateddate" ColumnName="rowupdateddate" />
+          <ScalarProperty Name="Machineipupdated" ColumnName="Machineipupdated" />
+          <ScalarProperty Name="Machinenameupdated" ColumnName="Machinenameupdated" />
+          <ScalarProperty Name="Machineuserupdated" ColumnName="Machineuserupdated" />
+          <ScalarProperty Name="useridupdated" ColumnName="useridupdated" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Companies">
+      <EntityTypeMapping TypeName="Gold_SalesModel.Company">
+        <MappingFragment StoreEntitySet="Company">
+          <ScalarProperty Name="CompanyID" ColumnName="CompanyID" />
+          <ScalarProperty Name="CompanyName" ColumnName="CompanyName" />
+          <ScalarProperty Name="active" ColumnName="active" />
+          <ScalarProperty Name="rowcreateddate" ColumnName="rowcreateddate" />
+          <ScalarProperty Name="MachineIP" ColumnName="MachineIP" />
+          <ScalarProperty Name="MachineName" ColumnName="MachineName" />
+          <ScalarProperty Name="MachineUser" ColumnName="MachineUser" />
+          <ScalarProperty Name="userid" ColumnName="userid" />
+          <ScalarProperty Name="rowupdateddate" ColumnName="rowupdateddate" />
+          <ScalarProperty Name="Machineipupdated" ColumnName="Machineipupdated" />
+          <ScalarProperty Name="Machinenameupdated" ColumnName="Machinenameupdated" />
+          <ScalarProperty Name="Machineuserupdated" ColumnName="Machineuserupdated" />
+          <ScalarProperty Name="useridupdated" ColumnName="useridupdated" />
+          <ScalarProperty Name="iabc" ColumnName="iabc" />
+          <ScalarProperty Name="idef" ColumnName="idef" />
+          <ScalarProperty Name="ighi" ColumnName="ighi" />
+          <ScalarProperty Name="ijkl" ColumnName="ijkl" />
+          <ScalarProperty Name="Sabc" ColumnName="Sabc" />
+          <ScalarProperty Name="Sdef" ColumnName="Sdef" />
+          <ScalarProperty Name="Sghi" ColumnName="Sghi" />
+          <ScalarProperty Name="Sjkl" ColumnName="Sjkl" />
+          <ScalarProperty Name="Dabc" ColumnName="Dabc" />
+          <ScalarProperty Name="Ddef" ColumnName="Ddef" />
+          <ScalarProperty Name="Dghi" ColumnName="Dghi" />
+          <ScalarProperty Name="Djkl" ColumnName="Djkl" />
+          <ScalarProperty Name="DECabc" ColumnName="DECabc" />
+          <ScalarProperty Name="DECdef" ColumnName="DECdef" />
+          <ScalarProperty Name="DECghi" ColumnName="DECghi" />
+          <ScalarProperty Name="DECjkl" ColumnName="DECjkl" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CompanyEmps">
+      <EntityTypeMapping TypeName="Gold_SalesModel.CompanyEmp">
+        <MappingFragment StoreEntitySet="CompanyEmp">
+          <ScalarProperty Name="EmpID" ColumnName="EmpID" />
+          <ScalarProperty Name="CompanyID" ColumnName="CompanyID" />
+          <ScalarProperty Name="EmpName" ColumnName="EmpName" />
+          <ScalarProperty Name="active" ColumnName="active" />
+          <ScalarProperty Name="rowcreateddate" ColumnName="rowcreateddate" />
+          <ScalarProperty Name="MachineIP" ColumnName="MachineIP" />
+          <ScalarProperty Name="MachineName" ColumnName="MachineName" />
+          <ScalarProperty Name="MachineUser" ColumnName="MachineUser" />
+          <ScalarProperty Name="userid" ColumnName="userid" />
+          <ScalarProperty Name="rowupdateddate" ColumnName="rowupdateddate" />
+          <ScalarProperty Name="Machineipupdated" ColumnName="Machineipupdated" />
+          <ScalarProperty Name="Machinenameupdated" ColumnName="Machinenameupdated" />
+          <ScalarProperty Name="Machineuserupdated" ColumnName="Machineuserupdated" />
+          <ScalarProperty Name="useridupdated" ColumnName="useridupdated" />
+          <ScalarProperty Name="iabc" ColumnName="iabc" />
+          <ScalarProperty Name="idef" ColumnName="idef" />
+          <ScalarProperty Name="ighi" ColumnName="ighi" />
+          <ScalarProperty Name="ijkl" ColumnName="ijkl" />
+          <ScalarProperty Name="Sabc" ColumnName="Sabc" />
+          <ScalarProperty Name="Sdef" ColumnName="Sdef" />
+          <ScalarProperty Name="Sghi" ColumnName="Sghi" />
+          <ScalarProperty Name="Sjkl" ColumnName="Sjkl" />
+          <ScalarProperty Name="Dabc" ColumnName="Dabc" />
+          <ScalarProperty Name="Ddef" ColumnName="Ddef" />
+          <ScalarProperty Name="Dghi" ColumnName="Dghi" />
+          <ScalarProperty Name="Djkl" ColumnName="Djkl" />
+          <ScalarProperty Name="DECabc" ColumnName="DECabc" />
+          <ScalarProperty Name="DECdef" ColumnName="DECdef" />
+          <ScalarProperty Name="DECghi" ColumnName="DECghi" />
+          <ScalarProperty Name="DECjkl" ColumnName="DECjkl" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Currencies">
+      <EntityTypeMapping TypeName="Gold_SalesModel.Currency">
+        <MappingFragment StoreEntitySet="Currency">
+          <ScalarProperty Name="CurrencyID" ColumnName="CurrencyID" />
+          <ScalarProperty Name="Currencyname" ColumnName="Currencyname" />
+          <ScalarProperty Name="IsSystemCurr" ColumnName="IsSystemCurr" />
+          <ScalarProperty Name="CurrRate" ColumnName="CurrRate" />
+          <ScalarProperty Name="CurrRateDate" ColumnName="CurrRateDate" />
+          <ScalarProperty Name="active" ColumnName="active" />
+          <ScalarProperty Name="rowcreateddate" ColumnName="rowcreateddate" />
+          <ScalarProperty Name="MachineIP" ColumnName="MachineIP" />
+          <ScalarProperty Name="MachineName" ColumnName="MachineName" />
+          <ScalarProperty Name="MachineUser" ColumnName="MachineUser" />
+          <ScalarProperty Name="userid" ColumnName="userid" />
+          <ScalarProperty Name="rowupdateddate" ColumnName="rowupdateddate" />
+          <ScalarProperty Name="Machineipupdated" ColumnName="Machineipupdated" />
+          <ScalarProperty Name="Machinenameupdated" ColumnName="Machinenameupdated" />
+          <ScalarProperty Name="Machineuserupdated" ColumnName="Machineuserupdated" />
+          <ScalarProperty Name="useridupdated" ColumnName="useridupdated" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CurrencyRates">
+      <EntityTypeMapping TypeName="Gold_SalesModel.CurrencyRate">
+        <MappingFragment StoreEntitySet="CurrencyRates">
+          <ScalarProperty Name="CurrencyID" ColumnName="CurrencyID" />
+          <ScalarProperty Name="CurrRateDate" ColumnName="CurrRateDate" />
+          <ScalarProperty Name="CurrRate" ColumnName="CurrRate" />
+          <ScalarProperty Name="active" ColumnName="active" />
+          <ScalarProperty Name="rowcreateddate" ColumnName="rowcreateddate" />
+          <ScalarProperty Name="MachineIP" ColumnName="MachineIP" />
+          <ScalarProperty Name="MachineName" ColumnName="MachineName" />
+          <ScalarProperty Name="MachineUser" ColumnName="MachineUser" />
+          <ScalarProperty Name="userid" ColumnName="userid" />
+          <ScalarProperty Name="rowupdateddate" ColumnName="rowupdateddate" />
+          <ScalarProperty Name="Machineipupdated" ColumnName="Machineipupdated" />
+          <ScalarProperty Name="Machinenameupdated" ColumnName="Machinenameupdated" />
+          <ScalarProperty Name="Machineuserupdated" ColumnName="Machineuserupdated" />
+          <ScalarProperty Name="useridupdated" ColumnName="useridupdated" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Customers">
+      <EntityTypeMapping TypeName="Gold_SalesModel.Customer">
+        <MappingFragment StoreEntitySet="Customers">
+          <ScalarProperty Name="CustomerID" ColumnName="CustomerID" />
+          <ScalarProperty Name="CompanyID" ColumnName="CompanyID" />
+          <ScalarProperty Name="Custname" ColumnName="Custname" />
+          <ScalarProperty Name="CustDesc" ColumnName="CustDesc" />
+          <ScalarProperty Name="CustCategory" ColumnName="CustCategory" />
+          <ScalarProperty Name="CustCatDesc" ColumnName="CustCatDesc" />
+          <ScalarProperty Name="CustKawmyID" ColumnName="CustKawmyID" />
+          <ScalarProperty Name="CustPassID" ColumnName="CustPassID" />
+          <ScalarProperty Name="CustTaxCardNo" ColumnName="CustTaxCardNo" />
+          <ScalarProperty Name="CustCreditLimit" ColumnName="CustCreditLimit" />
+          <ScalarProperty Name="CustContacts" ColumnName="CustContacts" />
+          <ScalarProperty Name="active" ColumnName="active" />
+          <ScalarProperty Name="rowcreateddate" ColumnName="rowcreateddate" />
+          <ScalarProperty Name="MachineIP" ColumnName="MachineIP" />
+          <ScalarProperty Name="MachineName" ColumnName="MachineName" />
+          <ScalarProperty Name="MachineUser" ColumnName="MachineUser" />
+          <ScalarProperty Name="userid" ColumnName="userid" />
+          <ScalarProperty Name="rowupdateddate" ColumnName="rowupdateddate" />
+          <ScalarProperty Name="Machineipupdated" ColumnName="Machineipupdated" />
+          <ScalarProperty Name="Machinenameupdated" ColumnName="Machinenameupdated" />
+          <ScalarProperty Name="Machineuserupdated" ColumnName="Machineuserupdated" />
+          <ScalarProperty Name="useridupdated" ColumnName="useridupdated" />
+          <ScalarProperty Name="iabc" ColumnName="iabc" />
+          <ScalarProperty Name="idef" ColumnName="idef" />
+          <ScalarProperty Name="ighi" ColumnName="ighi" />
+          <ScalarProperty Name="ijkl" ColumnName="ijkl" />
+          <ScalarProperty Name="Sabc" ColumnName="Sabc" />
+          <ScalarProperty Name="Sdef" ColumnName="Sdef" />
+          <ScalarProperty Name="Sghi" ColumnName="Sghi" />
+          <ScalarProperty Name="Sjkl" ColumnName="Sjkl" />
+          <ScalarProperty Name="Dabc" ColumnName="Dabc" />
+          <ScalarProperty Name="Ddef" ColumnName="Ddef" />
+          <ScalarProperty Name="Dghi" ColumnName="Dghi" />
+          <ScalarProperty Name="Djkl" ColumnName="Djkl" />
+          <ScalarProperty Name="DECabc" ColumnName="DECabc" />
+          <ScalarProperty Name="DECdef" ColumnName="DECdef" />
+          <ScalarProperty Name="DECghi" ColumnName="DECghi" />
+          <ScalarProperty Name="DECjkl" ColumnName="DECjkl" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Dimensions">
+      <EntityTypeMapping TypeName="Gold_SalesModel.Dimension">
+        <MappingFragment StoreEntitySet="Dimension">
+          <ScalarProperty Name="DimensionID" ColumnName="DimensionID" />
+          <ScalarProperty Name="DimensionTypeID" ColumnName="DimensionTypeID" />
+          <ScalarProperty Name="DimensionTypeName" ColumnName="DimensionTypeName" />
+          <ScalarProperty Name="DimensionName" ColumnName="DimensionName" />
+          <ScalarProperty Name="DimensionDesc" ColumnName="DimensionDesc" />
+          <ScalarProperty Name="active" ColumnName="active" />
+          <ScalarProperty Name="rowcreateddate" ColumnName="rowcreateddate" />
+          <ScalarProperty Name="MachineIP" ColumnName="MachineIP" />
+          <ScalarProperty Name="MachineName" ColumnName="MachineName" />
+          <ScalarProperty Name="MachineUser" ColumnName="MachineUser" />
+          <ScalarProperty Name="userid" ColumnName="userid" />
+          <ScalarProperty Name="rowupdateddate" ColumnName="rowupdateddate" />
+          <ScalarProperty Name="Machineipupdated" ColumnName="Machineipupdated" />
+          <ScalarProperty Name="Machinenameupdated" ColumnName="Machinenameupdated" />
+          <ScalarProperty Name="Machineuserupdated" ColumnName="Machineuserupdated" />
+          <ScalarProperty Name="useridupdated" ColumnName="useridupdated" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DimensionTypes">
+      <EntityTypeMapping TypeName="Gold_SalesModel.DimensionType">
+        <MappingFragment StoreEntitySet="DimensionType">
+          <ScalarProperty Name="DimensionTypeID" ColumnName="DimensionTypeID" />
+          <ScalarProperty Name="DimensionTypeName" ColumnName="DimensionTypeName" />
+          <ScalarProperty Name="DimensionTypeDesc" ColumnName="DimensionTypeDesc" />
+          <ScalarProperty Name="active" ColumnName="active" />
+          <ScalarProperty Name="rowcreateddate" ColumnName="rowcreateddate" />
+          <ScalarProperty Name="MachineIP" ColumnName="MachineIP" />
+          <ScalarProperty Name="MachineName" ColumnName="MachineName" />
+          <ScalarProperty Name="MachineUser" ColumnName="MachineUser" />
+          <ScalarProperty Name="userid" ColumnName="userid" />
+          <ScalarProperty Name="rowupdateddate" ColumnName="rowupdateddate" />
+          <ScalarProperty Name="Machineipupdated" ColumnName="Machineipupdated" />
+          <ScalarProperty Name="Machinenameupdated" ColumnName="Machinenameupdated" />
+          <ScalarProperty Name="Machineuserupdated" ColumnName="Machineuserupdated" />
+          <ScalarProperty Name="useridupdated" ColumnName="useridupdated" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="FunctionGroups">
+      <EntityTypeMapping TypeName="Gold_SalesModel.FunctionGroup">
+        <MappingFragment StoreEntitySet="FunctionGroup">
+          <ScalarProperty Name="FunctionGroupID" ColumnName="FunctionGroupID" />
+          <ScalarProperty Name="FunctionGroupName" ColumnName="FunctionGroupName" />
+          <ScalarProperty Name="FunctionGroupDesc" ColumnName="FunctionGroupDesc" />
+          <ScalarProperty Name="active" ColumnName="active" />
+          <ScalarProperty Name="deactivateddate" ColumnName="deactivateddate" />
+          <ScalarProperty Name="rowcreateddate" ColumnName="rowcreateddate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="FunctionGroupMenus">
+      <EntityTypeMapping TypeName="Gold_SalesModel.FunctionGroupMenu">
+        <MappingFragment StoreEntitySet="FunctionGroupMenu">
+          <ScalarProperty Name="FunctionGroupMenuID" ColumnName="FunctionGroupMenuID" />
+          <ScalarProperty Name="FunctionGroupID" ColumnName="FunctionGroupID" />
+          <ScalarProperty Name="FunctionID" ColumnName="FunctionID" />
+          <ScalarProperty Name="active" ColumnName="active" />
+          <ScalarProperty Name="deactivateddate" ColumnName="deactivateddate" />
+          <ScalarProperty Name="rowcreateddate" ColumnName="rowcreateddate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="FunctionMenus">
+      <EntityTypeMapping TypeName="Gold_SalesModel.FunctionMenu">
+        <MappingFragment StoreEntitySet="FunctionMenu">
+          <ScalarProperty Name="FunctionID" ColumnName="FunctionID" />
+          <ScalarProperty Name="FunctionName" ColumnName="FunctionName" />
+          <ScalarProperty Name="FunctionMenu1" ColumnName="FunctionMenu" />
+          <ScalarProperty Name="MenuLevel" ColumnName="MenuLevel" />
+          <ScalarProperty Name="ParentFunctionID" ColumnName="ParentFunctionID" />
+          <ScalarProperty Name="active" ColumnName="active" />
+          <ScalarProperty Name="deactivateddate" ColumnName="deactivateddate" />
+          <ScalarProperty Name="rowcreateddate" ColumnName="rowcreateddate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="GARDs">
+      <EntityTypeMapping TypeName="Gold_SalesModel.GARD">
+        <MappingFragment StoreEntitySet="GARD">
+          <ScalarProperty Name="GARDNUM" ColumnName="GARDNUM" />
+          <ScalarProperty Name="INVENTLOCATIONID" ColumnName="INVENTLOCATIONID" />
+          <ScalarProperty Name="CREATEUSER" ColumnName="CREATEUSER" />
+          <ScalarProperty Name="GARDDATE" ColumnName="GARDDATE" />
+          <ScalarProperty Name="LINECOUNT" ColumnName="LINECOUNT" />
+          <ScalarProperty Name="Gard_status" ColumnName="Gard_status" />
+          <ScalarProperty Name="Gard_status_Date" ColumnName="Gard_status_Date" />
+          <ScalarProperty Name="Gard_status_user" ColumnName="Gard_status_user" />
+          <ScalarProperty Name="MachineIp" ColumnName="MachineIp" />
+          <ScalarProperty Name="MachineName" ColumnName="MachineName" />
+          <ScalarProperty Name="MachineUser" ColumnName="MachineUser" />
+          <ScalarProperty Name="userid" ColumnName="userid" />
+          <ScalarProperty Name="MachineIPupdated" ColumnName="MachineIPupdated" />
+          <ScalarProperty Name="MachineNameupdated" ColumnName="MachineNameupdated" />
+          <ScalarProperty Name="MachineUserupdated" ColumnName="MachineUserupdated" />
+          <ScalarProperty Name="useridupdated" ColumnName="useridupdated" />
+          <ScalarProperty Name="rowcreateddate" ColumnName="rowcreateddate" />
+          <ScalarProperty Name="iabc" ColumnName="iabc" />
+          <ScalarProperty Name="idef" ColumnName="idef" />
+          <ScalarProperty Name="ighi" ColumnName="ighi" />
+          <ScalarProperty Name="ijkl" ColumnName="ijkl" />
+          <ScalarProperty Name="Sabc" ColumnName="Sabc" />
+          <ScalarProperty Name="Sdef" ColumnName="Sdef" />
+          <ScalarProperty Name="Sghi" ColumnName="Sghi" />
+          <ScalarProperty Name="Sjkl" ColumnName="Sjkl" />
+          <ScalarProperty Name="Dabc" ColumnName="Dabc" />
+          <ScalarProperty Name="Ddef" ColumnName="Ddef" />
+          <ScalarProperty Name="Dghi" ColumnName="Dghi" />
+          <ScalarProperty Name="Djkl" ColumnName="Djkl" />
+          <ScalarProperty Name="DECabc" ColumnName="DECabc" />
+          <ScalarProperty Name="DECdef" ColumnName="DECdef" />
+          <ScalarProperty Name="DECghi" ColumnName="DECghi" />
+          <ScalarProperty Name="DECjkl" ColumnName="DECjkl" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="GARDDETAILS">
+      <EntityTypeMapping TypeName="Gold_SalesModel.GARDDETAIL">
+        <MappingFragment StoreEntitySet="GARDDETAILS">
+          <ScalarProperty Name="GARDNUM" ColumnName="GARDNUM" />
+          <ScalarProperty Name="INVENTLOCATIONID" ColumnName="INVENTLOCATIONID" />
+          <ScalarProperty Name="ITEMORDER" ColumnName="ITEMORDER" />
+          <ScalarProperty Name="SERIAL" ColumnName="SERIAL" />
+          <ScalarProperty Name="INVENTDIMID" ColumnName="INVENTDIMID" />
+          <ScalarProperty Name="stockid" ColumnName="stockid" />
+          <ScalarProperty Name="ITEMID" ColumnName="ITEMID" />
+          <ScalarProperty Name="ITEMNAME" ColumnName="ITEMNAME" />
+          <ScalarProperty Name="itemexists" ColumnName="itemexists" />
+          <ScalarProperty Name="QTY" ColumnName="QTY" />
+          <ScalarProperty Name="UNITCODE" ColumnName="UNITCODE" />
+          <ScalarProperty Name="WEIGHT" ColumnName="WEIGHT" />
+          <ScalarProperty Name="CREATEUSER" ColumnName="CREATEUSER" />
+          <ScalarProperty Name="itemdate" ColumnName="itemdate" />
+          <ScalarProperty Name="itemip" ColumnName="itemip" />
+          <ScalarProperty Name="itempc" ColumnName="itempc" />
+          <ScalarProperty Name="MachineIP" ColumnName="MachineIP" />
+          <ScalarProperty Name="MachineName" ColumnName="MachineName" />
+          <ScalarProperty Name="Machineuser" ColumnName="Machineuser" />
+          <ScalarProperty Name="userid" ColumnName="userid" />
+          <ScalarProperty Name="rowcreateddate" ColumnName="rowcreateddate" />
+          <ScalarProperty Name="iabc" ColumnName="iabc" />
+          <ScalarProperty Name="idef" ColumnName="idef" />
+          <ScalarProperty Name="ighi" ColumnName="ighi" />
+          <ScalarProperty Name="ijkl" ColumnName="ijkl" />
+          <ScalarProperty Name="Sabc" ColumnName="Sabc" />
+          <ScalarProperty Name="Sdef" ColumnName="Sdef" />
+          <ScalarProperty Name="Sghi" ColumnName="Sghi" />
+          <ScalarProperty Name="Sjkl" ColumnName="Sjkl" />
+          <ScalarProperty Name="Dabc" ColumnName="Dabc" />
+          <ScalarProperty Name="Ddef" ColumnName="Ddef" />
+          <ScalarProperty Name="Dghi" ColumnName="Dghi" />
+          <ScalarProperty Name="Djkl" ColumnName="Djkl" />
+          <ScalarProperty Name="DECabc" ColumnName="DECabc" />
+          <ScalarProperty Name="DECdef" ColumnName="DECdef" />
+          <ScalarProperty Name="DECghi" ColumnName="DECghi" />
+          <ScalarProperty Name="DECjkl" ColumnName="DECjkl" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="GARDSTOCKs">
+      <EntityTypeMapping TypeName="Gold_SalesModel.GARDSTOCK">
+        <MappingFragment StoreEntitySet="GARDSTOCK">
+          <ScalarProperty Name="GARDNUM" ColumnName="GARDNUM" />
+          <ScalarProperty Name="INVENTLOCATIONID" ColumnName="INVENTLOCATIONID" />
+          <ScalarProperty Name="stockid" ColumnName="stockid" />
+          <ScalarProperty Name="ITEMID" ColumnName="ITEMID" />
+          <ScalarProperty Name="QTY" ColumnName="QTY" />
+          <ScalarProperty Name="SERIAL" ColumnName="SERIAL" />
+          <ScalarProperty Name="UNITCODE" ColumnName="UNITCODE" />
+          <ScalarProperty Name="WEIGHT" ColumnName="WEIGHT" />
+          <ScalarProperty Name="MachineIP" ColumnName="MachineIP" />
+          <ScalarProperty Name="MachineUser" ColumnName="MachineUser" />
+          <ScalarProperty Name="MachineName" ColumnName="MachineName" />
+          <ScalarProperty Name="userid" ColumnName="userid" />
+          <ScalarProperty Name="rowcreateddate" ColumnName="rowcreateddate" />
+          <ScalarProperty Name="iabc" ColumnName="iabc" />
+          <ScalarProperty Name="idef" ColumnName="idef" />
+          <ScalarProperty Name="ighi" ColumnName="ighi" />
+          <ScalarProperty Name="ijkl" ColumnName="ijkl" />
+          <ScalarProperty Name="Sabc" ColumnName="Sabc" />
+          <ScalarProperty Name="Sdef" ColumnName="Sdef" />
+          <ScalarProperty Name="Sghi" ColumnName="Sghi" />
+          <ScalarProperty Name="Sjkl" ColumnName="Sjkl" />
+          <ScalarProperty Name="Dabc" ColumnName="Dabc" />
+          <ScalarProperty Name="Ddef" ColumnName="Ddef" />
+          <ScalarProperty Name="Dghi" ColumnName="Dghi" />
+          <ScalarProperty Name="Djkl" ColumnName="Djkl" />
+          <ScalarProperty Name="DECabc" ColumnName="DECabc" />
+          <ScalarProperty Name="DECdef" ColumnName="DECdef" />
+          <ScalarProperty Name="DECghi" ColumnName="DECghi" />
+          <ScalarProperty Name="DECjkl" ColumnName="DECjkl" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="InventLocations">
+      <EntityTypeMapping TypeName="Gold_SalesModel.InventLocation">
+        <MappingFragment StoreEntitySet="InventLocation">
+          <ScalarProperty Name="InventLocationID" ColumnName="InventLocationID" />
+          <ScalarProperty Name="InvLocName" ColumnName="InvLocName" />
+          <ScalarProperty Name="SiteID" ColumnName="SiteID" />
+          <ScalarProperty Name="active" ColumnName="active" />
+          <ScalarProperty Name="LocGard" ColumnName="LocGard" />
+          <ScalarProperty Name="MachineIP" ColumnName="MachineIP" />
+          <ScalarProperty Name="MachineName" ColumnName="MachineName" />
+          <ScalarProperty Name="MachineUser" ColumnName="MachineUser" />
+          <ScalarProperty Name="userid" ColumnName="userid" />
+          <ScalarProperty Name="Machineipupdated" ColumnName="Machineipupdated" />
+          <ScalarProperty Name="Machinenameupdated" ColumnName="Machinenameupdated" />
+          <ScalarProperty Name="Machineuserupdated" ColumnName="Machineuserupdated" />
+          <ScalarProperty Name="useridupdated" ColumnName="useridupdated" />
+          <ScalarProperty Name="rowcreateddate" ColumnName="rowcreateddate" />
+          <ScalarProperty Name="iabc" ColumnName="iabc" />
+          <ScalarProperty Name="idef" ColumnName="idef" />
+          <ScalarProperty Name="ighi" ColumnName="ighi" />
+          <ScalarProperty Name="ijkl" ColumnName="ijkl" />
+          <ScalarProperty Name="Sabc" ColumnName="Sabc" />
+          <ScalarProperty Name="Sdef" ColumnName="Sdef" />
+          <ScalarProperty Name="Sghi" ColumnName="Sghi" />
+          <ScalarProperty Name="Sjkl" ColumnName="Sjkl" />
+          <ScalarProperty Name="Dabc" ColumnName="Dabc" />
+          <ScalarProperty Name="Ddef" ColumnName="Ddef" />
+          <ScalarProperty Name="Dghi" ColumnName="Dghi" />
+          <ScalarProperty Name="Djkl" ColumnName="Djkl" />
+          <ScalarProperty Name="DECabc" ColumnName="DECabc" />
+          <ScalarProperty Name="DECdef" ColumnName="DECdef" />
+          <ScalarProperty Name="DECghi" ColumnName="DECghi" />
+          <ScalarProperty Name="DECjkl" ColumnName="DECjkl" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="InventSites">
+      <EntityTypeMapping TypeName="Gold_SalesModel.InventSite">
+        <MappingFragment StoreEntitySet="InventSite">
+          <ScalarProperty Name="SiteID" ColumnName="SiteID" />
+          <ScalarProperty Name="SiteName" ColumnName="SiteName" />
+          <ScalarProperty Name="BranchID" ColumnName="BranchID" />
+          <ScalarProperty Name="active" ColumnName="active" />
+          <ScalarProperty Name="MachineIP" ColumnName="MachineIP" />
+          <ScalarProperty Name="MachineName" ColumnName="MachineName" />
+          <ScalarProperty Name="MachineUser" ColumnName="MachineUser" />
+          <ScalarProperty Name="userid" ColumnName="userid" />
+          <ScalarProperty Name="Machineipupdated" ColumnName="Machineipupdated" />
+          <ScalarProperty Name="Machinenameupdated" ColumnName="Machinenameupdated" />
+          <ScalarProperty Name="Machineuserupdated" ColumnName="Machineuserupdated" />
+          <ScalarProperty Name="useridupdated" ColumnName="useridupdated" />
+          <ScalarProperty Name="rowcreateddate" ColumnName="rowcreateddate" />
+          <ScalarProperty Name="iabc" ColumnName="iabc" />
+          <ScalarProperty Name="idef" ColumnName="idef" />
+          <ScalarProperty Name="ighi" ColumnName="ighi" />
+          <ScalarProperty Name="ijkl" ColumnName="ijkl" />
+          <ScalarProperty Name="Sabc" ColumnName="Sabc" />
+          <ScalarProperty Name="Sdef" ColumnName="Sdef" />
+          <ScalarProperty Name="Sghi" ColumnName="Sghi" />
+          <ScalarProperty Name="Sjkl" ColumnName="Sjkl" />
+          <ScalarProperty Name="Dabc" ColumnName="Dabc" />
+          <ScalarProperty Name="Ddef" ColumnName="Ddef" />
+          <ScalarProperty Name="Dghi" ColumnName="Dghi" />
+          <ScalarProperty Name="Djkl" ColumnName="Djkl" />
+          <ScalarProperty Name="DECabc" ColumnName="DECabc" />
+          <ScalarProperty Name="DECdef" ColumnName="DECdef" />
+          <ScalarProperty Name="DECghi" ColumnName="DECghi" />
+          <ScalarProperty Name="DECjkl" ColumnName="DECjkl" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="INVENTTRANSFERLINEs">
+      <EntityTypeMapping TypeName="Gold_SalesModel.INVENTTRANSFERLINE">
+        <MappingFragment StoreEntitySet="INVENTTRANSFERLINE">
+          <ScalarProperty Name="TRANSFERID" ColumnName="TRANSFERID" />
+          <ScalarProperty Name="LINENUM" ColumnName="LINENUM" />
+          <ScalarProperty Name="ITEMGROUPID" ColumnName="ITEMGROUPID" />
+          <ScalarProperty Name="ITEMID" ColumnName="ITEMID" />
+          <ScalarProperty Name="SERIAL" ColumnName="SERIAL" />
+          <ScalarProperty Name="PRICE" ColumnName="PRICE" />
+          <ScalarProperty Name="QTYSHIPPED" ColumnName="QTYSHIPPED" />
+          <ScalarProperty Name="UNIT_CODE" ColumnName="UNIT_CODE" />
+          <ScalarProperty Name="STOCKID" ColumnName="STOCKID" />
+          <ScalarProperty Name="Newstockid" ColumnName="Newstockid" />
+          <ScalarProperty Name="Stockidnew" ColumnName="Stockidnew" />
+          <ScalarProperty Name="rowcreateddate" ColumnName="rowcreateddate" />
+          <ScalarProperty Name="MachineIP" ColumnName="MachineIP" />
+          <ScalarProperty Name="Machinename" ColumnName="Machinename" />
+          <ScalarProperty Name="Machineuser" ColumnName="Machineuser" />
+          <ScalarProperty Name="userid" ColumnName="userid" />
+          <ScalarProperty Name="iabc" ColumnName="iabc" />
+          <ScalarProperty Name="idef" ColumnName="idef" />
+          <ScalarProperty Name="ighi" ColumnName="ighi" />
+          <ScalarProperty Name="ijkl" ColumnName="ijkl" />
+          <ScalarProperty Name="Sabc" ColumnName="Sabc" />
+          <ScalarProperty Name="Sdef" ColumnName="Sdef" />
+          <ScalarProperty Name="Sghi" ColumnName="Sghi" />
+          <ScalarProperty Name="Sjkl" ColumnName="Sjkl" />
+          <ScalarProperty Name="Dabc" ColumnName="Dabc" />
+          <ScalarProperty Name="Ddef" ColumnName="Ddef" />
+          <ScalarProperty Name="Dghi" ColumnName="Dghi" />
+          <ScalarProperty Name="Djkl" ColumnName="Djkl" />
+          <ScalarProperty Name="DECabc" ColumnName="DECabc" />
+          <ScalarProperty Name="DECdef" ColumnName="DECdef" />
+          <ScalarProperty Name="DECghi" ColumnName="DECghi" />
+          <ScalarProperty Name="DECjkl" ColumnName="DECjkl" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="INVENTTRANSFERTABLEs">
+      <EntityTypeMapping TypeName="Gold_SalesModel.INVENTTRANSFERTABLE">
+        <MappingFragment StoreEntitySet="INVENTTRANSFERTABLE">
+          <ScalarProperty Name="TRANSFERID" ColumnName="TRANSFERID" />
+          <ScalarProperty Name="TRANSFERIDNUM" ColumnName="TRANSFERIDNUM" />
+          <ScalarProperty Name="TRANSFERIDRETURN" ColumnName="TRANSFERIDRETURN" />
+          <ScalarProperty Name="INVENTLOCATIONIDFROM" ColumnName="INVENTLOCATIONIDFROM" />
+          <ScalarProperty Name="INVENTLOCATIONIDTO" ColumnName="INVENTLOCATIONIDTO" />
+          <ScalarProperty Name="INVENTLOCATIONIDTRANSIT" ColumnName="INVENTLOCATIONIDTRANSIT" />
+          <ScalarProperty Name="SHIPDATE" ColumnName="SHIPDATE" />
+          <ScalarProperty Name="RECEIVEDATE" ColumnName="RECEIVEDATE" />
+          <ScalarProperty Name="CREATEDDATE" ColumnName="CREATEDDATE" />
+          <ScalarProperty Name="APPROVEDDATE" ColumnName="APPROVEDDATE" />
+          <ScalarProperty Name="CLOSUREDATE" ColumnName="CLOSUREDATE" />
+          <ScalarProperty Name="TRANSFERSTATUS" ColumnName="TRANSFERSTATUS" />
+          <ScalarProperty Name="TotalLines" ColumnName="TotalLines" />
+          <ScalarProperty Name="TotalWeight" ColumnName="TotalWeight" />
+          <ScalarProperty Name="MachineIP" ColumnName="MachineIP" />
+          <ScalarProperty Name="Machineuser" ColumnName="Machineuser" />
+          <ScalarProperty Name="MachineName" ColumnName="MachineName" />
+          <ScalarProperty Name="userid" ColumnName="userid" />
+          <ScalarProperty Name="MachineIPupdated" ColumnName="MachineIPupdated" />
+          <ScalarProperty Name="MachineUserUpdated" ColumnName="MachineUserUpdated" />
+          <ScalarProperty Name="MachineNameUpdated" ColumnName="MachineNameUpdated" />
+          <ScalarProperty Name="useridUpdated" ColumnName="useridUpdated" />
+          <ScalarProperty Name="rowcreateddate" ColumnName="rowcreateddate" />
+          <ScalarProperty Name="iabc" ColumnName="iabc" />
+          <ScalarProperty Name="idef" ColumnName="idef" />
+          <ScalarProperty Name="ighi" ColumnName="ighi" />
+          <ScalarProperty Name="ijkl" ColumnName="ijkl" />
+          <ScalarProperty Name="Sabc" ColumnName="Sabc" />
+          <ScalarProperty Name="Sdef" ColumnName="Sdef" />
+          <ScalarProperty Name="Sghi" ColumnName="Sghi" />
+          <ScalarProperty Name="Sjkl" ColumnName="Sjkl" />
+          <ScalarProperty Name="Dabc" ColumnName="Dabc" />
+          <ScalarProperty Name="Ddef" ColumnName="Ddef" />
+          <ScalarProperty Name="Dghi" ColumnName="Dghi" />
+          <ScalarProperty Name="Djkl" ColumnName="Djkl" />
+          <ScalarProperty Name="DECabc" ColumnName="DECabc" />
+          <ScalarProperty Name="DECdef" ColumnName="DECdef" />
+          <ScalarProperty Name="DECghi" ColumnName="DECghi" />
+          <ScalarProperty Name="DECjkl" ColumnName="DECjkl" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Invoices">
+      <EntityTypeMapping TypeName="Gold_SalesModel.Invoice">
+        <MappingFragment StoreEntitySet="Invoice">
+          <ScalarProperty Name="InvID" ColumnName="InvID" />
+          <ScalarProperty Name="CompanyID" ColumnName="CompanyID" />
+          <ScalarProperty Name="BranchID" ColumnName="BranchID" />
+          <ScalarProperty Name="Invdate" ColumnName="Invdate" />
+          <ScalarProperty Name="InvType" ColumnName="InvType" />
+          <ScalarProperty Name="InvCurr" ColumnName="InvCurr" />
+          <ScalarProperty Name="Inv_CurrRate" ColumnName="Inv_CurrRate" />
+          <ScalarProperty Name="Inv_CurrAmount" ColumnName="Inv_CurrAmount" />
+          <ScalarProperty Name="Inv_LocalAmount" ColumnName="Inv_LocalAmount" />
+          <ScalarProperty Name="Inv_Qty" ColumnName="Inv_Qty" />
+          <ScalarProperty Name="Inv_Lines" ColumnName="Inv_Lines" />
+          <ScalarProperty Name="CustomerID" ColumnName="CustomerID" />
+          <ScalarProperty Name="returnorder" ColumnName="returnorder" />
+          <ScalarProperty Name="closure_date" ColumnName="closure_date" />
+          <ScalarProperty Name="remarks" ColumnName="remarks" />
+          <ScalarProperty Name="Portal_InvID" ColumnName="Portal_InvID" />
+          <ScalarProperty Name="Portal_InvLink" ColumnName="Portal_InvLink" />
+          <ScalarProperty Name="Portal_syncstatus" ColumnName="Portal_syncstatus" />
+          <ScalarProperty Name="rowcreateddate" ColumnName="rowcreateddate" />
+          <ScalarProperty Name="MachineIP" ColumnName="MachineIP" />
+          <ScalarProperty Name="MachineUser" ColumnName="MachineUser" />
+          <ScalarProperty Name="Machinename" ColumnName="Machinename" />
+          <ScalarProperty Name="userid" ColumnName="userid" />
+          <ScalarProperty Name="rowupdateddate" ColumnName="rowupdateddate" />
+          <ScalarProperty Name="MachineIPupdated" ColumnName="MachineIPupdated" />
+          <ScalarProperty Name="MachineUserupdated" ColumnName="MachineUserupdated" />
+          <ScalarProperty Name="MachineNameupdated" ColumnName="MachineNameupdated" />
+          <ScalarProperty Name="useridupdated" ColumnName="useridupdated" />
+          <ScalarProperty Name="iabc" ColumnName="iabc" />
+          <ScalarProperty Name="idef" ColumnName="idef" />
+          <ScalarProperty Name="ighi" ColumnName="ighi" />
+          <ScalarProperty Name="ijkl" ColumnName="ijkl" />
+          <ScalarProperty Name="Sabc" ColumnName="Sabc" />
+          <ScalarProperty Name="Sdef" ColumnName="Sdef" />
+          <ScalarProperty Name="Sghi" ColumnName="Sghi" />
+          <ScalarProperty Name="Sjkl" ColumnName="Sjkl" />
+          <ScalarProperty Name="Dabc" ColumnName="Dabc" />
+          <ScalarProperty Name="Ddef" ColumnName="Ddef" />
+          <ScalarProperty Name="Dghi" ColumnName="Dghi" />
+          <ScalarProperty Name="Djkl" ColumnName="Djkl" />
+          <ScalarProperty Name="DECabc" ColumnName="DECabc" />
+          <ScalarProperty Name="DECdef" ColumnName="DECdef" />
+          <ScalarProperty Name="DECghi" ColumnName="DECghi" />
+          <ScalarProperty Name="DECjkl" ColumnName="DECjkl" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Invoice_Details">
+      <EntityTypeMapping TypeName="Gold_SalesModel.Invoice_Details">
+        <MappingFragment StoreEntitySet="Invoice_Details">
+          <ScalarProperty Name="InvID" ColumnName="InvID" />
+          <ScalarProperty Name="CompanyID" ColumnName="CompanyID" />
+          <ScalarProperty Name="BranchID" ColumnName="BranchID" />
+          <ScalarProperty Name="linenum" ColumnName="linenum" />
+          <ScalarProperty Name="ItemID" ColumnName="ItemID" />
+          <ScalarProperty Name="itemserial" ColumnName="itemserial" />
+          <ScalarProperty Name="item_karat" ColumnName="item_karat" />
+          <ScalarProperty Name="unit_code" ColumnName="unit_code" />
+          <ScalarProperty Name="item_qty" ColumnName="item_qty" />
+          <ScalarProperty Name="sale_price" ColumnName="sale_price" />
+          <ScalarProperty Name="line_price" ColumnName="line_price" />
+          <ScalarProperty Name="disc_prc" ColumnName="disc_prc" />
+          <ScalarProperty Name="disc_value" ColumnName="disc_value" />
+          <ScalarProperty Name="line_Amount_PreTax" ColumnName="line_Amount_PreTax" />
+          <ScalarProperty Name="taxes_count" ColumnName="taxes_count" />
+          <ScalarProperty Name="taxes_totval" ColumnName="taxes_totval" />
+          <ScalarProperty Name="LineAmount" ColumnName="LineAmount" />
+          <ScalarProperty Name="Portal_InvID" ColumnName="Portal_InvID" />
+          <ScalarProperty Name="Inv_status" ColumnName="Inv_status" />
+          <ScalarProperty Name="rowcreateddate" ColumnName="rowcreateddate" />
+          <ScalarProperty Name="MachineIP" ColumnName="MachineIP" />
+          <ScalarProperty Name="MachineUser" ColumnName="MachineUser" />
+          <ScalarProperty Name="MachineName" ColumnName="MachineName" />
+          <ScalarProperty Name="userid" ColumnName="userid" />
+          <ScalarProperty Name="iabc" ColumnName="iabc" />
+          <ScalarProperty Name="idef" ColumnName="idef" />
+          <ScalarProperty Name="ighi" ColumnName="ighi" />
+          <ScalarProperty Name="ijkl" ColumnName="ijkl" />
+          <ScalarProperty Name="Sabc" ColumnName="Sabc" />
+          <ScalarProperty Name="Sdef" ColumnName="Sdef" />
+          <ScalarProperty Name="Sghi" ColumnName="Sghi" />
+          <ScalarProperty Name="Sjkl" ColumnName="Sjkl" />
+          <ScalarProperty Name="Dabc" ColumnName="Dabc" />
+          <ScalarProperty Name="Ddef" ColumnName="Ddef" />
+          <ScalarProperty Name="Dghi" ColumnName="Dghi" />
+          <ScalarProperty Name="Djkl" ColumnName="Djkl" />
+          <ScalarProperty Name="DECabc" ColumnName="DECabc" />
+          <ScalarProperty Name="DECdef" ColumnName="DECdef" />
+          <ScalarProperty Name="DECghi" ColumnName="DECghi" />
+          <ScalarProperty Name="DECjkl" ColumnName="DECjkl" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Invoice_error">
+      <EntityTypeMapping TypeName="Gold_SalesModel.Invoice_error">
+        <MappingFragment StoreEntitySet="Invoice_error">
+          <ScalarProperty Name="InvID" ColumnName="InvID" />
+          <ScalarProperty Name="CompanyID" ColumnName="CompanyID" />
+          <ScalarProperty Name="BranchID" ColumnName="BranchID" />
+          <ScalarProperty Name="linenum" ColumnName="linenum" />
+          <ScalarProperty Name="ItemID" ColumnName="ItemID" />
+          <ScalarProperty Name="itemserial" ColumnName="itemserial" />
+          <ScalarProperty Name="item_karat" ColumnName="item_karat" />
+          <ScalarProperty Name="unit_code" ColumnName="unit_code" />
+          <ScalarProperty Name="item_qty" ColumnName="item_qty" />
+          <ScalarProperty Name="sale_price" ColumnName="sale_price" />
+          <ScalarProperty Name="line_price" ColumnName="line_price" />
+          <ScalarProperty Name="disc_prc" ColumnName="disc_prc" />
+          <ScalarProperty Name="disc_value" ColumnName="disc_value" />
+          <ScalarProperty Name="line_Amount_PreTax" ColumnName="line_Amount_PreTax" />
+          <ScalarProperty Name="taxes_count" ColumnName="taxes_count" />
+          <ScalarProperty Name="taxes_totval" ColumnName="taxes_totval" />
+          <ScalarProperty Name="LineAmount" ColumnName="LineAmount" />
+          <ScalarProperty Name="Portal_InvID" ColumnName="Portal_InvID" />
+          <ScalarProperty Name="Inv_status" ColumnName="Inv_status" />
+          <ScalarProperty Name="error_remarks" ColumnName="error_remarks" />
+          <ScalarProperty Name="rowcreateddate" ColumnName="rowcreateddate" />
+          <ScalarProperty Name="MachineIP" ColumnName="MachineIP" />
+          <ScalarProperty Name="MachineUser" ColumnName="MachineUser" />
+          <ScalarProperty Name="MachineName" ColumnName="MachineName" />
+          <ScalarProperty Name="userid" ColumnName="userid" />
+          <ScalarProperty Name="iabc" ColumnName="iabc" />
+          <ScalarProperty Name="idef" ColumnName="idef" />
+          <ScalarProperty Name="ighi" ColumnName="ighi" />
+          <ScalarProperty Name="ijkl" ColumnName="ijkl" />
+          <ScalarProperty Name="Sabc" ColumnName="Sabc" />
+          <ScalarProperty Name="Sdef" ColumnName="Sdef" />
+          <ScalarProperty Name="Sghi" ColumnName="Sghi" />
+          <ScalarProperty Name="Sjkl" ColumnName="Sjkl" />
+          <ScalarProperty Name="Dabc" ColumnName="Dabc" />
+          <ScalarProperty Name="Ddef" ColumnName="Ddef" />
+          <ScalarProperty Name="Dghi" ColumnName="Dghi" />
+          <ScalarProperty Name="Djkl" ColumnName="Djkl" />
+          <ScalarProperty Name="DECabc" ColumnName="DECabc" />
+          <ScalarProperty Name="DECdef" ColumnName="DECdef" />
+          <ScalarProperty Name="DECghi" ColumnName="DECghi" />
+          <ScalarProperty Name="DECjkl" ColumnName="DECjkl" />
+          <ScalarProperty Name="rowguid" ColumnName="rowguid" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Invoice_Taxes">
+      <EntityTypeMapping TypeName="Gold_SalesModel.Invoice_Taxes">
+        <MappingFragment StoreEntitySet="Invoice_Taxes">
+          <ScalarProperty Name="InvID" ColumnName="InvID" />
+          <ScalarProperty Name="CompanyID" ColumnName="CompanyID" />
+          <ScalarProperty Name="BranchID" ColumnName="BranchID" />
+          <ScalarProperty Name="linenum" ColumnName="linenum" />
+          <ScalarProperty Name="TaxID" ColumnName="TaxID" />
+          <ScalarProperty Name="TaxVal" ColumnName="TaxVal" />
+          <ScalarProperty Name="active" ColumnName="active" />
+          <ScalarProperty Name="rowcreateddate" ColumnName="rowcreateddate" />
+          <ScalarProperty Name="MachineIP" ColumnName="MachineIP" />
+          <ScalarProperty Name="MachineName" ColumnName="MachineName" />
+          <ScalarProperty Name="MachineUser" ColumnName="MachineUser" />
+          <ScalarProperty Name="userid" ColumnName="userid" />
+          <ScalarProperty Name="rowupdateddate" ColumnName="rowupdateddate" />
+          <ScalarProperty Name="Machineipupdated" ColumnName="Machineipupdated" />
+          <ScalarProperty Name="Machinenameupdated" ColumnName="Machinenameupdated" />
+          <ScalarProperty Name="Machineuserupdated" ColumnName="Machineuserupdated" />
+          <ScalarProperty Name="useridupdated" ColumnName="useridupdated" />
+          <ScalarProperty Name="iabc" ColumnName="iabc" />
+          <ScalarProperty Name="idef" ColumnName="idef" />
+          <ScalarProperty Name="ighi" ColumnName="ighi" />
+          <ScalarProperty Name="ijkl" ColumnName="ijkl" />
+          <ScalarProperty Name="Sabc" ColumnName="Sabc" />
+          <ScalarProperty Name="Sdef" ColumnName="Sdef" />
+          <ScalarProperty Name="Sghi" ColumnName="Sghi" />
+          <ScalarProperty Name="Sjkl" ColumnName="Sjkl" />
+          <ScalarProperty Name="Dabc" ColumnName="Dabc" />
+          <ScalarProperty Name="Ddef" ColumnName="Ddef" />
+          <ScalarProperty Name="Dghi" ColumnName="Dghi" />
+          <ScalarProperty Name="Djkl" ColumnName="Djkl" />
+          <ScalarProperty Name="DECabc" ColumnName="DECabc" />
+          <ScalarProperty Name="DECdef" ColumnName="DECdef" />
+          <ScalarProperty Name="DECghi" ColumnName="DECghi" />
+          <ScalarProperty Name="DECjkl" ColumnName="DECjkl" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ItemGroups">
+      <EntityTypeMapping TypeName="Gold_SalesModel.ItemGroup">
+        <MappingFragment StoreEntitySet="ItemGroup">
+          <ScalarProperty Name="ItemGroupID" ColumnName="ItemGroupID" />
+          <ScalarProperty Name="ItemGroupname" ColumnName="ItemGroupname" />
+          <ScalarProperty Name="active" ColumnName="active" />
+          <ScalarProperty Name="rowcreateddate" ColumnName="rowcreateddate" />
+          <ScalarProperty Name="MachineIP" ColumnName="MachineIP" />
+          <ScalarProperty Name="MachineName" ColumnName="MachineName" />
+          <ScalarProperty Name="MachineUser" ColumnName="MachineUser" />
+          <ScalarProperty Name="userid" ColumnName="userid" />
+          <ScalarProperty Name="rowupdateddate" ColumnName="rowupdateddate" />
+          <ScalarProperty Name="Machineipupdated" ColumnName="Machineipupdated" />
+          <ScalarProperty Name="Machinenameupdated" ColumnName="Machinenameupdated" />
+          <ScalarProperty Name="Machineuserupdated" ColumnName="Machineuserupdated" />
+          <ScalarProperty Name="useridupdated" ColumnName="useridupdated" />
+          <ScalarProperty Name="iabc" ColumnName="iabc" />
+          <ScalarProperty Name="idef" ColumnName="idef" />
+          <ScalarProperty Name="ighi" ColumnName="ighi" />
+          <ScalarProperty Name="ijkl" ColumnName="ijkl" />
+          <ScalarProperty Name="Sabc" ColumnName="Sabc" />
+          <ScalarProperty Name="Sdef" ColumnName="Sdef" />
+          <ScalarProperty Name="Sghi" ColumnName="Sghi" />
+          <ScalarProperty Name="Sjkl" ColumnName="Sjkl" />
+          <ScalarProperty Name="Dabc" ColumnName="Dabc" />
+          <ScalarProperty Name="Ddef" ColumnName="Ddef" />
+          <ScalarProperty Name="Dghi" ColumnName="Dghi" />
+          <ScalarProperty Name="Djkl" ColumnName="Djkl" />
+          <ScalarProperty Name="DECabc" ColumnName="DECabc" />
+          <ScalarProperty Name="DECdef" ColumnName="DECdef" />
+          <ScalarProperty Name="DECghi" ColumnName="DECghi" />
+          <ScalarProperty Name="DECjkl" ColumnName="DECjkl" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Items">
+      <EntityTypeMapping TypeName="Gold_SalesModel.Item">
+        <MappingFragment StoreEntitySet="Items">
+          <ScalarProperty Name="ItemID" ColumnName="ItemID" />
+          <ScalarProperty Name="CompanyID" ColumnName="CompanyID" />
+          <ScalarProperty Name="itemname" ColumnName="itemname" />
+          <ScalarProperty Name="itemname_ENG" ColumnName="itemname_ENG" />
+          <ScalarProperty Name="itemunitcode" ColumnName="itemunitcode" />
+          <ScalarProperty Name="ItemTaxCode" ColumnName="ItemTaxCode" />
+          <ScalarProperty Name="TaxCodeType" ColumnName="TaxCodeType" />
+          <ScalarProperty Name="ItemTaxUnit" ColumnName="ItemTaxUnit" />
+          <ScalarProperty Name="itemprice" ColumnName="itemprice" />
+          <ScalarProperty Name="itemcost" ColumnName="itemcost" />
+          <ScalarProperty Name="itemgroupid" ColumnName="itemgroupid" />
+          <ScalarProperty Name="itembarcode" ColumnName="itembarcode" />
+          <ScalarProperty Name="main_vendor" ColumnName="main_vendor" />
+          <ScalarProperty Name="active" ColumnName="active" />
+          <ScalarProperty Name="rowcreateddate" ColumnName="rowcreateddate" />
+          <ScalarProperty Name="MachineIP" ColumnName="MachineIP" />
+          <ScalarProperty Name="MachineName" ColumnName="MachineName" />
+          <ScalarProperty Name="MachineUser" ColumnName="MachineUser" />
+          <ScalarProperty Name="userid" ColumnName="userid" />
+          <ScalarProperty Name="rowupdateddate" ColumnName="rowupdateddate" />
+          <ScalarProperty Name="Machineipupdated" ColumnName="Machineipupdated" />
+          <ScalarProperty Name="Machinenameupdated" ColumnName="Machinenameupdated" />
+          <ScalarProperty Name="Machineuserupdated" ColumnName="Machineuserupdated" />
+          <ScalarProperty Name="useridupdated" ColumnName="useridupdated" />
+          <ScalarProperty Name="iabc" ColumnName="iabc" />
+          <ScalarProperty Name="idef" ColumnName="idef" />
+          <ScalarProperty Name="ighi" ColumnName="ighi" />
+          <ScalarProperty Name="ijkl" ColumnName="ijkl" />
+          <ScalarProperty Name="Sabc" ColumnName="Sabc" />
+          <ScalarProperty Name="Sdef" ColumnName="Sdef" />
+          <ScalarProperty Name="Sghi" ColumnName="Sghi" />
+          <ScalarProperty Name="Sjkl" ColumnName="Sjkl" />
+          <ScalarProperty Name="Dabc" ColumnName="Dabc" />
+          <ScalarProperty Name="Ddef" ColumnName="Ddef" />
+          <ScalarProperty Name="Dghi" ColumnName="Dghi" />
+          <ScalarProperty Name="Djkl" ColumnName="Djkl" />
+          <ScalarProperty Name="DECabc" ColumnName="DECabc" />
+          <ScalarProperty Name="DECdef" ColumnName="DECdef" />
+          <ScalarProperty Name="DECghi" ColumnName="DECghi" />
+          <ScalarProperty Name="DECjkl" ColumnName="DECjkl" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ItemTaxes">
+      <EntityTypeMapping TypeName="Gold_SalesModel.ItemTax">
+        <MappingFragment StoreEntitySet="ItemTaxes">
+          <ScalarProperty Name="itemtaxID" ColumnName="itemtaxID" />
+          <ScalarProperty Name="itemID" ColumnName="itemID" />
+          <ScalarProperty Name="taxID" ColumnName="taxID" />
+          <ScalarProperty Name="itemtaxspecval" ColumnName="itemtaxspecval" />
+          <ScalarProperty Name="active" ColumnName="active" />
+          <ScalarProperty Name="rowcreateddate" ColumnName="rowcreateddate" />
+          <ScalarProperty Name="MachineIP" ColumnName="MachineIP" />
+          <ScalarProperty Name="MachineName" ColumnName="MachineName" />
+          <ScalarProperty Name="MachineUser" ColumnName="MachineUser" />
+          <ScalarProperty Name="userid" ColumnName="userid" />
+          <ScalarProperty Name="rowupdateddate" ColumnName="rowupdateddate" />
+          <ScalarProperty Name="Machineipupdated" ColumnName="Machineipupdated" />
+          <ScalarProperty Name="Machinenameupdated" ColumnName="Machinenameupdated" />
+          <ScalarProperty Name="Machineuserupdated" ColumnName="Machineuserupdated" />
+          <ScalarProperty Name="useridupdated" ColumnName="useridupdated" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ItemUnits">
+      <EntityTypeMapping TypeName="Gold_SalesModel.ItemUnit">
+        <MappingFragment StoreEntitySet="ItemUnit">
+          <ScalarProperty Name="itemunitcode" ColumnName="itemunitcode" />
+          <ScalarProperty Name="itemunitname" ColumnName="itemunitname" />
+          <ScalarProperty Name="active" ColumnName="active" />
+          <ScalarProperty Name="rowcreateddate" ColumnName="rowcreateddate" />
+          <ScalarProperty Name="MachineIP" ColumnName="MachineIP" />
+          <ScalarProperty Name="MachineName" ColumnName="MachineName" />
+          <ScalarProperty Name="MachineUser" ColumnName="MachineUser" />
+          <ScalarProperty Name="userid" ColumnName="userid" />
+          <ScalarProperty Name="rowupdateddate" ColumnName="rowupdateddate" />
+          <ScalarProperty Name="Machineipupdated" ColumnName="Machineipupdated" />
+          <ScalarProperty Name="Machinenameupdated" ColumnName="Machinenameupdated" />
+          <ScalarProperty Name="Machineuserupdated" ColumnName="Machineuserupdated" />
+          <ScalarProperty Name="useridupdated" ColumnName="useridupdated" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="pos_trans">
+      <EntityTypeMapping TypeName="Gold_SalesModel.pos_trans">
+        <MappingFragment StoreEntitySet="pos_trans">
+          <ScalarProperty Name="trans_id" ColumnName="trans_id" />
+          <ScalarProperty Name="store_code" ColumnName="store_code" />
+          <ScalarProperty Name="trans_date" ColumnName="trans_date" />
+          <ScalarProperty Name="client_code" ColumnName="client_code" />
+          <ScalarProperty Name="trans_total" ColumnName="trans_total" />
+          <ScalarProperty Name="remarks" ColumnName="remarks" />
+          <ScalarProperty Name="trans_total_21" ColumnName="trans_total_21" />
+          <ScalarProperty Name="trans_toatl_18" ColumnName="trans_toatl_18" />
+          <ScalarProperty Name="canceled" ColumnName="canceled" />
+          <ScalarProperty Name="syncstatus" ColumnName="syncstatus" />
+          <ScalarProperty Name="inventsiteid" ColumnName="inventsiteid" />
+          <ScalarProperty Name="axsync" ColumnName="axsync" />
+          <ScalarProperty Name="returnorder" ColumnName="returnorder" />
+          <ScalarProperty Name="closure_date" ColumnName="closure_date" />
+          <ScalarProperty Name="rowcreateddate" ColumnName="rowcreateddate" />
+          <ScalarProperty Name="total_weight" ColumnName="total_weight" />
+          <ScalarProperty Name="total_line" ColumnName="total_line" />
+          <ScalarProperty Name="MachineIP" ColumnName="MachineIP" />
+          <ScalarProperty Name="MachineUser" ColumnName="MachineUser" />
+          <ScalarProperty Name="Machinename" ColumnName="Machinename" />
+          <ScalarProperty Name="userid" ColumnName="userid" />
+          <ScalarProperty Name="MachineIPupdated" ColumnName="MachineIPupdated" />
+          <ScalarProperty Name="MachineUserupdated" ColumnName="MachineUserupdated" />
+          <ScalarProperty Name="MachineNameupdated" ColumnName="MachineNameupdated" />
+          <ScalarProperty Name="useridupdated" ColumnName="useridupdated" />
+          <ScalarProperty Name="iabc" ColumnName="iabc" />
+          <ScalarProperty Name="idef" ColumnName="idef" />
+          <ScalarProperty Name="ighi" ColumnName="ighi" />
+          <ScalarProperty Name="ijkl" ColumnName="ijkl" />
+          <ScalarProperty Name="Sabc" ColumnName="Sabc" />
+          <ScalarProperty Name="Sdef" ColumnName="Sdef" />
+          <ScalarProperty Name="Sghi" ColumnName="Sghi" />
+          <ScalarProperty Name="Sjkl" ColumnName="Sjkl" />
+          <ScalarProperty Name="Dabc" ColumnName="Dabc" />
+          <ScalarProperty Name="Ddef" ColumnName="Ddef" />
+          <ScalarProperty Name="Dghi" ColumnName="Dghi" />
+          <ScalarProperty Name="Djkl" ColumnName="Djkl" />
+          <ScalarProperty Name="DECabc" ColumnName="DECabc" />
+          <ScalarProperty Name="DECdef" ColumnName="DECdef" />
+          <ScalarProperty Name="DECghi" ColumnName="DECghi" />
+          <ScalarProperty Name="DECjkl" ColumnName="DECjkl" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="pos_trans_grid">
+      <EntityTypeMapping TypeName="Gold_SalesModel.pos_trans_grid">
+        <MappingFragment StoreEntitySet="pos_trans_grid">
+          <ScalarProperty Name="trans_id" ColumnName="trans_id" />
+          <ScalarProperty Name="linenum" ColumnName="linenum" />
+          <ScalarProperty Name="store_code" ColumnName="store_code" />
+          <ScalarProperty Name="itemname" ColumnName="itemname" />
+          <ScalarProperty Name="unit_code" ColumnName="unit_code" />
+          <ScalarProperty Name="item_weight" ColumnName="item_weight" />
+          <ScalarProperty Name="sale_price" ColumnName="sale_price" />
+          <ScalarProperty Name="slae_cost" ColumnName="slae_cost" />
+          <ScalarProperty Name="trans_date" ColumnName="trans_date" />
+          <ScalarProperty Name="item_sold" ColumnName="item_sold" />
+          <ScalarProperty Name="syncstatus" ColumnName="syncstatus" />
+          <ScalarProperty Name="inventdimid" ColumnName="inventdimid" />
+          <ScalarProperty Name="parmitemid" ColumnName="parmitemid" />
+          <ScalarProperty Name="stockid" ColumnName="stockid" />
+          <ScalarProperty Name="itemserial" ColumnName="itemserial" />
+          <ScalarProperty Name="rowcreateddate" ColumnName="rowcreateddate" />
+          <ScalarProperty Name="tax" ColumnName="tax" />
+          <ScalarProperty Name="taxrate" ColumnName="taxrate" />
+          <ScalarProperty Name="taxrates" ColumnName="taxrates" />
+          <ScalarProperty Name="taxes" ColumnName="taxes" />
+          <ScalarProperty Name="MachineIP" ColumnName="MachineIP" />
+          <ScalarProperty Name="MachineUser" ColumnName="MachineUser" />
+          <ScalarProperty Name="MachineName" ColumnName="MachineName" />
+          <ScalarProperty Name="userid" ColumnName="userid" />
+          <ScalarProperty Name="iabc" ColumnName="iabc" />
+          <ScalarProperty Name="idef" ColumnName="idef" />
+          <ScalarProperty Name="ighi" ColumnName="ighi" />
+          <ScalarProperty Name="ijkl" ColumnName="ijkl" />
+          <ScalarProperty Name="Sabc" ColumnName="Sabc" />
+          <ScalarProperty Name="Sdef" ColumnName="Sdef" />
+          <ScalarProperty Name="Sghi" ColumnName="Sghi" />
+          <ScalarProperty Name="Sjkl" ColumnName="Sjkl" />
+          <ScalarProperty Name="Dabc" ColumnName="Dabc" />
+          <ScalarProperty Name="Ddef" ColumnName="Ddef" />
+          <ScalarProperty Name="Dghi" ColumnName="Dghi" />
+          <ScalarProperty Name="Djkl" ColumnName="Djkl" />
+          <ScalarProperty Name="DECabc" ColumnName="DECabc" />
+          <ScalarProperty Name="DECdef" ColumnName="DECdef" />
+          <ScalarProperty Name="DECghi" ColumnName="DECghi" />
+          <ScalarProperty Name="DECjkl" ColumnName="DECjkl" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="purchlines">
+      <EntityTypeMapping TypeName="Gold_SalesModel.purchline">
+        <MappingFragment StoreEntitySet="purchline">
+          <ScalarProperty Name="purchid" ColumnName="purchid" />
+          <ScalarProperty Name="purchitemserial" ColumnName="purchitemserial" />
+          <ScalarProperty Name="rowcreateddate" ColumnName="rowcreateddate" />
+          <ScalarProperty Name="itemid" ColumnName="itemid" />
+          <ScalarProperty Name="itemweight" ColumnName="itemweight" />
+          <ScalarProperty Name="purchitemserialORA" ColumnName="purchitemserialORA" />
+          <ScalarProperty Name="purchitemserialAX" ColumnName="purchitemserialAX" />
+          <ScalarProperty Name="stockid" ColumnName="stockid" />
+          <ScalarProperty Name="MachineIP" ColumnName="MachineIP" />
+          <ScalarProperty Name="MachineUser" ColumnName="MachineUser" />
+          <ScalarProperty Name="MachineName" ColumnName="MachineName" />
+          <ScalarProperty Name="userid" ColumnName="userid" />
+          <ScalarProperty Name="iabc" ColumnName="iabc" />
+          <ScalarProperty Name="idef" ColumnName="idef" />
+          <ScalarProperty Name="ighi" ColumnName="ighi" />
+          <ScalarProperty Name="ijkl" ColumnName="ijkl" />
+          <ScalarProperty Name="Sabc" ColumnName="Sabc" />
+          <ScalarProperty Name="Sdef" ColumnName="Sdef" />
+          <ScalarProperty Name="Sghi" ColumnName="Sghi" />
+          <ScalarProperty Name="Sjkl" ColumnName="Sjkl" />
+          <ScalarProperty Name="Dabc" ColumnName="Dabc" />
+          <ScalarProperty Name="Ddef" ColumnName="Ddef" />
+          <ScalarProperty Name="Dghi" ColumnName="Dghi" />
+          <ScalarProperty Name="Djkl" ColumnName="Djkl" />
+          <ScalarProperty Name="DECabc" ColumnName="DECabc" />
+          <ScalarProperty Name="DECdef" ColumnName="DECdef" />
+          <ScalarProperty Name="DECghi" ColumnName="DECghi" />
+          <ScalarProperty Name="DECjkl" ColumnName="DECjkl" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="purchtables">
+      <EntityTypeMapping TypeName="Gold_SalesModel.purchtable">
+        <MappingFragment StoreEntitySet="purchtable">
+          <ScalarProperty Name="purchid" ColumnName="purchid" />
+          <ScalarProperty Name="purchidax" ColumnName="purchidax" />
+          <ScalarProperty Name="purchidOracle" ColumnName="purchidOracle" />
+          <ScalarProperty Name="purchdateopen" ColumnName="purchdateopen" />
+          <ScalarProperty Name="purchdateclose" ColumnName="purchdateclose" />
+          <ScalarProperty Name="inventlocationid" ColumnName="inventlocationid" />
+          <ScalarProperty Name="inventlocationidto" ColumnName="inventlocationidto" />
+          <ScalarProperty Name="remarks" ColumnName="remarks" />
+          <ScalarProperty Name="vendorid" ColumnName="vendorid" />
+          <ScalarProperty Name="purchstatus" ColumnName="purchstatus" />
+          <ScalarProperty Name="axsync" ColumnName="axsync" />
+          <ScalarProperty Name="linecount" ColumnName="linecount" />
+          <ScalarProperty Name="totalweight" ColumnName="totalweight" />
+          <ScalarProperty Name="empcode" ColumnName="empcode" />
+          <ScalarProperty Name="returnoder" ColumnName="returnoder" />
+          <ScalarProperty Name="MachineIP" ColumnName="MachineIP" />
+          <ScalarProperty Name="MachineUser" ColumnName="MachineUser" />
+          <ScalarProperty Name="Machinename" ColumnName="Machinename" />
+          <ScalarProperty Name="userid" ColumnName="userid" />
+          <ScalarProperty Name="MachineIPupdated" ColumnName="MachineIPupdated" />
+          <ScalarProperty Name="MachineUserupdated" ColumnName="MachineUserupdated" />
+          <ScalarProperty Name="MachineNameupdated" ColumnName="MachineNameupdated" />
+          <ScalarProperty Name="useridupdated" ColumnName="useridupdated" />
+          <ScalarProperty Name="rowcreateddate" ColumnName="rowcreateddate" />
+          <ScalarProperty Name="iabc" ColumnName="iabc" />
+          <ScalarProperty Name="idef" ColumnName="idef" />
+          <ScalarProperty Name="ighi" ColumnName="ighi" />
+          <ScalarProperty Name="ijkl" ColumnName="ijkl" />
+          <ScalarProperty Name="Sabc" ColumnName="Sabc" />
+          <ScalarProperty Name="Sdef" ColumnName="Sdef" />
+          <ScalarProperty Name="Sghi" ColumnName="Sghi" />
+          <ScalarProperty Name="Sjkl" ColumnName="Sjkl" />
+          <ScalarProperty Name="Dabc" ColumnName="Dabc" />
+          <ScalarProperty Name="Ddef" ColumnName="Ddef" />
+          <ScalarProperty Name="Dghi" ColumnName="Dghi" />
+          <ScalarProperty Name="Djkl" ColumnName="Djkl" />
+          <ScalarProperty Name="DECabc" ColumnName="DECabc" />
+          <ScalarProperty Name="DECdef" ColumnName="DECdef" />
+          <ScalarProperty Name="DECghi" ColumnName="DECghi" />
+          <ScalarProperty Name="DECjkl" ColumnName="DECjkl" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SalesReps">
+      <EntityTypeMapping TypeName="Gold_SalesModel.SalesRep">
+        <MappingFragment StoreEntitySet="SalesRep">
+          <ScalarProperty Name="SalesRepID" ColumnName="SalesRepID" />
+          <ScalarProperty Name="SalesRepName" ColumnName="SalesRepName" />
+          <ScalarProperty Name="SalesRepAddress" ColumnName="SalesRepAddress" />
+          <ScalarProperty Name="SalesRepPhones" ColumnName="SalesRepPhones" />
+          <ScalarProperty Name="SalesRepSite" ColumnName="SalesRepSite" />
+          <ScalarProperty Name="SalesRepCity" ColumnName="SalesRepCity" />
+          <ScalarProperty Name="SalesRepDesc" ColumnName="SalesRepDesc" />
+          <ScalarProperty Name="rowcreateddate" ColumnName="rowcreateddate" />
+          <ScalarProperty Name="MachineIP" ColumnName="MachineIP" />
+          <ScalarProperty Name="MachineName" ColumnName="MachineName" />
+          <ScalarProperty Name="MachineUser" ColumnName="MachineUser" />
+          <ScalarProperty Name="userid" ColumnName="userid" />
+          <ScalarProperty Name="Machineipupdated" ColumnName="Machineipupdated" />
+          <ScalarProperty Name="Machinenameupdated" ColumnName="Machinenameupdated" />
+          <ScalarProperty Name="Machineuserupdated" ColumnName="Machineuserupdated" />
+          <ScalarProperty Name="useridupdated" ColumnName="useridupdated" />
+          <ScalarProperty Name="iabc" ColumnName="iabc" />
+          <ScalarProperty Name="idef" ColumnName="idef" />
+          <ScalarProperty Name="ighi" ColumnName="ighi" />
+          <ScalarProperty Name="ijkl" ColumnName="ijkl" />
+          <ScalarProperty Name="Sabc" ColumnName="Sabc" />
+          <ScalarProperty Name="Sdef" ColumnName="Sdef" />
+          <ScalarProperty Name="Sghi" ColumnName="Sghi" />
+          <ScalarProperty Name="Sjkl" ColumnName="Sjkl" />
+          <ScalarProperty Name="Dabc" ColumnName="Dabc" />
+          <ScalarProperty Name="Ddef" ColumnName="Ddef" />
+          <ScalarProperty Name="Dghi" ColumnName="Dghi" />
+          <ScalarProperty Name="Djkl" ColumnName="Djkl" />
+          <ScalarProperty Name="DECabc" ColumnName="DECabc" />
+          <ScalarProperty Name="DECdef" ColumnName="DECdef" />
+          <ScalarProperty Name="DECghi" ColumnName="DECghi" />
+          <ScalarProperty Name="DECjkl" ColumnName="DECjkl" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SalesRepComms">
+      <EntityTypeMapping TypeName="Gold_SalesModel.SalesRepComm">
+        <MappingFragment StoreEntitySet="SalesRepComm">
+          <ScalarProperty Name="SalesRepID" ColumnName="SalesRepID" />
+          <ScalarProperty Name="SalesFromDate" ColumnName="SalesFromDate" />
+          <ScalarProperty Name="SalesToDate" ColumnName="SalesToDate" />
+          <ScalarProperty Name="SalesCommLinenum" ColumnName="SalesCommLinenum" />
+          <ScalarProperty Name="SalesFromValue" ColumnName="SalesFromValue" />
+          <ScalarProperty Name="SalesToValue" ColumnName="SalesToValue" />
+          <ScalarProperty Name="SalesCommPrc" ColumnName="SalesCommPrc" />
+          <ScalarProperty Name="Remarks" ColumnName="Remarks" />
+          <ScalarProperty Name="rowcreateddate" ColumnName="rowcreateddate" />
+          <ScalarProperty Name="MachineIP" ColumnName="MachineIP" />
+          <ScalarProperty Name="MachineName" ColumnName="MachineName" />
+          <ScalarProperty Name="MachineUser" ColumnName="MachineUser" />
+          <ScalarProperty Name="userid" ColumnName="userid" />
+          <ScalarProperty Name="Machineipupdated" ColumnName="Machineipupdated" />
+          <ScalarProperty Name="Machinenameupdated" ColumnName="Machinenameupdated" />
+          <ScalarProperty Name="Machineuserupdated" ColumnName="Machineuserupdated" />
+          <ScalarProperty Name="useridupdated" ColumnName="useridupdated" />
+          <ScalarProperty Name="iabc" ColumnName="iabc" />
+          <ScalarProperty Name="idef" ColumnName="idef" />
+          <ScalarProperty Name="ighi" ColumnName="ighi" />
+          <ScalarProperty Name="ijkl" ColumnName="ijkl" />
+          <ScalarProperty Name="Sabc" ColumnName="Sabc" />
+          <ScalarProperty Name="Sdef" ColumnName="Sdef" />
+          <ScalarProperty Name="Sghi" ColumnName="Sghi" />
+          <ScalarProperty Name="Sjkl" ColumnName="Sjkl" />
+          <ScalarProperty Name="Dabc" ColumnName="Dabc" />
+          <ScalarProperty Name="Ddef" ColumnName="Ddef" />
+          <ScalarProperty Name="Dghi" ColumnName="Dghi" />
+          <ScalarProperty Name="Djkl" ColumnName="Djkl" />
+          <ScalarProperty Name="DECabc" ColumnName="DECabc" />
+          <ScalarProperty Name="DECdef" ColumnName="DECdef" />
+          <ScalarProperty Name="DECghi" ColumnName="DECghi" />
+          <ScalarProperty Name="DECjkl" ColumnName="DECjkl" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SalesRepTargets">
+      <EntityTypeMapping TypeName="Gold_SalesModel.SalesRepTarget">
+        <MappingFragment StoreEntitySet="SalesRepTarget">
+          <ScalarProperty Name="SalesRepID" ColumnName="SalesRepID" />
+          <ScalarProperty Name="SalesFromDate" ColumnName="SalesFromDate" />
+          <ScalarProperty Name="SalesToDate" ColumnName="SalesToDate" />
+          <ScalarProperty Name="SalesTargetLinenum" ColumnName="SalesTargetLinenum" />
+          <ScalarProperty Name="SalesTargetValue" ColumnName="SalesTargetValue" />
+          <ScalarProperty Name="Remarks" ColumnName="Remarks" />
+          <ScalarProperty Name="rowcreateddate" ColumnName="rowcreateddate" />
+          <ScalarProperty Name="MachineIP" ColumnName="MachineIP" />
+          <ScalarProperty Name="MachineName" ColumnName="MachineName" />
+          <ScalarProperty Name="MachineUser" ColumnName="MachineUser" />
+          <ScalarProperty Name="userid" ColumnName="userid" />
+          <ScalarProperty Name="Machineipupdated" ColumnName="Machineipupdated" />
+          <ScalarProperty Name="Machinenameupdated" ColumnName="Machinenameupdated" />
+          <ScalarProperty Name="Machineuserupdated" ColumnName="Machineuserupdated" />
+          <ScalarProperty Name="useridupdated" ColumnName="useridupdated" />
+          <ScalarProperty Name="iabc" ColumnName="iabc" />
+          <ScalarProperty Name="idef" ColumnName="idef" />
+          <ScalarProperty Name="ighi" ColumnName="ighi" />
+          <ScalarProperty Name="ijkl" ColumnName="ijkl" />
+          <ScalarProperty Name="Sabc" ColumnName="Sabc" />
+          <ScalarProperty Name="Sdef" ColumnName="Sdef" />
+          <ScalarProperty Name="Sghi" ColumnName="Sghi" />
+          <ScalarProperty Name="Sjkl" ColumnName="Sjkl" />
+          <ScalarProperty Name="Dabc" ColumnName="Dabc" />
+          <ScalarProperty Name="Ddef" ColumnName="Ddef" />
+          <ScalarProperty Name="Dghi" ColumnName="Dghi" />
+          <ScalarProperty Name="Djkl" ColumnName="Djkl" />
+          <ScalarProperty Name="DECabc" ColumnName="DECabc" />
+          <ScalarProperty Name="DECdef" ColumnName="DECdef" />
+          <ScalarProperty Name="DECghi" ColumnName="DECghi" />
+          <ScalarProperty Name="DECjkl" ColumnName="DECjkl" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SecAudits">
+      <EntityTypeMapping TypeName="Gold_SalesModel.SecAudit">
+        <MappingFragment StoreEntitySet="SecAudit">
+          <ScalarProperty Name="SecActionID" ColumnName="SecActionID" />
+          <ScalarProperty Name="SecAction_Date" ColumnName="SecAction_Date" />
+          <ScalarProperty Name="SecAction" ColumnName="SecAction" />
+          <ScalarProperty Name="IsAdmin" ColumnName="IsAdmin" />
+          <ScalarProperty Name="UserLocationID" ColumnName="UserLocationID" />
+          <ScalarProperty Name="FunctionGroupID" ColumnName="FunctionGroupID" />
+          <ScalarProperty Name="FunctionID" ColumnName="FunctionID" />
+          <ScalarProperty Name="userid" ColumnName="userid" />
+          <ScalarProperty Name="MachineIP" ColumnName="MachineIP" />
+          <ScalarProperty Name="MachineName" ColumnName="MachineName" />
+          <ScalarProperty Name="MachineUser" ColumnName="MachineUser" />
+          <ScalarProperty Name="rowcreateddate" ColumnName="rowcreateddate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="STOCKs">
+      <EntityTypeMapping TypeName="Gold_SalesModel.STOCK">
+        <MappingFragment StoreEntitySet="STOCK">
+          <ScalarProperty Name="STOCKID" ColumnName="STOCKID" />
+          <ScalarProperty Name="itemserial" ColumnName="itemserial" />
+          <ScalarProperty Name="itemweight" ColumnName="itemweight" />
+          <ScalarProperty Name="itemgroupid" ColumnName="itemgroupid" />
+          <ScalarProperty Name="itemunitcode" ColumnName="itemunitcode" />
+          <ScalarProperty Name="InventLocationID" ColumnName="InventLocationID" />
+          <ScalarProperty Name="BranchID" ColumnName="BranchID" />
+          <ScalarProperty Name="parmitemid" ColumnName="parmitemid" />
+          <ScalarProperty Name="Suspend" ColumnName="Suspend" />
+          <ScalarProperty Name="lastsyncstatus" ColumnName="lastsyncstatus" />
+          <ScalarProperty Name="lastInvLoc" ColumnName="lastInvLoc" />
+          <ScalarProperty Name="lastdate" ColumnName="lastdate" />
+          <ScalarProperty Name="INtransID" ColumnName="INtransID" />
+          <ScalarProperty Name="INdate" ColumnName="INdate" />
+          <ScalarProperty Name="OutTrans" ColumnName="OutTrans" />
+          <ScalarProperty Name="OutDate" ColumnName="OutDate" />
+          <ScalarProperty Name="oldstockid" ColumnName="oldstockid" />
+          <ScalarProperty Name="stockidold" ColumnName="stockidold" />
+          <ScalarProperty Name="reservetype" ColumnName="reservetype" />
+          <ScalarProperty Name="reserveid" ColumnName="reserveid" />
+          <ScalarProperty Name="MachineIP" ColumnName="MachineIP" />
+          <ScalarProperty Name="MachineName" ColumnName="MachineName" />
+          <ScalarProperty Name="MachineUser" ColumnName="MachineUser" />
+          <ScalarProperty Name="userid" ColumnName="userid" />
+          <ScalarProperty Name="Machineipupdated" ColumnName="Machineipupdated" />
+          <ScalarProperty Name="Machinenameupdated" ColumnName="Machinenameupdated" />
+          <ScalarProperty Name="Machineuserupdated" ColumnName="Machineuserupdated" />
+          <ScalarProperty Name="useridupdated" ColumnName="useridupdated" />
+          <ScalarProperty Name="rowcreateddate" ColumnName="rowcreateddate" />
+          <ScalarProperty Name="iabc" ColumnName="iabc" />
+          <ScalarProperty Name="idef" ColumnName="idef" />
+          <ScalarProperty Name="ighi" ColumnName="ighi" />
+          <ScalarProperty Name="ijkl" ColumnName="ijkl" />
+          <ScalarProperty Name="Sabc" ColumnName="Sabc" />
+          <ScalarProperty Name="Sdef" ColumnName="Sdef" />
+          <ScalarProperty Name="Sghi" ColumnName="Sghi" />
+          <ScalarProperty Name="Sjkl" ColumnName="Sjkl" />
+          <ScalarProperty Name="Dabc" ColumnName="Dabc" />
+          <ScalarProperty Name="Ddef" ColumnName="Ddef" />
+          <ScalarProperty Name="Dghi" ColumnName="Dghi" />
+          <ScalarProperty Name="Djkl" ColumnName="Djkl" />
+          <ScalarProperty Name="DECabc" ColumnName="DECabc" />
+          <ScalarProperty Name="DECdef" ColumnName="DECdef" />
+          <ScalarProperty Name="DECghi" ColumnName="DECghi" />
+          <ScalarProperty Name="DECjkl" ColumnName="DECjkl" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="StockDailies">
+      <EntityTypeMapping TypeName="Gold_SalesModel.StockDaily">
+        <MappingFragment StoreEntitySet="StockDaily">
+          <ScalarProperty Name="inventlocatioinid" ColumnName="inventlocatioinid" />
+          <ScalarProperty Name="stockdate" ColumnName="stockdate" />
+          <ScalarProperty Name="itemweight21" ColumnName="itemweight21" />
+          <ScalarProperty Name="itemweight18" ColumnName="itemweight18" />
+          <ScalarProperty Name="itemcount21" ColumnName="itemcount21" />
+          <ScalarProperty Name="itemcount18" ColumnName="itemcount18" />
+          <ScalarProperty Name="salesclosed" ColumnName="salesclosed" />
+          <ScalarProperty Name="salesopen" ColumnName="salesopen" />
+          <ScalarProperty Name="transclosed" ColumnName="transclosed" />
+          <ScalarProperty Name="transopen" ColumnName="transopen" />
+          <ScalarProperty Name="returnclosed" ColumnName="returnclosed" />
+          <ScalarProperty Name="returnopen" ColumnName="returnopen" />
+          <ScalarProperty Name="itemweight21P" ColumnName="itemweight21P" />
+          <ScalarProperty Name="itemweight18P" ColumnName="itemweight18P" />
+          <ScalarProperty Name="itemcount21P" ColumnName="itemcount21P" />
+          <ScalarProperty Name="itemcount18P" ColumnName="itemcount18P" />
+          <ScalarProperty Name="MachineIP" ColumnName="MachineIP" />
+          <ScalarProperty Name="MachineName" ColumnName="MachineName" />
+          <ScalarProperty Name="MachineUser" ColumnName="MachineUser" />
+          <ScalarProperty Name="userid" ColumnName="userid" />
+          <ScalarProperty Name="Machineipupdated" ColumnName="Machineipupdated" />
+          <ScalarProperty Name="Machinenameupdated" ColumnName="Machinenameupdated" />
+          <ScalarProperty Name="Machineuserupdated" ColumnName="Machineuserupdated" />
+          <ScalarProperty Name="useridupdated" ColumnName="useridupdated" />
+          <ScalarProperty Name="rowcreateddate" ColumnName="rowcreateddate" />
+          <ScalarProperty Name="iabc" ColumnName="iabc" />
+          <ScalarProperty Name="idef" ColumnName="idef" />
+          <ScalarProperty Name="ighi" ColumnName="ighi" />
+          <ScalarProperty Name="ijkl" ColumnName="ijkl" />
+          <ScalarProperty Name="Sabc" ColumnName="Sabc" />
+          <ScalarProperty Name="Sdef" ColumnName="Sdef" />
+          <ScalarProperty Name="Sghi" ColumnName="Sghi" />
+          <ScalarProperty Name="Sjkl" ColumnName="Sjkl" />
+          <ScalarProperty Name="Dabc" ColumnName="Dabc" />
+          <ScalarProperty Name="Ddef" ColumnName="Ddef" />
+          <ScalarProperty Name="Dghi" ColumnName="Dghi" />
+          <ScalarProperty Name="Djkl" ColumnName="Djkl" />
+          <ScalarProperty Name="DECabc" ColumnName="DECabc" />
+          <ScalarProperty Name="DECdef" ColumnName="DECdef" />
+          <ScalarProperty Name="DECghi" ColumnName="DECghi" />
+          <ScalarProperty Name="DECjkl" ColumnName="DECjkl" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="syncs">
+      <EntityTypeMapping TypeName="Gold_SalesModel.sync">
+        <MappingFragment StoreEntitySet="sync">
+          <ScalarProperty Name="syn_id" ColumnName="syn_id" />
+          <ScalarProperty Name="CompanyID" ColumnName="CompanyID" />
+          <ScalarProperty Name="sync_date" ColumnName="sync_date" />
+          <ScalarProperty Name="sync_status" ColumnName="sync_status" />
+          <ScalarProperty Name="sync_ip" ColumnName="sync_ip" />
+          <ScalarProperty Name="sync_user" ColumnName="sync_user" />
+          <ScalarProperty Name="TotalLocalAmount" ColumnName="TotalLocalAmount" />
+          <ScalarProperty Name="TotalQty" ColumnName="TotalQty" />
+          <ScalarProperty Name="TotalLines" ColumnName="TotalLines" />
+          <ScalarProperty Name="Invcount" ColumnName="Invcount" />
+          <ScalarProperty Name="InvAccepted" ColumnName="InvAccepted" />
+          <ScalarProperty Name="InvRejected" ColumnName="InvRejected" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sync_details">
+      <EntityTypeMapping TypeName="Gold_SalesModel.sync_details">
+        <MappingFragment StoreEntitySet="sync_details">
+          <ScalarProperty Name="syn_id" ColumnName="syn_id" />
+          <ScalarProperty Name="sync_details_linenum" ColumnName="sync_details_linenum" />
+          <ScalarProperty Name="InvID" ColumnName="InvID" />
+          <ScalarProperty Name="CompanyID" ColumnName="CompanyID" />
+          <ScalarProperty Name="BranchID" ColumnName="BranchID" />
+          <ScalarProperty Name="Invdate" ColumnName="Invdate" />
+          <ScalarProperty Name="InvType" ColumnName="InvType" />
+          <ScalarProperty Name="InvCurr" ColumnName="InvCurr" />
+          <ScalarProperty Name="Inv_CurrRate" ColumnName="Inv_CurrRate" />
+          <ScalarProperty Name="Inv_CurrAmount" ColumnName="Inv_CurrAmount" />
+          <ScalarProperty Name="Inv_LocalAmount" ColumnName="Inv_LocalAmount" />
+          <ScalarProperty Name="Inv_Qty" ColumnName="Inv_Qty" />
+          <ScalarProperty Name="Inv_Lines" ColumnName="Inv_Lines" />
+          <ScalarProperty Name="CustomerID" ColumnName="CustomerID" />
+          <ScalarProperty Name="Custname" ColumnName="Custname" />
+          <ScalarProperty Name="Custname_ENG" ColumnName="Custname_ENG" />
+          <ScalarProperty Name="CustCategory" ColumnName="CustCategory" />
+          <ScalarProperty Name="Cust_TaxID" ColumnName="Cust_TaxID" />
+          <ScalarProperty Name="Cust_TaxType" ColumnName="Cust_TaxType" />
+          <ScalarProperty Name="Cust_TaxName" ColumnName="Cust_TaxName" />
+          <ScalarProperty Name="Cust_CountryApr" ColumnName="Cust_CountryApr" />
+          <ScalarProperty Name="Cust_Countryname" ColumnName="Cust_Countryname" />
+          <ScalarProperty Name="Cust_City" ColumnName="Cust_City" />
+          <ScalarProperty Name="Cust_Street" ColumnName="Cust_Street" />
+          <ScalarProperty Name="Cust_Building" ColumnName="Cust_Building" />
+          <ScalarProperty Name="Cust_PostNo" ColumnName="Cust_PostNo" />
+          <ScalarProperty Name="linenum" ColumnName="linenum" />
+          <ScalarProperty Name="ItemID" ColumnName="ItemID" />
+          <ScalarProperty Name="itemname" ColumnName="itemname" />
+          <ScalarProperty Name="itemname_ENG" ColumnName="itemname_ENG" />
+          <ScalarProperty Name="ItemTaxCode" ColumnName="ItemTaxCode" />
+          <ScalarProperty Name="TaxCodeType" ColumnName="TaxCodeType" />
+          <ScalarProperty Name="ItemTaxUnit" ColumnName="ItemTaxUnit" />
+          <ScalarProperty Name="itemqty" ColumnName="itemqty" />
+          <ScalarProperty Name="itemprice" ColumnName="itemprice" />
+          <ScalarProperty Name="itemDiscPrc" ColumnName="itemDiscPrc" />
+          <ScalarProperty Name="itemAmount" ColumnName="itemAmount" />
+          <ScalarProperty Name="itemTaxAmount" ColumnName="itemTaxAmount" />
+          <ScalarProperty Name="PortalInvID" ColumnName="PortalInvID" />
+          <ScalarProperty Name="PortalInvlink" ColumnName="PortalInvlink" />
+          <ScalarProperty Name="Inv_portal_status" ColumnName="Inv_portal_status" />
+          <ScalarProperty Name="IsReuploaded" ColumnName="IsReuploaded" />
+          <ScalarProperty Name="Reuploaddate" ColumnName="Reuploaddate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sync_taxes">
+      <EntityTypeMapping TypeName="Gold_SalesModel.sync_taxes">
+        <MappingFragment StoreEntitySet="sync_taxes">
+          <ScalarProperty Name="syn_id" ColumnName="syn_id" />
+          <ScalarProperty Name="sync_details_linenum" ColumnName="sync_details_linenum" />
+          <ScalarProperty Name="sync_taxes_linenum" ColumnName="sync_taxes_linenum" />
+          <ScalarProperty Name="InvID" ColumnName="InvID" />
+          <ScalarProperty Name="CompanyID" ColumnName="CompanyID" />
+          <ScalarProperty Name="BranchID" ColumnName="BranchID" />
+          <ScalarProperty Name="linenum" ColumnName="linenum" />
+          <ScalarProperty Name="TaxID" ColumnName="TaxID" />
+          <ScalarProperty Name="TaxVal" ColumnName="TaxVal" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sysdiagrams">
+      <EntityTypeMapping TypeName="Gold_SalesModel.sysdiagram">
+        <MappingFragment StoreEntitySet="sysdiagrams">
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+          <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+          <ScalarProperty Name="version" ColumnName="version" />
+          <ScalarProperty Name="definition" ColumnName="definition" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sysversionactions">
+      <EntityTypeMapping TypeName="Gold_SalesModel.sysversionaction">
+        <MappingFragment StoreEntitySet="sysversionaction">
+          <ScalarProperty Name="actionid" ColumnName="actionid" />
+          <ScalarProperty Name="updateid" ColumnName="updateid" />
+          <ScalarProperty Name="rowcreateddate" ColumnName="rowcreateddate" />
+          <ScalarProperty Name="userip" ColumnName="userip" />
+          <ScalarProperty Name="MachineIP" ColumnName="MachineIP" />
+          <ScalarProperty Name="MachineName" ColumnName="MachineName" />
+          <ScalarProperty Name="MachineUser" ColumnName="MachineUser" />
+          <ScalarProperty Name="userid" ColumnName="userid" />
+          <ScalarProperty Name="Machineipupdated" ColumnName="Machineipupdated" />
+          <ScalarProperty Name="Machinenameupdated" ColumnName="Machinenameupdated" />
+          <ScalarProperty Name="Machineuserupdated" ColumnName="Machineuserupdated" />
+          <ScalarProperty Name="useridupdated" ColumnName="useridupdated" />
+          <ScalarProperty Name="iabc" ColumnName="iabc" />
+          <ScalarProperty Name="idef" ColumnName="idef" />
+          <ScalarProperty Name="ighi" ColumnName="ighi" />
+          <ScalarProperty Name="ijkl" ColumnName="ijkl" />
+          <ScalarProperty Name="Sabc" ColumnName="Sabc" />
+          <ScalarProperty Name="Sdef" ColumnName="Sdef" />
+          <ScalarProperty Name="Sghi" ColumnName="Sghi" />
+          <ScalarProperty Name="Sjkl" ColumnName="Sjkl" />
+          <ScalarProperty Name="Dabc" ColumnName="Dabc" />
+          <ScalarProperty Name="Ddef" ColumnName="Ddef" />
+          <ScalarProperty Name="Dghi" ColumnName="Dghi" />
+          <ScalarProperty Name="Djkl" ColumnName="Djkl" />
+          <ScalarProperty Name="DECabc" ColumnName="DECabc" />
+          <ScalarProperty Name="DECdef" ColumnName="DECdef" />
+          <ScalarProperty Name="DECghi" ColumnName="DECghi" />
+          <ScalarProperty Name="DECjkl" ColumnName="DECjkl" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sysversionaudits">
+      <EntityTypeMapping TypeName="Gold_SalesModel.sysversionaudit">
+        <MappingFragment StoreEntitySet="sysversionaudit">
+          <ScalarProperty Name="actionid" ColumnName="actionid" />
+          <ScalarProperty Name="updateid" ColumnName="updateid" />
+          <ScalarProperty Name="rowcreateddate" ColumnName="rowcreateddate" />
+          <ScalarProperty Name="userip" ColumnName="userip" />
+          <ScalarProperty Name="MachineIP" ColumnName="MachineIP" />
+          <ScalarProperty Name="MachineName" ColumnName="MachineName" />
+          <ScalarProperty Name="MachineUser" ColumnName="MachineUser" />
+          <ScalarProperty Name="userid" ColumnName="userid" />
+          <ScalarProperty Name="Machineipupdated" ColumnName="Machineipupdated" />
+          <ScalarProperty Name="Machinenameupdated" ColumnName="Machinenameupdated" />
+          <ScalarProperty Name="Machineuserupdated" ColumnName="Machineuserupdated" />
+          <ScalarProperty Name="useridupdated" ColumnName="useridupdated" />
+          <ScalarProperty Name="iabc" ColumnName="iabc" />
+          <ScalarProperty Name="idef" ColumnName="idef" />
+          <ScalarProperty Name="ighi" ColumnName="ighi" />
+          <ScalarProperty Name="ijkl" ColumnName="ijkl" />
+          <ScalarProperty Name="Sabc" ColumnName="Sabc" />
+          <ScalarProperty Name="Sdef" ColumnName="Sdef" />
+          <ScalarProperty Name="Sghi" ColumnName="Sghi" />
+          <ScalarProperty Name="Sjkl" ColumnName="Sjkl" />
+          <ScalarProperty Name="Dabc" ColumnName="Dabc" />
+          <ScalarProperty Name="Ddef" ColumnName="Ddef" />
+          <ScalarProperty Name="Dghi" ColumnName="Dghi" />
+          <ScalarProperty Name="Djkl" ColumnName="Djkl" />
+          <ScalarProperty Name="DECabc" ColumnName="DECabc" />
+          <ScalarProperty Name="DECdef" ColumnName="DECdef" />
+          <ScalarProperty Name="DECghi" ColumnName="DECghi" />
+          <ScalarProperty Name="DECjkl" ColumnName="DECjkl" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sysversiondetails">
+      <EntityTypeMapping TypeName="Gold_SalesModel.sysversiondetail">
+        <MappingFragment StoreEntitySet="sysversiondetails">
+          <ScalarProperty Name="updateID" ColumnName="updateID" />
+          <ScalarProperty Name="updatedetailid" ColumnName="updatedetailid" />
+          <ScalarProperty Name="filename" ColumnName="filename" />
+          <ScalarProperty Name="updatedate" ColumnName="updatedate" />
+          <ScalarProperty Name="versionbin" ColumnName="versionbin" />
+          <ScalarProperty Name="MachineIP" ColumnName="MachineIP" />
+          <ScalarProperty Name="MachineName" ColumnName="MachineName" />
+          <ScalarProperty Name="MachineUser" ColumnName="MachineUser" />
+          <ScalarProperty Name="userid" ColumnName="userid" />
+          <ScalarProperty Name="Machineipupdated" ColumnName="Machineipupdated" />
+          <ScalarProperty Name="Machinenameupdated" ColumnName="Machinenameupdated" />
+          <ScalarProperty Name="Machineuserupdated" ColumnName="Machineuserupdated" />
+          <ScalarProperty Name="useridupdated" ColumnName="useridupdated" />
+          <ScalarProperty Name="rowcreateddate" ColumnName="rowcreateddate" />
+          <ScalarProperty Name="iabc" ColumnName="iabc" />
+          <ScalarProperty Name="idef" ColumnName="idef" />
+          <ScalarProperty Name="ighi" ColumnName="ighi" />
+          <ScalarProperty Name="ijkl" ColumnName="ijkl" />
+          <ScalarProperty Name="Sabc" ColumnName="Sabc" />
+          <ScalarProperty Name="Sdef" ColumnName="Sdef" />
+          <ScalarProperty Name="Sghi" ColumnName="Sghi" />
+          <ScalarProperty Name="Sjkl" ColumnName="Sjkl" />
+          <ScalarProperty Name="Dabc" ColumnName="Dabc" />
+          <ScalarProperty Name="Ddef" ColumnName="Ddef" />
+          <ScalarProperty Name="Dghi" ColumnName="Dghi" />
+          <ScalarProperty Name="Djkl" ColumnName="Djkl" />
+          <ScalarProperty Name="DECabc" ColumnName="DECabc" />
+          <ScalarProperty Name="DECdef" ColumnName="DECdef" />
+          <ScalarProperty Name="DECghi" ColumnName="DECghi" />
+          <ScalarProperty Name="DECjkl" ColumnName="DECjkl" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sysversionLOGs">
+      <EntityTypeMapping TypeName="Gold_SalesModel.sysversionLOG">
+        <MappingFragment StoreEntitySet="sysversionLOG">
+          <ScalarProperty Name="actionid" ColumnName="actionid" />
+          <ScalarProperty Name="updateid" ColumnName="updateid" />
+          <ScalarProperty Name="rowcreateddate" ColumnName="rowcreateddate" />
+          <ScalarProperty Name="CompanyID" ColumnName="CompanyID" />
+          <ScalarProperty Name="userip" ColumnName="userip" />
+          <ScalarProperty Name="MachineIP" ColumnName="MachineIP" />
+          <ScalarProperty Name="MachineName" ColumnName="MachineName" />
+          <ScalarProperty Name="MachineUser" ColumnName="MachineUser" />
+          <ScalarProperty Name="userid" ColumnName="userid" />
+          <ScalarProperty Name="Machineipupdated" ColumnName="Machineipupdated" />
+          <ScalarProperty Name="Machinenameupdated" ColumnName="Machinenameupdated" />
+          <ScalarProperty Name="Machineuserupdated" ColumnName="Machineuserupdated" />
+          <ScalarProperty Name="useridupdated" ColumnName="useridupdated" />
+          <ScalarProperty Name="iabc" ColumnName="iabc" />
+          <ScalarProperty Name="idef" ColumnName="idef" />
+          <ScalarProperty Name="ighi" ColumnName="ighi" />
+          <ScalarProperty Name="ijkl" ColumnName="ijkl" />
+          <ScalarProperty Name="Sabc" ColumnName="Sabc" />
+          <ScalarProperty Name="Sdef" ColumnName="Sdef" />
+          <ScalarProperty Name="Sghi" ColumnName="Sghi" />
+          <ScalarProperty Name="Sjkl" ColumnName="Sjkl" />
+          <ScalarProperty Name="Dabc" ColumnName="Dabc" />
+          <ScalarProperty Name="Ddef" ColumnName="Ddef" />
+          <ScalarProperty Name="Dghi" ColumnName="Dghi" />
+          <ScalarProperty Name="Djkl" ColumnName="Djkl" />
+          <ScalarProperty Name="DECabc" ColumnName="DECabc" />
+          <ScalarProperty Name="DECdef" ColumnName="DECdef" />
+          <ScalarProperty Name="DECghi" ColumnName="DECghi" />
+          <ScalarProperty Name="DECjkl" ColumnName="DECjkl" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sysversions">
+      <EntityTypeMapping TypeName="Gold_SalesModel.sysversion">
+        <MappingFragment StoreEntitySet="sysversions">
+          <ScalarProperty Name="updateID" ColumnName="updateID" />
+          <ScalarProperty Name="updateDate" ColumnName="updateDate" />
+          <ScalarProperty Name="updatetype" ColumnName="updatetype" />
+          <ScalarProperty Name="MachineIP" ColumnName="MachineIP" />
+          <ScalarProperty Name="MachineName" ColumnName="MachineName" />
+          <ScalarProperty Name="MachineUser" ColumnName="MachineUser" />
+          <ScalarProperty Name="userid" ColumnName="userid" />
+          <ScalarProperty Name="Machineipupdated" ColumnName="Machineipupdated" />
+          <ScalarProperty Name="Machinenameupdated" ColumnName="Machinenameupdated" />
+          <ScalarProperty Name="Machineuserupdated" ColumnName="Machineuserupdated" />
+          <ScalarProperty Name="useridupdated" ColumnName="useridupdated" />
+          <ScalarProperty Name="rowcreateddate" ColumnName="rowcreateddate" />
+          <ScalarProperty Name="iabc" ColumnName="iabc" />
+          <ScalarProperty Name="idef" ColumnName="idef" />
+          <ScalarProperty Name="ighi" ColumnName="ighi" />
+          <ScalarProperty Name="ijkl" ColumnName="ijkl" />
+          <ScalarProperty Name="Sabc" ColumnName="Sabc" />
+          <ScalarProperty Name="Sdef" ColumnName="Sdef" />
+          <ScalarProperty Name="Sghi" ColumnName="Sghi" />
+          <ScalarProperty Name="Sjkl" ColumnName="Sjkl" />
+          <ScalarProperty Name="Dabc" ColumnName="Dabc" />
+          <ScalarProperty Name="Ddef" ColumnName="Ddef" />
+          <ScalarProperty Name="Dghi" ColumnName="Dghi" />
+          <ScalarProperty Name="Djkl" ColumnName="Djkl" />
+          <ScalarProperty Name="DECabc" ColumnName="DECabc" />
+          <ScalarProperty Name="DECdef" ColumnName="DECdef" />
+          <ScalarProperty Name="DECghi" ColumnName="DECghi" />
+          <ScalarProperty Name="DECjkl" ColumnName="DECjkl" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Taxes">
+      <EntityTypeMapping TypeName="Gold_SalesModel.Tax">
+        <MappingFragment StoreEntitySet="Taxes">
+          <ScalarProperty Name="TaxID" ColumnName="TaxID" />
+          <ScalarProperty Name="TaxType" ColumnName="TaxType" />
+          <ScalarProperty Name="ISPrcVal" ColumnName="ISPrcVal" />
+          <ScalarProperty Name="Tax_Prc" ColumnName="Tax_Prc" />
+          <ScalarProperty Name="Tax_Val" ColumnName="Tax_Val" />
+          <ScalarProperty Name="TaxName" ColumnName="TaxName" />
+          <ScalarProperty Name="TaxDesc" ColumnName="TaxDesc" />
+          <ScalarProperty Name="active" ColumnName="active" />
+          <ScalarProperty Name="rowcreateddate" ColumnName="rowcreateddate" />
+          <ScalarProperty Name="MachineIP" ColumnName="MachineIP" />
+          <ScalarProperty Name="MachineName" ColumnName="MachineName" />
+          <ScalarProperty Name="MachineUser" ColumnName="MachineUser" />
+          <ScalarProperty Name="userid" ColumnName="userid" />
+          <ScalarProperty Name="rowupdateddate" ColumnName="rowupdateddate" />
+          <ScalarProperty Name="Machineipupdated" ColumnName="Machineipupdated" />
+          <ScalarProperty Name="Machinenameupdated" ColumnName="Machinenameupdated" />
+          <ScalarProperty Name="Machineuserupdated" ColumnName="Machineuserupdated" />
+          <ScalarProperty Name="useridupdated" ColumnName="useridupdated" />
+          <ScalarProperty Name="iabc" ColumnName="iabc" />
+          <ScalarProperty Name="idef" ColumnName="idef" />
+          <ScalarProperty Name="ighi" ColumnName="ighi" />
+          <ScalarProperty Name="ijkl" ColumnName="ijkl" />
+          <ScalarProperty Name="Sabc" ColumnName="Sabc" />
+          <ScalarProperty Name="Sdef" ColumnName="Sdef" />
+          <ScalarProperty Name="Sghi" ColumnName="Sghi" />
+          <ScalarProperty Name="Sjkl" ColumnName="Sjkl" />
+          <ScalarProperty Name="Dabc" ColumnName="Dabc" />
+          <ScalarProperty Name="Ddef" ColumnName="Ddef" />
+          <ScalarProperty Name="Dghi" ColumnName="Dghi" />
+          <ScalarProperty Name="Djkl" ColumnName="Djkl" />
+          <ScalarProperty Name="DECabc" ColumnName="DECabc" />
+          <ScalarProperty Name="DECdef" ColumnName="DECdef" />
+          <ScalarProperty Name="DECghi" ColumnName="DECghi" />
+          <ScalarProperty Name="DECjkl" ColumnName="DECjkl" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="UserLocations">
+      <EntityTypeMapping TypeName="Gold_SalesModel.UserLocation">
+        <MappingFragment StoreEntitySet="UserLocation">
+          <ScalarProperty Name="UserLocationID" ColumnName="UserLocationID" />
+          <ScalarProperty Name="userid" ColumnName="userid" />
+          <ScalarProperty Name="InventLocationID" ColumnName="InventLocationID" />
+          <ScalarProperty Name="priority_flg" ColumnName="priority_flg" />
+          <ScalarProperty Name="transferfrom_flg" ColumnName="transferfrom_flg" />
+          <ScalarProperty Name="transferto_flg" ColumnName="transferto_flg" />
+          <ScalarProperty Name="accepttransfer_flg" ColumnName="accepttransfer_flg" />
+          <ScalarProperty Name="sales_flg" ColumnName="sales_flg" />
+          <ScalarProperty Name="returnsales_flg" ColumnName="returnsales_flg" />
+          <ScalarProperty Name="purchase_flg" ColumnName="purchase_flg" />
+          <ScalarProperty Name="returnpurchase_flg" ColumnName="returnpurchase_flg" />
+          <ScalarProperty Name="active" ColumnName="active" />
+          <ScalarProperty Name="deactivateddate" ColumnName="deactivateddate" />
+          <ScalarProperty Name="rowcreateddate" ColumnName="rowcreateddate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="UserLocationFunctions">
+      <EntityTypeMapping TypeName="Gold_SalesModel.UserLocationFunction">
+        <MappingFragment StoreEntitySet="UserLocationFunction">
+          <ScalarProperty Name="UserLocationFunctionID" ColumnName="UserLocationFunctionID" />
+          <ScalarProperty Name="UserLocationID" ColumnName="UserLocationID" />
+          <ScalarProperty Name="FunctionID" ColumnName="FunctionID" />
+          <ScalarProperty Name="GroupAssignedBy" ColumnName="GroupAssignedBy" />
+          <ScalarProperty Name="active" ColumnName="active" />
+          <ScalarProperty Name="deactivateddate" ColumnName="deactivateddate" />
+          <ScalarProperty Name="rowcreateddate" ColumnName="rowcreateddate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="UserLocFunGroups">
+      <EntityTypeMapping TypeName="Gold_SalesModel.UserLocFunGroup">
+        <MappingFragment StoreEntitySet="UserLocFunGroup">
+          <ScalarProperty Name="UserLocFunGroupID" ColumnName="UserLocFunGroupID" />
+          <ScalarProperty Name="UserLocationID" ColumnName="UserLocationID" />
+          <ScalarProperty Name="FunctionGroupID" ColumnName="FunctionGroupID" />
+          <ScalarProperty Name="active" ColumnName="active" />
+          <ScalarProperty Name="deactivateddate" ColumnName="deactivateddate" />
+          <ScalarProperty Name="rowcreateddate" ColumnName="rowcreateddate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="UserLogins">
+      <EntityTypeMapping TypeName="Gold_SalesModel.UserLogin">
+        <MappingFragment StoreEntitySet="UserLogins">
+          <ScalarProperty Name="userid" ColumnName="userid" />
+          <ScalarProperty Name="logindate" ColumnName="logindate" />
+          <ScalarProperty Name="logoutdate" ColumnName="logoutdate" />
+          <ScalarProperty Name="active" ColumnName="active" />
+          <ScalarProperty Name="CompanyID" ColumnName="CompanyID" />
+          <ScalarProperty Name="MachineIP" ColumnName="MachineIP" />
+          <ScalarProperty Name="MachineName" ColumnName="MachineName" />
+          <ScalarProperty Name="MachineUser" ColumnName="MachineUser" />
+          <ScalarProperty Name="rowcreateddate" ColumnName="rowcreateddate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="users">
+      <EntityTypeMapping TypeName="Gold_SalesModel.user">
+        <MappingFragment StoreEntitySet="users">
+          <ScalarProperty Name="userid" ColumnName="userid" />
+          <ScalarProperty Name="username" ColumnName="username" />
+          <ScalarProperty Name="userpassword" ColumnName="userpassword" />
+          <ScalarProperty Name="userdescription" ColumnName="userdescription" />
+          <ScalarProperty Name="sysadmin" ColumnName="sysadmin" />
+          <ScalarProperty Name="active" ColumnName="active" />
+          <ScalarProperty Name="deactivateddate" ColumnName="deactivateddate" />
+          <ScalarProperty Name="rowcreateddate" ColumnName="rowcreateddate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="vendors">
+      <EntityTypeMapping TypeName="Gold_SalesModel.vendor">
+        <MappingFragment StoreEntitySet="vendors">
+          <ScalarProperty Name="vendorid" ColumnName="vendorid" />
+          <ScalarProperty Name="VendorName" ColumnName="VendorName" />
+          <ScalarProperty Name="VendorDesc" ColumnName="VendorDesc" />
+          <ScalarProperty Name="rowcreateddate" ColumnName="rowcreateddate" />
+          <ScalarProperty Name="MachineIP" ColumnName="MachineIP" />
+          <ScalarProperty Name="MachineName" ColumnName="MachineName" />
+          <ScalarProperty Name="MachineUser" ColumnName="MachineUser" />
+          <ScalarProperty Name="userid" ColumnName="userid" />
+          <ScalarProperty Name="Machineipupdated" ColumnName="Machineipupdated" />
+          <ScalarProperty Name="Machinenameupdated" ColumnName="Machinenameupdated" />
+          <ScalarProperty Name="Machineuserupdated" ColumnName="Machineuserupdated" />
+          <ScalarProperty Name="useridupdated" ColumnName="useridupdated" />
+          <ScalarProperty Name="iabc" ColumnName="iabc" />
+          <ScalarProperty Name="idef" ColumnName="idef" />
+          <ScalarProperty Name="ighi" ColumnName="ighi" />
+          <ScalarProperty Name="ijkl" ColumnName="ijkl" />
+          <ScalarProperty Name="Sabc" ColumnName="Sabc" />
+          <ScalarProperty Name="Sdef" ColumnName="Sdef" />
+          <ScalarProperty Name="Sghi" ColumnName="Sghi" />
+          <ScalarProperty Name="Sjkl" ColumnName="Sjkl" />
+          <ScalarProperty Name="Dabc" ColumnName="Dabc" />
+          <ScalarProperty Name="Ddef" ColumnName="Ddef" />
+          <ScalarProperty Name="Dghi" ColumnName="Dghi" />
+          <ScalarProperty Name="Djkl" ColumnName="Djkl" />
+          <ScalarProperty Name="DECabc" ColumnName="DECabc" />
+          <ScalarProperty Name="DECdef" ColumnName="DECdef" />
+          <ScalarProperty Name="DECghi" ColumnName="DECghi" />
+          <ScalarProperty Name="DECjkl" ColumnName="DECjkl" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Vouchers">
+      <EntityTypeMapping TypeName="Gold_SalesModel.Voucher">
+        <MappingFragment StoreEntitySet="Voucher">
+          <ScalarProperty Name="VoucherID" ColumnName="VoucherID" />
+          <ScalarProperty Name="VoucherDate" ColumnName="VoucherDate" />
+          <ScalarProperty Name="VoucherCurrency" ColumnName="VoucherCurrency" />
+          <ScalarProperty Name="VoucherDEBIT" ColumnName="VoucherDEBIT" />
+          <ScalarProperty Name="VoucherCREDIT" ColumnName="VoucherCREDIT" />
+          <ScalarProperty Name="VoucherCLOSED" ColumnName="VoucherCLOSED" />
+          <ScalarProperty Name="VoucherPOSTED" ColumnName="VoucherPOSTED" />
+          <ScalarProperty Name="VoucherTypeID" ColumnName="VoucherTypeID" />
+          <ScalarProperty Name="voucherDesc" ColumnName="voucherDesc" />
+          <ScalarProperty Name="rowcreateddate" ColumnName="rowcreateddate" />
+          <ScalarProperty Name="MachineIP" ColumnName="MachineIP" />
+          <ScalarProperty Name="MachineName" ColumnName="MachineName" />
+          <ScalarProperty Name="MachineUser" ColumnName="MachineUser" />
+          <ScalarProperty Name="userid" ColumnName="userid" />
+          <ScalarProperty Name="Machineipupdated" ColumnName="Machineipupdated" />
+          <ScalarProperty Name="Machinenameupdated" ColumnName="Machinenameupdated" />
+          <ScalarProperty Name="Machineuserupdated" ColumnName="Machineuserupdated" />
+          <ScalarProperty Name="useridupdated" ColumnName="useridupdated" />
+          <ScalarProperty Name="iabc" ColumnName="iabc" />
+          <ScalarProperty Name="idef" ColumnName="idef" />
+          <ScalarProperty Name="ighi" ColumnName="ighi" />
+          <ScalarProperty Name="ijkl" ColumnName="ijkl" />
+          <ScalarProperty Name="Sabc" ColumnName="Sabc" />
+          <ScalarProperty Name="Sdef" ColumnName="Sdef" />
+          <ScalarProperty Name="Sghi" ColumnName="Sghi" />
+          <ScalarProperty Name="Sjkl" ColumnName="Sjkl" />
+          <ScalarProperty Name="Dabc" ColumnName="Dabc" />
+          <ScalarProperty Name="Ddef" ColumnName="Ddef" />
+          <ScalarProperty Name="Dghi" ColumnName="Dghi" />
+          <ScalarProperty Name="Djkl" ColumnName="Djkl" />
+          <ScalarProperty Name="DECabc" ColumnName="DECabc" />
+          <ScalarProperty Name="DECdef" ColumnName="DECdef" />
+          <ScalarProperty Name="DECghi" ColumnName="DECghi" />
+          <ScalarProperty Name="DECjkl" ColumnName="DECjkl" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="VoucherGrids">
+      <EntityTypeMapping TypeName="Gold_SalesModel.VoucherGrid">
+        <MappingFragment StoreEntitySet="VoucherGrid">
+          <ScalarProperty Name="VoucherID" ColumnName="VoucherID" />
+          <ScalarProperty Name="VoucherLinenum" ColumnName="VoucherLinenum" />
+          <ScalarProperty Name="CurrencyID" ColumnName="CurrencyID" />
+          <ScalarProperty Name="DEBIT" ColumnName="DEBIT" />
+          <ScalarProperty Name="CREDIT" ColumnName="CREDIT" />
+          <ScalarProperty Name="CurrRate" ColumnName="CurrRate" />
+          <ScalarProperty Name="DEBIT_LOCAL" ColumnName="DEBIT_LOCAL" />
+          <ScalarProperty Name="CREDIT_LOCAL" ColumnName="CREDIT_LOCAL" />
+          <ScalarProperty Name="voucherLineDesc" ColumnName="voucherLineDesc" />
+          <ScalarProperty Name="AccountID" ColumnName="AccountID" />
+          <ScalarProperty Name="COST_CENTER_NO" ColumnName="COST_CENTER_NO" />
+          <ScalarProperty Name="DOCUMENT_NO" ColumnName="DOCUMENT_NO" />
+          <ScalarProperty Name="rowcreateddate" ColumnName="rowcreateddate" />
+          <ScalarProperty Name="MachineIP" ColumnName="MachineIP" />
+          <ScalarProperty Name="MachineName" ColumnName="MachineName" />
+          <ScalarProperty Name="MachineUser" ColumnName="MachineUser" />
+          <ScalarProperty Name="userid" ColumnName="userid" />
+          <ScalarProperty Name="Machineipupdated" ColumnName="Machineipupdated" />
+          <ScalarProperty Name="Machinenameupdated" ColumnName="Machinenameupdated" />
+          <ScalarProperty Name="Machineuserupdated" ColumnName="Machineuserupdated" />
+          <ScalarProperty Name="useridupdated" ColumnName="useridupdated" />
+          <ScalarProperty Name="iabc" ColumnName="iabc" />
+          <ScalarProperty Name="idef" ColumnName="idef" />
+          <ScalarProperty Name="ighi" ColumnName="ighi" />
+          <ScalarProperty Name="ijkl" ColumnName="ijkl" />
+          <ScalarProperty Name="Sabc" ColumnName="Sabc" />
+          <ScalarProperty Name="Sdef" ColumnName="Sdef" />
+          <ScalarProperty Name="Sghi" ColumnName="Sghi" />
+          <ScalarProperty Name="Sjkl" ColumnName="Sjkl" />
+          <ScalarProperty Name="Dabc" ColumnName="Dabc" />
+          <ScalarProperty Name="Ddef" ColumnName="Ddef" />
+          <ScalarProperty Name="Dghi" ColumnName="Dghi" />
+          <ScalarProperty Name="Djkl" ColumnName="Djkl" />
+          <ScalarProperty Name="DECabc" ColumnName="DECabc" />
+          <ScalarProperty Name="DECdef" ColumnName="DECdef" />
+          <ScalarProperty Name="DECghi" ColumnName="DECghi" />
+          <ScalarProperty Name="DECjkl" ColumnName="DECjkl" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="VoucherTypes">
+      <EntityTypeMapping TypeName="Gold_SalesModel.VoucherType">
+        <MappingFragment StoreEntitySet="VoucherType">
+          <ScalarProperty Name="VoucherTypeID" ColumnName="VoucherTypeID" />
+          <ScalarProperty Name="VoucherTypeName" ColumnName="VoucherTypeName" />
+          <ScalarProperty Name="VoucherTypeDesc" ColumnName="VoucherTypeDesc" />
+          <ScalarProperty Name="rowcreateddate" ColumnName="rowcreateddate" />
+          <ScalarProperty Name="MachineIP" ColumnName="MachineIP" />
+          <ScalarProperty Name="MachineName" ColumnName="MachineName" />
+          <ScalarProperty Name="MachineUser" ColumnName="MachineUser" />
+          <ScalarProperty Name="userid" ColumnName="userid" />
+          <ScalarProperty Name="Machineipupdated" ColumnName="Machineipupdated" />
+          <ScalarProperty Name="Machinenameupdated" ColumnName="Machinenameupdated" />
+          <ScalarProperty Name="Machineuserupdated" ColumnName="Machineuserupdated" />
+          <ScalarProperty Name="useridupdated" ColumnName="useridupdated" />
+          <ScalarProperty Name="iabc" ColumnName="iabc" />
+          <ScalarProperty Name="idef" ColumnName="idef" />
+          <ScalarProperty Name="ighi" ColumnName="ighi" />
+          <ScalarProperty Name="ijkl" ColumnName="ijkl" />
+          <ScalarProperty Name="Sabc" ColumnName="Sabc" />
+          <ScalarProperty Name="Sdef" ColumnName="Sdef" />
+          <ScalarProperty Name="Sghi" ColumnName="Sghi" />
+          <ScalarProperty Name="Sjkl" ColumnName="Sjkl" />
+          <ScalarProperty Name="Dabc" ColumnName="Dabc" />
+          <ScalarProperty Name="Ddef" ColumnName="Ddef" />
+          <ScalarProperty Name="Dghi" ColumnName="Dghi" />
+          <ScalarProperty Name="Djkl" ColumnName="Djkl" />
+          <ScalarProperty Name="DECabc" ColumnName="DECabc" />
+          <ScalarProperty Name="DECdef" ColumnName="DECdef" />
+          <ScalarProperty Name="DECghi" ColumnName="DECghi" />
+          <ScalarProperty Name="DECjkl" ColumnName="DECjkl" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="pos_trans_bk">
+      <EntityTypeMapping TypeName="Gold_SalesModel.pos_trans_bk">
+        <MappingFragment StoreEntitySet="pos_trans_bk">
+          <ScalarProperty Name="trans_id" ColumnName="trans_id" />
+          <ScalarProperty Name="store_code" ColumnName="store_code" />
+          <ScalarProperty Name="trans_date" ColumnName="trans_date" />
+          <ScalarProperty Name="client_code" ColumnName="client_code" />
+          <ScalarProperty Name="trans_total" ColumnName="trans_total" />
+          <ScalarProperty Name="remarks" ColumnName="remarks" />
+          <ScalarProperty Name="trans_total_21" ColumnName="trans_total_21" />
+          <ScalarProperty Name="trans_toatl_18" ColumnName="trans_toatl_18" />
+          <ScalarProperty Name="canceled" ColumnName="canceled" />
+          <ScalarProperty Name="syncstatus" ColumnName="syncstatus" />
+          <ScalarProperty Name="inventsiteid" ColumnName="inventsiteid" />
+          <ScalarProperty Name="axsync" ColumnName="axsync" />
+          <ScalarProperty Name="returnorder" ColumnName="returnorder" />
+          <ScalarProperty Name="closure_date" ColumnName="closure_date" />
+          <ScalarProperty Name="rowcreateddate" ColumnName="rowcreateddate" />
+          <ScalarProperty Name="total_weight" ColumnName="total_weight" />
+          <ScalarProperty Name="total_line" ColumnName="total_line" />
+          <ScalarProperty Name="MachineIP" ColumnName="MachineIP" />
+          <ScalarProperty Name="MachineUser" ColumnName="MachineUser" />
+          <ScalarProperty Name="Machinename" ColumnName="Machinename" />
+          <ScalarProperty Name="userid" ColumnName="userid" />
+          <ScalarProperty Name="MachineIPupdated" ColumnName="MachineIPupdated" />
+          <ScalarProperty Name="MachineUserupdated" ColumnName="MachineUserupdated" />
+          <ScalarProperty Name="MachineNameupdated" ColumnName="MachineNameupdated" />
+          <ScalarProperty Name="useridupdated" ColumnName="useridupdated" />
+          <ScalarProperty Name="iabc" ColumnName="iabc" />
+          <ScalarProperty Name="idef" ColumnName="idef" />
+          <ScalarProperty Name="ighi" ColumnName="ighi" />
+          <ScalarProperty Name="ijkl" ColumnName="ijkl" />
+          <ScalarProperty Name="Sabc" ColumnName="Sabc" />
+          <ScalarProperty Name="Sdef" ColumnName="Sdef" />
+          <ScalarProperty Name="Sghi" ColumnName="Sghi" />
+          <ScalarProperty Name="Sjkl" ColumnName="Sjkl" />
+          <ScalarProperty Name="Dabc" ColumnName="Dabc" />
+          <ScalarProperty Name="Ddef" ColumnName="Ddef" />
+          <ScalarProperty Name="Dghi" ColumnName="Dghi" />
+          <ScalarProperty Name="Djkl" ColumnName="Djkl" />
+          <ScalarProperty Name="DECabc" ColumnName="DECabc" />
+          <ScalarProperty Name="DECdef" ColumnName="DECdef" />
+          <ScalarProperty Name="DECghi" ColumnName="DECghi" />
+          <ScalarProperty Name="DECjkl" ColumnName="DECjkl" />
+          <ScalarProperty Name="rowguid" ColumnName="rowguid" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="pos_trans_grid_bk">
+      <EntityTypeMapping TypeName="Gold_SalesModel.pos_trans_grid_bk">
+        <MappingFragment StoreEntitySet="pos_trans_grid_bk">
+          <ScalarProperty Name="trans_id" ColumnName="trans_id" />
+          <ScalarProperty Name="linenum" ColumnName="linenum" />
+          <ScalarProperty Name="store_code" ColumnName="store_code" />
+          <ScalarProperty Name="itemname" ColumnName="itemname" />
+          <ScalarProperty Name="unit_code" ColumnName="unit_code" />
+          <ScalarProperty Name="item_weight" ColumnName="item_weight" />
+          <ScalarProperty Name="sale_price" ColumnName="sale_price" />
+          <ScalarProperty Name="slae_cost" ColumnName="slae_cost" />
+          <ScalarProperty Name="trans_date" ColumnName="trans_date" />
+          <ScalarProperty Name="item_sold" ColumnName="item_sold" />
+          <ScalarProperty Name="syncstatus" ColumnName="syncstatus" />
+          <ScalarProperty Name="inventdimid" ColumnName="inventdimid" />
+          <ScalarProperty Name="parmitemid" ColumnName="parmitemid" />
+          <ScalarProperty Name="stockid" ColumnName="stockid" />
+          <ScalarProperty Name="itemserial" ColumnName="itemserial" />
+          <ScalarProperty Name="rowcreateddate" ColumnName="rowcreateddate" />
+          <ScalarProperty Name="tax" ColumnName="tax" />
+          <ScalarProperty Name="taxrate" ColumnName="taxrate" />
+          <ScalarProperty Name="taxrates" ColumnName="taxrates" />
+          <ScalarProperty Name="taxes" ColumnName="taxes" />
+          <ScalarProperty Name="MachineIP" ColumnName="MachineIP" />
+          <ScalarProperty Name="MachineUser" ColumnName="MachineUser" />
+          <ScalarProperty Name="MachineName" ColumnName="MachineName" />
+          <ScalarProperty Name="userid" ColumnName="userid" />
+          <ScalarProperty Name="iabc" ColumnName="iabc" />
+          <ScalarProperty Name="idef" ColumnName="idef" />
+          <ScalarProperty Name="ighi" ColumnName="ighi" />
+          <ScalarProperty Name="ijkl" ColumnName="ijkl" />
+          <ScalarProperty Name="Sabc" ColumnName="Sabc" />
+          <ScalarProperty Name="Sdef" ColumnName="Sdef" />
+          <ScalarProperty Name="Sghi" ColumnName="Sghi" />
+          <ScalarProperty Name="Sjkl" ColumnName="Sjkl" />
+          <ScalarProperty Name="Dabc" ColumnName="Dabc" />
+          <ScalarProperty Name="Ddef" ColumnName="Ddef" />
+          <ScalarProperty Name="Dghi" ColumnName="Dghi" />
+          <ScalarProperty Name="Djkl" ColumnName="Djkl" />
+          <ScalarProperty Name="DECabc" ColumnName="DECabc" />
+          <ScalarProperty Name="DECdef" ColumnName="DECdef" />
+          <ScalarProperty Name="DECghi" ColumnName="DECghi" />
+          <ScalarProperty Name="DECjkl" ColumnName="DECjkl" />
+          <ScalarProperty Name="rowguid" ColumnName="rowguid" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sync_info">
+      <EntityTypeMapping TypeName="Gold_SalesModel.sync_info">
+        <MappingFragment StoreEntitySet="sync_info">
+          <ScalarProperty Name="syn_id" ColumnName="syn_id" />
+          <ScalarProperty Name="CompanyID" ColumnName="CompanyID" />
+          <ScalarProperty Name="hostname" ColumnName="hostname" />
+          <ScalarProperty Name="ipaddress" ColumnName="ipaddress" />
+          <ScalarProperty Name="trans_date" ColumnName="trans_date" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sync_info_toserver">
+      <EntityTypeMapping TypeName="Gold_SalesModel.sync_info_toserver">
+        <MappingFragment StoreEntitySet="sync_info_toserver">
+          <ScalarProperty Name="syn_id" ColumnName="syn_id" />
+          <ScalarProperty Name="CompanyID" ColumnName="CompanyID" />
+          <ScalarProperty Name="hostname" ColumnName="hostname" />
+          <ScalarProperty Name="ipaddress" ColumnName="ipaddress" />
+          <ScalarProperty Name="trans_date" ColumnName="trans_date" />
+          <ScalarProperty Name="sync_status" ColumnName="sync_status" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>
