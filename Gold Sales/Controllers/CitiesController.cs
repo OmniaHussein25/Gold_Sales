@@ -13,7 +13,7 @@ namespace Gold_Sales.Controllers
     public class CitiesController : Controller
     {
         private Gold_SalesEntities db = new Gold_SalesEntities();
-
+        //Hello Omnia
         // GET: Cities
         public ActionResult Index()
         {
