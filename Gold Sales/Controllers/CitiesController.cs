@@ -104,6 +104,9 @@ namespace Gold_Sales.Controllers
             return View(city);
         }
 
+
+
+
         // POST: Cities/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]

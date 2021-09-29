@@ -1,0 +1,6 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<parameters>
+  <parameter name="Gold_SalesEntities-Web.config Connection String" description="Gold_SalesEntities Connection String used in web.config by the application to access the database." defaultValue="metadata=res://*/Models.GoldSalesModel.csdl|res://*/Models.GoldSalesModel.ssdl|res://*/Models.GoldSalesModel.msl;provider=System.Data.SqlClient;provider connection string=&quot;data source=172.16.6.25\MSSQLDBTEST;initial catalog=Gold_Sales;persist security info=True;user id=sa;password=Admin123;MultipleActiveResultSets=True;App=EntityFramework&quot;" tags="SqlConnectionString">
+    <parameterEntry kind="XmlFile" scope="C:\\Users\\omnia\.hussien\\Desktop\\Gold\ Sales\\Gold\ Sales\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='Gold_SalesEntities']/@connectionString" />
+  </parameter>
+</parameters>

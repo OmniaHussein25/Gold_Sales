@@ -1,0 +1,39 @@
+﻿@model Gold_Sales.Models.City
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="table-responsive">
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.CityName)
+                </th>
+
+                <td>
+                    @Html.DisplayFor(model => model.CityName)
+                </td>
+            </tr>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.CountryName)
+                </th>
+
+                <td>
+                    @Html.DisplayFor(model => model.CountryName)
+                </td>
+            </tr>
+
+
+        </tbody>
+    </table>
+</div>
+
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.CityID }, new { @class = "btn btn-success" })
+    @Html.ActionLink("Cancel", "Index", null, new { @class = "btn btn-primary" })
+</p>
+

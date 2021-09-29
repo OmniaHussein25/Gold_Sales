@@ -1,0 +1,57 @@
+﻿<div id="sidebar-menu" class="main_menu_side hidden-print main_menu">
+    <div class="menu_section">
+        <h3>General</h3>
+        <ul class="nav side-menu">
+            <li>
+                <a href="@Url.Action("Index", "Home")"><i class="fa fa-desktop"></i> Dashboard </a>
+
+            </li>
+            <li>
+                <a href="@Url.Action("Index", "TableTemplate")"><i class="fa fa-desktop"></i> Table Template </a>
+
+            </li>
+            <li>
+                <a><i class="fa fa-sitemap"></i> Branshes <span class="fa fa-chevron-down"></span></a>
+                <ul class="nav child_menu">
+                    <li>@Html.ActionLink("Show Branches", "Index", "Branches")</li>
+                    <li>@Html.ActionLink("Add new branch", "Create", "Branches")</li>
+
+
+                </ul>
+            </li>
+
+            <li>
+                <a><i class="fa fa-building"></i> Companies <span class="fa fa-chevron-down"></span></a>
+                <ul class="nav child_menu">
+                    <li>@Html.ActionLink("Show Companies", "Index", "Companies")</li>
+                    <li>@Html.ActionLink("Add new Company", "Create", "Companies")</li>
+
+
+                </ul>
+            </li>
+            <li>
+                <a><i class="fa fa-users"></i> Company Employee <span class="fa fa-chevron-down"></span></a>
+                <ul class="nav child_menu">
+                    <li>@Html.ActionLink("Show Employees", "Index", "CompanyEmps")</li>
+                    <li>@Html.ActionLink("Add new Employee", "Create", "CompanyEmps")</li>
+
+
+                </ul>
+            </li>
+
+            <li>
+                <a><i class="fa fa-anchor"></i> Look Up <span class="fa fa-chevron-down"></span></a>
+                <ul class="nav child_menu">
+                    <li>@Html.ActionLink("Cities", "Index", "Cities")</li>
+                    @*<li>@Html.ActionLink("Add new Employee", "Create", "CompanyEmps")</li>*@
+
+
+                </ul>
+            </li>
+
+
+        </ul>
+    </div>
+
+</div>
+

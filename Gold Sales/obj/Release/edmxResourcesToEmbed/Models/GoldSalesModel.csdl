@@ -1,0 +1,2650 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="Gold_SalesModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Account">
+    <Key>
+      <PropertyRef Name="AccountID" />
+    </Key>
+    <Property Name="AccountID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="AccountTypeID" Type="Byte" Nullable="false" />
+    <Property Name="AccountName" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="AccountDesc" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="Leaf" Type="Byte" />
+    <Property Name="ParentAccountID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="active" Type="Byte" />
+    <Property Name="rowcreateddate" Type="DateTime" Precision="0" />
+    <Property Name="MachineIP" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="MachineName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="MachineUser" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="userid" Type="Int32" />
+    <Property Name="rowupdateddate" Type="DateTime" Precision="0" />
+    <Property Name="Machineipupdated" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Machinenameupdated" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Machineuserupdated" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="useridupdated" Type="Int32" />
+    <NavigationProperty Name="Account1" Relationship="Self.FK_Account_Account" FromRole="Account" ToRole="Account1" />
+    <NavigationProperty Name="Account2" Relationship="Self.FK_Account_Account" FromRole="Account1" ToRole="Account" />
+    <NavigationProperty Name="AccountType" Relationship="Self.FK_Account_AccountType" FromRole="Account" ToRole="AccountType" />
+    <NavigationProperty Name="AccountDimensions" Relationship="Self.FK_AccountDimensions_Account" FromRole="Account" ToRole="AccountDimensions" />
+  </EntityType>
+  <EntityType Name="AccountDimension">
+    <Key>
+      <PropertyRef Name="AccountID" />
+      <PropertyRef Name="DimensionID" />
+      <PropertyRef Name="DimensionTypeID" />
+    </Key>
+    <Property Name="AccountID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="AccountName" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="DimensionID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="DimensionName" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="DimensionTypeID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="DimensionTypeName" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="DimensionAccountDesc" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="active" Type="Byte" />
+    <Property Name="rowcreateddate" Type="DateTime" Precision="0" />
+    <Property Name="MachineIP" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="MachineName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="MachineUser" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="userid" Type="Int32" />
+    <Property Name="rowupdateddate" Type="DateTime" Precision="0" />
+    <Property Name="Machineipupdated" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Machinenameupdated" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Machineuserupdated" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="useridupdated" Type="Int32" />
+    <NavigationProperty Name="Account" Relationship="Self.FK_AccountDimensions_Account" FromRole="AccountDimensions" ToRole="Account" />
+    <NavigationProperty Name="Dimension" Relationship="Self.FK_AccountDimensions_Dimension" FromRole="AccountDimensions" ToRole="Dimension" />
+  </EntityType>
+  <EntityType Name="AccountType">
+    <Key>
+      <PropertyRef Name="AccountTypeID" />
+    </Key>
+    <Property Name="AccountTypeID" Type="Byte" Nullable="false" />
+    <Property Name="AccountTypeName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="AccountTypeDesc" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="active" Type="Byte" />
+    <Property Name="rowcreateddate" Type="DateTime" Precision="0" />
+    <Property Name="MachineIP" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="MachineName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="MachineUser" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="userid" Type="Int32" />
+    <Property Name="rowupdateddate" Type="DateTime" Precision="0" />
+    <Property Name="Machineipupdated" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Machinenameupdated" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Machineuserupdated" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="useridupdated" Type="Int32" />
+    <NavigationProperty Name="Accounts" Relationship="Self.FK_Account_AccountType" FromRole="AccountType" ToRole="Account" />
+  </EntityType>
+  <EntityType Name="Branch">
+    <Key>
+      <PropertyRef Name="BranchID" />
+    </Key>
+    <Property Name="BranchID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="CompanyID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="BranchName" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="CityID" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="active" Type="Byte" />
+    <Property Name="rowcreateddate" Type="DateTime" Precision="0" />
+    <Property Name="MachineIP" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="MachineName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="MachineUser" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="userid" Type="Int32" />
+    <Property Name="rowupdateddate" Type="DateTime" Precision="0" />
+    <Property Name="Machineipupdated" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Machinenameupdated" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Machineuserupdated" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="useridupdated" Type="Int32" />
+    <Property Name="iabc" Type="Int32" />
+    <Property Name="idef" Type="Int32" />
+    <Property Name="ighi" Type="Int32" />
+    <Property Name="ijkl" Type="Int32" />
+    <Property Name="Sabc" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="Sdef" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="Sghi" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="Sjkl" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="Dabc" Type="DateTime" Precision="0" />
+    <Property Name="Ddef" Type="DateTime" Precision="0" />
+    <Property Name="Dghi" Type="DateTime" Precision="0" />
+    <Property Name="Djkl" Type="DateTime" Precision="0" />
+    <Property Name="DECabc" Type="Decimal" Precision="10" Scale="4" />
+    <Property Name="DECdef" Type="Decimal" Precision="10" Scale="4" />
+    <Property Name="DECghi" Type="Decimal" Precision="10" Scale="4" />
+    <Property Name="DECjkl" Type="Decimal" Precision="10" Scale="4" />
+    <NavigationProperty Name="City" Relationship="Self.FK_Branch_City" FromRole="Branch" ToRole="City" />
+    <NavigationProperty Name="Company" Relationship="Self.FK_Branch_Company" FromRole="Branch" ToRole="Company" />
+  </EntityType>
+  <EntityType Name="City">
+    <Key>
+      <PropertyRef Name="CityID" />
+    </Key>
+    <Property Name="CityID" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="CityName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="CountryName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="active" Type="Byte" />
+    <Property Name="rowcreateddate" Type="DateTime" Precision="0" />
+    <Property Name="MachineIP" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="MachineName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="MachineUser" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="userid" Type="Int32" />
+    <Property Name="rowupdateddate" Type="DateTime" Precision="0" />
+    <Property Name="Machineipupdated" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Machinenameupdated" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Machineuserupdated" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="useridupdated" Type="Int32" />
+    <NavigationProperty Name="Branches" Relationship="Self.FK_Branch_City" FromRole="City" ToRole="Branch" />
+  </EntityType>
+  <EntityType Name="Company">
+    <Key>
+      <PropertyRef Name="CompanyID" />
+    </Key>
+    <Property Name="CompanyID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="CompanyName" Type="String" MaxLength="200" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="active" Type="Byte" />
+    <Property Name="rowcreateddate" Type="DateTime" Precision="0" />
+    <Property Name="MachineIP" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="MachineName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="MachineUser" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="userid" Type="Int32" />
+    <Property Name="rowupdateddate" Type="DateTime" Precision="0" />
+    <Property Name="Machineipupdated" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Machinenameupdated" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Machineuserupdated" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="useridupdated" Type="Int32" />
+    <Property Name="iabc" Type="Int32" />
+    <Property Name="idef" Type="Int32" />
+    <Property Name="ighi" Type="Int32" />
+    <Property Name="ijkl" Type="Int32" />
+    <Property Name="Sabc" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="Sdef" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="Sghi" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="Sjkl" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="Dabc" Type="DateTime" Precision="0" />
+    <Property Name="Ddef" Type="DateTime" Precision="0" />
+    <Property Name="Dghi" Type="DateTime" Precision="0" />
+    <Property Name="Djkl" Type="DateTime" Precision="0" />
+    <Property Name="DECabc" Type="Decimal" Precision="10" Scale="4" />
+    <Property Name="DECdef" Type="Decimal" Precision="10" Scale="4" />
+    <Property Name="DECghi" Type="Decimal" Precision="10" Scale="4" />
+    <Property Name="DECjkl" Type="Decimal" Precision="10" Scale="4" />
+    <NavigationProperty Name="Branches" Relationship="Self.FK_Branch_Company" FromRole="Company" ToRole="Branch" />
+    <NavigationProperty Name="CompanyEmps" Relationship="Self.FK_CompanyEmp_Company" FromRole="Company" ToRole="CompanyEmp" />
+  </EntityType>
+  <EntityType Name="CompanyEmp">
+    <Key>
+      <PropertyRef Name="EmpID" />
+    </Key>
+    <Property Name="EmpID" Type="Int32" Nullable="false" />
+    <Property Name="CompanyID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="EmpName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="active" Type="Int32" />
+    <Property Name="rowcreateddate" Type="DateTime" Precision="0" />
+    <Property Name="MachineIP" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="MachineName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="MachineUser" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="userid" Type="Int32" />
+    <Property Name="rowupdateddate" Type="DateTime" Precision="0" />
+    <Property Name="Machineipupdated" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Machinenameupdated" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Machineuserupdated" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="useridupdated" Type="Int32" />
+    <Property Name="iabc" Type="Int32" />
+    <Property Name="idef" Type="Int32" />
+    <Property Name="ighi" Type="Int32" />
+    <Property Name="ijkl" Type="Int32" />
+    <Property Name="Sabc" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="Sdef" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="Sghi" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="Sjkl" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="Dabc" Type="DateTime" Precision="0" />
+    <Property Name="Ddef" Type="DateTime" Precision="0" />
+    <Property Name="Dghi" Type="DateTime" Precision="0" />
+    <Property Name="Djkl" Type="DateTime" Precision="0" />
+    <Property Name="DECabc" Type="Decimal" Precision="10" Scale="4" />
+    <Property Name="DECdef" Type="Decimal" Precision="10" Scale="4" />
+    <Property Name="DECghi" Type="Decimal" Precision="10" Scale="4" />
+    <Property Name="DECjkl" Type="Decimal" Precision="10" Scale="4" />
+    <NavigationProperty Name="Company" Relationship="Self.FK_CompanyEmp_Company" FromRole="CompanyEmp" ToRole="Company" />
+  </EntityType>
+  <EntityType Name="Currency">
+    <Key>
+      <PropertyRef Name="CurrencyID" />
+    </Key>
+    <Property Name="CurrencyID" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Currencyname" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="IsSystemCurr" Type="Int32" />
+    <Property Name="CurrRate" Type="Decimal" Precision="18" Scale="12" />
+    <Property Name="CurrRateDate" Type="DateTime" Precision="0" />
+    <Property Name="active" Type="Int32" />
+    <Property Name="rowcreateddate" Type="DateTime" Precision="0" />
+    <Property Name="MachineIP" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="MachineName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="MachineUser" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="userid" Type="Int32" />
+    <Property Name="rowupdateddate" Type="DateTime" Precision="0" />
+    <Property Name="Machineipupdated" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Machinenameupdated" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Machineuserupdated" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="useridupdated" Type="Int32" />
+    <NavigationProperty Name="CurrencyRates" Relationship="Self.FK_CurrencyRates_Currency" FromRole="Currency" ToRole="CurrencyRates" />
+  </EntityType>
+  <EntityType Name="CurrencyRate">
+    <Key>
+      <PropertyRef Name="CurrencyID" />
+      <PropertyRef Name="CurrRateDate" />
+    </Key>
+    <Property Name="CurrencyID" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="CurrRateDate" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="CurrRate" Type="Decimal" Precision="18" Scale="12" />
+    <Property Name="active" Type="Int32" />
+    <Property Name="rowcreateddate" Type="DateTime" Precision="0" />
+    <Property Name="MachineIP" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="MachineName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="MachineUser" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="userid" Type="Int32" />
+    <Property Name="rowupdateddate" Type="DateTime" Precision="0" />
+    <Property Name="Machineipupdated" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Machinenameupdated" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Machineuserupdated" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="useridupdated" Type="Int32" />
+    <NavigationProperty Name="Currency" Relationship="Self.FK_CurrencyRates_Currency" FromRole="CurrencyRates" ToRole="Currency" />
+  </EntityType>
+  <EntityType Name="Customer">
+    <Key>
+      <PropertyRef Name="CustomerID" />
+    </Key>
+    <Property Name="CustomerID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="CompanyID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Custname" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="CustDesc" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="CustCategory" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="CustCatDesc" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="CustKawmyID" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="CustPassID" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="CustTaxCardNo" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="CustCreditLimit" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="CustContacts" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="active" Type="Int32" />
+    <Property Name="rowcreateddate" Type="DateTime" Precision="0" />
+    <Property Name="MachineIP" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="MachineName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="MachineUser" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="userid" Type="Int32" />
+    <Property Name="rowupdateddate" Type="DateTime" Precision="0" />
+    <Property Name="Machineipupdated" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Machinenameupdated" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Machineuserupdated" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="useridupdated" Type="Int32" />
+    <Property Name="iabc" Type="Int32" />
+    <Property Name="idef" Type="Int32" />
+    <Property Name="ighi" Type="Int32" />
+    <Property Name="ijkl" Type="Int32" />
+    <Property Name="Sabc" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="Sdef" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="Sghi" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="Sjkl" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="Dabc" Type="DateTime" Precision="0" />
+    <Property Name="Ddef" Type="DateTime" Precision="0" />
+    <Property Name="Dghi" Type="DateTime" Precision="0" />
+    <Property Name="Djkl" Type="DateTime" Precision="0" />
+    <Property Name="DECabc" Type="Decimal" Precision="10" Scale="4" />
+    <Property Name="DECdef" Type="Decimal" Precision="10" Scale="4" />
+    <Property Name="DECghi" Type="Decimal" Precision="10" Scale="4" />
+    <Property Name="DECjkl" Type="Decimal" Precision="10" Scale="4" />
+  </EntityType>
+  <EntityType Name="Dimension">
+    <Key>
+      <PropertyRef Name="DimensionID" />
+      <PropertyRef Name="DimensionTypeID" />
+    </Key>
+    <Property Name="DimensionID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="DimensionTypeID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="DimensionTypeName" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="DimensionName" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="DimensionDesc" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="active" Type="Byte" />
+    <Property Name="rowcreateddate" Type="DateTime" Precision="0" />
+    <Property Name="MachineIP" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="MachineName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="MachineUser" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="userid" Type="Int32" />
+    <Property Name="rowupdateddate" Type="DateTime" Precision="0" />
+    <Property Name="Machineipupdated" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Machinenameupdated" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Machineuserupdated" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="useridupdated" Type="Int32" />
+    <NavigationProperty Name="AccountDimensions" Relationship="Self.FK_AccountDimensions_Dimension" FromRole="Dimension" ToRole="AccountDimensions" />
+    <NavigationProperty Name="DimensionType" Relationship="Self.FK_Dimension_DimensionType" FromRole="Dimension" ToRole="DimensionType" />
+  </EntityType>
+  <EntityType Name="DimensionType">
+    <Key>
+      <PropertyRef Name="DimensionTypeID" />
+    </Key>
+    <Property Name="DimensionTypeID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="DimensionTypeName" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="DimensionTypeDesc" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="active" Type="Byte" />
+    <Property Name="rowcreateddate" Type="DateTime" Precision="0" />
+    <Property Name="MachineIP" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="MachineName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="MachineUser" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="userid" Type="Int32" />
+    <Property Name="rowupdateddate" Type="DateTime" Precision="0" />
+    <Property Name="Machineipupdated" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Machinenameupdated" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Machineuserupdated" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="useridupdated" Type="Int32" />
+    <NavigationProperty Name="Dimensions" Relationship="Self.FK_Dimension_DimensionType" FromRole="DimensionType" ToRole="Dimension" />
+  </EntityType>
+  <EntityType Name="FunctionGroup">
+    <Key>
+      <PropertyRef Name="FunctionGroupID" />
+    </Key>
+    <Property Name="FunctionGroupID" Type="Int32" Nullable="false" />
+    <Property Name="FunctionGroupName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="FunctionGroupDesc" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="active" Type="Byte" />
+    <Property Name="deactivateddate" Type="DateTime" Precision="0" />
+    <Property Name="rowcreateddate" Type="DateTime" Precision="0" />
+  </EntityType>
+  <EntityType Name="FunctionGroupMenu">
+    <Key>
+      <PropertyRef Name="FunctionGroupMenuID" />
+    </Key>
+    <Property Name="FunctionGroupMenuID" Type="Int32" Nullable="false" />
+    <Property Name="FunctionGroupID" Type="Int32" />
+    <Property Name="FunctionID" Type="Int32" />
+    <Property Name="active" Type="Byte" />
+    <Property Name="deactivateddate" Type="DateTime" Precision="0" />
+    <Property Name="rowcreateddate" Type="DateTime" Precision="0" />
+  </EntityType>
+  <EntityType Name="FunctionMenu">
+    <Key>
+      <PropertyRef Name="FunctionID" />
+    </Key>
+    <Property Name="FunctionID" Type="Int32" Nullable="false" />
+    <Property Name="FunctionName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="FunctionMenu1" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="MenuLevel" Type="Byte" />
+    <Property Name="ParentFunctionID" Type="Int32" />
+    <Property Name="active" Type="Int32" />
+    <Property Name="deactivateddate" Type="DateTime" Precision="0" />
+    <Property Name="rowcreateddate" Type="DateTime" Precision="0" />
+  </EntityType>
+  <EntityType Name="GARD">
+    <Key>
+      <PropertyRef Name="GARDNUM" />
+      <PropertyRef Name="INVENTLOCATIONID" />
+    </Key>
+    <Property Name="GARDNUM" Type="Int64" Nullable="false" />
+    <Property Name="INVENTLOCATIONID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="CREATEUSER" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="GARDDATE" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="LINECOUNT" Type="Int32" Nullable="false" />
+    <Property Name="Gard_status" Type="Int32" />
+    <Property Name="Gard_status_Date" Type="DateTime" Precision="3" />
+    <Property Name="Gard_status_user" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="MachineIp" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="MachineName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="MachineUser" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="userid" Type="Int32" />
+    <Property Name="MachineIPupdated" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="MachineNameupdated" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="MachineUserupdated" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="useridupdated" Type="Int32" />
+    <Property Name="rowcreateddate" Type="DateTime" Precision="0" />
+    <Property Name="iabc" Type="Int32" />
+    <Property Name="idef" Type="Int32" />
+    <Property Name="ighi" Type="Int32" />
+    <Property Name="ijkl" Type="Int32" />
+    <Property Name="Sabc" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="Sdef" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="Sghi" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="Sjkl" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="Dabc" Type="DateTime" Precision="0" />
+    <Property Name="Ddef" Type="DateTime" Precision="0" />
+    <Property Name="Dghi" Type="DateTime" Precision="0" />
+    <Property Name="Djkl" Type="DateTime" Precision="0" />
+    <Property Name="DECabc" Type="Decimal" Precision="32" Scale="16" />
+    <Property Name="DECdef" Type="Decimal" Precision="32" Scale="16" />
+    <Property Name="DECghi" Type="Decimal" Precision="32" Scale="16" />
+    <Property Name="DECjkl" Type="Decimal" Precision="32" Scale="16" />
+    <NavigationProperty Name="InventLocation" Relationship="Self.FK_GARD_InventLocation" FromRole="GARD" ToRole="InventLocation" />
+    <NavigationProperty Name="GARDDETAILS" Relationship="Self.FK_GARDDETAILS_GARD" FromRole="GARD" ToRole="GARDDETAILS" />
+    <NavigationProperty Name="GARDSTOCKs" Relationship="Self.FK_GARDSTOCK_GARD" FromRole="GARD" ToRole="GARDSTOCK" />
+  </EntityType>
+  <EntityType Name="GARDDETAIL">
+    <Key>
+      <PropertyRef Name="GARDNUM" />
+      <PropertyRef Name="INVENTLOCATIONID" />
+      <PropertyRef Name="ITEMORDER" />
+    </Key>
+    <Property Name="GARDNUM" Type="Int64" Nullable="false" />
+    <Property Name="INVENTLOCATIONID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="ITEMORDER" Type="Int64" Nullable="false" />
+    <Property Name="SERIAL" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="INVENTDIMID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="stockid" Type="Int64" />
+    <Property Name="ITEMID" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="ITEMNAME" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="itemexists" Type="Int32" />
+    <Property Name="QTY" Type="Int32" Nullable="false" />
+    <Property Name="UNITCODE" Type="Int32" Nullable="false" />
+    <Property Name="WEIGHT" Type="Decimal" Precision="32" Scale="16" Nullable="false" />
+    <Property Name="CREATEUSER" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="itemdate" Type="DateTime" Precision="3" />
+    <Property Name="itemip" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="itempc" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="MachineIP" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="MachineName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Machineuser" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="userid" Type="Int32" />
+    <Property Name="rowcreateddate" Type="DateTime" Precision="0" />
+    <Property Name="iabc" Type="Int32" />
+    <Property Name="idef" Type="Int32" />
+    <Property Name="ighi" Type="Int32" />
+    <Property Name="ijkl" Type="Int32" />
+    <Property Name="Sabc" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="Sdef" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="Sghi" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="Sjkl" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="Dabc" Type="DateTime" Precision="0" />
+    <Property Name="Ddef" Type="DateTime" Precision="0" />
+    <Property Name="Dghi" Type="DateTime" Precision="0" />
+    <Property Name="Djkl" Type="DateTime" Precision="0" />
+    <Property Name="DECabc" Type="Decimal" Precision="32" Scale="16" />
+    <Property Name="DECdef" Type="Decimal" Precision="32" Scale="16" />
+    <Property Name="DECghi" Type="Decimal" Precision="32" Scale="16" />
+    <Property Name="DECjkl" Type="Decimal" Precision="32" Scale="16" />
+    <NavigationProperty Name="GARD" Relationship="Self.FK_GARDDETAILS_GARD" FromRole="GARDDETAILS" ToRole="GARD" />
+  </EntityType>
+  <EntityType Name="GARDSTOCK">
+    <Key>
+      <PropertyRef Name="GARDNUM" />
+      <PropertyRef Name="INVENTLOCATIONID" />
+      <PropertyRef Name="stockid" />
+    </Key>
+    <Property Name="GARDNUM" Type="Int64" Nullable="false" />
+    <Property Name="INVENTLOCATIONID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="stockid" Type="Int64" Nullable="false" />
+    <Property Name="ITEMID" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="QTY" Type="Int32" Nullable="false" />
+    <Property Name="SERIAL" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="UNITCODE" Type="Int32" Nullable="false" />
+    <Property Name="WEIGHT" Type="Decimal" Precision="32" Scale="16" Nullable="false" />
+    <Property Name="MachineIP" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="MachineUser" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="MachineName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="userid" Type="Int32" />
+    <Property Name="rowcreateddate" Type="DateTime" Precision="0" />
+    <Property Name="iabc" Type="Int32" />
+    <Property Name="idef" Type="Int32" />
+    <Property Name="ighi" Type="Int32" />
+    <Property Name="ijkl" Type="Int32" />
+    <Property Name="Sabc" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="Sdef" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="Sghi" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="Sjkl" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="Dabc" Type="DateTime" Precision="0" />
+    <Property Name="Ddef" Type="DateTime" Precision="0" />
+    <Property Name="Dghi" Type="DateTime" Precision="0" />
+    <Property Name="Djkl" Type="DateTime" Precision="0" />
+    <Property Name="DECabc" Type="Decimal" Precision="32" Scale="16" />
+    <Property Name="DECdef" Type="Decimal" Precision="32" Scale="16" />
+    <Property Name="DECghi" Type="Decimal" Precision="32" Scale="16" />
+    <Property Name="DECjkl" Type="Decimal" Precision="32" Scale="16" />
+    <NavigationProperty Name="GARD" Relationship="Self.FK_GARDSTOCK_GARD" FromRole="GARDSTOCK" ToRole="GARD" />
+  </EntityType>
+  <EntityType Name="InventLocation">
+    <Key>
+      <PropertyRef Name="InventLocationID" />
+    </Key>
+    <Property Name="InventLocationID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="InvLocName" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="SiteID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="active" Type="Byte" />
+    <Property Name="LocGard" Type="Int64" />
+    <Property Name="MachineIP" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="MachineName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="MachineUser" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="userid" Type="Int32" />
+    <Property Name="Machineipupdated" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Machinenameupdated" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Machineuserupdated" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="useridupdated" Type="Int32" />
+    <Property Name="rowcreateddate" Type="DateTime" Precision="0" />
+    <Property Name="iabc" Type="Int32" />
+    <Property Name="idef" Type="Int32" />
+    <Property Name="ighi" Type="Int32" />
+    <Property Name="ijkl" Type="Int32" />
+    <Property Name="Sabc" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="Sdef" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="Sghi" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="Sjkl" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="Dabc" Type="DateTime" Precision="0" />
+    <Property Name="Ddef" Type="DateTime" Precision="0" />
+    <Property Name="Dghi" Type="DateTime" Precision="0" />
+    <Property Name="Djkl" Type="DateTime" Precision="0" />
+    <Property Name="DECabc" Type="Decimal" Precision="32" Scale="16" />
+    <Property Name="DECdef" Type="Decimal" Precision="32" Scale="16" />
+    <Property Name="DECghi" Type="Decimal" Precision="32" Scale="16" />
+    <Property Name="DECjkl" Type="Decimal" Precision="32" Scale="16" />
+    <NavigationProperty Name="GARDs" Relationship="Self.FK_GARD_InventLocation" FromRole="InventLocation" ToRole="GARD" />
+    <NavigationProperty Name="InventSite" Relationship="Self.FK_InventLocation_InventSite" FromRole="InventLocation" ToRole="InventSite" />
+    <NavigationProperty Name="STOCKs" Relationship="Self.FK_STOCK_InventLocation" FromRole="InventLocation" ToRole="STOCK" />
+    <NavigationProperty Name="StockDailies" Relationship="Self.FK_StockDaily_InventLocation" FromRole="InventLocation" ToRole="StockDaily" />
+    <NavigationProperty Name="UserLocations" Relationship="Self.FK_UserLocation_Branch" FromRole="InventLocation" ToRole="UserLocation" />
+  </EntityType>
+  <EntityType Name="InventSite">
+    <Key>
+      <PropertyRef Name="SiteID" />
+    </Key>
+    <Property Name="SiteID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="SiteName" Type="String" MaxLength="200" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="BranchID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="active" Type="Byte" />
+    <Property Name="MachineIP" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="MachineName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="MachineUser" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="userid" Type="Int32" />
+    <Property Name="Machineipupdated" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Machinenameupdated" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Machineuserupdated" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="useridupdated" Type="Int32" />
+    <Property Name="rowcreateddate" Type="DateTime" Precision="0" />
+    <Property Name="iabc" Type="Int32" />
+    <Property Name="idef" Type="Int32" />
+    <Property Name="ighi" Type="Int32" />
+    <Property Name="ijkl" Type="Int32" />
+    <Property Name="Sabc" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="Sdef" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="Sghi" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="Sjkl" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="Dabc" Type="DateTime" Precision="0" />
+    <Property Name="Ddef" Type="DateTime" Precision="0" />
+    <Property Name="Dghi" Type="DateTime" Precision="0" />
+    <Property Name="Djkl" Type="DateTime" Precision="0" />
+    <Property Name="DECabc" Type="Decimal" Precision="32" Scale="16" />
+    <Property Name="DECdef" Type="Decimal" Precision="32" Scale="16" />
+    <Property Name="DECghi" Type="Decimal" Precision="32" Scale="16" />
+    <Property Name="DECjkl" Type="Decimal" Precision="32" Scale="16" />
+    <NavigationProperty Name="InventLocations" Relationship="Self.FK_InventLocation_InventSite" FromRole="InventSite" ToRole="InventLocation" />
+  </EntityType>
+  <EntityType Name="INVENTTRANSFERLINE">
+    <Key>
+      <PropertyRef Name="TRANSFERID" />
+      <PropertyRef Name="LINENUM" />
+    </Key>
+    <Property Name="TRANSFERID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="LINENUM" Type="Decimal" Precision="32" Scale="16" Nullable="false" />
+    <Property Name="ITEMGROUPID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="ITEMID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="SERIAL" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="PRICE" Type="Decimal" Precision="32" Scale="16" Nullable="false" />
+    <Property Name="QTYSHIPPED" Type="Decimal" Precision="32" Scale="16" Nullable="false" />
+    <Property Name="UNIT_CODE" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="STOCKID" Type="Int64" />
+    <Property Name="Newstockid" Type="Int64" />
+    <Property Name="Stockidnew" Type="Int64" />
+    <Property Name="rowcreateddate" Type="DateTime" Precision="3" />
+    <Property Name="MachineIP" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Machinename" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Machineuser" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="userid" Type="Int32" />
+    <Property Name="iabc" Type="Int32" />
+    <Property Name="idef" Type="Int32" />
+    <Property Name="ighi" Type="Int32" />
+    <Property Name="ijkl" Type="Int32" />
+    <Property Name="Sabc" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="Sdef" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="Sghi" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="Sjkl" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="Dabc" Type="DateTime" Precision="0" />
+    <Property Name="Ddef" Type="DateTime" Precision="0" />
+    <Property Name="Dghi" Type="DateTime" Precision="0" />
+    <Property Name="Djkl" Type="DateTime" Precision="0" />
+    <Property Name="DECabc" Type="Decimal" Precision="32" Scale="16" />
+    <Property Name="DECdef" Type="Decimal" Precision="32" Scale="16" />
+    <Property Name="DECghi" Type="Decimal" Precision="32" Scale="16" />
+    <Property Name="DECjkl" Type="Decimal" Precision="32" Scale="16" />
+    <NavigationProperty Name="INVENTTRANSFERTABLE" Relationship="Self.FK_INVENTTRANSFERLINE_INVENTTRANSFERTABLE" FromRole="INVENTTRANSFERLINE" ToRole="INVENTTRANSFERTABLE" />
+  </EntityType>
+  <EntityType Name="INVENTTRANSFERTABLE">
+    <Key>
+      <PropertyRef Name="TRANSFERID" />
+    </Key>
+    <Property Name="TRANSFERID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="TRANSFERIDNUM" Type="Int64" />
+    <Property Name="TRANSFERIDRETURN" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="INVENTLOCATIONIDFROM" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="INVENTLOCATIONIDTO" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="INVENTLOCATIONIDTRANSIT" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+    <Property Name="SHIPDATE" Type="DateTime" Precision="3" />
+    <Property Name="RECEIVEDATE" Type="DateTime" Precision="3" />
+    <Property Name="CREATEDDATE" Type="DateTime" Precision="3" />
+    <Property Name="APPROVEDDATE" Type="DateTime" Precision="3" />
+    <Property Name="CLOSUREDATE" Type="DateTime" Precision="3" />
+    <Property Name="TRANSFERSTATUS" Type="Int32" />
+    <Property Name="TotalLines" Type="Int32" />
+    <Property Name="TotalWeight" Type="Decimal" Precision="32" Scale="16" />
+    <Property Name="MachineIP" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Machineuser" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="MachineName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="userid" Type="Int32" />
+    <Property Name="MachineIPupdated" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="MachineUserUpdated" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="MachineNameUpdated" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="useridUpdated" Type="Int32" />
+    <Property Name="rowcreateddate" Type="DateTime" Precision="0" />
+    <Property Name="iabc" Type="Int32" />
+    <Property Name="idef" Type="Int32" />
+    <Property Name="ighi" Type="Int32" />
+    <Property Name="ijkl" Type="Int32" />
+    <Property Name="Sabc" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="Sdef" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="Sghi" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="Sjkl" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="Dabc" Type="DateTime" Precision="0" />
+    <Property Name="Ddef" Type="DateTime" Precision="0" />
+    <Property Name="Dghi" Type="DateTime" Precision="0" />
+    <Property Name="Djkl" Type="DateTime" Precision="0" />
+    <Property Name="DECabc" Type="Decimal" Precision="32" Scale="16" />
+    <Property Name="DECdef" Type="Decimal" Precision="32" Scale="16" />
+    <Property Name="DECghi" Type="Decimal" Precision="32" Scale="16" />
+    <Property Name="DECjkl" Type="Decimal" Precision="32" Scale="16" />
+    <NavigationProperty Name="INVENTTRANSFERLINEs" Relationship="Self.FK_INVENTTRANSFERLINE_INVENTTRANSFERTABLE" FromRole="INVENTTRANSFERTABLE" ToRole="INVENTTRANSFERLINE" />
+  </EntityType>
+  <EntityType Name="Invoice">
+    <Key>
+      <PropertyRef Name="InvID" />
+      <PropertyRef Name="CompanyID" />
+      <PropertyRef Name="BranchID" />
+    </Key>
+    <Property Name="InvID" Type="Int32" Nullable="false" />
+    <Property Name="CompanyID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="BranchID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Invdate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="InvType" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="InvCurr" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Inv_CurrRate" Type="Decimal" Precision="10" Scale="4" />
+    <Property Name="Inv_CurrAmount" Type="Decimal" Precision="16" Scale="4" />
+    <Property Name="Inv_LocalAmount" Type="Decimal" Precision="16" Scale="4" />
+    <Property Name="Inv_Qty" Type="Decimal" Precision="16" Scale="4" />
+    <Property Name="Inv_Lines" Type="Int32" />
+    <Property Name="CustomerID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="returnorder" Type="Int32" />
+    <Property Name="closure_date" Type="DateTime" Precision="3" />
+    <Property Name="remarks" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Portal_InvID" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="Portal_InvLink" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="Portal_syncstatus" Type="Int32" />
+    <Property Name="rowcreateddate" Type="DateTime" Precision="3" />
+    <Property Name="MachineIP" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="MachineUser" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Machinename" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="userid" Type="Int32" />
+    <Property Name="rowupdateddate" Type="DateTime" Precision="0" />
+    <Property Name="MachineIPupdated" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="MachineUserupdated" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="MachineNameupdated" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="useridupdated" Type="Int32" />
+    <Property Name="iabc" Type="Int32" />
+    <Property Name="idef" Type="Int32" />
+    <Property Name="ighi" Type="Int32" />
+    <Property Name="ijkl" Type="Int32" />
+    <Property Name="Sabc" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="Sdef" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="Sghi" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="Sjkl" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="Dabc" Type="DateTime" Precision="0" />
+    <Property Name="Ddef" Type="DateTime" Precision="0" />
+    <Property Name="Dghi" Type="DateTime" Precision="0" />
+    <Property Name="Djkl" Type="DateTime" Precision="0" />
+    <Property Name="DECabc" Type="Decimal" Precision="10" Scale="4" />
+    <Property Name="DECdef" Type="Decimal" Precision="10" Scale="4" />
+    <Property Name="DECghi" Type="Decimal" Precision="10" Scale="4" />
+    <Property Name="DECjkl" Type="Decimal" Precision="10" Scale="4" />
+    <NavigationProperty Name="Invoice_Details" Relationship="Self.FK_Invoice_Details_Invoice" FromRole="Invoice" ToRole="Invoice_Details" />
+    <NavigationProperty Name="Invoice_error" Relationship="Self.FK_Invoice_error_Invoice" FromRole="Invoice" ToRole="Invoice_error" />
+  </EntityType>
+  <EntityType Name="Invoice_Details">
+    <Key>
+      <PropertyRef Name="InvID" />
+      <PropertyRef Name="CompanyID" />
+      <PropertyRef Name="BranchID" />
+      <PropertyRef Name="linenum" />
+    </Key>
+    <Property Name="InvID" Type="Int32" Nullable="false" />
+    <Property Name="CompanyID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="BranchID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="linenum" Type="Int32" Nullable="false" />
+    <Property Name="ItemID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="itemserial" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="item_karat" Type="Int32" />
+    <Property Name="unit_code" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="item_qty" Type="Decimal" Precision="10" Scale="4" />
+    <Property Name="sale_price" Type="Decimal" Precision="10" Scale="4" />
+    <Property Name="line_price" Type="Decimal" Precision="10" Scale="4" />
+    <Property Name="disc_prc" Type="Decimal" Precision="4" Scale="2" />
+    <Property Name="disc_value" Type="Decimal" Precision="10" Scale="4" />
+    <Property Name="line_Amount_PreTax" Type="Decimal" Precision="10" Scale="4" />
+    <Property Name="taxes_count" Type="Int32" />
+    <Property Name="taxes_totval" Type="Decimal" Precision="10" Scale="4" />
+    <Property Name="LineAmount" Type="Decimal" Precision="10" Scale="4" />
+    <Property Name="Portal_InvID" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="Inv_status" Type="Int32" />
+    <Property Name="rowcreateddate" Type="DateTime" Precision="3" />
+    <Property Name="MachineIP" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="MachineUser" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="MachineName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="userid" Type="Int32" />
+    <Property Name="iabc" Type="Int32" />
+    <Property Name="idef" Type="Int32" />
+    <Property Name="ighi" Type="Int32" />
+    <Property Name="ijkl" Type="Int32" />
+    <Property Name="Sabc" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="Sdef" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="Sghi" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="Sjkl" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="Dabc" Type="DateTime" Precision="0" />
+    <Property Name="Ddef" Type="DateTime" Precision="0" />
+    <Property Name="Dghi" Type="DateTime" Precision="0" />
+    <Property Name="Djkl" Type="DateTime" Precision="0" />
+    <Property Name="DECabc" Type="Decimal" Precision="10" Scale="4" />
+    <Property Name="DECdef" Type="Decimal" Precision="10" Scale="4" />
+    <Property Name="DECghi" Type="Decimal" Precision="10" Scale="4" />
+    <Property Name="DECjkl" Type="Decimal" Precision="10" Scale="4" />
+    <NavigationProperty Name="Invoice" Relationship="Self.FK_Invoice_Details_Invoice" FromRole="Invoice_Details" ToRole="Invoice" />
+    <NavigationProperty Name="Invoice_Taxes" Relationship="Self.FK_Invoice_Taxes_Invoice_Details" FromRole="Invoice_Details" ToRole="Invoice_Taxes" />
+  </EntityType>
+  <EntityType Name="Invoice_error">
+    <Key>
+      <PropertyRef Name="InvID" />
+      <PropertyRef Name="CompanyID" />
+      <PropertyRef Name="BranchID" />
+    </Key>
+    <Property Name="InvID" Type="Int32" Nullable="false" />
+    <Property Name="CompanyID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="BranchID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="linenum" Type="Int32" Nullable="false" />
+    <Property Name="ItemID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="itemserial" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="item_karat" Type="Int32" />
+    <Property Name="unit_code" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="item_qty" Type="Decimal" Precision="10" Scale="4" />
+    <Property Name="sale_price" Type="Decimal" Precision="10" Scale="4" />
+    <Property Name="line_price" Type="Decimal" Precision="10" Scale="4" />
+    <Property Name="disc_prc" Type="Decimal" Precision="4" Scale="2" />
+    <Property Name="disc_value" Type="Decimal" Precision="10" Scale="4" />
+    <Property Name="line_Amount_PreTax" Type="Decimal" Precision="10" Scale="4" />
+    <Property Name="taxes_count" Type="Int32" />
+    <Property Name="taxes_totval" Type="Decimal" Precision="10" Scale="4" />
+    <Property Name="LineAmount" Type="Decimal" Precision="10" Scale="4" />
+    <Property Name="Portal_InvID" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="Inv_status" Type="Int32" />
+    <Property Name="error_remarks" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="rowcreateddate" Type="DateTime" Precision="3" />
+    <Property Name="MachineIP" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="MachineUser" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="MachineName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="userid" Type="Int32" />
+    <Property Name="iabc" Type="Int32" />
+    <Property Name="idef" Type="Int32" />
+    <Property Name="ighi" Type="Int32" />
+    <Property Name="ijkl" Type="Int32" />
+    <Property Name="Sabc" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="Sdef" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="Sghi" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="Sjkl" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="Dabc" Type="DateTime" Precision="0" />
+    <Property Name="Ddef" Type="DateTime" Precision="0" />
+    <Property Name="Dghi" Type="DateTime" Precision="0" />
+    <Property Name="Djkl" Type="DateTime" Precision="0" />
+    <Property Name="DECabc" Type="Decimal" Precision="10" Scale="4" />
+    <Property Name="DECdef" Type="Decimal" Precision="10" Scale="4" />
+    <Property Name="DECghi" Type="Decimal" Precision="10" Scale="4" />
+    <Property Name="DECjkl" Type="Decimal" Precision="10" Scale="4" />
+    <Property Name="rowguid" Type="Guid" Nullable="false" />
+    <NavigationProperty Name="Invoice" Relationship="Self.FK_Invoice_error_Invoice" FromRole="Invoice_error" ToRole="Invoice" />
+  </EntityType>
+  <EntityType Name="Invoice_Taxes">
+    <Key>
+      <PropertyRef Name="InvID" />
+      <PropertyRef Name="CompanyID" />
+      <PropertyRef Name="BranchID" />
+      <PropertyRef Name="linenum" />
+      <PropertyRef Name="TaxID" />
+    </Key>
+    <Property Name="InvID" Type="Int32" Nullable="false" />
+    <Property Name="CompanyID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="BranchID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="linenum" Type="Int32" Nullable="false" />
+    <Property Name="TaxID" Type="Int32" Nullable="false" />
+    <Property Name="TaxVal" Type="Decimal" Precision="10" Scale="4" />
+    <Property Name="active" Type="Int32" />
+    <Property Name="rowcreateddate" Type="DateTime" Precision="0" />
+    <Property Name="MachineIP" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="MachineName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="MachineUser" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="userid" Type="Int32" />
+    <Property Name="rowupdateddate" Type="DateTime" Precision="0" />
+    <Property Name="Machineipupdated" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Machinenameupdated" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Machineuserupdated" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="useridupdated" Type="Int32" />
+    <Property Name="iabc" Type="Int32" />
+    <Property Name="idef" Type="Int32" />
+    <Property Name="ighi" Type="Int32" />
+    <Property Name="ijkl" Type="Int32" />
+    <Property Name="Sabc" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="Sdef" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="Sghi" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="Sjkl" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="Dabc" Type="DateTime" Precision="0" />
+    <Property Name="Ddef" Type="DateTime" Precision="0" />
+    <Property Name="Dghi" Type="DateTime" Precision="0" />
+    <Property Name="Djkl" Type="DateTime" Precision="0" />
+    <Property Name="DECabc" Type="Decimal" Precision="10" Scale="4" />
+    <Property Name="DECdef" Type="Decimal" Precision="10" Scale="4" />
+    <Property Name="DECghi" Type="Decimal" Precision="10" Scale="4" />
+    <Property Name="DECjkl" Type="Decimal" Precision="10" Scale="4" />
+    <NavigationProperty Name="Invoice_Details" Relationship="Self.FK_Invoice_Taxes_Invoice_Details" FromRole="Invoice_Taxes" ToRole="Invoice_Details" />
+    <NavigationProperty Name="Tax" Relationship="Self.FK_Invoice_Taxes_Taxes" FromRole="Invoice_Taxes" ToRole="Taxes" />
+  </EntityType>
+  <EntityType Name="ItemGroup">
+    <Key>
+      <PropertyRef Name="ItemGroupID" />
+    </Key>
+    <Property Name="ItemGroupID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="ItemGroupname" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="active" Type="Int32" />
+    <Property Name="rowcreateddate" Type="DateTime" Precision="0" />
+    <Property Name="MachineIP" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="MachineName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="MachineUser" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="userid" Type="Int32" />
+    <Property Name="rowupdateddate" Type="DateTime" Precision="0" />
+    <Property Name="Machineipupdated" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Machinenameupdated" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Machineuserupdated" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="useridupdated" Type="Int32" />
+    <Property Name="iabc" Type="Int32" />
+    <Property Name="idef" Type="Int32" />
+    <Property Name="ighi" Type="Int32" />
+    <Property Name="ijkl" Type="Int32" />
+    <Property Name="Sabc" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="Sdef" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="Sghi" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="Sjkl" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="Dabc" Type="DateTime" Precision="0" />
+    <Property Name="Ddef" Type="DateTime" Precision="0" />
+    <Property Name="Dghi" Type="DateTime" Precision="0" />
+    <Property Name="Djkl" Type="DateTime" Precision="0" />
+    <Property Name="DECabc" Type="Decimal" Precision="10" Scale="4" />
+    <Property Name="DECdef" Type="Decimal" Precision="10" Scale="4" />
+    <Property Name="DECghi" Type="Decimal" Precision="10" Scale="4" />
+    <Property Name="DECjkl" Type="Decimal" Precision="10" Scale="4" />
+    <NavigationProperty Name="Items" Relationship="Self.FK_Items_ItemGroup" FromRole="ItemGroup" ToRole="Items" />
+  </EntityType>
+  <EntityType Name="Item">
+    <Key>
+      <PropertyRef Name="ItemID" />
+    </Key>
+    <Property Name="ItemID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="CompanyID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="itemname" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="itemname_ENG" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="itemunitcode" Type="Int32" />
+    <Property Name="ItemTaxCode" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="TaxCodeType" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="ItemTaxUnit" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="itemprice" Type="Decimal" Precision="10" Scale="4" />
+    <Property Name="itemcost" Type="Decimal" Precision="10" Scale="4" />
+    <Property Name="itemgroupid" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="itembarcode" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="main_vendor" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="active" Type="Int32" />
+    <Property Name="rowcreateddate" Type="DateTime" Precision="0" />
+    <Property Name="MachineIP" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="MachineName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="MachineUser" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="userid" Type="Int32" />
+    <Property Name="rowupdateddate" Type="DateTime" Precision="0" />
+    <Property Name="Machineipupdated" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Machinenameupdated" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Machineuserupdated" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="useridupdated" Type="Int32" />
+    <Property Name="iabc" Type="Int32" />
+    <Property Name="idef" Type="Int32" />
+    <Property Name="ighi" Type="Int32" />
+    <Property Name="ijkl" Type="Int32" />
+    <Property Name="Sabc" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="Sdef" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="Sghi" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="Sjkl" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="Dabc" Type="DateTime" Precision="0" />
+    <Property Name="Ddef" Type="DateTime" Precision="0" />
+    <Property Name="Dghi" Type="DateTime" Precision="0" />
+    <Property Name="Djkl" Type="DateTime" Precision="0" />
+    <Property Name="DECabc" Type="Decimal" Precision="10" Scale="4" />
+    <Property Name="DECdef" Type="Decimal" Precision="10" Scale="4" />
+    <Property Name="DECghi" Type="Decimal" Precision="10" Scale="4" />
+    <Property Name="DECjkl" Type="Decimal" Precision="10" Scale="4" />
+    <NavigationProperty Name="ItemGroup" Relationship="Self.FK_Items_ItemGroup" FromRole="Items" ToRole="ItemGroup" />
+    <NavigationProperty Name="ItemUnit" Relationship="Self.FK_Items_ItemUnit" FromRole="Items" ToRole="ItemUnit" />
+    <NavigationProperty Name="ItemTaxes" Relationship="Self.FK_ItemTaxes_Items" FromRole="Items" ToRole="ItemTaxes" />
+  </EntityType>
+  <EntityType Name="ItemTax">
+    <Key>
+      <PropertyRef Name="itemtaxID" />
+    </Key>
+    <Property Name="itemtaxID" Type="Int32" Nullable="false" />
+    <Property Name="itemID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="taxID" Type="Int32" />
+    <Property Name="itemtaxspecval" Type="Decimal" Precision="10" Scale="4" />
+    <Property Name="active" Type="Int32" />
+    <Property Name="rowcreateddate" Type="DateTime" Precision="0" />
+    <Property Name="MachineIP" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="MachineName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="MachineUser" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="userid" Type="Int32" />
+    <Property Name="rowupdateddate" Type="DateTime" Precision="0" />
+    <Property Name="Machineipupdated" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Machinenameupdated" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Machineuserupdated" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="useridupdated" Type="Int32" />
+    <NavigationProperty Name="Item" Relationship="Self.FK_ItemTaxes_Items" FromRole="ItemTaxes" ToRole="Items" />
+    <NavigationProperty Name="Tax" Relationship="Self.FK_ItemTaxes_Taxes" FromRole="ItemTaxes" ToRole="Taxes" />
+  </EntityType>
+  <EntityType Name="ItemUnit">
+    <Key>
+      <PropertyRef Name="itemunitcode" />
+    </Key>
+    <Property Name="itemunitcode" Type="Int32" Nullable="false" />
+    <Property Name="itemunitname" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="active" Type="Int32" />
+    <Property Name="rowcreateddate" Type="DateTime" Precision="0" />
+    <Property Name="MachineIP" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="MachineName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="MachineUser" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="userid" Type="Int32" />
+    <Property Name="rowupdateddate" Type="DateTime" Precision="0" />
+    <Property Name="Machineipupdated" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Machinenameupdated" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Machineuserupdated" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="useridupdated" Type="Int32" />
+    <NavigationProperty Name="Items" Relationship="Self.FK_Items_ItemUnit" FromRole="ItemUnit" ToRole="Items" />
+  </EntityType>
+  <EntityType Name="pos_trans">
+    <Key>
+      <PropertyRef Name="trans_id" />
+      <PropertyRef Name="store_code" />
+    </Key>
+    <Property Name="trans_id" Type="Int32" Nullable="false" />
+    <Property Name="store_code" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="trans_date" Type="DateTime" Precision="3" />
+    <Property Name="client_code" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="trans_total" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="remarks" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="trans_total_21" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="trans_toatl_18" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="canceled" Type="Int32" />
+    <Property Name="syncstatus" Type="Int32" />
+    <Property Name="inventsiteid" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="axsync" Type="Int32" />
+    <Property Name="returnorder" Type="Int32" />
+    <Property Name="closure_date" Type="DateTime" Precision="3" />
+    <Property Name="rowcreateddate" Type="DateTime" Precision="3" />
+    <Property Name="total_weight" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="total_line" Type="Int32" />
+    <Property Name="MachineIP" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="MachineUser" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Machinename" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="userid" Type="Int32" />
+    <Property Name="MachineIPupdated" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="MachineUserupdated" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="MachineNameupdated" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="useridupdated" Type="Int32" />
+    <Property Name="iabc" Type="Int32" />
+    <Property Name="idef" Type="Int32" />
+    <Property Name="ighi" Type="Int32" />
+    <Property Name="ijkl" Type="Int32" />
+    <Property Name="Sabc" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="Sdef" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="Sghi" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="Sjkl" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="Dabc" Type="DateTime" Precision="0" />
+    <Property Name="Ddef" Type="DateTime" Precision="0" />
+    <Property Name="Dghi" Type="DateTime" Precision="0" />
+    <Property Name="Djkl" Type="DateTime" Precision="0" />
+    <Property Name="DECabc" Type="Decimal" Precision="32" Scale="16" />
+    <Property Name="DECdef" Type="Decimal" Precision="32" Scale="16" />
+    <Property Name="DECghi" Type="Decimal" Precision="32" Scale="16" />
+    <Property Name="DECjkl" Type="Decimal" Precision="32" Scale="16" />
+    <NavigationProperty Name="pos_trans_grid" Relationship="Self.FK_pos_trans_grid_pos_trans" FromRole="pos_trans" ToRole="pos_trans_grid" />
+  </EntityType>
+  <EntityType Name="pos_trans_grid">
+    <Key>
+      <PropertyRef Name="trans_id" />
+      <PropertyRef Name="linenum" />
+      <PropertyRef Name="store_code" />
+    </Key>
+    <Property Name="trans_id" Type="Int32" Nullable="false" />
+    <Property Name="linenum" Type="Int32" Nullable="false" />
+    <Property Name="store_code" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="itemname" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="unit_code" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="item_weight" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="sale_price" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="slae_cost" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="trans_date" Type="DateTime" Precision="3" />
+    <Property Name="item_sold" Type="Int32" />
+    <Property Name="syncstatus" Type="Int32" />
+    <Property Name="inventdimid" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="parmitemid" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="stockid" Type="Int64" />
+    <Property Name="itemserial" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="rowcreateddate" Type="DateTime" Precision="3" />
+    <Property Name="tax" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="taxrate" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="taxrates" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="taxes" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="MachineIP" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="MachineUser" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="MachineName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="userid" Type="Int32" />
+    <Property Name="iabc" Type="Int32" />
+    <Property Name="idef" Type="Int32" />
+    <Property Name="ighi" Type="Int32" />
+    <Property Name="ijkl" Type="Int32" />
+    <Property Name="Sabc" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="Sdef" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="Sghi" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="Sjkl" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="Dabc" Type="DateTime" Precision="0" />
+    <Property Name="Ddef" Type="DateTime" Precision="0" />
+    <Property Name="Dghi" Type="DateTime" Precision="0" />
+    <Property Name="Djkl" Type="DateTime" Precision="0" />
+    <Property Name="DECabc" Type="Decimal" Precision="32" Scale="16" />
+    <Property Name="DECdef" Type="Decimal" Precision="32" Scale="16" />
+    <Property Name="DECghi" Type="Decimal" Precision="32" Scale="16" />
+    <Property Name="DECjkl" Type="Decimal" Precision="32" Scale="16" />
+    <NavigationProperty Name="pos_trans" Relationship="Self.FK_pos_trans_grid_pos_trans" FromRole="pos_trans_grid" ToRole="pos_trans" />
+  </EntityType>
+  <EntityType Name="purchline">
+    <Key>
+      <PropertyRef Name="purchid" />
+      <PropertyRef Name="purchitemserial" />
+    </Key>
+    <Property Name="purchid" Type="Int64" Nullable="false" />
+    <Property Name="purchitemserial" Type="Int64" Nullable="false" />
+    <Property Name="rowcreateddate" Type="DateTime" Precision="0" />
+    <Property Name="itemid" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="itemweight" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="purchitemserialORA" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="purchitemserialAX" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="stockid" Type="Int64" />
+    <Property Name="MachineIP" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="MachineUser" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="MachineName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="userid" Type="Int32" />
+    <Property Name="iabc" Type="Int32" />
+    <Property Name="idef" Type="Int32" />
+    <Property Name="ighi" Type="Int32" />
+    <Property Name="ijkl" Type="Int32" />
+    <Property Name="Sabc" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="Sdef" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="Sghi" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="Sjkl" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="Dabc" Type="DateTime" Precision="0" />
+    <Property Name="Ddef" Type="DateTime" Precision="0" />
+    <Property Name="Dghi" Type="DateTime" Precision="0" />
+    <Property Name="Djkl" Type="DateTime" Precision="0" />
+    <Property Name="DECabc" Type="Decimal" Precision="32" Scale="16" />
+    <Property Name="DECdef" Type="Decimal" Precision="32" Scale="16" />
+    <Property Name="DECghi" Type="Decimal" Precision="32" Scale="16" />
+    <Property Name="DECjkl" Type="Decimal" Precision="32" Scale="16" />
+    <NavigationProperty Name="purchtable" Relationship="Self.FK_purchline_purchtable" FromRole="purchline" ToRole="purchtable" />
+  </EntityType>
+  <EntityType Name="purchtable">
+    <Key>
+      <PropertyRef Name="purchid" />
+    </Key>
+    <Property Name="purchid" Type="Int64" Nullable="false" />
+    <Property Name="purchidax" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="purchidOracle" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Name="purchdateopen" Type="DateTime" Precision="0" />
+    <Property Name="purchdateclose" Type="DateTime" Precision="0" />
+    <Property Name="inventlocationid" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="inventlocationidto" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Name="remarks" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Name="vendorid" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="purchstatus" Type="Int32" />
+    <Property Name="axsync" Type="Int32" />
+    <Property Name="linecount" Type="Int32" />
+    <Property Name="totalweight" Type="Decimal" Precision="32" Scale="16" />
+    <Property Name="empcode" Type="Int32" />
+    <Property Name="returnoder" Type="Int32" />
+    <Property Name="MachineIP" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="MachineUser" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Machinename" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="userid" Type="Int32" />
+    <Property Name="MachineIPupdated" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="MachineUserupdated" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="MachineNameupdated" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="useridupdated" Type="Int32" />
+    <Property Name="rowcreateddate" Type="DateTime" Precision="0" />
+    <Property Name="iabc" Type="Int32" />
+    <Property Name="idef" Type="Int32" />
+    <Property Name="ighi" Type="Int32" />
+    <Property Name="ijkl" Type="Int32" />
+    <Property Name="Sabc" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="Sdef" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="Sghi" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="Sjkl" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="Dabc" Type="DateTime" Precision="0" />
+    <Property Name="Ddef" Type="DateTime" Precision="0" />
+    <Property Name="Dghi" Type="DateTime" Precision="0" />
+    <Property Name="Djkl" Type="DateTime" Precision="0" />
+    <Property Name="DECabc" Type="Decimal" Precision="32" Scale="16" />
+    <Property Name="DECdef" Type="Decimal" Precision="32" Scale="16" />
+    <Property Name="DECghi" Type="Decimal" Precision="32" Scale="16" />
+    <Property Name="DECjkl" Type="Decimal" Precision="32" Scale="16" />
+    <NavigationProperty Name="purchlines" Relationship="Self.FK_purchline_purchtable" FromRole="purchtable" ToRole="purchline" />
+  </EntityType>
+  <EntityType Name="SalesRep">
+    <Key>
+      <PropertyRef Name="SalesRepID" />
+    </Key>
+    <Property Name="SalesRepID" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="SalesRepName" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="SalesRepAddress" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="SalesRepPhones" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="SalesRepSite" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="SalesRepCity" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="SalesRepDesc" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="rowcreateddate" Type="DateTime" Precision="0" />
+    <Property Name="MachineIP" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="MachineName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="MachineUser" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="userid" Type="Int32" />
+    <Property Name="Machineipupdated" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Machinenameupdated" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Machineuserupdated" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="useridupdated" Type="Int32" />
+    <Property Name="iabc" Type="Int32" />
+    <Property Name="idef" Type="Int32" />
+    <Property Name="ighi" Type="Int32" />
+    <Property Name="ijkl" Type="Int32" />
+    <Property Name="Sabc" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="Sdef" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="Sghi" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="Sjkl" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="Dabc" Type="DateTime" Precision="0" />
+    <Property Name="Ddef" Type="DateTime" Precision="0" />
+    <Property Name="Dghi" Type="DateTime" Precision="0" />
+    <Property Name="Djkl" Type="DateTime" Precision="0" />
+    <Property Name="DECabc" Type="Decimal" Precision="10" Scale="4" />
+    <Property Name="DECdef" Type="Decimal" Precision="10" Scale="4" />
+    <Property Name="DECghi" Type="Decimal" Precision="10" Scale="4" />
+    <Property Name="DECjkl" Type="Decimal" Precision="10" Scale="4" />
+    <NavigationProperty Name="SalesRepComms" Relationship="Self.FK_SalesRepComm_SalesRep" FromRole="SalesRep" ToRole="SalesRepComm" />
+    <NavigationProperty Name="SalesRepTargets" Relationship="Self.FK_SalesRepTarget_SalesRep" FromRole="SalesRep" ToRole="SalesRepTarget" />
+  </EntityType>
+  <EntityType Name="SalesRepComm">
+    <Key>
+      <PropertyRef Name="SalesRepID" />
+      <PropertyRef Name="SalesFromDate" />
+      <PropertyRef Name="SalesCommLinenum" />
+    </Key>
+    <Property Name="SalesRepID" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="SalesFromDate" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="SalesToDate" Type="DateTime" Precision="0" />
+    <Property Name="SalesCommLinenum" Type="Int32" Nullable="false" />
+    <Property Name="SalesFromValue" Type="Decimal" Precision="10" Scale="2" />
+    <Property Name="SalesToValue" Type="Decimal" Precision="10" Scale="2" />
+    <Property Name="SalesCommPrc" Type="Decimal" Precision="10" Scale="4" />
+    <Property Name="Remarks" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="rowcreateddate" Type="DateTime" Precision="0" />
+    <Property Name="MachineIP" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="MachineName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="MachineUser" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="userid" Type="Int32" />
+    <Property Name="Machineipupdated" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Machinenameupdated" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Machineuserupdated" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="useridupdated" Type="Int32" />
+    <Property Name="iabc" Type="Int32" />
+    <Property Name="idef" Type="Int32" />
+    <Property Name="ighi" Type="Int32" />
+    <Property Name="ijkl" Type="Int32" />
+    <Property Name="Sabc" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="Sdef" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="Sghi" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="Sjkl" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="Dabc" Type="DateTime" Precision="0" />
+    <Property Name="Ddef" Type="DateTime" Precision="0" />
+    <Property Name="Dghi" Type="DateTime" Precision="0" />
+    <Property Name="Djkl" Type="DateTime" Precision="0" />
+    <Property Name="DECabc" Type="Decimal" Precision="10" Scale="4" />
+    <Property Name="DECdef" Type="Decimal" Precision="10" Scale="4" />
+    <Property Name="DECghi" Type="Decimal" Precision="10" Scale="4" />
+    <Property Name="DECjkl" Type="Decimal" Precision="10" Scale="4" />
+    <NavigationProperty Name="SalesRep" Relationship="Self.FK_SalesRepComm_SalesRep" FromRole="SalesRepComm" ToRole="SalesRep" />
+  </EntityType>
+  <EntityType Name="SalesRepTarget">
+    <Key>
+      <PropertyRef Name="SalesRepID" />
+      <PropertyRef Name="SalesFromDate" />
+      <PropertyRef Name="SalesTargetLinenum" />
+    </Key>
+    <Property Name="SalesRepID" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="SalesFromDate" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="SalesToDate" Type="DateTime" Precision="0" />
+    <Property Name="SalesTargetLinenum" Type="Int32" Nullable="false" />
+    <Property Name="SalesTargetValue" Type="Decimal" Precision="10" Scale="2" />
+    <Property Name="Remarks" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="rowcreateddate" Type="DateTime" Precision="0" />
+    <Property Name="MachineIP" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="MachineName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="MachineUser" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="userid" Type="Int32" />
+    <Property Name="Machineipupdated" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Machinenameupdated" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Machineuserupdated" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="useridupdated" Type="Int32" />
+    <Property Name="iabc" Type="Int32" />
+    <Property Name="idef" Type="Int32" />
+    <Property Name="ighi" Type="Int32" />
+    <Property Name="ijkl" Type="Int32" />
+    <Property Name="Sabc" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="Sdef" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="Sghi" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="Sjkl" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="Dabc" Type="DateTime" Precision="0" />
+    <Property Name="Ddef" Type="DateTime" Precision="0" />
+    <Property Name="Dghi" Type="DateTime" Precision="0" />
+    <Property Name="Djkl" Type="DateTime" Precision="0" />
+    <Property Name="DECabc" Type="Decimal" Precision="10" Scale="4" />
+    <Property Name="DECdef" Type="Decimal" Precision="10" Scale="4" />
+    <Property Name="DECghi" Type="Decimal" Precision="10" Scale="4" />
+    <Property Name="DECjkl" Type="Decimal" Precision="10" Scale="4" />
+    <NavigationProperty Name="SalesRep" Relationship="Self.FK_SalesRepTarget_SalesRep" FromRole="SalesRepTarget" ToRole="SalesRep" />
+  </EntityType>
+  <EntityType Name="SecAudit">
+    <Key>
+      <PropertyRef Name="SecActionID" />
+    </Key>
+    <Property Name="SecActionID" Type="Int64" Nullable="false" />
+    <Property Name="SecAction_Date" Type="DateTime" Precision="0" />
+    <Property Name="SecAction" Type="Byte" />
+    <Property Name="IsAdmin" Type="Byte" />
+    <Property Name="UserLocationID" Type="Int32" />
+    <Property Name="FunctionGroupID" Type="Int32" />
+    <Property Name="FunctionID" Type="Int32" />
+    <Property Name="userid" Type="Int32" />
+    <Property Name="MachineIP" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="MachineName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="MachineUser" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="rowcreateddate" Type="DateTime" Precision="0" />
+  </EntityType>
+  <EntityType Name="STOCK">
+    <Key>
+      <PropertyRef Name="STOCKID" />
+    </Key>
+    <Property Name="STOCKID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="itemserial" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="itemweight" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="itemgroupid" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="itemunitcode" Type="Int32" />
+    <Property Name="InventLocationID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="BranchID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="parmitemid" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Suspend" Type="Int32" />
+    <Property Name="lastsyncstatus" Type="Int32" />
+    <Property Name="lastInvLoc" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="lastdate" Type="DateTime" Precision="3" />
+    <Property Name="INtransID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="INdate" Type="DateTime" Precision="3" />
+    <Property Name="OutTrans" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="OutDate" Type="DateTime" Precision="3" />
+    <Property Name="oldstockid" Type="Int64" />
+    <Property Name="stockidold" Type="Int64" />
+    <Property Name="reservetype" Type="Int32" />
+    <Property Name="reserveid" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="MachineIP" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="MachineName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="MachineUser" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="userid" Type="Int32" />
+    <Property Name="Machineipupdated" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Machinenameupdated" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Machineuserupdated" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="useridupdated" Type="Int32" />
+    <Property Name="rowcreateddate" Type="DateTime" Precision="0" />
+    <Property Name="iabc" Type="Int32" />
+    <Property Name="idef" Type="Int32" />
+    <Property Name="ighi" Type="Int32" />
+    <Property Name="ijkl" Type="Int32" />
+    <Property Name="Sabc" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="Sdef" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="Sghi" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="Sjkl" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="Dabc" Type="DateTime" Precision="0" />
+    <Property Name="Ddef" Type="DateTime" Precision="0" />
+    <Property Name="Dghi" Type="DateTime" Precision="0" />
+    <Property Name="Djkl" Type="DateTime" Precision="0" />
+    <Property Name="DECabc" Type="Decimal" Precision="32" Scale="16" />
+    <Property Name="DECdef" Type="Decimal" Precision="32" Scale="16" />
+    <Property Name="DECghi" Type="Decimal" Precision="32" Scale="16" />
+    <Property Name="DECjkl" Type="Decimal" Precision="32" Scale="16" />
+    <NavigationProperty Name="InventLocation" Relationship="Self.FK_STOCK_InventLocation" FromRole="STOCK" ToRole="InventLocation" />
+  </EntityType>
+  <EntityType Name="StockDaily">
+    <Key>
+      <PropertyRef Name="inventlocatioinid" />
+      <PropertyRef Name="stockdate" />
+    </Key>
+    <Property Name="inventlocatioinid" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="stockdate" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="itemweight21" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="itemweight18" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="itemcount21" Type="Int32" />
+    <Property Name="itemcount18" Type="Int32" />
+    <Property Name="salesclosed" Type="Byte" />
+    <Property Name="salesopen" Type="Byte" />
+    <Property Name="transclosed" Type="Byte" />
+    <Property Name="transopen" Type="Byte" />
+    <Property Name="returnclosed" Type="Byte" />
+    <Property Name="returnopen" Type="Byte" />
+    <Property Name="itemweight21P" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="itemweight18P" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="itemcount21P" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="itemcount18P" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="MachineIP" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="MachineName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="MachineUser" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="userid" Type="Int32" />
+    <Property Name="Machineipupdated" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Machinenameupdated" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Machineuserupdated" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="useridupdated" Type="Int32" />
+    <Property Name="rowcreateddate" Type="DateTime" Precision="0" />
+    <Property Name="iabc" Type="Int32" />
+    <Property Name="idef" Type="Int32" />
+    <Property Name="ighi" Type="Int32" />
+    <Property Name="ijkl" Type="Int32" />
+    <Property Name="Sabc" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="Sdef" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="Sghi" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="Sjkl" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="Dabc" Type="DateTime" Precision="0" />
+    <Property Name="Ddef" Type="DateTime" Precision="0" />
+    <Property Name="Dghi" Type="DateTime" Precision="0" />
+    <Property Name="Djkl" Type="DateTime" Precision="0" />
+    <Property Name="DECabc" Type="Decimal" Precision="32" Scale="16" />
+    <Property Name="DECdef" Type="Decimal" Precision="32" Scale="16" />
+    <Property Name="DECghi" Type="Decimal" Precision="32" Scale="16" />
+    <Property Name="DECjkl" Type="Decimal" Precision="32" Scale="16" />
+    <NavigationProperty Name="InventLocation" Relationship="Self.FK_StockDaily_InventLocation" FromRole="StockDaily" ToRole="InventLocation" />
+  </EntityType>
+  <EntityType Name="sync">
+    <Key>
+      <PropertyRef Name="syn_id" />
+    </Key>
+    <Property Name="syn_id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CompanyID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="sync_date" Type="DateTime" Precision="0" />
+    <Property Name="sync_status" Type="Int32" />
+    <Property Name="sync_ip" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+    <Property Name="sync_user" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="TotalLocalAmount" Type="Decimal" Precision="32" Scale="4" />
+    <Property Name="TotalQty" Type="Decimal" Precision="32" Scale="4" />
+    <Property Name="TotalLines" Type="Int32" />
+    <Property Name="Invcount" Type="Int32" />
+    <Property Name="InvAccepted" Type="Int32" />
+    <Property Name="InvRejected" Type="Int32" />
+  </EntityType>
+  <EntityType Name="sync_details">
+    <Key>
+      <PropertyRef Name="syn_id" />
+      <PropertyRef Name="sync_details_linenum" />
+    </Key>
+    <Property Name="syn_id" Type="Int64" Nullable="false" />
+    <Property Name="sync_details_linenum" Type="Int64" Nullable="false" />
+    <Property Name="InvID" Type="Int32" />
+    <Property Name="CompanyID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="BranchID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Invdate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="InvType" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="InvCurr" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Inv_CurrRate" Type="Decimal" Precision="10" Scale="4" />
+    <Property Name="Inv_CurrAmount" Type="Decimal" Precision="16" Scale="4" />
+    <Property Name="Inv_LocalAmount" Type="Decimal" Precision="16" Scale="4" />
+    <Property Name="Inv_Qty" Type="Decimal" Precision="16" Scale="4" />
+    <Property Name="Inv_Lines" Type="Int32" />
+    <Property Name="CustomerID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Custname" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="Custname_ENG" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="CustCategory" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="Cust_TaxID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Cust_TaxType" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="Cust_TaxName" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="Cust_CountryApr" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Cust_Countryname" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="Cust_City" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="Cust_Street" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="Cust_Building" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="Cust_PostNo" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="linenum" Type="Int32" Nullable="false" />
+    <Property Name="ItemID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="itemname" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="itemname_ENG" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="ItemTaxCode" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="TaxCodeType" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="ItemTaxUnit" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="itemqty" Type="Decimal" Precision="10" Scale="4" />
+    <Property Name="itemprice" Type="Decimal" Precision="10" Scale="4" />
+    <Property Name="itemDiscPrc" Type="Decimal" Precision="10" Scale="4" />
+    <Property Name="itemAmount" Type="Decimal" Precision="10" Scale="4" />
+    <Property Name="itemTaxAmount" Type="Decimal" Precision="10" Scale="4" />
+    <Property Name="PortalInvID" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="PortalInvlink" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="Inv_portal_status" Type="Int32" />
+    <Property Name="IsReuploaded" Type="Int32" />
+    <Property Name="Reuploaddate" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="sync_taxes">
+    <Key>
+      <PropertyRef Name="syn_id" />
+      <PropertyRef Name="sync_details_linenum" />
+      <PropertyRef Name="sync_taxes_linenum" />
+    </Key>
+    <Property Name="syn_id" Type="Int64" Nullable="false" />
+    <Property Name="sync_details_linenum" Type="Int64" Nullable="false" />
+    <Property Name="sync_taxes_linenum" Type="Int32" Nullable="false" />
+    <Property Name="InvID" Type="Int32" Nullable="false" />
+    <Property Name="CompanyID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="BranchID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="linenum" Type="Int32" Nullable="false" />
+    <Property Name="TaxID" Type="Int32" Nullable="false" />
+    <Property Name="TaxVal" Type="Decimal" Precision="10" Scale="4" />
+  </EntityType>
+  <EntityType Name="sysdiagram">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="principal_id" Type="Int32" Nullable="false" />
+    <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="version" Type="Int32" />
+    <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="sysversionaction">
+    <Key>
+      <PropertyRef Name="actionid" />
+    </Key>
+    <Property Name="actionid" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="updateid" Type="Int32" />
+    <Property Name="rowcreateddate" Type="DateTime" Precision="3" />
+    <Property Name="userip" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="MachineIP" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="MachineName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="MachineUser" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="userid" Type="Int32" />
+    <Property Name="Machineipupdated" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Machinenameupdated" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Machineuserupdated" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="useridupdated" Type="Int32" />
+    <Property Name="iabc" Type="Int32" />
+    <Property Name="idef" Type="Int32" />
+    <Property Name="ighi" Type="Int32" />
+    <Property Name="ijkl" Type="Int32" />
+    <Property Name="Sabc" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="Sdef" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="Sghi" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="Sjkl" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="Dabc" Type="DateTime" Precision="0" />
+    <Property Name="Ddef" Type="DateTime" Precision="0" />
+    <Property Name="Dghi" Type="DateTime" Precision="0" />
+    <Property Name="Djkl" Type="DateTime" Precision="0" />
+    <Property Name="DECabc" Type="Decimal" Precision="10" Scale="4" />
+    <Property Name="DECdef" Type="Decimal" Precision="10" Scale="4" />
+    <Property Name="DECghi" Type="Decimal" Precision="10" Scale="4" />
+    <Property Name="DECjkl" Type="Decimal" Precision="10" Scale="4" />
+  </EntityType>
+  <EntityType Name="sysversionaudit">
+    <Key>
+      <PropertyRef Name="actionid" />
+    </Key>
+    <Property Name="actionid" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="updateid" Type="Int32" />
+    <Property Name="rowcreateddate" Type="DateTime" Precision="3" />
+    <Property Name="userip" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="MachineIP" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="MachineName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="MachineUser" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="userid" Type="Int32" />
+    <Property Name="Machineipupdated" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Machinenameupdated" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Machineuserupdated" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="useridupdated" Type="Int32" />
+    <Property Name="iabc" Type="Int32" />
+    <Property Name="idef" Type="Int32" />
+    <Property Name="ighi" Type="Int32" />
+    <Property Name="ijkl" Type="Int32" />
+    <Property Name="Sabc" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="Sdef" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="Sghi" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="Sjkl" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="Dabc" Type="DateTime" Precision="0" />
+    <Property Name="Ddef" Type="DateTime" Precision="0" />
+    <Property Name="Dghi" Type="DateTime" Precision="0" />
+    <Property Name="Djkl" Type="DateTime" Precision="0" />
+    <Property Name="DECabc" Type="Decimal" Precision="10" Scale="4" />
+    <Property Name="DECdef" Type="Decimal" Precision="10" Scale="4" />
+    <Property Name="DECghi" Type="Decimal" Precision="10" Scale="4" />
+    <Property Name="DECjkl" Type="Decimal" Precision="10" Scale="4" />
+  </EntityType>
+  <EntityType Name="sysversiondetail">
+    <Key>
+      <PropertyRef Name="updatedetailid" />
+    </Key>
+    <Property Name="updateID" Type="Int32" />
+    <Property Name="updatedetailid" Type="Int32" Nullable="false" />
+    <Property Name="filename" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="updatedate" Type="DateTime" Precision="3" />
+    <Property Name="versionbin" Type="Binary" MaxLength="Max" FixedLength="false" />
+    <Property Name="MachineIP" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="MachineName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="MachineUser" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="userid" Type="Int32" />
+    <Property Name="Machineipupdated" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Machinenameupdated" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Machineuserupdated" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="useridupdated" Type="Int32" />
+    <Property Name="rowcreateddate" Type="DateTime" Precision="0" />
+    <Property Name="iabc" Type="Int32" />
+    <Property Name="idef" Type="Int32" />
+    <Property Name="ighi" Type="Int32" />
+    <Property Name="ijkl" Type="Int32" />
+    <Property Name="Sabc" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="Sdef" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="Sghi" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="Sjkl" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="Dabc" Type="DateTime" Precision="0" />
+    <Property Name="Ddef" Type="DateTime" Precision="0" />
+    <Property Name="Dghi" Type="DateTime" Precision="0" />
+    <Property Name="Djkl" Type="DateTime" Precision="0" />
+    <Property Name="DECabc" Type="Decimal" Precision="10" Scale="4" />
+    <Property Name="DECdef" Type="Decimal" Precision="10" Scale="4" />
+    <Property Name="DECghi" Type="Decimal" Precision="10" Scale="4" />
+    <Property Name="DECjkl" Type="Decimal" Precision="10" Scale="4" />
+  </EntityType>
+  <EntityType Name="sysversionLOG">
+    <Key>
+      <PropertyRef Name="actionid" />
+    </Key>
+    <Property Name="actionid" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="updateid" Type="Int32" />
+    <Property Name="rowcreateddate" Type="DateTime" Precision="3" />
+    <Property Name="CompanyID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="userip" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="MachineIP" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="MachineName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="MachineUser" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="userid" Type="Int32" />
+    <Property Name="Machineipupdated" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Machinenameupdated" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Machineuserupdated" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="useridupdated" Type="Int32" />
+    <Property Name="iabc" Type="Int32" />
+    <Property Name="idef" Type="Int32" />
+    <Property Name="ighi" Type="Int32" />
+    <Property Name="ijkl" Type="Int32" />
+    <Property Name="Sabc" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="Sdef" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="Sghi" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="Sjkl" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="Dabc" Type="DateTime" Precision="0" />
+    <Property Name="Ddef" Type="DateTime" Precision="0" />
+    <Property Name="Dghi" Type="DateTime" Precision="0" />
+    <Property Name="Djkl" Type="DateTime" Precision="0" />
+    <Property Name="DECabc" Type="Decimal" Precision="10" Scale="4" />
+    <Property Name="DECdef" Type="Decimal" Precision="10" Scale="4" />
+    <Property Name="DECghi" Type="Decimal" Precision="10" Scale="4" />
+    <Property Name="DECjkl" Type="Decimal" Precision="10" Scale="4" />
+  </EntityType>
+  <EntityType Name="sysversion">
+    <Key>
+      <PropertyRef Name="updateID" />
+    </Key>
+    <Property Name="updateID" Type="Int32" Nullable="false" />
+    <Property Name="updateDate" Type="DateTime" Precision="3" />
+    <Property Name="updatetype" Type="Byte" />
+    <Property Name="MachineIP" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="MachineName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="MachineUser" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="userid" Type="Int32" />
+    <Property Name="Machineipupdated" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Machinenameupdated" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Machineuserupdated" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="useridupdated" Type="Int32" />
+    <Property Name="rowcreateddate" Type="DateTime" Precision="0" />
+    <Property Name="iabc" Type="Int32" />
+    <Property Name="idef" Type="Int32" />
+    <Property Name="ighi" Type="Int32" />
+    <Property Name="ijkl" Type="Int32" />
+    <Property Name="Sabc" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="Sdef" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="Sghi" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="Sjkl" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="Dabc" Type="DateTime" Precision="0" />
+    <Property Name="Ddef" Type="DateTime" Precision="0" />
+    <Property Name="Dghi" Type="DateTime" Precision="0" />
+    <Property Name="Djkl" Type="DateTime" Precision="0" />
+    <Property Name="DECabc" Type="Decimal" Precision="10" Scale="4" />
+    <Property Name="DECdef" Type="Decimal" Precision="10" Scale="4" />
+    <Property Name="DECghi" Type="Decimal" Precision="10" Scale="4" />
+    <Property Name="DECjkl" Type="Decimal" Precision="10" Scale="4" />
+  </EntityType>
+  <EntityType Name="Tax">
+    <Key>
+      <PropertyRef Name="TaxID" />
+    </Key>
+    <Property Name="TaxID" Type="Int32" Nullable="false" />
+    <Property Name="TaxType" Type="Int32" Nullable="false" />
+    <Property Name="ISPrcVal" Type="Int32" Nullable="false" />
+    <Property Name="Tax_Prc" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="Tax_Val" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="TaxName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="TaxDesc" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="active" Type="Int32" />
+    <Property Name="rowcreateddate" Type="DateTime" Precision="0" />
+    <Property Name="MachineIP" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="MachineName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="MachineUser" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="userid" Type="Int32" />
+    <Property Name="rowupdateddate" Type="DateTime" Precision="0" />
+    <Property Name="Machineipupdated" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Machinenameupdated" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Machineuserupdated" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="useridupdated" Type="Int32" />
+    <Property Name="iabc" Type="Int32" />
+    <Property Name="idef" Type="Int32" />
+    <Property Name="ighi" Type="Int32" />
+    <Property Name="ijkl" Type="Int32" />
+    <Property Name="Sabc" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="Sdef" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="Sghi" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="Sjkl" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="Dabc" Type="DateTime" Precision="0" />
+    <Property Name="Ddef" Type="DateTime" Precision="0" />
+    <Property Name="Dghi" Type="DateTime" Precision="0" />
+    <Property Name="Djkl" Type="DateTime" Precision="0" />
+    <Property Name="DECabc" Type="Decimal" Precision="10" Scale="4" />
+    <Property Name="DECdef" Type="Decimal" Precision="10" Scale="4" />
+    <Property Name="DECghi" Type="Decimal" Precision="10" Scale="4" />
+    <Property Name="DECjkl" Type="Decimal" Precision="10" Scale="4" />
+    <NavigationProperty Name="Invoice_Taxes" Relationship="Self.FK_Invoice_Taxes_Taxes" FromRole="Taxes" ToRole="Invoice_Taxes" />
+    <NavigationProperty Name="ItemTaxes" Relationship="Self.FK_ItemTaxes_Taxes" FromRole="Taxes" ToRole="ItemTaxes" />
+  </EntityType>
+  <EntityType Name="UserLocation">
+    <Key>
+      <PropertyRef Name="UserLocationID" />
+    </Key>
+    <Property Name="UserLocationID" Type="Int32" Nullable="false" />
+    <Property Name="userid" Type="Int32" Nullable="false" />
+    <Property Name="InventLocationID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="priority_flg" Type="Byte" />
+    <Property Name="transferfrom_flg" Type="Byte" />
+    <Property Name="transferto_flg" Type="Byte" />
+    <Property Name="accepttransfer_flg" Type="Byte" />
+    <Property Name="sales_flg" Type="Byte" />
+    <Property Name="returnsales_flg" Type="Byte" />
+    <Property Name="purchase_flg" Type="Byte" />
+    <Property Name="returnpurchase_flg" Type="Byte" />
+    <Property Name="active" Type="Int32" />
+    <Property Name="deactivateddate" Type="DateTime" Precision="0" />
+    <Property Name="rowcreateddate" Type="DateTime" Precision="0" />
+    <NavigationProperty Name="InventLocation" Relationship="Self.FK_UserLocation_Branch" FromRole="UserLocation" ToRole="InventLocation" />
+    <NavigationProperty Name="user" Relationship="Self.FK_UserLocation_users" FromRole="UserLocation" ToRole="users" />
+  </EntityType>
+  <EntityType Name="UserLocationFunction">
+    <Key>
+      <PropertyRef Name="UserLocationFunctionID" />
+    </Key>
+    <Property Name="UserLocationFunctionID" Type="Int64" Nullable="false" />
+    <Property Name="UserLocationID" Type="Int32" Nullable="false" />
+    <Property Name="FunctionID" Type="Int32" Nullable="false" />
+    <Property Name="GroupAssignedBy" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="active" Type="Byte" />
+    <Property Name="deactivateddate" Type="DateTime" Precision="0" />
+    <Property Name="rowcreateddate" Type="DateTime" Precision="0" />
+  </EntityType>
+  <EntityType Name="UserLocFunGroup">
+    <Key>
+      <PropertyRef Name="UserLocFunGroupID" />
+    </Key>
+    <Property Name="UserLocFunGroupID" Type="Int32" Nullable="false" />
+    <Property Name="UserLocationID" Type="Int32" />
+    <Property Name="FunctionGroupID" Type="Int32" />
+    <Property Name="active" Type="Byte" />
+    <Property Name="deactivateddate" Type="DateTime" Precision="0" />
+    <Property Name="rowcreateddate" Type="DateTime" Precision="0" />
+  </EntityType>
+  <EntityType Name="UserLogin">
+    <Key>
+      <PropertyRef Name="userid" />
+      <PropertyRef Name="logindate" />
+    </Key>
+    <Property Name="userid" Type="Int32" Nullable="false" />
+    <Property Name="logindate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="logoutdate" Type="DateTime" Precision="3" />
+    <Property Name="active" Type="Byte" />
+    <Property Name="CompanyID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="MachineIP" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="MachineName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="MachineUser" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="rowcreateddate" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="user" Relationship="Self.FK_UserLogins_users" FromRole="UserLogins" ToRole="users" />
+  </EntityType>
+  <EntityType Name="user">
+    <Key>
+      <PropertyRef Name="userid" />
+    </Key>
+    <Property Name="userid" Type="Int32" Nullable="false" />
+    <Property Name="username" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="userpassword" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="userdescription" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="sysadmin" Type="Byte" />
+    <Property Name="active" Type="Byte" />
+    <Property Name="deactivateddate" Type="DateTime" Precision="0" />
+    <Property Name="rowcreateddate" Type="DateTime" Precision="0" />
+    <NavigationProperty Name="UserLocations" Relationship="Self.FK_UserLocation_users" FromRole="users" ToRole="UserLocation" />
+    <NavigationProperty Name="UserLogins" Relationship="Self.FK_UserLogins_users" FromRole="users" ToRole="UserLogins" />
+  </EntityType>
+  <EntityType Name="vendor">
+    <Key>
+      <PropertyRef Name="vendorid" />
+    </Key>
+    <Property Name="vendorid" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="VendorName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="VendorDesc" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="rowcreateddate" Type="DateTime" Precision="0" />
+    <Property Name="MachineIP" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="MachineName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="MachineUser" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="userid" Type="Int32" />
+    <Property Name="Machineipupdated" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Machinenameupdated" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Machineuserupdated" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="useridupdated" Type="Int32" />
+    <Property Name="iabc" Type="Int32" />
+    <Property Name="idef" Type="Int32" />
+    <Property Name="ighi" Type="Int32" />
+    <Property Name="ijkl" Type="Int32" />
+    <Property Name="Sabc" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="Sdef" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="Sghi" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="Sjkl" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="Dabc" Type="DateTime" Precision="0" />
+    <Property Name="Ddef" Type="DateTime" Precision="0" />
+    <Property Name="Dghi" Type="DateTime" Precision="0" />
+    <Property Name="Djkl" Type="DateTime" Precision="0" />
+    <Property Name="DECabc" Type="Decimal" Precision="32" Scale="16" />
+    <Property Name="DECdef" Type="Decimal" Precision="32" Scale="16" />
+    <Property Name="DECghi" Type="Decimal" Precision="32" Scale="16" />
+    <Property Name="DECjkl" Type="Decimal" Precision="32" Scale="16" />
+  </EntityType>
+  <EntityType Name="Voucher">
+    <Key>
+      <PropertyRef Name="VoucherID" />
+    </Key>
+    <Property Name="VoucherID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="VoucherDate" Type="DateTime" Precision="0" />
+    <Property Name="VoucherCurrency" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="VoucherDEBIT" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="VoucherCREDIT" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="VoucherCLOSED" Type="Byte" />
+    <Property Name="VoucherPOSTED" Type="Byte" />
+    <Property Name="VoucherTypeID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="voucherDesc" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="rowcreateddate" Type="DateTime" Precision="0" />
+    <Property Name="MachineIP" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="MachineName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="MachineUser" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="userid" Type="Int32" />
+    <Property Name="Machineipupdated" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Machinenameupdated" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Machineuserupdated" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="useridupdated" Type="Int32" />
+    <Property Name="iabc" Type="Int32" />
+    <Property Name="idef" Type="Int32" />
+    <Property Name="ighi" Type="Int32" />
+    <Property Name="ijkl" Type="Int32" />
+    <Property Name="Sabc" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="Sdef" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="Sghi" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="Sjkl" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="Dabc" Type="DateTime" Precision="0" />
+    <Property Name="Ddef" Type="DateTime" Precision="0" />
+    <Property Name="Dghi" Type="DateTime" Precision="0" />
+    <Property Name="Djkl" Type="DateTime" Precision="0" />
+    <Property Name="DECabc" Type="Decimal" Precision="10" Scale="4" />
+    <Property Name="DECdef" Type="Decimal" Precision="10" Scale="4" />
+    <Property Name="DECghi" Type="Decimal" Precision="10" Scale="4" />
+    <Property Name="DECjkl" Type="Decimal" Precision="10" Scale="4" />
+    <NavigationProperty Name="VoucherType" Relationship="Self.FK_Voucher_VoucherType" FromRole="Voucher" ToRole="VoucherType" />
+    <NavigationProperty Name="VoucherGrids" Relationship="Self.FK_VoucherGrid_Voucher" FromRole="Voucher" ToRole="VoucherGrid" />
+  </EntityType>
+  <EntityType Name="VoucherGrid">
+    <Key>
+      <PropertyRef Name="VoucherID" />
+      <PropertyRef Name="VoucherLinenum" />
+    </Key>
+    <Property Name="VoucherID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="VoucherLinenum" Type="Int32" Nullable="false" />
+    <Property Name="CurrencyID" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="DEBIT" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="CREDIT" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="CurrRate" Type="Decimal" Precision="18" Scale="12" />
+    <Property Name="DEBIT_LOCAL" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="CREDIT_LOCAL" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="voucherLineDesc" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="AccountID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="COST_CENTER_NO" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="DOCUMENT_NO" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="rowcreateddate" Type="DateTime" Precision="0" />
+    <Property Name="MachineIP" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="MachineName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="MachineUser" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="userid" Type="Int32" />
+    <Property Name="Machineipupdated" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Machinenameupdated" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Machineuserupdated" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="useridupdated" Type="Int32" />
+    <Property Name="iabc" Type="Int32" />
+    <Property Name="idef" Type="Int32" />
+    <Property Name="ighi" Type="Int32" />
+    <Property Name="ijkl" Type="Int32" />
+    <Property Name="Sabc" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="Sdef" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="Sghi" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="Sjkl" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="Dabc" Type="DateTime" Precision="0" />
+    <Property Name="Ddef" Type="DateTime" Precision="0" />
+    <Property Name="Dghi" Type="DateTime" Precision="0" />
+    <Property Name="Djkl" Type="DateTime" Precision="0" />
+    <Property Name="DECabc" Type="Decimal" Precision="10" Scale="4" />
+    <Property Name="DECdef" Type="Decimal" Precision="10" Scale="4" />
+    <Property Name="DECghi" Type="Decimal" Precision="10" Scale="4" />
+    <Property Name="DECjkl" Type="Decimal" Precision="10" Scale="4" />
+    <NavigationProperty Name="Voucher" Relationship="Self.FK_VoucherGrid_Voucher" FromRole="VoucherGrid" ToRole="Voucher" />
+  </EntityType>
+  <EntityType Name="VoucherType">
+    <Key>
+      <PropertyRef Name="VoucherTypeID" />
+    </Key>
+    <Property Name="VoucherTypeID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="VoucherTypeName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="VoucherTypeDesc" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="rowcreateddate" Type="DateTime" Precision="0" />
+    <Property Name="MachineIP" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="MachineName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="MachineUser" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="userid" Type="Int32" />
+    <Property Name="Machineipupdated" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Machinenameupdated" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Machineuserupdated" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="useridupdated" Type="Int32" />
+    <Property Name="iabc" Type="Int32" />
+    <Property Name="idef" Type="Int32" />
+    <Property Name="ighi" Type="Int32" />
+    <Property Name="ijkl" Type="Int32" />
+    <Property Name="Sabc" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="Sdef" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="Sghi" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="Sjkl" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="Dabc" Type="DateTime" Precision="0" />
+    <Property Name="Ddef" Type="DateTime" Precision="0" />
+    <Property Name="Dghi" Type="DateTime" Precision="0" />
+    <Property Name="Djkl" Type="DateTime" Precision="0" />
+    <Property Name="DECabc" Type="Decimal" Precision="10" Scale="4" />
+    <Property Name="DECdef" Type="Decimal" Precision="10" Scale="4" />
+    <Property Name="DECghi" Type="Decimal" Precision="10" Scale="4" />
+    <Property Name="DECjkl" Type="Decimal" Precision="10" Scale="4" />
+    <NavigationProperty Name="Vouchers" Relationship="Self.FK_Voucher_VoucherType" FromRole="VoucherType" ToRole="Voucher" />
+  </EntityType>
+  <EntityType Name="pos_trans_bk">
+    <Key>
+      <PropertyRef Name="trans_id" />
+      <PropertyRef Name="store_code" />
+      <PropertyRef Name="rowguid" />
+    </Key>
+    <Property Name="trans_id" Type="Int32" Nullable="false" />
+    <Property Name="store_code" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="trans_date" Type="DateTime" Precision="3" />
+    <Property Name="client_code" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="trans_total" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="remarks" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="trans_total_21" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="trans_toatl_18" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="canceled" Type="Int32" />
+    <Property Name="syncstatus" Type="Int32" />
+    <Property Name="inventsiteid" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="axsync" Type="Int32" />
+    <Property Name="returnorder" Type="Int32" />
+    <Property Name="closure_date" Type="DateTime" Precision="3" />
+    <Property Name="rowcreateddate" Type="DateTime" Precision="3" />
+    <Property Name="total_weight" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="total_line" Type="Int32" />
+    <Property Name="MachineIP" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="MachineUser" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Machinename" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="userid" Type="Int32" />
+    <Property Name="MachineIPupdated" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="MachineUserupdated" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="MachineNameupdated" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="useridupdated" Type="Int32" />
+    <Property Name="iabc" Type="Int32" />
+    <Property Name="idef" Type="Int32" />
+    <Property Name="ighi" Type="Int32" />
+    <Property Name="ijkl" Type="Int32" />
+    <Property Name="Sabc" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="Sdef" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="Sghi" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="Sjkl" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="Dabc" Type="DateTime" Precision="0" />
+    <Property Name="Ddef" Type="DateTime" Precision="0" />
+    <Property Name="Dghi" Type="DateTime" Precision="0" />
+    <Property Name="Djkl" Type="DateTime" Precision="0" />
+    <Property Name="DECabc" Type="Decimal" Precision="32" Scale="16" />
+    <Property Name="DECdef" Type="Decimal" Precision="32" Scale="16" />
+    <Property Name="DECghi" Type="Decimal" Precision="32" Scale="16" />
+    <Property Name="DECjkl" Type="Decimal" Precision="32" Scale="16" />
+    <Property Name="rowguid" Type="Guid" Nullable="false" />
+  </EntityType>
+  <EntityType Name="pos_trans_grid_bk">
+    <Key>
+      <PropertyRef Name="trans_id" />
+      <PropertyRef Name="linenum" />
+      <PropertyRef Name="store_code" />
+      <PropertyRef Name="inventdimid" />
+      <PropertyRef Name="rowguid" />
+    </Key>
+    <Property Name="trans_id" Type="Int32" Nullable="false" />
+    <Property Name="linenum" Type="Int32" Nullable="false" />
+    <Property Name="store_code" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="itemname" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="unit_code" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="item_weight" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="sale_price" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="slae_cost" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="trans_date" Type="DateTime" Precision="3" />
+    <Property Name="item_sold" Type="Int32" />
+    <Property Name="syncstatus" Type="Int32" />
+    <Property Name="inventdimid" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="parmitemid" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="stockid" Type="Int64" />
+    <Property Name="itemserial" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="rowcreateddate" Type="DateTime" Precision="3" />
+    <Property Name="tax" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="taxrate" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="taxrates" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="taxes" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="MachineIP" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="MachineUser" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="MachineName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="userid" Type="Int32" />
+    <Property Name="iabc" Type="Int32" />
+    <Property Name="idef" Type="Int32" />
+    <Property Name="ighi" Type="Int32" />
+    <Property Name="ijkl" Type="Int32" />
+    <Property Name="Sabc" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="Sdef" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="Sghi" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="Sjkl" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="Dabc" Type="DateTime" Precision="0" />
+    <Property Name="Ddef" Type="DateTime" Precision="0" />
+    <Property Name="Dghi" Type="DateTime" Precision="0" />
+    <Property Name="Djkl" Type="DateTime" Precision="0" />
+    <Property Name="DECabc" Type="Decimal" Precision="32" Scale="16" />
+    <Property Name="DECdef" Type="Decimal" Precision="32" Scale="16" />
+    <Property Name="DECghi" Type="Decimal" Precision="32" Scale="16" />
+    <Property Name="DECjkl" Type="Decimal" Precision="32" Scale="16" />
+    <Property Name="rowguid" Type="Guid" Nullable="false" />
+  </EntityType>
+  <EntityType Name="sync_info">
+    <Key>
+      <PropertyRef Name="syn_id" />
+    </Key>
+    <Property Name="syn_id" Type="Int32" Nullable="false" />
+    <Property Name="CompanyID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="hostname" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ipaddress" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="trans_date" Type="DateTime" Precision="0" />
+  </EntityType>
+  <EntityType Name="sync_info_toserver">
+    <Key>
+      <PropertyRef Name="syn_id" />
+    </Key>
+    <Property Name="syn_id" Type="Int32" Nullable="false" />
+    <Property Name="CompanyID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="hostname" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="ipaddress" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="trans_date" Type="DateTime" Precision="0" />
+    <Property Name="sync_status" Type="Int32" />
+  </EntityType>
+  <Association Name="FK_Account_Account">
+    <End Role="Account" Type="Self.Account" Multiplicity="0..1" />
+    <End Role="Account1" Type="Self.Account" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Account">
+        <PropertyRef Name="AccountID" />
+      </Principal>
+      <Dependent Role="Account1">
+        <PropertyRef Name="ParentAccountID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Account_AccountType">
+    <End Role="AccountType" Type="Self.AccountType" Multiplicity="1" />
+    <End Role="Account" Type="Self.Account" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AccountType">
+        <PropertyRef Name="AccountTypeID" />
+      </Principal>
+      <Dependent Role="Account">
+        <PropertyRef Name="AccountTypeID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_AccountDimensions_Account">
+    <End Role="Account" Type="Self.Account" Multiplicity="1" />
+    <End Role="AccountDimensions" Type="Self.AccountDimension" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Account">
+        <PropertyRef Name="AccountID" />
+      </Principal>
+      <Dependent Role="AccountDimensions">
+        <PropertyRef Name="AccountID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_AccountDimensions_Dimension">
+    <End Role="Dimension" Type="Self.Dimension" Multiplicity="1" />
+    <End Role="AccountDimensions" Type="Self.AccountDimension" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Dimension">
+        <PropertyRef Name="DimensionID" />
+        <PropertyRef Name="DimensionTypeID" />
+      </Principal>
+      <Dependent Role="AccountDimensions">
+        <PropertyRef Name="DimensionID" />
+        <PropertyRef Name="DimensionTypeID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Branch_City">
+    <End Role="City" Type="Self.City" Multiplicity="0..1" />
+    <End Role="Branch" Type="Self.Branch" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="City">
+        <PropertyRef Name="CityID" />
+      </Principal>
+      <Dependent Role="Branch">
+        <PropertyRef Name="CityID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Branch_Company">
+    <End Role="Company" Type="Self.Company" Multiplicity="1" />
+    <End Role="Branch" Type="Self.Branch" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Company">
+        <PropertyRef Name="CompanyID" />
+      </Principal>
+      <Dependent Role="Branch">
+        <PropertyRef Name="CompanyID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CompanyEmp_Company">
+    <End Role="Company" Type="Self.Company" Multiplicity="0..1" />
+    <End Role="CompanyEmp" Type="Self.CompanyEmp" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Company">
+        <PropertyRef Name="CompanyID" />
+      </Principal>
+      <Dependent Role="CompanyEmp">
+        <PropertyRef Name="CompanyID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CurrencyRates_Currency">
+    <End Role="Currency" Type="Self.Currency" Multiplicity="1" />
+    <End Role="CurrencyRates" Type="Self.CurrencyRate" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Currency">
+        <PropertyRef Name="CurrencyID" />
+      </Principal>
+      <Dependent Role="CurrencyRates">
+        <PropertyRef Name="CurrencyID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Dimension_DimensionType">
+    <End Role="DimensionType" Type="Self.DimensionType" Multiplicity="1" />
+    <End Role="Dimension" Type="Self.Dimension" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="DimensionType">
+        <PropertyRef Name="DimensionTypeID" />
+      </Principal>
+      <Dependent Role="Dimension">
+        <PropertyRef Name="DimensionTypeID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_GARD_InventLocation">
+    <End Role="InventLocation" Type="Self.InventLocation" Multiplicity="1" />
+    <End Role="GARD" Type="Self.GARD" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="InventLocation">
+        <PropertyRef Name="InventLocationID" />
+      </Principal>
+      <Dependent Role="GARD">
+        <PropertyRef Name="INVENTLOCATIONID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_GARDDETAILS_GARD">
+    <End Role="GARD" Type="Self.GARD" Multiplicity="1" />
+    <End Role="GARDDETAILS" Type="Self.GARDDETAIL" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="GARD">
+        <PropertyRef Name="GARDNUM" />
+        <PropertyRef Name="INVENTLOCATIONID" />
+      </Principal>
+      <Dependent Role="GARDDETAILS">
+        <PropertyRef Name="GARDNUM" />
+        <PropertyRef Name="INVENTLOCATIONID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_GARDSTOCK_GARD">
+    <End Role="GARD" Type="Self.GARD" Multiplicity="1" />
+    <End Role="GARDSTOCK" Type="Self.GARDSTOCK" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="GARD">
+        <PropertyRef Name="GARDNUM" />
+        <PropertyRef Name="INVENTLOCATIONID" />
+      </Principal>
+      <Dependent Role="GARDSTOCK">
+        <PropertyRef Name="GARDNUM" />
+        <PropertyRef Name="INVENTLOCATIONID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_InventLocation_InventSite">
+    <End Role="InventSite" Type="Self.InventSite" Multiplicity="0..1" />
+    <End Role="InventLocation" Type="Self.InventLocation" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="InventSite">
+        <PropertyRef Name="SiteID" />
+      </Principal>
+      <Dependent Role="InventLocation">
+        <PropertyRef Name="SiteID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_STOCK_InventLocation">
+    <End Role="InventLocation" Type="Self.InventLocation" Multiplicity="0..1" />
+    <End Role="STOCK" Type="Self.STOCK" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="InventLocation">
+        <PropertyRef Name="InventLocationID" />
+      </Principal>
+      <Dependent Role="STOCK">
+        <PropertyRef Name="InventLocationID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_StockDaily_InventLocation">
+    <End Role="InventLocation" Type="Self.InventLocation" Multiplicity="1" />
+    <End Role="StockDaily" Type="Self.StockDaily" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="InventLocation">
+        <PropertyRef Name="InventLocationID" />
+      </Principal>
+      <Dependent Role="StockDaily">
+        <PropertyRef Name="inventlocatioinid" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_UserLocation_Branch">
+    <End Role="InventLocation" Type="Self.InventLocation" Multiplicity="1" />
+    <End Role="UserLocation" Type="Self.UserLocation" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="InventLocation">
+        <PropertyRef Name="InventLocationID" />
+      </Principal>
+      <Dependent Role="UserLocation">
+        <PropertyRef Name="InventLocationID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_INVENTTRANSFERLINE_INVENTTRANSFERTABLE">
+    <End Role="INVENTTRANSFERTABLE" Type="Self.INVENTTRANSFERTABLE" Multiplicity="1" />
+    <End Role="INVENTTRANSFERLINE" Type="Self.INVENTTRANSFERLINE" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="INVENTTRANSFERTABLE">
+        <PropertyRef Name="TRANSFERID" />
+      </Principal>
+      <Dependent Role="INVENTTRANSFERLINE">
+        <PropertyRef Name="TRANSFERID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Invoice_Details_Invoice">
+    <End Role="Invoice" Type="Self.Invoice" Multiplicity="1" />
+    <End Role="Invoice_Details" Type="Self.Invoice_Details" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Invoice">
+        <PropertyRef Name="InvID" />
+        <PropertyRef Name="CompanyID" />
+        <PropertyRef Name="BranchID" />
+      </Principal>
+      <Dependent Role="Invoice_Details">
+        <PropertyRef Name="InvID" />
+        <PropertyRef Name="CompanyID" />
+        <PropertyRef Name="BranchID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Invoice_error_Invoice">
+    <End Role="Invoice" Type="Self.Invoice" Multiplicity="1" />
+    <End Role="Invoice_error" Type="Self.Invoice_error" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="Invoice">
+        <PropertyRef Name="InvID" />
+        <PropertyRef Name="CompanyID" />
+        <PropertyRef Name="BranchID" />
+      </Principal>
+      <Dependent Role="Invoice_error">
+        <PropertyRef Name="InvID" />
+        <PropertyRef Name="CompanyID" />
+        <PropertyRef Name="BranchID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Invoice_Taxes_Invoice_Details">
+    <End Role="Invoice_Details" Type="Self.Invoice_Details" Multiplicity="1" />
+    <End Role="Invoice_Taxes" Type="Self.Invoice_Taxes" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Invoice_Details">
+        <PropertyRef Name="InvID" />
+        <PropertyRef Name="CompanyID" />
+        <PropertyRef Name="BranchID" />
+        <PropertyRef Name="linenum" />
+      </Principal>
+      <Dependent Role="Invoice_Taxes">
+        <PropertyRef Name="InvID" />
+        <PropertyRef Name="CompanyID" />
+        <PropertyRef Name="BranchID" />
+        <PropertyRef Name="linenum" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Invoice_Taxes_Taxes">
+    <End Role="Taxes" Type="Self.Tax" Multiplicity="1" />
+    <End Role="Invoice_Taxes" Type="Self.Invoice_Taxes" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Taxes">
+        <PropertyRef Name="TaxID" />
+      </Principal>
+      <Dependent Role="Invoice_Taxes">
+        <PropertyRef Name="TaxID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Items_ItemGroup">
+    <End Role="ItemGroup" Type="Self.ItemGroup" Multiplicity="0..1" />
+    <End Role="Items" Type="Self.Item" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ItemGroup">
+        <PropertyRef Name="ItemGroupID" />
+      </Principal>
+      <Dependent Role="Items">
+        <PropertyRef Name="itemgroupid" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Items_ItemUnit">
+    <End Role="ItemUnit" Type="Self.ItemUnit" Multiplicity="0..1" />
+    <End Role="Items" Type="Self.Item" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ItemUnit">
+        <PropertyRef Name="itemunitcode" />
+      </Principal>
+      <Dependent Role="Items">
+        <PropertyRef Name="itemunitcode" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ItemTaxes_Items">
+    <End Role="Items" Type="Self.Item" Multiplicity="0..1" />
+    <End Role="ItemTaxes" Type="Self.ItemTax" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Items">
+        <PropertyRef Name="ItemID" />
+      </Principal>
+      <Dependent Role="ItemTaxes">
+        <PropertyRef Name="itemID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ItemTaxes_Taxes">
+    <End Role="Taxes" Type="Self.Tax" Multiplicity="0..1" />
+    <End Role="ItemTaxes" Type="Self.ItemTax" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Taxes">
+        <PropertyRef Name="TaxID" />
+      </Principal>
+      <Dependent Role="ItemTaxes">
+        <PropertyRef Name="taxID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_pos_trans_grid_pos_trans">
+    <End Role="pos_trans" Type="Self.pos_trans" Multiplicity="1" />
+    <End Role="pos_trans_grid" Type="Self.pos_trans_grid" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="pos_trans">
+        <PropertyRef Name="trans_id" />
+        <PropertyRef Name="store_code" />
+      </Principal>
+      <Dependent Role="pos_trans_grid">
+        <PropertyRef Name="trans_id" />
+        <PropertyRef Name="store_code" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_purchline_purchtable">
+    <End Role="purchtable" Type="Self.purchtable" Multiplicity="1" />
+    <End Role="purchline" Type="Self.purchline" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="purchtable">
+        <PropertyRef Name="purchid" />
+      </Principal>
+      <Dependent Role="purchline">
+        <PropertyRef Name="purchid" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SalesRepComm_SalesRep">
+    <End Role="SalesRep" Type="Self.SalesRep" Multiplicity="1" />
+    <End Role="SalesRepComm" Type="Self.SalesRepComm" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SalesRep">
+        <PropertyRef Name="SalesRepID" />
+      </Principal>
+      <Dependent Role="SalesRepComm">
+        <PropertyRef Name="SalesRepID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SalesRepTarget_SalesRep">
+    <End Role="SalesRep" Type="Self.SalesRep" Multiplicity="1" />
+    <End Role="SalesRepTarget" Type="Self.SalesRepTarget" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SalesRep">
+        <PropertyRef Name="SalesRepID" />
+      </Principal>
+      <Dependent Role="SalesRepTarget">
+        <PropertyRef Name="SalesRepID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_UserLocation_users">
+    <End Role="users" Type="Self.user" Multiplicity="1" />
+    <End Role="UserLocation" Type="Self.UserLocation" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="users">
+        <PropertyRef Name="userid" />
+      </Principal>
+      <Dependent Role="UserLocation">
+        <PropertyRef Name="userid" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_UserLogins_users">
+    <End Role="users" Type="Self.user" Multiplicity="1" />
+    <End Role="UserLogins" Type="Self.UserLogin" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="users">
+        <PropertyRef Name="userid" />
+      </Principal>
+      <Dependent Role="UserLogins">
+        <PropertyRef Name="userid" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Voucher_VoucherType">
+    <End Role="VoucherType" Type="Self.VoucherType" Multiplicity="0..1" />
+    <End Role="Voucher" Type="Self.Voucher" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="VoucherType">
+        <PropertyRef Name="VoucherTypeID" />
+      </Principal>
+      <Dependent Role="Voucher">
+        <PropertyRef Name="VoucherTypeID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_VoucherGrid_Voucher">
+    <End Role="Voucher" Type="Self.Voucher" Multiplicity="1" />
+    <End Role="VoucherGrid" Type="Self.VoucherGrid" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Voucher">
+        <PropertyRef Name="VoucherID" />
+      </Principal>
+      <Dependent Role="VoucherGrid">
+        <PropertyRef Name="VoucherID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="Gold_SalesEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Accounts" EntityType="Self.Account" />
+    <EntitySet Name="AccountDimensions" EntityType="Self.AccountDimension" />
+    <EntitySet Name="AccountTypes" EntityType="Self.AccountType" />
+    <EntitySet Name="Branches" EntityType="Self.Branch" />
+    <EntitySet Name="Cities" EntityType="Self.City" />
+    <EntitySet Name="Companies" EntityType="Self.Company" />
+    <EntitySet Name="CompanyEmps" EntityType="Self.CompanyEmp" />
+    <EntitySet Name="Currencies" EntityType="Self.Currency" />
+    <EntitySet Name="CurrencyRates" EntityType="Self.CurrencyRate" />
+    <EntitySet Name="Customers" EntityType="Self.Customer" />
+    <EntitySet Name="Dimensions" EntityType="Self.Dimension" />
+    <EntitySet Name="DimensionTypes" EntityType="Self.DimensionType" />
+    <EntitySet Name="FunctionGroups" EntityType="Self.FunctionGroup" />
+    <EntitySet Name="FunctionGroupMenus" EntityType="Self.FunctionGroupMenu" />
+    <EntitySet Name="FunctionMenus" EntityType="Self.FunctionMenu" />
+    <EntitySet Name="GARDs" EntityType="Self.GARD" />
+    <EntitySet Name="GARDDETAILS" EntityType="Self.GARDDETAIL" />
+    <EntitySet Name="GARDSTOCKs" EntityType="Self.GARDSTOCK" />
+    <EntitySet Name="InventLocations" EntityType="Self.InventLocation" />
+    <EntitySet Name="InventSites" EntityType="Self.InventSite" />
+    <EntitySet Name="INVENTTRANSFERLINEs" EntityType="Self.INVENTTRANSFERLINE" />
+    <EntitySet Name="INVENTTRANSFERTABLEs" EntityType="Self.INVENTTRANSFERTABLE" />
+    <EntitySet Name="Invoices" EntityType="Self.Invoice" />
+    <EntitySet Name="Invoice_Details" EntityType="Self.Invoice_Details" />
+    <EntitySet Name="Invoice_error" EntityType="Self.Invoice_error" />
+    <EntitySet Name="Invoice_Taxes" EntityType="Self.Invoice_Taxes" />
+    <EntitySet Name="ItemGroups" EntityType="Self.ItemGroup" />
+    <EntitySet Name="Items" EntityType="Self.Item" />
+    <EntitySet Name="ItemTaxes" EntityType="Self.ItemTax" />
+    <EntitySet Name="ItemUnits" EntityType="Self.ItemUnit" />
+    <EntitySet Name="pos_trans" EntityType="Self.pos_trans" />
+    <EntitySet Name="pos_trans_grid" EntityType="Self.pos_trans_grid" />
+    <EntitySet Name="purchlines" EntityType="Self.purchline" />
+    <EntitySet Name="purchtables" EntityType="Self.purchtable" />
+    <EntitySet Name="SalesReps" EntityType="Self.SalesRep" />
+    <EntitySet Name="SalesRepComms" EntityType="Self.SalesRepComm" />
+    <EntitySet Name="SalesRepTargets" EntityType="Self.SalesRepTarget" />
+    <EntitySet Name="SecAudits" EntityType="Self.SecAudit" />
+    <EntitySet Name="STOCKs" EntityType="Self.STOCK" />
+    <EntitySet Name="StockDailies" EntityType="Self.StockDaily" />
+    <EntitySet Name="syncs" EntityType="Self.sync" />
+    <EntitySet Name="sync_details" EntityType="Self.sync_details" />
+    <EntitySet Name="sync_taxes" EntityType="Self.sync_taxes" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagram" />
+    <EntitySet Name="sysversionactions" EntityType="Self.sysversionaction" />
+    <EntitySet Name="sysversionaudits" EntityType="Self.sysversionaudit" />
+    <EntitySet Name="sysversiondetails" EntityType="Self.sysversiondetail" />
+    <EntitySet Name="sysversionLOGs" EntityType="Self.sysversionLOG" />
+    <EntitySet Name="sysversions" EntityType="Self.sysversion" />
+    <EntitySet Name="Taxes" EntityType="Self.Tax" />
+    <EntitySet Name="UserLocations" EntityType="Self.UserLocation" />
+    <EntitySet Name="UserLocationFunctions" EntityType="Self.UserLocationFunction" />
+    <EntitySet Name="UserLocFunGroups" EntityType="Self.UserLocFunGroup" />
+    <EntitySet Name="UserLogins" EntityType="Self.UserLogin" />
+    <EntitySet Name="users" EntityType="Self.user" />
+    <EntitySet Name="vendors" EntityType="Self.vendor" />
+    <EntitySet Name="Vouchers" EntityType="Self.Voucher" />
+    <EntitySet Name="VoucherGrids" EntityType="Self.VoucherGrid" />
+    <EntitySet Name="VoucherTypes" EntityType="Self.VoucherType" />
+    <EntitySet Name="pos_trans_bk" EntityType="Self.pos_trans_bk" />
+    <EntitySet Name="pos_trans_grid_bk" EntityType="Self.pos_trans_grid_bk" />
+    <EntitySet Name="sync_info" EntityType="Self.sync_info" />
+    <EntitySet Name="sync_info_toserver" EntityType="Self.sync_info_toserver" />
+    <AssociationSet Name="FK_Account_Account" Association="Self.FK_Account_Account">
+      <End Role="Account" EntitySet="Accounts" />
+      <End Role="Account1" EntitySet="Accounts" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Account_AccountType" Association="Self.FK_Account_AccountType">
+      <End Role="AccountType" EntitySet="AccountTypes" />
+      <End Role="Account" EntitySet="Accounts" />
+    </AssociationSet>
+    <AssociationSet Name="FK_AccountDimensions_Account" Association="Self.FK_AccountDimensions_Account">
+      <End Role="Account" EntitySet="Accounts" />
+      <End Role="AccountDimensions" EntitySet="AccountDimensions" />
+    </AssociationSet>
+    <AssociationSet Name="FK_AccountDimensions_Dimension" Association="Self.FK_AccountDimensions_Dimension">
+      <End Role="Dimension" EntitySet="Dimensions" />
+      <End Role="AccountDimensions" EntitySet="AccountDimensions" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Branch_City" Association="Self.FK_Branch_City">
+      <End Role="City" EntitySet="Cities" />
+      <End Role="Branch" EntitySet="Branches" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Branch_Company" Association="Self.FK_Branch_Company">
+      <End Role="Company" EntitySet="Companies" />
+      <End Role="Branch" EntitySet="Branches" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CompanyEmp_Company" Association="Self.FK_CompanyEmp_Company">
+      <End Role="Company" EntitySet="Companies" />
+      <End Role="CompanyEmp" EntitySet="CompanyEmps" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CurrencyRates_Currency" Association="Self.FK_CurrencyRates_Currency">
+      <End Role="Currency" EntitySet="Currencies" />
+      <End Role="CurrencyRates" EntitySet="CurrencyRates" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Dimension_DimensionType" Association="Self.FK_Dimension_DimensionType">
+      <End Role="DimensionType" EntitySet="DimensionTypes" />
+      <End Role="Dimension" EntitySet="Dimensions" />
+    </AssociationSet>
+    <AssociationSet Name="FK_GARD_InventLocation" Association="Self.FK_GARD_InventLocation">
+      <End Role="InventLocation" EntitySet="InventLocations" />
+      <End Role="GARD" EntitySet="GARDs" />
+    </AssociationSet>
+    <AssociationSet Name="FK_GARDDETAILS_GARD" Association="Self.FK_GARDDETAILS_GARD">
+      <End Role="GARD" EntitySet="GARDs" />
+      <End Role="GARDDETAILS" EntitySet="GARDDETAILS" />
+    </AssociationSet>
+    <AssociationSet Name="FK_GARDSTOCK_GARD" Association="Self.FK_GARDSTOCK_GARD">
+      <End Role="GARD" EntitySet="GARDs" />
+      <End Role="GARDSTOCK" EntitySet="GARDSTOCKs" />
+    </AssociationSet>
+    <AssociationSet Name="FK_InventLocation_InventSite" Association="Self.FK_InventLocation_InventSite">
+      <End Role="InventSite" EntitySet="InventSites" />
+      <End Role="InventLocation" EntitySet="InventLocations" />
+    </AssociationSet>
+    <AssociationSet Name="FK_STOCK_InventLocation" Association="Self.FK_STOCK_InventLocation">
+      <End Role="InventLocation" EntitySet="InventLocations" />
+      <End Role="STOCK" EntitySet="STOCKs" />
+    </AssociationSet>
+    <AssociationSet Name="FK_StockDaily_InventLocation" Association="Self.FK_StockDaily_InventLocation">
+      <End Role="InventLocation" EntitySet="InventLocations" />
+      <End Role="StockDaily" EntitySet="StockDailies" />
+    </AssociationSet>
+    <AssociationSet Name="FK_UserLocation_Branch" Association="Self.FK_UserLocation_Branch">
+      <End Role="InventLocation" EntitySet="InventLocations" />
+      <End Role="UserLocation" EntitySet="UserLocations" />
+    </AssociationSet>
+    <AssociationSet Name="FK_INVENTTRANSFERLINE_INVENTTRANSFERTABLE" Association="Self.FK_INVENTTRANSFERLINE_INVENTTRANSFERTABLE">
+      <End Role="INVENTTRANSFERTABLE" EntitySet="INVENTTRANSFERTABLEs" />
+      <End Role="INVENTTRANSFERLINE" EntitySet="INVENTTRANSFERLINEs" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Invoice_Details_Invoice" Association="Self.FK_Invoice_Details_Invoice">
+      <End Role="Invoice" EntitySet="Invoices" />
+      <End Role="Invoice_Details" EntitySet="Invoice_Details" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Invoice_error_Invoice" Association="Self.FK_Invoice_error_Invoice">
+      <End Role="Invoice" EntitySet="Invoices" />
+      <End Role="Invoice_error" EntitySet="Invoice_error" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Invoice_Taxes_Invoice_Details" Association="Self.FK_Invoice_Taxes_Invoice_Details">
+      <End Role="Invoice_Details" EntitySet="Invoice_Details" />
+      <End Role="Invoice_Taxes" EntitySet="Invoice_Taxes" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Invoice_Taxes_Taxes" Association="Self.FK_Invoice_Taxes_Taxes">
+      <End Role="Taxes" EntitySet="Taxes" />
+      <End Role="Invoice_Taxes" EntitySet="Invoice_Taxes" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Items_ItemGroup" Association="Self.FK_Items_ItemGroup">
+      <End Role="ItemGroup" EntitySet="ItemGroups" />
+      <End Role="Items" EntitySet="Items" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Items_ItemUnit" Association="Self.FK_Items_ItemUnit">
+      <End Role="ItemUnit" EntitySet="ItemUnits" />
+      <End Role="Items" EntitySet="Items" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ItemTaxes_Items" Association="Self.FK_ItemTaxes_Items">
+      <End Role="Items" EntitySet="Items" />
+      <End Role="ItemTaxes" EntitySet="ItemTaxes" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ItemTaxes_Taxes" Association="Self.FK_ItemTaxes_Taxes">
+      <End Role="Taxes" EntitySet="Taxes" />
+      <End Role="ItemTaxes" EntitySet="ItemTaxes" />
+    </AssociationSet>
+    <AssociationSet Name="FK_pos_trans_grid_pos_trans" Association="Self.FK_pos_trans_grid_pos_trans">
+      <End Role="pos_trans" EntitySet="pos_trans" />
+      <End Role="pos_trans_grid" EntitySet="pos_trans_grid" />
+    </AssociationSet>
+    <AssociationSet Name="FK_purchline_purchtable" Association="Self.FK_purchline_purchtable">
+      <End Role="purchtable" EntitySet="purchtables" />
+      <End Role="purchline" EntitySet="purchlines" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SalesRepComm_SalesRep" Association="Self.FK_SalesRepComm_SalesRep">
+      <End Role="SalesRep" EntitySet="SalesReps" />
+      <End Role="SalesRepComm" EntitySet="SalesRepComms" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SalesRepTarget_SalesRep" Association="Self.FK_SalesRepTarget_SalesRep">
+      <End Role="SalesRep" EntitySet="SalesReps" />
+      <End Role="SalesRepTarget" EntitySet="SalesRepTargets" />
+    </AssociationSet>
+    <AssociationSet Name="FK_UserLocation_users" Association="Self.FK_UserLocation_users">
+      <End Role="users" EntitySet="users" />
+      <End Role="UserLocation" EntitySet="UserLocations" />
+    </AssociationSet>
+    <AssociationSet Name="FK_UserLogins_users" Association="Self.FK_UserLogins_users">
+      <End Role="users" EntitySet="users" />
+      <End Role="UserLogins" EntitySet="UserLogins" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Voucher_VoucherType" Association="Self.FK_Voucher_VoucherType">
+      <End Role="VoucherType" EntitySet="VoucherTypes" />
+      <End Role="Voucher" EntitySet="Vouchers" />
+    </AssociationSet>
+    <AssociationSet Name="FK_VoucherGrid_Voucher" Association="Self.FK_VoucherGrid_Voucher">
+      <End Role="Voucher" EntitySet="Vouchers" />
+      <End Role="VoucherGrid" EntitySet="VoucherGrids" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

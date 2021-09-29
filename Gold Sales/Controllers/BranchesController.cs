@@ -114,14 +114,26 @@ namespace Gold_Sales.Controllers
         }
 
         // POST: Branches/Delete/5
-        [HttpPost, ActionName("Delete")]
-        [ValidateAntiForgeryToken]
-        public ActionResult DeleteConfirmed(string id)
+        //[HttpPost, ActionName("Delete")]
+        //[ValidateAntiForgeryToken]
+        //public ActionResult DeleteConfirmed(string id)
+        //{
+        //    Branch branch = db.Branches.Find(id);
+        //    db.Branches.Remove(branch);
+        //    db.SaveChanges();
+        //    return RedirectToAction("Index");
+        //}
+        public JsonResult DeleteBranch(string id)
         {
+            bool res = false;
             Branch branch = db.Branches.Find(id);
-            db.Branches.Remove(branch);
-            db.SaveChanges();
-            return RedirectToAction("Index");
+            if (branch != null)
+            {
+                db.Branches.Remove(branch);
+                db.SaveChanges();
+                res = true;
+            }
+            return Json(res, JsonRequestBehavior.AllowGet);
         }
 
         protected override void Dispose(bool disposing)

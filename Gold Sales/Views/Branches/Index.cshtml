@@ -115,7 +115,7 @@
                                         </th>*@
                                     <th></th>
                                 </tr>
-                                </thead>
+                            </thead>
                             <tbody>
                                 @foreach (var item in Model)
                                 {
@@ -214,9 +214,12 @@
                                                 @Html.DisplayFor(modelItem => item.Company.CompanyName)
                                             </td>*@
                                         <td>
-                                            @Html.ActionLink("Edit", "Edit", new { id = item.CityID }, new { @class = "btn btn-round btn-warning" })
-                                            @Html.ActionLink("Details", "Details", new { id = item.CityID }, new { @class = "btn btn-round btn-info" })
-                                            @Html.ActionLink("Delete", "Delete", new { id = item.CityID }, new { @class = "btn btn-round btn-danger" })
+                                            @Html.ActionLink(" ", "Edit", new { id = item.BranchID }, new { @class = "btn btn-round btn-warning glyphicon glyphicon-edit" })
+                                            @Html.ActionLink(" ", "Details", new { id = item.BranchID }, new { @class = "btn btn-round btn-info glyphicon glyphicon-info-sign" })
+                                            @*@Html.ActionLink("Delete", "Delete", new { id = item.CityID }, new { @class = "btn btn-round btn-danger", onclick = "return confirm('Are sure wants to delete?');" })*@
+                                            <a href="#" class="btn btn-round btn-danger glyphicon glyphicon-trash" onclick="ConfirmDelete(@item.BranchID)"> </a>
+
+
                                         </td>
                                     </tr>
 
@@ -228,9 +231,80 @@
                             </tbody>
                         </table>
 
+
                     </div>
                 </div>
+                <div class="modal fade" id="myModal">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <a href="#" class="close" data-dismiss="modal">&times;</a>
+                                <h3 class="modal-title">Delete Branch</h3>
+                            </div>
+                            <div class="modal-body">
+                                <h4>
+                                    Are you sure You want to delete this item ?!
+                                </h4>
+
+
+
+                            </div>
+                            <div class="modal-footer">
+                                <a href="#" class="btn btn-default" data-dismiss="modal">Cancel</a>
+                                <a href="#" class="btn btn-success" onclick="DeleteBranch()">Confirm</a>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <input type="hidden" id="hiddenBranchID" />
             </div>
         </div>
+
     </div>
 </div>
+
+
+
+
+<script>
+
+    var ConfirmDelete = function (id) {
+
+        $("#hiddenBranchID").val(id);
+        $("#myModal").modal('show');
+
+    }
+
+    var DeleteBranch = function () {
+        //debugger
+
+        $("#loaderDiv").show();
+
+        var branchid = $("#hiddenBranchID").val();
+
+        $.ajax({
+
+            type: "POST",
+            url: "/Branches/DeleteBranch",
+            data: { id: branchid },
+            dataType: "json",
+            success: function (result) {
+                $("#loaderDiv").hide();
+                $("#myModal").modal("hide");
+                location.reload();
+
+            },
+            error: function (response) {
+                alert("error!");
+            }
+
+
+        })
+
+    }
+</script>

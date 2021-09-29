@@ -159,8 +159,8 @@ C:\Users\omnia.hussien\Desktop\Gold Sales\Gold Sales\bin\System.Web.WebPages.Raz
 C:\Users\omnia.hussien\Desktop\Gold Sales\Gold Sales\bin\Newtonsoft.Json.xml
 C:\Users\omnia.hussien\Desktop\Gold Sales\Gold Sales\bin\Antlr3.Runtime.pdb
 C:\Users\omnia.hussien\Desktop\Gold Sales\Gold Sales\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\omnia.hussien\Desktop\Gold Sales\Gold Sales\obj\Debug\Gold Sales.csproj.AssemblyReference.cache
 C:\Users\omnia.hussien\Desktop\Gold Sales\Gold Sales\obj\Debug\Gold Sales.csproj.CoreCompileInputs.cache
 C:\Users\omnia.hussien\Desktop\Gold Sales\Gold Sales\obj\Debug\Gold Sales.csproj.CopyComplete
 C:\Users\omnia.hussien\Desktop\Gold Sales\Gold Sales\obj\Debug\Gold Sales.dll
 C:\Users\omnia.hussien\Desktop\Gold Sales\Gold Sales\obj\Debug\Gold Sales.pdb
-C:\Users\omnia.hussien\Desktop\Gold Sales\Gold Sales\obj\Debug\Gold Sales.csproj.AssemblyReference.cache
