@@ -21,7 +21,7 @@
             </li>
 
             <li>
-                <a><i class="fa fa-building"></i> Companies <span class="fa fa-chevron-down"></span></a>
+                <a><i class="fa fa-institution"></i> Companies <span class="fa fa-chevron-down"></span></a>
                 <ul class="nav child_menu">
                     <li>@Html.ActionLink("Show Companies", "Index", "Companies")</li>
                     <li>@Html.ActionLink("Add new Company", "Create", "Companies")</li>
@@ -30,7 +30,26 @@
                 </ul>
             </li>
             <li>
-                <a><i class="fa fa-users"></i> Company Employee <span class="fa fa-chevron-down"></span></a>
+                <a><i class="fa fa-users"></i>Customers <span class="fa fa-chevron-down"></span></a>
+                <ul class="nav child_menu">
+                    <li>@Html.ActionLink("Show Customer", "Index", "Customers")</li>
+                    <li>@Html.ActionLink("Add new Customer", "Create", "Customers")</li>
+
+
+                </ul>
+            </li>
+            <li>
+                <!---fa fa-cogs-->
+                <a><i class="fa fa-money"></i>Vendors <span class="fa fa-chevron-down"></span></a>
+                <ul class="nav child_menu">
+                    <li>@Html.ActionLink("Show Vendors", "Index", "Vendors")</li>
+                    <li>@Html.ActionLink("Add new Vendor", "Create", "Vendors")</li>
+
+
+                </ul>
+            </li>
+            <li>
+                <a><i class="fas fa-id-card""></i> Company Employee <span class="fa fa-chevron-down"></span></a>
                 <ul class="nav child_menu">
                     <li>@Html.ActionLink("Show Employees", "Index", "CompanyEmps")</li>
                     <li>@Html.ActionLink("Add new Employee", "Create", "CompanyEmps")</li>
@@ -43,7 +62,10 @@
                 <a><i class="fa fa-anchor"></i> Look Up <span class="fa fa-chevron-down"></span></a>
                 <ul class="nav child_menu">
                     <li>@Html.ActionLink("Cities", "Index", "Cities")</li>
-                    @*<li>@Html.ActionLink("Add new Employee", "Create", "CompanyEmps")</li>*@
+                    <li>@Html.ActionLink("Taxes", "Index", "Taxes")</li>
+                    <li>@Html.ActionLink("Item Groups", "Index", "ItemGroups")</li>
+                    @*<li>@Html.ActionLink("Cities", "Index", "Cities")</li>*@
+
 
 
                 </ul>
