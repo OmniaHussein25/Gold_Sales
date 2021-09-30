@@ -16,7 +16,7 @@
     @Html.HiddenFor(model => model.CompanyID)
 
     <div class="item form-group">
-        @Html.LabelFor(model => model.CompanyName, htmlAttributes: new { @class = "col-form-label col-md-3 col-sm-3 label-align" })
+        @Html.LabelFor(model => model.CompanyName, "Company Name", htmlAttributes: new { @class = "col-form-label col-md-3 col-sm-3 label-align" })
         <div class="col-md-6 col-sm-6">
             @Html.EditorFor(model => model.CompanyName, new { htmlAttributes = new { @class = "form-control" } })
             @Html.ValidationMessageFor(model => model.CompanyName, "", new { @class = "text-danger" })
@@ -24,7 +24,7 @@
     </div>
 
     <div class="item form-group">
-        @Html.LabelFor(model => model.active, htmlAttributes: new { @class = "col-form-label col-md-3 col-sm-3 label-align" })
+        @Html.LabelFor(model => model.active, "Active", htmlAttributes: new { @class = "col-form-label col-md-3 col-sm-3 label-align" })
         <div class="col-md-6 col-sm-6">
             @Html.EditorFor(model => model.active, new { htmlAttributes = new { @class = "form-control" } })
             @Html.ValidationMessageFor(model => model.active, "", new { @class = "text-danger" })

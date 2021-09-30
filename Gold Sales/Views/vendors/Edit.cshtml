@@ -17,7 +17,7 @@
     @Html.HiddenFor(model => model.vendorid)
 
     <div class="item form-group">
-        @Html.LabelFor(model => model.VendorName, htmlAttributes: new { @class = "col-form-label col-md-3 col-sm-3 label-align" })
+        @Html.LabelFor(model => model.VendorName, "Vendor Name", htmlAttributes: new { @class = "col-form-label col-md-3 col-sm-3 label-align" })
         <div class="col-md-6 col-sm-6">
             @Html.EditorFor(model => model.VendorName, new { htmlAttributes = new { @class = "form-control" } })
             @Html.ValidationMessageFor(model => model.VendorName, "", new { @class = "text-danger" })
@@ -25,7 +25,7 @@
     </div>
 
     <div class="item form-group">
-        @Html.LabelFor(model => model.VendorDesc, htmlAttributes: new { @class = "col-form-label col-md-3 col-sm-3 label-align" })
+        @Html.LabelFor(model => model.VendorDesc, "Vendor Description", htmlAttributes: new { @class = "col-form-label col-md-3 col-sm-3 label-align" })
         <div class="col-md-6 col-sm-6">
             @Html.EditorFor(model => model.VendorDesc, new { htmlAttributes = new { @class = "form-control" } })
             @Html.ValidationMessageFor(model => model.VendorDesc, "", new { @class = "text-danger" })

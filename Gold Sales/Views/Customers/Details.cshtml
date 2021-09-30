@@ -11,7 +11,16 @@
         <tbody>
             <tr>
                 <th>
-                    @Html.DisplayNameFor(model => model.CompanyID)
+                    @Html.LabelFor(model => model.CustomerID,"Customer ID")
+                </th>
+
+                <td>
+                    @Html.DisplayFor(model => model.CustomerID)
+                </td>
+            </tr>
+            <tr>
+                <th>
+                    @Html.LabelFor(model => model.CompanyID,"Company ID")
                 </th>
 
                 <td>
@@ -20,7 +29,7 @@
             </tr>
             <tr>
                 <th>
-                    @Html.DisplayNameFor(model => model.Custname)
+                    @Html.LabelFor(model => model.Custname,"Customer Name")
                 </th>
 
                 <td>
@@ -29,7 +38,7 @@
             </tr>
             <tr>
                 <th>
-                    @Html.DisplayNameFor(model => model.CustDesc)
+                    @Html.LabelFor(model => model.CustDesc,"Customer Description")
                 </th>
 
                 <td>
@@ -38,7 +47,7 @@
             </tr>
             <tr>
                 <th>
-                    @Html.DisplayNameFor(model => model.CustCategory)
+                    @Html.LabelFor(model => model.CustCategory, "Category")
                 </th>
 
                 <td>
@@ -48,7 +57,7 @@
             <tr>
 
                 <th>
-                    @Html.DisplayNameFor(model => model.CustCatDesc)
+                    @Html.LabelFor(model => model.CustCatDesc, "Category Description")
                 </th>
 
                 <td>
@@ -57,7 +66,7 @@
             </tr>
             <tr>
                 <th>
-                    @Html.DisplayNameFor(model => model.CustKawmyID)
+                    @Html.LabelFor(model => model.CustKawmyID, "National ID")
                 </th>
 
                 <td>
@@ -66,7 +75,7 @@
             </tr>
             <tr>
                 <th>
-                    @Html.DisplayNameFor(model => model.CustPassID)
+                    @Html.LabelFor(model => model.CustPassID, "Passport ID")
                 </th>
 
                 <td>
@@ -75,7 +84,7 @@
             </tr>
             <tr>
                 <th>
-                    @Html.DisplayNameFor(model => model.CustTaxCardNo)
+                    @Html.LabelFor(model => model.CustTaxCardNo, "Tax Card No.")
                 </th>
 
                 <td>
@@ -84,7 +93,7 @@
             </tr>
             <tr>
                 <th>
-                    @Html.DisplayNameFor(model => model.CustCreditLimit)
+                    @Html.LabelFor(model => model.CustCreditLimit, "Credit Limit")
                 </th>
 
                 <td>
@@ -93,7 +102,7 @@
             </tr>
             <tr>
                 <th>
-                    @Html.DisplayNameFor(model => model.CustContacts)
+                    @Html.LabelFor(model => model.CustContacts, "Contacts")
                 </th>
 
                 <td>
@@ -102,7 +111,7 @@
             </tr>
             <tr>
                 <th>
-                    @Html.DisplayNameFor(model => model.active)
+                    @Html.LabelFor(model => model.active,"Active")
                 </th>
 
                 <td>
@@ -111,15 +120,15 @@
             </tr>
             <tr>
                 <th>
-                    @Html.DisplayNameFor(model => model.rowcreateddate)
+                    @Html.LabelFor(model => model.rowcreateddate,"Row Created Date")
                 </th>
 
                 <td>
                     @Html.DisplayFor(model => model.rowcreateddate)
                 </td>
             </tr>
-        @*<th>
-            @Html.DisplayNameFor(model => model.MachineIP)
+            @*<th>
+            @Html.LabelFor(model => model.MachineIP)
         </th>
 
         <td>
@@ -127,7 +136,7 @@
         </td>
 
         <th>
-            @Html.DisplayNameFor(model => model.MachineName)
+            @Html.LabelFor(model => model.MachineName)
         </th>
 
         <td>
@@ -135,7 +144,7 @@
         </td>
 
         <th>
-            @Html.DisplayNameFor(model => model.MachineUser)
+            @Html.LabelFor(model => model.MachineUser)
         </th>
 
         <td>
@@ -143,31 +152,31 @@
         </td>
 
         <th>
-            @Html.DisplayNameFor(model => model.userid)
+            @Html.LabelFor(model => model.userid)
         </th>
 
         <td>
             @Html.DisplayFor(model => model.userid)
         </td>*@
-        <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.rowupdateddate)
-            </th>
+            <tr>
+                <th>
+                    @Html.LabelFor(model => model.rowupdateddate,"Row Updated Date")
+                </th>
 
-            <td>
-                @Html.DisplayFor(model => model.rowupdateddate)
-            </td>
-        </tr>
-        @*<th>
-            @Html.DisplayNameFor(model => model.Machineipupdated)
+                <td>
+                    @Html.DisplayFor(model => model.rowupdateddate)
+                </td>
+            </tr>
+            @*<th>
+            @Html.LabelFor(model => model.Machineipupdated)
         </th>*@
 
-        @*<td>
+            @*<td>
             @Html.DisplayFor(model => model.Machineipupdated)
         </td>
 
         <th>
-            @Html.DisplayNameFor(model => model.Machinenameupdated)
+            @Html.LabelFor(model => model.Machinenameupdated)
         </th>
 
         <td>
@@ -175,7 +184,7 @@
         </td>
 
         <th>
-            @Html.DisplayNameFor(model => model.Machineuserupdated)
+            @Html.LabelFor(model => model.Machineuserupdated)
         </th>
 
         <td>
@@ -183,7 +192,7 @@
         </td>
 
         <th>
-            @Html.DisplayNameFor(model => model.useridupdated)
+            @Html.LabelFor(model => model.useridupdated)
         </th>
 
         <td>
@@ -191,7 +200,7 @@
         </td>
 
         <th>
-            @Html.DisplayNameFor(model => model.iabc)
+            @Html.LabelFor(model => model.iabc)
         </th>
 
         <td>
@@ -199,7 +208,7 @@
         </td>
 
         <th>
-            @Html.DisplayNameFor(model => model.idef)
+            @Html.LabelFor(model => model.idef)
         </th>
 
         <td>
@@ -207,7 +216,7 @@
         </td>
 
         <th>
-            @Html.DisplayNameFor(model => model.ighi)
+            @Html.LabelFor(model => model.ighi)
         </th>
 
         <td>
@@ -215,7 +224,7 @@
         </td>
 
         <th>
-            @Html.DisplayNameFor(model => model.ijkl)
+            @Html.LabelFor(model => model.ijkl)
         </th>
 
         <td>
@@ -223,7 +232,7 @@
         </td>
 
         <th>
-            @Html.DisplayNameFor(model => model.Sabc)
+            @Html.LabelFor(model => model.Sabc)
         </th>
 
         <td>
@@ -231,7 +240,7 @@
         </td>
 
         <th>
-            @Html.DisplayNameFor(model => model.Sdef)
+            @Html.LabelFor(model => model.Sdef)
         </th>
 
         <td>
@@ -239,7 +248,7 @@
         </td>
 
         <th>
-            @Html.DisplayNameFor(model => model.Sghi)
+            @Html.LabelFor(model => model.Sghi)
         </th>
 
         <td>
@@ -247,7 +256,7 @@
         </td>
 
         <th>
-            @Html.DisplayNameFor(model => model.Sjkl)
+            @Html.LabelFor(model => model.Sjkl)
         </th>
 
         <td>
@@ -255,7 +264,7 @@
         </td>
 
         <th>
-            @Html.DisplayNameFor(model => model.Dabc)
+            @Html.LabelFor(model => model.Dabc)
         </th>
 
         <td>
@@ -263,7 +272,7 @@
         </td>
 
         <th>
-            @Html.DisplayNameFor(model => model.Ddef)
+            @Html.LabelFor(model => model.Ddef)
         </th>
 
         <td>
@@ -271,7 +280,7 @@
         </td>
 
         <th>
-            @Html.DisplayNameFor(model => model.Dghi)
+            @Html.LabelFor(model => model.Dghi)
         </th>
 
         <td>
@@ -279,7 +288,7 @@
         </td>
 
         <th>
-            @Html.DisplayNameFor(model => model.Djkl)
+            @Html.LabelFor(model => model.Djkl)
         </th>
 
         <td>
@@ -287,7 +296,7 @@
         </td>
 
         <th>
-            @Html.DisplayNameFor(model => model.DECabc)
+            @Html.LabelFor(model => model.DECabc)
         </th>
 
         <td>
@@ -295,7 +304,7 @@
         </td>
 
         <th>
-            @Html.DisplayNameFor(model => model.DECdef)
+            @Html.LabelFor(model => model.DECdef)
         </th>
 
         <td>
@@ -303,7 +312,7 @@
         </td>
 
         <th>
-            @Html.DisplayNameFor(model => model.DECghi)
+            @Html.LabelFor(model => model.DECghi)
         </th>
 
         <td>
@@ -311,14 +320,14 @@
         </td>
 
         <th>
-            @Html.DisplayNameFor(model => model.DECjkl)
+            @Html.LabelFor(model => model.DECjkl)
         </th>
 
         <td>
             @Html.DisplayFor(model => model.DECjkl)
         </td>*@
 
-    </tbody>
+        </tbody>
     </table>
 </div>
 <p>
