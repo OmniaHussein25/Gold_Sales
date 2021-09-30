@@ -114,6 +114,7 @@ namespace Gold_Sales.Controllers
         //    db.SaveChanges();
         //    return RedirectToAction("Index");
         //}
+
         public JsonResult DeleteObj(string id)
         {
             bool res = false;
@@ -126,7 +127,6 @@ namespace Gold_Sales.Controllers
             }
             return Json(res, JsonRequestBehavior.AllowGet);
         }
-
         protected override void Dispose(bool disposing)
         {
             if (disposing)

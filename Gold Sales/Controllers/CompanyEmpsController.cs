@@ -131,7 +131,6 @@ namespace Gold_Sales.Controllers
             }
             return Json(res, JsonRequestBehavior.AllowGet);
         }
-
         protected override void Dispose(bool disposing)
         {
             if (disposing)
