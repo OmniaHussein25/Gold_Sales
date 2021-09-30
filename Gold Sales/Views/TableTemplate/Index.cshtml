@@ -11,7 +11,7 @@
         <div class="col-sm-12">
             <div class="card-box table-responsive">
                 <p>
-                    @Html.ActionLink("  Create New", "Create", null, new { @class = "btn btn-round btn-primary", @style = "Float:Right;" })
+                    @Html.ActionLink("Create New", "Create", null, new { @class = "btn btn-round btn-primary", @style = "Float:Right;" })
 
                 </p>
 
@@ -65,53 +65,32 @@
 
                     </div>
                 </div>
-                <!--------------->
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h4 class="modal-title" id="myModalLabel">Delete City</h4>
-                        <button type="button" class="close" data-dismiss="modal">
-                            <span aria-hidden="true">×</span>
-                        </button>
-                    </div>
-                    <div class="modal-body">
-                        <h4>Text in a modal</h4>
-                        <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.</p>
-                        <p>Aenean lacinia bibendum nulla sed consectetur. Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Donec sed odio dui. Donec ullamcorper nulla non metus auctor fringilla.</p>
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                        <button type="button" class="btn btn-primary">Save changes</button>
-                    </div>
-                </div>
-                <!------------>
+                <!----Model Start-->
                 <div class="modal fade" id="myModal">
                     <div class="modal-dialog">
+
                         <div class="modal-content">
                             <div class="modal-header">
-                                <a href="#" class="close" data-dismiss="modal">&times;</a>
-                                <h3 class="modal-title" style="float:left">Delete City</h3>
+                                <h4 class="modal-title" id="myModalLabel">Delete City</h4>
+                                <button type="button" class="close" data-dismiss="modal">
+
+                                    <span aria-hidden="true">×</span>
+                                </button>
                             </div>
                             <div class="modal-body">
-                                <h4>
-                                    Are you sure You want to delete this item ?!
-                                </h4>
-
-
-
+                                <h4> Are you sure You want to delete this item ?!</h4>
                             </div>
                             <div class="modal-footer">
-                                <a href="#" class="btn btn-default" data-dismiss="modal">Cancel</a>
-                                <a href="#" class="btn btn-success" onclick="DeleteCity()">Confirm</a>
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                <button type="button" class="btn btn-primary" onclick="DeleteObj()">Confirm</button>
                             </div>
-
                         </div>
-
                     </div>
-
                 </div>
 
+                <!--Model End-->
 
-                <input type="hidden" id="hiddenCityId" />
+                <input type="hidden" id="hiddenId" />
             </div>
         </div>
 
@@ -125,22 +104,22 @@
 
     var ConfirmDelete = function (id) {
 
-        $("#hiddenCityId").val(id);
+        $("#hiddenId").val(id);
         $("#myModal").modal('show');
 
     }
 
-    var DeleteCity = function () {
+    var DeleteObj = function () {
         //debugger
 
         $("#loaderDiv").show();
 
-        var cityid = $("#hiddenCityId").val();
+        var cityid = $("#hiddenId").val();
 
         $.ajax({
 
             type: "POST",
-            url: "/TableTemplate/DeleteCity",
+            url: "/TableTemplate/DeleteObj",
             data: { id: cityid },
             dataType: "json",
             success: function (result) {
@@ -150,7 +129,7 @@
 
             },
             error: function (response) {
-                alert("error!");  
+                alert("error!");
             }
 
 

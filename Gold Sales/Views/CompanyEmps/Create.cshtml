@@ -1,36 +1,50 @@
-﻿@model Gold_Sales.Models.vendor
+﻿@model Gold_Sales.Models.CompanyEmp
 
 @{
-    ViewBag.Title = "Edit";
+    ViewBag.Title = "Create";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>Edit</h2>
+<h2>Create</h2>
 
 
-@using (Html.BeginForm())
+@using (Html.BeginForm()) 
 {
     @Html.AntiForgeryToken()
     
     <div class="form-horizontal form-label-left">
-
+        <h4>CompanyEmp</h4>
         <hr />
         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-        @Html.HiddenFor(model => model.vendorid)
-
         <div class="item form-group">
-            @Html.LabelFor(model => model.VendorName, htmlAttributes: new { @class = "col-form-label col-md-3 col-sm-3 label-align" })
+            @Html.LabelFor(model => model.EmpID, htmlAttributes: new { @class = "col-form-label col-md-3 col-sm-3 label-align" })
             <div class="col-md-6 col-sm-6">
-                @Html.EditorFor(model => model.VendorName, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.VendorName, "", new { @class = "text-danger" })
+                @Html.EditorFor(model => model.EmpID, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.EmpID, "", new { @class = "text-danger" })
             </div>
         </div>
 
         <div class="item form-group">
-            @Html.LabelFor(model => model.VendorDesc, htmlAttributes: new { @class = "col-form-label col-md-3 col-sm-3 label-align" })
+            @Html.LabelFor(model => model.CompanyID, "CompanyID", htmlAttributes: new { @class = "col-form-label col-md-3 col-sm-3 label-align" })
             <div class="col-md-6 col-sm-6">
-                @Html.EditorFor(model => model.VendorDesc, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.VendorDesc, "", new { @class = "text-danger" })
+                @Html.DropDownList("CompanyID", null, htmlAttributes: new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.CompanyID, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="item form-group">
+            @Html.LabelFor(model => model.EmpName, htmlAttributes: new { @class = "col-form-label col-md-3 col-sm-3 label-align" })
+            <div class="col-md-6 col-sm-6">
+                @Html.EditorFor(model => model.EmpName, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.EmpName, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="item form-group">
+            @Html.LabelFor(model => model.active, htmlAttributes: new { @class = "col-form-label col-md-3 col-sm-3 label-align" })
+            <div class="col-md-6 col-sm-6">
+                @Html.EditorFor(model => model.active, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.active, "", new { @class = "text-danger" })
             </div>
         </div>
 
@@ -71,6 +85,14 @@
             <div class="col-md-6 col-sm-6">
                 @Html.EditorFor(model => model.userid, new { htmlAttributes = new { @class = "form-control" } })
                 @Html.ValidationMessageFor(model => model.userid, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="item form-group">
+            @Html.LabelFor(model => model.rowupdateddate, htmlAttributes: new { @class = "col-form-label col-md-3 col-sm-3 label-align" })
+            <div class="col-md-6 col-sm-6">
+                @Html.EditorFor(model => model.rowupdateddate, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.rowupdateddate, "", new { @class = "text-danger" })
             </div>
         </div>
 
@@ -234,9 +256,9 @@
             </div>
         </div>*@
 
-        <div class="item form-group">
+        <div class="item item form-group">
             <div class="col-md-6 col-sm-6 offset-md-3">
-                <input type="submit" value="Save" class="btn btn-success" />
+                <input type="submit" value="Create" class="btn btn-success" />
             </div>
         </div>
     </div>

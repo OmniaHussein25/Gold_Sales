@@ -105,14 +105,26 @@ namespace Gold_Sales.Controllers
         }
 
         // POST: Customers/Delete/5
-        [HttpPost, ActionName("Delete")]
-        [ValidateAntiForgeryToken]
-        public ActionResult DeleteConfirmed(string id)
+        //[HttpPost, ActionName("Delete")]
+        //[ValidateAntiForgeryToken]
+        //public ActionResult DeleteConfirmed(string id)
+        //{
+        //    Customer customer = db.Customers.Find(id);
+        //    db.Customers.Remove(customer);
+        //    db.SaveChanges();
+        //    return RedirectToAction("Index");
+        //}
+        public JsonResult DeleteObj(string id)
         {
+            bool res = false;
             Customer customer = db.Customers.Find(id);
-            db.Customers.Remove(customer);
-            db.SaveChanges();
-            return RedirectToAction("Index");
+            if (customer != null)
+            {
+                db.Customers.Remove(customer);
+                db.SaveChanges();
+                res = true;
+            }
+            return Json(res, JsonRequestBehavior.AllowGet);
         }
 
         protected override void Dispose(bool disposing)

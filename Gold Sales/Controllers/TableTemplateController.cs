@@ -117,7 +117,7 @@ namespace Gold_Sales.Controllers
         //[HttpPost, ActionName("Delete")]
         //[ValidateAntiForgeryToken]
 
-        public JsonResult DeleteCity(string id)
+        public JsonResult DeleteObj(string id)
         {
             bool res = false;
             City city = db.Cities.Find(id);

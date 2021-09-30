@@ -10,122 +10,123 @@ using Gold_Sales.Models;
 
 namespace Gold_Sales.Controllers
 {
-    public class vendorsController : Controller
+    public class CompaniesController : Controller
     {
         private Gold_SalesEntities db = new Gold_SalesEntities();
 
-        // GET: vendors
+        // GET: Companies
         public ActionResult Index()
         {
-            return View(db.vendors.ToList());
+            return View(db.Companies.ToList());
         }
 
-        // GET: vendors/Details/5
+        // GET: Companies/Details/5
         public ActionResult Details(string id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            vendor vendor = db.vendors.Find(id);
-            if (vendor == null)
+            Company company = db.Companies.Find(id);
+            if (company == null)
             {
                 return HttpNotFound();
             }
-            return View(vendor);
+            return View(company);
         }
 
-        // GET: vendors/Create
+        // GET: Companies/Create
         public ActionResult Create()
         {
             return View();
         }
 
-        // POST: vendors/Create
+        // POST: Companies/Create
         // To protect from overposting attacks, enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "vendorid,VendorName,VendorDesc,rowcreateddate,MachineIP,MachineName,MachineUser,userid,Machineipupdated,Machinenameupdated,Machineuserupdated,useridupdated,iabc,idef,ighi,ijkl,Sabc,Sdef,Sghi,Sjkl,Dabc,Ddef,Dghi,Djkl,DECabc,DECdef,DECghi,DECjkl")] vendor vendor)
+        public ActionResult Create([Bind(Include = "CompanyID,CompanyName,active,rowcreateddate,MachineIP,MachineName,MachineUser,userid,rowupdateddate,Machineipupdated,Machinenameupdated,Machineuserupdated,useridupdated,iabc,idef,ighi,ijkl,Sabc,Sdef,Sghi,Sjkl,Dabc,Ddef,Dghi,Djkl,DECabc,DECdef,DECghi,DECjkl")] Company company)
         {
             if (ModelState.IsValid)
             {
-                db.vendors.Add(vendor);
+                db.Companies.Add(company);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
 
-            return View(vendor);
+            return View(company);
         }
 
-        // GET: vendors/Edit/5
+        // GET: Companies/Edit/5
         public ActionResult Edit(string id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            vendor vendor = db.vendors.Find(id);
-            if (vendor == null)
+            Company company = db.Companies.Find(id);
+            if (company == null)
             {
                 return HttpNotFound();
             }
-            return View(vendor);
+            return View(company);
         }
 
-        // POST: vendors/Edit/5
+        // POST: Companies/Edit/5
         // To protect from overposting attacks, enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "vendorid,VendorName,VendorDesc,rowcreateddate,MachineIP,MachineName,MachineUser,userid,Machineipupdated,Machinenameupdated,Machineuserupdated,useridupdated,iabc,idef,ighi,ijkl,Sabc,Sdef,Sghi,Sjkl,Dabc,Ddef,Dghi,Djkl,DECabc,DECdef,DECghi,DECjkl")] vendor vendor)
+        public ActionResult Edit([Bind(Include = "CompanyID,CompanyName,active,rowcreateddate,MachineIP,MachineName,MachineUser,userid,rowupdateddate,Machineipupdated,Machinenameupdated,Machineuserupdated,useridupdated,iabc,idef,ighi,ijkl,Sabc,Sdef,Sghi,Sjkl,Dabc,Ddef,Dghi,Djkl,DECabc,DECdef,DECghi,DECjkl")] Company company)
         {
             if (ModelState.IsValid)
             {
-                db.Entry(vendor).State = EntityState.Modified;
+                db.Entry(company).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            return View(vendor);
+            return View(company);
         }
 
-        // GET: vendors/Delete/5
+        // GET: Companies/Delete/5
         public ActionResult Delete(string id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            vendor vendor = db.vendors.Find(id);
-            if (vendor == null)
+            Company company = db.Companies.Find(id);
+            if (company == null)
             {
                 return HttpNotFound();
             }
-            return View(vendor);
+            return View(company);
         }
 
-        // POST: vendors/Delete/5
+        // POST: Companies/Delete/5
         //[HttpPost, ActionName("Delete")]
         //[ValidateAntiForgeryToken]
         //public ActionResult DeleteConfirmed(string id)
         //{
-        //    vendor vendor = db.vendors.Find(id);
-        //    db.vendors.Remove(vendor);
+        //    Company company = db.Companies.Find(id);
+        //    db.Companies.Remove(company);
         //    db.SaveChanges();
         //    return RedirectToAction("Index");
         //}
         public JsonResult DeleteObj(string id)
         {
             bool res = false;
-            vendor vendor = db.vendors.Find(id);
-            if (vendor != null)
+            Company company = db.Companies.Find(id);
+            if (company != null)
             {
-                db.vendors.Remove(vendor);
+                db.Companies.Remove(company);
                 db.SaveChanges();
                 res = true;
             }
             return Json(res, JsonRequestBehavior.AllowGet);
         }
+
         protected override void Dispose(bool disposing)
         {
             if (disposing)

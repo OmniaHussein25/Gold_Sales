@@ -7,309 +7,315 @@
 
 <h2>Details</h2>
 
-<div>
-    <h4>Customer</h4>
-    <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.CompanyID)
-        </dt>
+<div class="table-responsive">
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.CompanyID)
+                </th>
 
-        <dd>
-            @Html.DisplayFor(model => model.CompanyID)
-        </dd>
+                <td>
+                    @Html.DisplayFor(model => model.CompanyID)
+                </td>
+            </tr>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.Custname)
+                </th>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Custname)
-        </dt>
+                <td>
+                    @Html.DisplayFor(model => model.Custname)
+                </td>
+            </tr>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.CustDesc)
+                </th>
 
-        <dd>
-            @Html.DisplayFor(model => model.Custname)
-        </dd>
+                <td>
+                    @Html.DisplayFor(model => model.CustDesc)
+                </td>
+            </tr>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.CustCategory)
+                </th>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.CustDesc)
-        </dt>
+                <td>
+                    @Html.DisplayFor(model => model.CustCategory)
+                </td>
+            </tr>
+            <tr>
+                @*
+                <th>
+                    @Html.DisplayNameFor(model => model.CustCatDesc)
+                </th>
 
-        <dd>
-            @Html.DisplayFor(model => model.CustDesc)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.CustCategory)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.CustCategory)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.CustCatDesc)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.CustCatDesc)
-        </dd>
-
-        <dt>
+                <td>
+                    @Html.DisplayFor(model => model.CustCatDesc)
+                </td>
+            </tr>
+        <th>
             @Html.DisplayNameFor(model => model.CustKawmyID)
-        </dt>
+        </th>
 
-        <dd>
+        <td>
             @Html.DisplayFor(model => model.CustKawmyID)
-        </dd>
+        </td>
 
-        <dt>
+        <th>
             @Html.DisplayNameFor(model => model.CustPassID)
-        </dt>
+        </th>
 
-        <dd>
+        <td>
             @Html.DisplayFor(model => model.CustPassID)
-        </dd>
+        </td>
 
-        <dt>
+        <th>
             @Html.DisplayNameFor(model => model.CustTaxCardNo)
-        </dt>
+        </th>
 
-        <dd>
+        <td>
             @Html.DisplayFor(model => model.CustTaxCardNo)
-        </dd>
+        </td>
 
-        <dt>
+        <th>
             @Html.DisplayNameFor(model => model.CustCreditLimit)
-        </dt>
+        </th>
 
-        <dd>
+        <td>
             @Html.DisplayFor(model => model.CustCreditLimit)
-        </dd>
+        </td>
 
-        <dt>
+        <th>
             @Html.DisplayNameFor(model => model.CustContacts)
-        </dt>
+        </th>
 
-        <dd>
+        <td>
             @Html.DisplayFor(model => model.CustContacts)
-        </dd>
+        </td>
 
-        <dt>
+        <th>
             @Html.DisplayNameFor(model => model.active)
-        </dt>
+        </th>
 
-        <dd>
+        <td>
             @Html.DisplayFor(model => model.active)
-        </dd>
+        </td>
 
-        <dt>
+        <th>
             @Html.DisplayNameFor(model => model.rowcreateddate)
-        </dt>
+        </th>
 
-        <dd>
+        <td>
             @Html.DisplayFor(model => model.rowcreateddate)
-        </dd>
+        </td>
 
-        <dt>
+        <th>
             @Html.DisplayNameFor(model => model.MachineIP)
-        </dt>
+        </th>
 
-        <dd>
+        <td>
             @Html.DisplayFor(model => model.MachineIP)
-        </dd>
+        </td>
 
-        <dt>
+        <th>
             @Html.DisplayNameFor(model => model.MachineName)
-        </dt>
+        </th>
 
-        <dd>
+        <td>
             @Html.DisplayFor(model => model.MachineName)
-        </dd>
+        </td>
 
-        <dt>
+        <th>
             @Html.DisplayNameFor(model => model.MachineUser)
-        </dt>
+        </th>
 
-        <dd>
+        <td>
             @Html.DisplayFor(model => model.MachineUser)
-        </dd>
+        </td>
 
-        <dt>
+        <th>
             @Html.DisplayNameFor(model => model.userid)
-        </dt>
+        </th>
 
-        <dd>
+        <td>
             @Html.DisplayFor(model => model.userid)
-        </dd>
+        </td>
 
-        <dt>
+        <th>
             @Html.DisplayNameFor(model => model.rowupdateddate)
-        </dt>
+        </th>
 
-        <dd>
+        <td>
             @Html.DisplayFor(model => model.rowupdateddate)
-        </dd>
+        </td>
 
-        <dt>
+        <th>
             @Html.DisplayNameFor(model => model.Machineipupdated)
-        </dt>
+        </th>
 
-        <dd>
+        <td>
             @Html.DisplayFor(model => model.Machineipupdated)
-        </dd>
+        </td>
 
-        <dt>
+        <th>
             @Html.DisplayNameFor(model => model.Machinenameupdated)
-        </dt>
+        </th>
 
-        <dd>
+        <td>
             @Html.DisplayFor(model => model.Machinenameupdated)
-        </dd>
+        </td>
 
-        <dt>
+        <th>
             @Html.DisplayNameFor(model => model.Machineuserupdated)
-        </dt>
+        </th>
 
-        <dd>
+        <td>
             @Html.DisplayFor(model => model.Machineuserupdated)
-        </dd>
+        </td>
 
-        <dt>
+        <th>
             @Html.DisplayNameFor(model => model.useridupdated)
-        </dt>
+        </th>
 
-        <dd>
+        <td>
             @Html.DisplayFor(model => model.useridupdated)
-        </dd>
+        </td>
 
-        <dt>
+        <th>
             @Html.DisplayNameFor(model => model.iabc)
-        </dt>
+        </th>
 
-        <dd>
+        <td>
             @Html.DisplayFor(model => model.iabc)
-        </dd>
+        </td>
 
-        <dt>
+        <th>
             @Html.DisplayNameFor(model => model.idef)
-        </dt>
+        </th>
 
-        <dd>
+        <td>
             @Html.DisplayFor(model => model.idef)
-        </dd>
+        </td>
 
-        <dt>
+        <th>
             @Html.DisplayNameFor(model => model.ighi)
-        </dt>
+        </th>
 
-        <dd>
+        <td>
             @Html.DisplayFor(model => model.ighi)
-        </dd>
+        </td>
 
-        <dt>
+        <th>
             @Html.DisplayNameFor(model => model.ijkl)
-        </dt>
+        </th>
 
-        <dd>
+        <td>
             @Html.DisplayFor(model => model.ijkl)
-        </dd>
+        </td>
 
-        <dt>
+        <th>
             @Html.DisplayNameFor(model => model.Sabc)
-        </dt>
+        </th>
 
-        <dd>
+        <td>
             @Html.DisplayFor(model => model.Sabc)
-        </dd>
+        </td>
 
-        <dt>
+        <th>
             @Html.DisplayNameFor(model => model.Sdef)
-        </dt>
+        </th>
 
-        <dd>
+        <td>
             @Html.DisplayFor(model => model.Sdef)
-        </dd>
+        </td>
 
-        <dt>
+        <th>
             @Html.DisplayNameFor(model => model.Sghi)
-        </dt>
+        </th>
 
-        <dd>
+        <td>
             @Html.DisplayFor(model => model.Sghi)
-        </dd>
+        </td>
 
-        <dt>
+        <th>
             @Html.DisplayNameFor(model => model.Sjkl)
-        </dt>
+        </th>
 
-        <dd>
+        <td>
             @Html.DisplayFor(model => model.Sjkl)
-        </dd>
+        </td>
 
-        <dt>
+        <th>
             @Html.DisplayNameFor(model => model.Dabc)
-        </dt>
+        </th>
 
-        <dd>
+        <td>
             @Html.DisplayFor(model => model.Dabc)
-        </dd>
+        </td>
 
-        <dt>
+        <th>
             @Html.DisplayNameFor(model => model.Ddef)
-        </dt>
+        </th>
 
-        <dd>
+        <td>
             @Html.DisplayFor(model => model.Ddef)
-        </dd>
+        </td>
 
-        <dt>
+        <th>
             @Html.DisplayNameFor(model => model.Dghi)
-        </dt>
+        </th>
 
-        <dd>
+        <td>
             @Html.DisplayFor(model => model.Dghi)
-        </dd>
+        </td>
 
-        <dt>
+        <th>
             @Html.DisplayNameFor(model => model.Djkl)
-        </dt>
+        </th>
 
-        <dd>
+        <td>
             @Html.DisplayFor(model => model.Djkl)
-        </dd>
+        </td>
 
-        <dt>
+        <th>
             @Html.DisplayNameFor(model => model.DECabc)
-        </dt>
+        </th>
 
-        <dd>
+        <td>
             @Html.DisplayFor(model => model.DECabc)
-        </dd>
+        </td>
 
-        <dt>
+        <th>
             @Html.DisplayNameFor(model => model.DECdef)
-        </dt>
+        </th>
 
-        <dd>
+        <td>
             @Html.DisplayFor(model => model.DECdef)
-        </dd>
+        </td>
 
-        <dt>
+        <th>
             @Html.DisplayNameFor(model => model.DECghi)
-        </dt>
+        </th>
 
-        <dd>
+        <td>
             @Html.DisplayFor(model => model.DECghi)
-        </dd>
+        </td>
 
-        <dt>
+        <th>
             @Html.DisplayNameFor(model => model.DECjkl)
-        </dt>
+        </th>
 
-        <dd>
+        <td>
             @Html.DisplayFor(model => model.DECjkl)
-        </dd>
+        </td>*@
 
-    </dl>
+</tbody>
+    </table>
 </div>
 <p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.CustomerID }) |
-    @Html.ActionLink("Back to List", "Index")
+    @Html.ActionLink("Edit", "Edit", new { id = Model.CustomerID }, new { @class = "btn btn-success" }) 
+    @Html.ActionLink("Back to List", "Index", null, new { @class = "btn btn-primary" })
 </p>
