@@ -17,6 +17,7 @@ namespace Gold_Sales.Controllers
         // GET: Customers
         public ActionResult Index()
         {
+            //hii 11
             return View(db.Customers.ToList());
         }
 
