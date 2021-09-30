@@ -5,7 +5,6 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>Details</h2>
 
 <div class="table-responsive">
     <table class="table">
@@ -29,7 +28,7 @@
                 </td>
             </tr>
 
-            @*<tr>
+            <tr>
                 <th>
                     @Html.DisplayNameFor(model => model.rowcreateddate)
                 </th>
@@ -38,7 +37,7 @@
                     @Html.DisplayFor(model => model.rowcreateddate)
                 </td>
             </tr>
-            <tr>
+            @*<tr>
                 <th>
                     @Html.DisplayNameFor(model => model.MachineIP)
                 </th>
@@ -261,5 +260,5 @@
 </div>
 <p>
     @Html.ActionLink("Edit", "Edit", new { id = Model.vendorid }, new { @class = "btn btn-success" }) 
-    @Html.ActionLink("Back to List", "Index", null, new { @class = "btn btn-primary" })
+    @Html.ActionLink("Cancel", "Index", null, new { @class = "btn btn-primary" })
 </p>

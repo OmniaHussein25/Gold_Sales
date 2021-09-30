@@ -5,7 +5,6 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>Details</h2>
 
 <div class="table-responsive">
     <table class="table">
@@ -47,7 +46,7 @@
                 </td>
             </tr>
             <tr>
-                @*
+
                 <th>
                     @Html.DisplayNameFor(model => model.CustCatDesc)
                 </th>
@@ -56,63 +55,70 @@
                     @Html.DisplayFor(model => model.CustCatDesc)
                 </td>
             </tr>
-        <th>
-            @Html.DisplayNameFor(model => model.CustKawmyID)
-        </th>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.CustKawmyID)
+                </th>
 
-        <td>
-            @Html.DisplayFor(model => model.CustKawmyID)
-        </td>
+                <td>
+                    @Html.DisplayFor(model => model.CustKawmyID)
+                </td>
+            </tr>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.CustPassID)
+                </th>
 
-        <th>
-            @Html.DisplayNameFor(model => model.CustPassID)
-        </th>
+                <td>
+                    @Html.DisplayFor(model => model.CustPassID)
+                </td>
+            </tr>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.CustTaxCardNo)
+                </th>
 
-        <td>
-            @Html.DisplayFor(model => model.CustPassID)
-        </td>
+                <td>
+                    @Html.DisplayFor(model => model.CustTaxCardNo)
+                </td>
+            </tr>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.CustCreditLimit)
+                </th>
 
-        <th>
-            @Html.DisplayNameFor(model => model.CustTaxCardNo)
-        </th>
+                <td>
+                    @Html.DisplayFor(model => model.CustCreditLimit)
+                </td>
+            </tr>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.CustContacts)
+                </th>
 
-        <td>
-            @Html.DisplayFor(model => model.CustTaxCardNo)
-        </td>
+                <td>
+                    @Html.DisplayFor(model => model.CustContacts)
+                </td>
+            </tr>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.active)
+                </th>
 
-        <th>
-            @Html.DisplayNameFor(model => model.CustCreditLimit)
-        </th>
+                <td>
+                    @Html.DisplayFor(model => model.active)
+                </td>
+            </tr>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.rowcreateddate)
+                </th>
 
-        <td>
-            @Html.DisplayFor(model => model.CustCreditLimit)
-        </td>
-
-        <th>
-            @Html.DisplayNameFor(model => model.CustContacts)
-        </th>
-
-        <td>
-            @Html.DisplayFor(model => model.CustContacts)
-        </td>
-
-        <th>
-            @Html.DisplayNameFor(model => model.active)
-        </th>
-
-        <td>
-            @Html.DisplayFor(model => model.active)
-        </td>
-
-        <th>
-            @Html.DisplayNameFor(model => model.rowcreateddate)
-        </th>
-
-        <td>
-            @Html.DisplayFor(model => model.rowcreateddate)
-        </td>
-
-        <th>
+                <td>
+                    @Html.DisplayFor(model => model.rowcreateddate)
+                </td>
+            </tr>
+        @*<th>
             @Html.DisplayNameFor(model => model.MachineIP)
         </th>
 
@@ -142,21 +148,21 @@
 
         <td>
             @Html.DisplayFor(model => model.userid)
-        </td>
+        </td>*@
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.rowupdateddate)
+            </th>
 
-        <th>
-            @Html.DisplayNameFor(model => model.rowupdateddate)
-        </th>
-
-        <td>
-            @Html.DisplayFor(model => model.rowupdateddate)
-        </td>
-
-        <th>
+            <td>
+                @Html.DisplayFor(model => model.rowupdateddate)
+            </td>
+        </tr>
+        @*<th>
             @Html.DisplayNameFor(model => model.Machineipupdated)
-        </th>
+        </th>*@
 
-        <td>
+        @*<td>
             @Html.DisplayFor(model => model.Machineipupdated)
         </td>
 
@@ -312,10 +318,10 @@
             @Html.DisplayFor(model => model.DECjkl)
         </td>*@
 
-</tbody>
+    </tbody>
     </table>
 </div>
 <p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.CustomerID }, new { @class = "btn btn-success" }) 
-    @Html.ActionLink("Back to List", "Index", null, new { @class = "btn btn-primary" })
+    @Html.ActionLink("Edit", "Edit", new { id = Model.CustomerID }, new { @class = "btn btn-success" })
+    @Html.ActionLink("Cancel", "Index", null, new { @class = "btn btn-primary" })
 </p>

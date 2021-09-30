@@ -1,11 +1,10 @@
 ﻿@model Gold_Sales.Models.CompanyEmp
 
 @{
-    ViewBag.Title = "Edit";
+    ViewBag.Title = "Edit Company Employee Information";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>Edit</h2>
 
 
 @using (Html.BeginForm())
@@ -13,8 +12,7 @@
     @Html.AntiForgeryToken()
     
 <div class="form-horizontal form-label-left">
-    <h4>CompanyEmp</h4>
-    <hr />
+
     @Html.ValidationSummary(true, "", new { @class = "text-danger" })
     @Html.HiddenFor(model => model.EmpID)
 
@@ -250,17 +248,13 @@
             </div>
         </div>
     *@
-    <div class="item item form-group">
-        <div class="col-md-6 col-sm-6 offset-md-3">
-            <input type="submit" value="Save"  class="btn btn-success"  />
-        </div>
-    </div>
+   
+    @Html.Partial("~/Views/Shared/Partials/_FormButtons.cshtml")
+
 </div>
 }
 
-<div>
-    @Html.ActionLink("Back to List", "Index", null, new { @class = "btn btn-primary" })
-</div>
+
 
 @section Scripts {
     @Scripts.Render("~/bundles/jqueryval")
