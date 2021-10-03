@@ -50,6 +50,7 @@ namespace Gold_Sales.Controllers
         {
             if (ModelState.IsValid)
             {
+                city.rowupdateddate = DateTime.Now;
                 db.Cities.Add(city);
                 db.SaveChanges();
                 return RedirectToAction("Index");
