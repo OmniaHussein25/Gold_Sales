@@ -9,19 +9,20 @@
             <ul class=" navbar-right">
                 <li class="nav-item dropdown open" style="padding-left: 15px;">
                     <a href="javascript:;" class="user-profile dropdown-toggle" aria-haspopup="true" id="navbarDropdown" data-toggle="dropdown" aria-expanded="false">
-                        @*@if (Session["UserName"] != null)
+                        @if (Session["UserName"] != null)
 
                         {
-                        <p>
-                            @Session["UserName"].ToString()
                             
-                        </p>
-                        }*@
+                                @Session["UserName"].ToString()
+                                
+                            
+                        }
 
-                    </a>
+                        </a>
                     <div class="dropdown-menu dropdown-usermenu pull-right" aria-labelledby="navbarDropdown">
                         <a class="dropdown-item" href="https://colorlib.com/polygon/gentelella/index.html">Help</a>
-                        <a class="dropdown-item" @Html.ActionLink("Log Out","Index","LogIn")></a>
+                       <a class="dropdown-item " href="@Url.Action("Index", "LogIn")">Log Out<i class="fas fa-sign-out-alt pull-right"></i></a>
+                        
                     </div>
                 </li>
 
