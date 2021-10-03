@@ -51,6 +51,7 @@ namespace Gold_Sales.Controllers
         {
             if (ModelState.IsValid)
             {
+                customer.rowupdateddate = DateTime.Now;
                 db.Customers.Add(customer);
                 db.SaveChanges();
                 return RedirectToAction("Index");
