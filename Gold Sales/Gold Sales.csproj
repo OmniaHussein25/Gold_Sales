@@ -134,12 +134,8 @@
     <Compile Include="Controllers\CitiesController.cs" />
     <Compile Include="Controllers\CompaniesController.cs" />
     <Compile Include="Controllers\CompanyEmpsController.cs" />
-    <Compile Include="Controllers\CurrenciesController.cs" />
-    <Compile Include="Controllers\CurrencyRatesController.cs" />
     <Compile Include="Controllers\CustomersController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
-    <Compile Include="Controllers\ItemGroupsController.cs" />
-    <Compile Include="Controllers\ItemsController.cs" />
     <Compile Include="Controllers\LogInController.cs" />
     <Compile Include="Controllers\TableTemplateController.cs" />
     <Compile Include="Controllers\vendorsController.cs" />
@@ -6926,22 +6922,6 @@
     <Content Include="Style\vendors\fontawesome-free-5.15.4-web\webfonts\fa-solid-900.woff" />
     <Content Include="Style\vendors\fontawesome-free-5.15.4-web\webfonts\fa-solid-900.woff2" />
     <Content Include="Views\Shared\Partials\_FormButtons.cshtml" />
-    <Content Include="Views\Currencies\Create.cshtml" />
-    <Content Include="Views\Currencies\Details.cshtml" />
-    <Content Include="Views\Currencies\Edit.cshtml" />
-    <Content Include="Views\Currencies\Index.cshtml" />
-    <Content Include="Views\CurrencyRates\Create.cshtml" />
-    <Content Include="Views\CurrencyRates\Details.cshtml" />
-    <Content Include="Views\CurrencyRates\Edit.cshtml" />
-    <Content Include="Views\CurrencyRates\Index.cshtml" />
-    <Content Include="Views\ItemGroups\Create.cshtml" />
-    <Content Include="Views\ItemGroups\Details.cshtml" />
-    <Content Include="Views\ItemGroups\Edit.cshtml" />
-    <Content Include="Views\ItemGroups\Index.cshtml" />
-    <Content Include="Views\Items\Create.cshtml" />
-    <Content Include="Views\Items\Details.cshtml" />
-    <Content Include="Views\Items\Edit.cshtml" />
-    <Content Include="Views\Items\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
