@@ -62,19 +62,20 @@ namespace Gold_Sales.Controllers
         }
 
         // GET: pos_trans_grid/Edit/5
-        public ActionResult Edit(int? id)
+        public ActionResult Edit(int? trans_id, int? linenum , string store_code)
         {
-            if (id == null)
+            if (trans_id == null || linenum == null || store_code == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            pos_trans_grid pos_trans_grid = db.pos_trans_grid.Find(id);
-            if (pos_trans_grid == null)
+        
+            pos_trans_grid services = db.pos_trans_grid.Where(a => a.trans_id == trans_id && a.linenum == linenum && a.store_code == store_code).FirstOrDefault();
+            if (services == null)
             {
                 return HttpNotFound();
             }
-            ViewBag.trans_id = new SelectList(db.pos_trans, "trans_id", "client_code", pos_trans_grid.trans_id);
-            return View(pos_trans_grid);
+            ViewBag.trans_id = new SelectList(db.pos_trans, "trans_id", "client_code", services.trans_id);
+            return View(services);
         }
 
         // POST: pos_trans_grid/Edit/5

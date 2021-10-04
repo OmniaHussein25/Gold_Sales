@@ -26,6 +26,7 @@ namespace Gold_Sales.Controllers
         {
             if (id == null)
             {
+
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
             CompanyEmp companyEmp = db.CompanyEmps.Find(id);

@@ -269,8 +269,8 @@
                                         <td>
 
 
-                                            @Html.ActionLink(" ", "Edit", new { id = item.trans_id, lineNumber = item.linenum, storeCode = item.store_code }, new { @class = "btn btn-round btn-warning glyphicon glyphicon-edit" })
-                                            @Html.ActionLink(" ", "Details", new { id = item.trans_id, lineNumber = item.linenum, storeCode = item.store_code }, new { @class = "btn btn-round btn-warning glyphicon glyphicon-edit" })
+                                            @Html.ActionLink(" ", "Edit", new { trans_id = item.trans_id, linenum = item.linenum, store_code = item.store_code }, new { @class = "btn btn-round btn-warning glyphicon glyphicon-edit" })
+                                            @Html.ActionLink(" ", "Details", new { id = item.trans_id, lineNumber = item.linenum, storeCode = item.store_code }, new { @class = "btn btn-round btn-info glyphicon glyphicon-info-sign" })
                                             @*@Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })*@
                                             <a href="#" class="btn btn-round btn-danger glyphicon glyphicon-trash" onclick="ConfirmDelete(@item.trans_id)"> </a>
 
