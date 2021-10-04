@@ -7,12 +7,12 @@ using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using Gold_Sales.Models;
-
 namespace Gold_Sales.Controllers
 {
     public class CustomersController : Controller
     {
         private Gold_SalesEntities db = new Gold_SalesEntities();
+
 
         // GET: Customers
         public ActionResult Index()
@@ -83,6 +83,7 @@ namespace Gold_Sales.Controllers
         {
             if (ModelState.IsValid)
             {
+                customer.rowupdateddate = DateTime.Now;
                 db.Entry(customer).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");
