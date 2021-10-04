@@ -17,7 +17,7 @@ namespace Gold_Sales.Models
         public int FunctionGroupMenuID { get; set; }
         public Nullable<int> FunctionGroupID { get; set; }
         public Nullable<int> FunctionID { get; set; }
-        public Nullable<byte> active { get; set; }
+        public Nullable<bool> active { get; set; }
         public Nullable<System.DateTime> deactivateddate { get; set; }
         public Nullable<System.DateTime> rowcreateddate { get; set; }
     }

@@ -23,7 +23,7 @@ namespace Gold_Sales.Models
         public byte AccountTypeID { get; set; }
         public string AccountTypeName { get; set; }
         public string AccountTypeDesc { get; set; }
-        public Nullable<byte> active { get; set; }
+        public Nullable<bool> active { get; set; }
         public Nullable<System.DateTime> rowcreateddate { get; set; }
         public string MachineIP { get; set; }
         public string MachineName { get; set; }

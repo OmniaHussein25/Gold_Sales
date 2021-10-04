@@ -25,7 +25,7 @@ namespace Gold_Sales.Models
         public Nullable<int> IsSystemCurr { get; set; }
         public Nullable<decimal> CurrRate { get; set; }
         public Nullable<System.DateTime> CurrRateDate { get; set; }
-        public Nullable<int> active { get; set; }
+        public Nullable<bool> active { get; set; }
         public Nullable<System.DateTime> rowcreateddate { get; set; }
         public string MachineIP { get; set; }
         public string MachineName { get; set; }

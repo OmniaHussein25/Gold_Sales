@@ -23,7 +23,7 @@ namespace Gold_Sales.Models
         public string CityID { get; set; }
         public string CityName { get; set; }
         public string CountryName { get; set; }
-        public Nullable<byte> active { get; set; }
+        public Nullable<bool> active { get; set; }
         public Nullable<System.DateTime> rowcreateddate { get; set; }
         public string MachineIP { get; set; }
         public string MachineName { get; set; }
