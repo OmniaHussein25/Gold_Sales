@@ -82,7 +82,7 @@ namespace Gold_Sales.Controllers
         {
             if (ModelState.IsValid)
             {
-                vendor.rowupdateddate = DateTime.Now;
+                //vendor.r = DateTime.Now;
                 db.Entry(vendor).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");
