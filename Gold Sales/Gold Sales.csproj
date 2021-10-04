@@ -137,6 +137,7 @@
     <Compile Include="Controllers\CustomersController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\LogInController.cs" />
+    <Compile Include="Controllers\pos_trans_gridController.cs" />
     <Compile Include="Controllers\TableTemplateController.cs" />
     <Compile Include="Controllers\vendorsController.cs" />
     <Compile Include="Global.asax.cs">
@@ -6922,6 +6923,11 @@
     <Content Include="Style\vendors\fontawesome-free-5.15.4-web\webfonts\fa-solid-900.woff" />
     <Content Include="Style\vendors\fontawesome-free-5.15.4-web\webfonts\fa-solid-900.woff2" />
     <Content Include="Views\Shared\Partials\_FormButtons.cshtml" />
+    <Content Include="Views\pos_trans_grid\Create.cshtml" />
+    <Content Include="Views\pos_trans_grid\Delete.cshtml" />
+    <Content Include="Views\pos_trans_grid\Details.cshtml" />
+    <Content Include="Views\pos_trans_grid\Edit.cshtml" />
+    <Content Include="Views\pos_trans_grid\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
