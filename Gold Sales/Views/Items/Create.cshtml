@@ -78,7 +78,7 @@
     </div>
 
     <div class="item form-group">
-        @Html.LabelFor(model => model.itemprice, "Item Price", htmlAttributes: new { @class = "col-form-label col-md-3 col-sm-3 label-align" })
+        @Html.LabelFor(model => model.itemprice, "whole Price", htmlAttributes: new { @class = "col-form-label col-md-3 col-sm-3 label-align" })
         <div class="col-md-6 col-sm-6 ">
             @Html.EditorFor(model => model.itemprice, new { htmlAttributes = new { @class = "form-control" } })
             @Html.ValidationMessageFor(model => model.itemprice, "", new { @class = "text-danger" })
@@ -117,21 +117,24 @@
         </div>
     </div>
 
-    <div class="item form-group">
-        @Html.LabelFor(model => model.main_vendor, "Main Vendor", htmlAttributes: new { @class = "col-form-label col-md-3 col-sm-3 label-align" })
+    @*<div class="item form-group">
+        @Html.LabelFor(model => model.Vendor.VendorName, "Main Vendor", htmlAttributes: new { @class = "col-form-label col-md-3 col-sm-3 label-align" })
         <div class="col-md-6 col-sm-6 ">
-            @Html.EditorFor(model => model.main_vendor, new { htmlAttributes = new { @class = "form-control" } })
-            @Html.ValidationMessageFor(model => model.main_vendor, "", new { @class = "text-danger" })
+            @Html.EditorFor(model => model.Vendor.VendorName, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.Vendor.Vendor.VendorName, "", new { @class = "text-danger" })
         </div>
-    </div>
+    </div>*@
 
     <div class="item form-group">
         @Html.LabelFor(model => model.active, "Active", htmlAttributes: new { @class = "col-form-label col-md-3 col-sm-3 label-align" })
         <div class="col-md-6 col-sm-6 ">
-            @Html.EditorFor(model => model.active, new { htmlAttributes = new { @class = "form-control" } })
-            @Html.ValidationMessageFor(model => model.active, "", new { @class = "text-danger" })
+            @*<div class="checkbox">*@
+               @Html.EditorFor(model=>model.active ,new { htmlAttributes = new { @class = "form-control" } })
+                @*@Html.CheckBoxFor(model => model.active.Value, new { htmlAttributes = new { @class = "check-box" } })*@
+                @Html.ValidationMessageFor(model => model.active, "", new { @class = "text-danger" })
+           @*</div>*@
+            </div>
         </div>
-    </div>
 
     @*<div class="item form-group">
             @Html.LabelFor(model => model.rowcreateddate, htmlAttributes: new { @class = "col-form-label col-md-3 col-sm-3 label-align" })
