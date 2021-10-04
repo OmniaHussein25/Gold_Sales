@@ -1,114 +1,140 @@
-﻿@model IEnumerable<Gold_Sales.Models.Branch>
+﻿@model IEnumerable<Gold_Sales.Models.pos_trans_grid>
 
 @{
-    ViewBag.Title = "Branches List";
+    ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
+
+
 
 <div class="x_content">
     <div class="row">
         <div class="col-sm-12">
             <div class="card-box table-responsive">
-             
                 <div id="datatable_wrapper" class="dataTables_wrapper container-fluid dt-bootstrap no-footer">
                     <div class="col-sm-12">
                         <table id="datatable" class="table table-striped table-bordered dataTable no-footer dtr-inline jambo_table bulk_action" style="width:100%">
 
-                            <thead >
+                            <thead>
                                 <tr>
                                     <th>
-                                        @Html.LabelForModel("ID")
+                                        @Html.DisplayNameFor(model => model.itemserial)
                                     </th>
                                     <th>
-                                        @Html.LabelForModel("BranchName")
+                                        @Html.DisplayNameFor(model => model.itemname)
                                     </th>
                                     <th>
-                                        @Html.LabelForModel("Active")
+                                        @Html.DisplayNameFor(model => model.unit_code)
                                     </th>
+                                    <th>
+                                        @Html.DisplayNameFor(model => model.item_weight)
+                                    </th>
+                                    <th>
+                                        @Html.DisplayNameFor(model => model.sale_price)
+                                    </th>
+                                    <th>
+                                        @Html.DisplayNameFor(model => model.slae_cost)
+                                    </th>
+                                    <th>
+                                        @Html.DisplayNameFor(model => model.taxrate)
+                                    </th>
+                                    <th>
+                                        @Html.DisplayNameFor(model => model.taxes)
+                                    </th>
+
+
                                     @*<th>
-                                            @Html.LabelForModel(model => model.rowcreateddate)
+                                            @Html.DisplayNameFor(model => model.trans_date)
                                         </th>
                                         <th>
-                                            @Html.LabelForModel(model => model.MachineIP)
+                                            @Html.DisplayNameFor(model => model.item_sold)
                                         </th>
                                         <th>
-                                            @Html.LabelForModel(model => model.MachineName)
+                                            @Html.DisplayNameFor(model => model.syncstatus)
                                         </th>
                                         <th>
-                                            @Html.LabelForModel(model => model.MachineUser)
+                                            @Html.DisplayNameFor(model => model.inventdimid)
                                         </th>
                                         <th>
-                                            @Html.LabelForModel(model => model.userid)
+                                            @Html.DisplayNameFor(model => model.parmitemid)
                                         </th>
                                         <th>
-                                            @Html.LabelForModel(model => model.rowupdateddate)
+                                            @Html.DisplayNameFor(model => model.stockid)
                                         </th>
                                         <th>
-                                            @Html.LabelForModel(model => model.Machineipupdated)
+                                            @Html.DisplayNameFor(model => model.rowcreateddate)
                                         </th>
                                         <th>
-                                            @Html.LabelForModel(model => model.Machinenameupdated)
+                                            @Html.DisplayNameFor(model => model.tax)
                                         </th>
                                         <th>
-                                            @Html.LabelForModel(model => model.Machineuserupdated)
+                                            @Html.DisplayNameFor(model => model.taxrates)
                                         </th>
                                         <th>
-                                            @Html.LabelForModel(model => model.useridupdated)
+                                            @Html.DisplayNameFor(model => model.MachineIP)
                                         </th>
                                         <th>
-                                            @Html.LabelForModel(model => model.iabc)
+                                            @Html.DisplayNameFor(model => model.MachineUser)
                                         </th>
                                         <th>
-                                            @Html.LabelForModel(model => model.idef)
+                                            @Html.DisplayNameFor(model => model.MachineName)
                                         </th>
                                         <th>
-                                            @Html.LabelForModel(model => model.ighi)
+                                            @Html.DisplayNameFor(model => model.userid)
                                         </th>
                                         <th>
-                                            @Html.LabelForModel(model => model.ijkl)
+                                            @Html.DisplayNameFor(model => model.iabc)
                                         </th>
                                         <th>
-                                            @Html.LabelForModel(model => model.Sabc)
+                                            @Html.DisplayNameFor(model => model.idef)
                                         </th>
                                         <th>
-                                            @Html.LabelForModel(model => model.Sdef)
+                                            @Html.DisplayNameFor(model => model.ighi)
                                         </th>
                                         <th>
-                                            @Html.LabelForModel(model => model.Sghi)
+                                            @Html.DisplayNameFor(model => model.ijkl)
                                         </th>
                                         <th>
-                                            @Html.LabelForModel(model => model.Sjkl)
+                                            @Html.DisplayNameFor(model => model.Sabc)
                                         </th>
                                         <th>
-                                            @Html.LabelForModel(model => model.Dabc)
+                                            @Html.DisplayNameFor(model => model.Sdef)
                                         </th>
                                         <th>
-                                            @Html.LabelForModel(model => model.Ddef)
+                                            @Html.DisplayNameFor(model => model.Sghi)
                                         </th>
                                         <th>
-                                            @Html.LabelForModel(model => model.Dghi)
+                                            @Html.DisplayNameFor(model => model.Sjkl)
                                         </th>
                                         <th>
-                                            @Html.LabelForModel(model => model.Djkl)
+                                            @Html.DisplayNameFor(model => model.Dabc)
                                         </th>
                                         <th>
-                                            @Html.LabelForModel(model => model.DECabc)
+                                            @Html.DisplayNameFor(model => model.Ddef)
                                         </th>
                                         <th>
-                                            @Html.LabelForModel(model => model.DECdef)
+                                            @Html.DisplayNameFor(model => model.Dghi)
                                         </th>
                                         <th>
-                                            @Html.LabelForModel(model => model.DECghi)
+                                            @Html.DisplayNameFor(model => model.Djkl)
                                         </th>
                                         <th>
-                                            @Html.LabelForModel(model => model.DECjkl)
+                                            @Html.DisplayNameFor(model => model.DECabc)
                                         </th>
                                         <th>
-                                            @Html.LabelForModel(model => model.City.CityName)
+                                            @Html.DisplayNameFor(model => model.DECdef)
                                         </th>
                                         <th>
-                                            @Html.LabelForModel(model => model.Company.CompanyName)
+                                            @Html.DisplayNameFor(model => model.DECghi)
+                                        </th>
+                                        <th>
+                                            @Html.DisplayNameFor(model => model.DECjkl)
+                                        </th>
+                                        <th>
+                                            @Html.DisplayNameFor(model => model.pos_trans.client_code)
                                         </th>*@
+
+
                                     <th></th>
                                 </tr>
                             </thead>
@@ -117,43 +143,76 @@
                                 {
                                     <tr>
                                         <td>
-                                            @Html.DisplayFor(modelItem => item.BranchID)
+                                            @Html.DisplayFor(modelItem => item.itemserial)
                                         </td>
                                         <td>
-                                            @Html.DisplayFor(modelItem => item.BranchName)
+                                            @Html.DisplayFor(modelItem => item.itemname)
                                         </td>
                                         <td>
-                                            @Html.DisplayFor(modelItem => item.active)
+                                            @Html.DisplayFor(modelItem => item.unit_code)
                                         </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.item_weight)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.sale_price)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.slae_cost)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.taxrates)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.taxes)
+                                        </td>
+
+
                                         @*<td>
+                                                @Html.DisplayFor(modelItem => item.trans_date)
+                                            </td>
+
+                                            <td>
+                                                @Html.DisplayFor(modelItem => item.item_sold)
+                                            </td>
+                                            <td>
+                                                @Html.DisplayFor(modelItem => item.syncstatus)
+                                            </td>
+                                            <td>
+                                                @Html.DisplayFor(modelItem => item.inventdimid)
+                                            </td>
+                                            <td>
+                                                @Html.DisplayFor(modelItem => item.parmitemid)
+                                            </td>
+                                            <td>
+                                                @Html.DisplayFor(modelItem => item.stockid)
+                                            </td>
+                                            <td>
                                                 @Html.DisplayFor(modelItem => item.rowcreateddate)
+                                            </td>
+                                            <td>
+                                                @Html.DisplayFor(modelItem => item.tax)
+                                            </td>
+                                            <td>
+                                                @Html.DisplayFor(modelItem => item.taxrate)
+                                            </td>
+                                            <td>
+                                                @Html.DisplayFor(modelItem => item.taxrates)
+                                            </td>
+                                            <td>
+                                                @Html.DisplayFor(modelItem => item.taxes)
                                             </td>
                                             <td>
                                                 @Html.DisplayFor(modelItem => item.MachineIP)
                                             </td>
                                             <td>
-                                                @Html.DisplayFor(modelItem => item.MachineName)
-                                            </td>
-                                            <td>
                                                 @Html.DisplayFor(modelItem => item.MachineUser)
                                             </td>
                                             <td>
+                                                @Html.DisplayFor(modelItem => item.MachineName)
+                                            </td>
+                                            <td>
                                                 @Html.DisplayFor(modelItem => item.userid)
-                                            </td>
-                                            <td>
-                                                @Html.DisplayFor(modelItem => item.rowupdateddate)
-                                            </td>
-                                            <td>
-                                                @Html.DisplayFor(modelItem => item.Machineipupdated)
-                                            </td>
-                                            <td>
-                                                @Html.DisplayFor(modelItem => item.Machinenameupdated)
-                                            </td>
-                                            <td>
-                                                @Html.DisplayFor(modelItem => item.Machineuserupdated)
-                                            </td>
-                                            <td>
-                                                @Html.DisplayFor(modelItem => item.useridupdated)
                                             </td>
                                             <td>
                                                 @Html.DisplayFor(modelItem => item.iabc)
@@ -204,39 +263,37 @@
                                                 @Html.DisplayFor(modelItem => item.DECjkl)
                                             </td>
                                             <td>
-                                                @Html.DisplayFor(modelItem => item.City.CityName)
-                                            </td>
-                                            <td>
-                                                @Html.DisplayFor(modelItem => item.Company.CompanyName)
+                                                @Html.DisplayFor(modelItem => item.pos_trans.client_code)
                                             </td>*@
+
                                         <td>
-                                            @Html.ActionLink(" ", "Edit", new { id = item.BranchID }, new { @class = "btn btn-round btn-warning glyphicon glyphicon-edit" })
-                                            @Html.ActionLink(" ", "Details", new { id = item.BranchID }, new { @class = "btn btn-round btn-info glyphicon glyphicon-info-sign" })
-                                            @*@Html.ActionLink("Delete", "Delete", new { id = item.CityID }, new { @class = "btn btn-round btn-danger", onclick = "return confirm('Are sure wants to delete?');" })*@
-                                            <a href="#" class="btn btn-round btn-danger glyphicon glyphicon-trash" onclick="ConfirmDelete(@item.BranchID)"> </a>
+
+
+                                            @Html.ActionLink(" ", "Edit", new { id = item.trans_id, lineNumber = item.linenum, storeCode = item.store_code }, new { @class = "btn btn-round btn-warning glyphicon glyphicon-edit" })
+                                            @Html.ActionLink(" ", "Details", new { id = item.trans_id, lineNumber = item.linenum, storeCode = item.store_code }, new { @class = "btn btn-round btn-warning glyphicon glyphicon-edit" })
+                                            @*@Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })*@
+                                            <a href="#" class="btn btn-round btn-danger glyphicon glyphicon-trash" onclick="ConfirmDelete(@item.trans_id)"> </a>
+
 
 
                                         </td>
+
                                     </tr>
-
-
-
                                 }
-
 
                             </tbody>
                         </table>
-
-
                     </div>
                 </div>
+
+
                 <!----Model Start-->
                 <div class="modal fade" id="myModal">
                     <div class="modal-dialog">
 
                         <div class="modal-content">
                             <div class="modal-header">
-                                <h4 class="modal-title" id="myModalLabel">Delete Branch</h4>
+                                <h4 class="modal-title" id="myModalLabel">Delete City</h4>
                                 <button type="button" class="close" data-dismiss="modal">
 
                                     <span aria-hidden="true">×</span>
@@ -262,9 +319,6 @@
     </div>
 </div>
 
-
-
-
 <script>
 
     var ConfirmDelete = function (id) {
@@ -279,13 +333,13 @@
 
         $("#loaderDiv").show();
 
-        var branchid = $("#hiddenId").val();
+        var cityid = $("#hiddenId").val();
 
         $.ajax({
 
             type: "POST",
-            url: "/Branches/DeleteObj",
-            data: { id: branchid },
+            url: "/TableTemplate/DeleteObj",
+            data: { id: cityid },
             dataType: "json",
             success: function (result) {
                 $("#loaderDiv").hide();

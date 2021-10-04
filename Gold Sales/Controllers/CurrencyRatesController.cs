@@ -10,128 +10,129 @@ using Gold_Sales.Models;
 
 namespace Gold_Sales.Controllers
 {
-    public class CitiesController : Controller
+    public class CurrencyRatesController : Controller
     {
         private Gold_SalesEntities db = new Gold_SalesEntities();
-        //Hello Omnia
-        // GET: Cities
+
+        // GET: CurrencyRates
         public ActionResult Index()
         {
-            return View(db.Cities.ToList());
+            var currencyRates = db.CurrencyRates.Include(c => c.Currency);
+            return View(currencyRates.ToList());
         }
 
-        // GET: Cities/Details/5
+        // GET: CurrencyRates/Details/5
         public ActionResult Details(string id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            City city = db.Cities.Find(id);
-            if (city == null)
+            CurrencyRate currencyRate = db.CurrencyRates.Find(id);
+            if (currencyRate == null)
             {
                 return HttpNotFound();
             }
-            return View(city);
+            return View(currencyRate);
         }
 
-        // GET: Cities/Create
+        // GET: CurrencyRates/Create
         public ActionResult Create()
         {
+            ViewBag.CurrencyID = new SelectList(db.Currencies, "CurrencyID", "Currencyname");
             return View();
         }
 
-        // POST: Cities/Create
+        // POST: CurrencyRates/Create
         // To protect from overposting attacks, enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "CityID,CityName,CountryName,active,rowcreateddate,MachineIP,MachineName,MachineUser,userid,rowupdateddate,Machineipupdated,Machinenameupdated,Machineuserupdated,useridupdated")] City city)
+        public ActionResult Create([Bind(Include = "CurrencyID,CurrRateDate,CurrRate,active,rowcreateddate,MachineIP,MachineName,MachineUser,userid,rowupdateddate,Machineipupdated,Machinenameupdated,Machineuserupdated,useridupdated")] CurrencyRate currencyRate)
         {
             if (ModelState.IsValid)
             {
-                city.rowupdateddate = DateTime.Now;
-                db.Cities.Add(city);
+                db.CurrencyRates.Add(currencyRate);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
 
-            return View(city);
+            ViewBag.CurrencyID = new SelectList(db.Currencies, "CurrencyID", "Currencyname", currencyRate.CurrencyID);
+            return View(currencyRate);
         }
 
-        // GET: Cities/Edit/5
+        // GET: CurrencyRates/Edit/5
         public ActionResult Edit(string id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            City city = db.Cities.Find(id);
-            if (city == null)
+            CurrencyRate currencyRate = db.CurrencyRates.Find(id);
+            if (currencyRate == null)
             {
                 return HttpNotFound();
             }
-            return View(city);
+            ViewBag.CurrencyID = new SelectList(db.Currencies, "CurrencyID", "Currencyname", currencyRate.CurrencyID);
+            return View(currencyRate);
         }
 
-        // POST: Cities/Edit/5
+        // POST: CurrencyRates/Edit/5
         // To protect from overposting attacks, enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "CityID,CityName,CountryName,active,rowcreateddate,MachineIP,MachineName,MachineUser,userid,rowupdateddate,Machineipupdated,Machinenameupdated,Machineuserupdated,useridupdated")] City city)
+        public ActionResult Edit([Bind(Include = "CurrencyID,CurrRateDate,CurrRate,active,rowcreateddate,MachineIP,MachineName,MachineUser,userid,rowupdateddate,Machineipupdated,Machinenameupdated,Machineuserupdated,useridupdated")] CurrencyRate currencyRate)
         {
             if (ModelState.IsValid)
             {
-                city.rowupdateddate = DateTime.Now;
-                db.Entry(city).State = EntityState.Modified;
+                currencyRate.rowupdateddate = DateTime.Now;
+                db.Entry(currencyRate).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            return View(city);
+            ViewBag.CurrencyID = new SelectList(db.Currencies, "CurrencyID", "Currencyname", currencyRate.CurrencyID);
+            return View(currencyRate);
         }
 
-        // GET: Cities/Delete/5
+        // GET: CurrencyRates/Delete/5
         public ActionResult Delete(string id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            City city = db.Cities.Find(id);
-            if (city == null)
+            CurrencyRate currencyRate = db.CurrencyRates.Find(id);
+            if (currencyRate == null)
             {
                 return HttpNotFound();
             }
-            return View(city);
+            return View(currencyRate);
         }
 
-
-
-
-        // POST: Cities/Delete/5
+        // POST: CurrencyRates/Delete/5
         //[HttpPost, ActionName("Delete")]
         //[ValidateAntiForgeryToken]
         //public ActionResult DeleteConfirmed(string id)
         //{
-        //    City city = db.Cities.Find(id);
-        //    db.Cities.Remove(city);
+        //    CurrencyRate currencyRate = db.CurrencyRates.Find(id);
+        //    db.CurrencyRates.Remove(currencyRate);
         //    db.SaveChanges();
         //    return RedirectToAction("Index");
         //}
-
         public JsonResult DeleteObj(string id)
         {
             bool res = false;
-            City city = db.Cities.Find(id);
-            if (city != null)
+            CurrencyRate currencyrate = db.CurrencyRates.Find(id);
+            if (currencyrate != null)
             {
-                db.Cities.Remove(city);
+                db.CurrencyRates.Remove(currencyrate);
                 db.SaveChanges();
                 res = true;
             }
             return Json(res, JsonRequestBehavior.AllowGet);
         }
+
         protected override void Dispose(bool disposing)
         {
             if (disposing)

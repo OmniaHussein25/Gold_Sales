@@ -10,123 +10,117 @@ using Gold_Sales.Models;
 
 namespace Gold_Sales.Controllers
 {
-    public class CitiesController : Controller
+    public class ItemGroupsController : Controller
     {
         private Gold_SalesEntities db = new Gold_SalesEntities();
-        //Hello Omnia
-        // GET: Cities
+
+        // GET: ItemGroups
         public ActionResult Index()
         {
-            return View(db.Cities.ToList());
+            return View(db.ItemGroups.ToList());
         }
 
-        // GET: Cities/Details/5
+        // GET: ItemGroups/Details/5
         public ActionResult Details(string id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            City city = db.Cities.Find(id);
-            if (city == null)
+            ItemGroup itemGroup = db.ItemGroups.Find(id);
+            if (itemGroup == null)
             {
                 return HttpNotFound();
             }
-            return View(city);
+            return View(itemGroup);
         }
 
-        // GET: Cities/Create
+        // GET: ItemGroups/Create
         public ActionResult Create()
         {
             return View();
         }
 
-        // POST: Cities/Create
+        // POST: ItemGroups/Create
         // To protect from overposting attacks, enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "CityID,CityName,CountryName,active,rowcreateddate,MachineIP,MachineName,MachineUser,userid,rowupdateddate,Machineipupdated,Machinenameupdated,Machineuserupdated,useridupdated")] City city)
+        public ActionResult Create([Bind(Include = "ItemGroupID,ItemGroupname,active,rowcreateddate,MachineIP,MachineName,MachineUser,userid,rowupdateddate,Machineipupdated,Machinenameupdated,Machineuserupdated,useridupdated,iabc,idef,ighi,ijkl,Sabc,Sdef,Sghi,Sjkl,Dabc,Ddef,Dghi,Djkl,DECabc,DECdef,DECghi,DECjkl")] ItemGroup itemGroup)
         {
             if (ModelState.IsValid)
             {
-                city.rowupdateddate = DateTime.Now;
-                db.Cities.Add(city);
+                db.ItemGroups.Add(itemGroup);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
 
-            return View(city);
+            return View(itemGroup);
         }
 
-        // GET: Cities/Edit/5
+        // GET: ItemGroups/Edit/5
         public ActionResult Edit(string id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            City city = db.Cities.Find(id);
-            if (city == null)
+            ItemGroup itemGroup = db.ItemGroups.Find(id);
+            if (itemGroup == null)
             {
                 return HttpNotFound();
             }
-            return View(city);
+            return View(itemGroup);
         }
 
-        // POST: Cities/Edit/5
+        // POST: ItemGroups/Edit/5
         // To protect from overposting attacks, enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "CityID,CityName,CountryName,active,rowcreateddate,MachineIP,MachineName,MachineUser,userid,rowupdateddate,Machineipupdated,Machinenameupdated,Machineuserupdated,useridupdated")] City city)
+        public ActionResult Edit([Bind(Include = "ItemGroupID,ItemGroupname,active,rowcreateddate,MachineIP,MachineName,MachineUser,userid,rowupdateddate,Machineipupdated,Machinenameupdated,Machineuserupdated,useridupdated,iabc,idef,ighi,ijkl,Sabc,Sdef,Sghi,Sjkl,Dabc,Ddef,Dghi,Djkl,DECabc,DECdef,DECghi,DECjkl")] ItemGroup itemGroup)
         {
             if (ModelState.IsValid)
             {
-                city.rowupdateddate = DateTime.Now;
-                db.Entry(city).State = EntityState.Modified;
+                db.Entry(itemGroup).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            return View(city);
+            return View(itemGroup);
         }
 
-        // GET: Cities/Delete/5
+        // GET: ItemGroups/Delete/5
         public ActionResult Delete(string id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            City city = db.Cities.Find(id);
-            if (city == null)
+            ItemGroup itemGroup = db.ItemGroups.Find(id);
+            if (itemGroup == null)
             {
                 return HttpNotFound();
             }
-            return View(city);
+            return View(itemGroup);
         }
 
-
-
-
-        // POST: Cities/Delete/5
+        // POST: ItemGroups/Delete/5
         //[HttpPost, ActionName("Delete")]
         //[ValidateAntiForgeryToken]
         //public ActionResult DeleteConfirmed(string id)
         //{
-        //    City city = db.Cities.Find(id);
-        //    db.Cities.Remove(city);
+        //    ItemGroup itemGroup = db.ItemGroups.Find(id);
+        //    db.ItemGroups.Remove(itemGroup);
         //    db.SaveChanges();
         //    return RedirectToAction("Index");
         //}
-
         public JsonResult DeleteObj(string id)
         {
             bool res = false;
-            City city = db.Cities.Find(id);
-            if (city != null)
+            ItemGroup itemgroup = db.ItemGroups.Find(id);
+            if (itemgroup != null)
             {
-                db.Cities.Remove(city);
+                db.ItemGroups.Remove(itemgroup);
                 db.SaveChanges();
                 res = true;
             }

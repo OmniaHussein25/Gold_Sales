@@ -10,128 +10,124 @@ using Gold_Sales.Models;
 
 namespace Gold_Sales.Controllers
 {
-    public class CitiesController : Controller
+    public class CurrenciesController : Controller
     {
         private Gold_SalesEntities db = new Gold_SalesEntities();
-        //Hello Omnia
-        // GET: Cities
+
+        // GET: Currencies
         public ActionResult Index()
         {
-            return View(db.Cities.ToList());
+            return View(db.Currencies.ToList());
         }
 
-        // GET: Cities/Details/5
+        // GET: Currencies/Details/5
         public ActionResult Details(string id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            City city = db.Cities.Find(id);
-            if (city == null)
+            Currency currency = db.Currencies.Find(id);
+            if (currency == null)
             {
                 return HttpNotFound();
             }
-            return View(city);
+            return View(currency);
         }
 
-        // GET: Cities/Create
+        // GET: Currencies/Create
         public ActionResult Create()
         {
             return View();
         }
 
-        // POST: Cities/Create
+        // POST: Currencies/Create
         // To protect from overposting attacks, enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "CityID,CityName,CountryName,active,rowcreateddate,MachineIP,MachineName,MachineUser,userid,rowupdateddate,Machineipupdated,Machinenameupdated,Machineuserupdated,useridupdated")] City city)
+        public ActionResult Create([Bind(Include = "CurrencyID,Currencyname,IsSystemCurr,CurrRate,CurrRateDate,active,rowcreateddate,MachineIP,MachineName,MachineUser,userid,rowupdateddate,Machineipupdated,Machinenameupdated,Machineuserupdated,useridupdated")] Currency currency)
         {
             if (ModelState.IsValid)
             {
-                city.rowupdateddate = DateTime.Now;
-                db.Cities.Add(city);
+                db.Currencies.Add(currency);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
 
-            return View(city);
+            return View(currency);
         }
 
-        // GET: Cities/Edit/5
+        // GET: Currencies/Edit/5
         public ActionResult Edit(string id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            City city = db.Cities.Find(id);
-            if (city == null)
+            Currency currency = db.Currencies.Find(id);
+            if (currency == null)
             {
                 return HttpNotFound();
             }
-            return View(city);
+            return View(currency);
         }
 
-        // POST: Cities/Edit/5
+        // POST: Currencies/Edit/5
         // To protect from overposting attacks, enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "CityID,CityName,CountryName,active,rowcreateddate,MachineIP,MachineName,MachineUser,userid,rowupdateddate,Machineipupdated,Machinenameupdated,Machineuserupdated,useridupdated")] City city)
+        public ActionResult Edit([Bind(Include = "CurrencyID,Currencyname,IsSystemCurr,CurrRate,CurrRateDate,active,rowcreateddate,MachineIP,MachineName,MachineUser,userid,rowupdateddate,Machineipupdated,Machinenameupdated,Machineuserupdated,useridupdated")] Currency currency)
         {
             if (ModelState.IsValid)
             {
-                city.rowupdateddate = DateTime.Now;
-                db.Entry(city).State = EntityState.Modified;
+                currency.rowupdateddate = DateTime.Now;
+                db.Entry(currency).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            return View(city);
+            return View(currency);
         }
 
-        // GET: Cities/Delete/5
+        // GET: Currencies/Delete/5
         public ActionResult Delete(string id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            City city = db.Cities.Find(id);
-            if (city == null)
+            Currency currency = db.Currencies.Find(id);
+            if (currency == null)
             {
                 return HttpNotFound();
             }
-            return View(city);
+            return View(currency);
         }
 
-
-
-
-        // POST: Cities/Delete/5
+        // POST: Currencies/Delete/5
         //[HttpPost, ActionName("Delete")]
         //[ValidateAntiForgeryToken]
         //public ActionResult DeleteConfirmed(string id)
         //{
-        //    City city = db.Cities.Find(id);
-        //    db.Cities.Remove(city);
+        //    Currency currency = db.Currencies.Find(id);
+        //    db.Currencies.Remove(currency);
         //    db.SaveChanges();
         //    return RedirectToAction("Index");
         //}
-
         public JsonResult DeleteObj(string id)
         {
             bool res = false;
-            City city = db.Cities.Find(id);
-            if (city != null)
+            Currency currency = db.Currencies.Find(id);
+            if (currency != null)
             {
-                db.Cities.Remove(city);
+                db.Currencies.Remove(currency);
                 db.SaveChanges();
                 res = true;
             }
             return Json(res, JsonRequestBehavior.AllowGet);
         }
+
         protected override void Dispose(bool disposing)
         {
             if (disposing)
