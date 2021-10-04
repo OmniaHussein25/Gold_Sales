@@ -23,7 +23,7 @@ namespace Gold_Sales.Models
         public string SiteID { get; set; }
         public string SiteName { get; set; }
         public string BranchID { get; set; }
-        public Nullable<byte> active { get; set; }
+        public Nullable<bool> active { get; set; }
         public string MachineIP { get; set; }
         public string MachineName { get; set; }
         public string MachineUser { get; set; }

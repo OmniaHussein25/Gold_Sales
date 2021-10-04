@@ -22,7 +22,7 @@ namespace Gold_Sales.Models
     
         public int itemunitcode { get; set; }
         public string itemunitname { get; set; }
-        public Nullable<int> active { get; set; }
+        public Nullable<bool> active { get; set; }
         public Nullable<System.DateTime> rowcreateddate { get; set; }
         public string MachineIP { get; set; }
         public string MachineName { get; set; }

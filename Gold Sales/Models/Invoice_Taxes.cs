@@ -20,7 +20,7 @@ namespace Gold_Sales.Models
         public int linenum { get; set; }
         public int TaxID { get; set; }
         public Nullable<decimal> TaxVal { get; set; }
-        public Nullable<int> active { get; set; }
+        public Nullable<bool> active { get; set; }
         public Nullable<System.DateTime> rowcreateddate { get; set; }
         public string MachineIP { get; set; }
         public string MachineName { get; set; }

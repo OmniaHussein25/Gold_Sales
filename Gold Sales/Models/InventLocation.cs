@@ -26,7 +26,7 @@ namespace Gold_Sales.Models
         public string InventLocationID { get; set; }
         public string InvLocName { get; set; }
         public string SiteID { get; set; }
-        public Nullable<byte> active { get; set; }
+        public Nullable<bool> active { get; set; }
         public Nullable<long> LocGard { get; set; }
         public string MachineIP { get; set; }
         public string MachineName { get; set; }

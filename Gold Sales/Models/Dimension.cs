@@ -25,7 +25,7 @@ namespace Gold_Sales.Models
         public string DimensionTypeName { get; set; }
         public string DimensionName { get; set; }
         public string DimensionDesc { get; set; }
-        public Nullable<byte> active { get; set; }
+        public Nullable<bool> active { get; set; }
         public Nullable<System.DateTime> rowcreateddate { get; set; }
         public string MachineIP { get; set; }
         public string MachineName { get; set; }

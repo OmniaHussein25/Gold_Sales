@@ -25,7 +25,7 @@ namespace Gold_Sales.Models
         public string CustTaxCardNo { get; set; }
         public Nullable<decimal> CustCreditLimit { get; set; }
         public string CustContacts { get; set; }
-        public Nullable<int> active { get; set; }
+        public Nullable<bool> active { get; set; }
         public Nullable<System.DateTime> rowcreateddate { get; set; }
         public string MachineIP { get; set; }
         public string MachineName { get; set; }

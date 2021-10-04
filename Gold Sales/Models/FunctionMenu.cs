@@ -19,7 +19,7 @@ namespace Gold_Sales.Models
         public string FunctionMenu1 { get; set; }
         public Nullable<byte> MenuLevel { get; set; }
         public Nullable<int> ParentFunctionID { get; set; }
-        public Nullable<int> active { get; set; }
+        public Nullable<bool> active { get; set; }
         public Nullable<System.DateTime> deactivateddate { get; set; }
         public Nullable<System.DateTime> rowcreateddate { get; set; }
     }
