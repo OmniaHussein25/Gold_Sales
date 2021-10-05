@@ -5,13 +5,13 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<<div>
+<div>
     <div class="table-responsive">
         <table class="table">
             <tbody>
                 <tr>
                     <th>
-                        @Html.LabelFor(model => model.ItemID,"Item ID")
+                        @Html.LabelFor(model => model.ItemID, "Item ID")
                     </th>
 
                     <td>
@@ -20,44 +20,16 @@
                 </tr>
                 <tr>
                     <th>
-                        @Html.LabelFor(model => model.CompanyID,"Company ID")
-                    </th>
-
-                    <td>
-                        @Html.DisplayFor(model => model.CompanyID)
-                    </td>
-                </tr>
-                <tr>
-                    <th>
-                        @Html.LabelFor(model => model.ItemGroup.ItemGroupname,"Item Group Name")
-                    </th>
-
-                    <td>
-                        @Html.DisplayFor(model => model.ItemGroup.ItemGroupname)
-                    </td>
-                </tr>
-                <tr>
-                    <th>
-                        @Html.LabelFor(model => model.ItemUnit.itemunitname,"Item Unit Name")
-                    </th>
-
-                    <td>
-                        @Html.DisplayFor(model => model.ItemUnit.itemunitname)
-                    </td>
-                </tr>
-                <tr>
-                    <th>
-                        @Html.LabelFor(model => model.itemname,"Item Name")
+                        @Html.LabelFor(model => model.itemname, "Item Name")
                     </th>
 
                     <td>
                         @Html.DisplayFor(model => model.itemname)
                     </td>
                 </tr>
-
                 <tr>
                     <th>
-                        @Html.LabelFor(model => model.itemname_ENG,"Item Name English")
+                        @Html.LabelFor(model => model.itemname_ENG, "Item Name English")
                     </th>
 
                     <td>
@@ -67,7 +39,74 @@
 
                 <tr>
                     <th>
-                        @Html.LabelFor(model => model.ItemTaxCode,"Item Tax Code")
+                        @Html.LabelFor(model => model.ItemGroup.ItemGroupname, "Item Group")
+                    </th>
+
+                    <td>
+                        @Html.DisplayFor(model => model.ItemGroup.ItemGroupname)
+                    </td>
+                </tr>
+                <tr>
+                    <th>
+                        @Html.LabelFor(model => model.itemprice, "Whole")
+                    </th>
+
+                    <td>
+                        @Html.DisplayFor(model => model.itemprice)
+                    </td>
+                </tr>
+                <tr>
+                    <th>
+                        @Html.LabelFor(model => model.DECabc, "Retail")
+                    </th>
+
+                    <td>
+                        @Html.DisplayFor(model => model.DECabc)
+                    </td>
+                </tr>
+                <tr>
+                    <th>
+                        @Html.LabelFor(model => model.ItemUnit.itemunitcode, "Unit Code")
+                    </th>
+
+                    <td>
+                        @Html.DisplayFor(model => model.ItemUnit.itemunitcode)
+                    </td>
+                </tr>
+                <tr>
+                    <th>
+                        @Html.LabelFor(model => model.itemcost, "Cost")
+                    </th>
+
+                    <td>
+                        @Html.DisplayFor(model => model.itemcost)
+                    </td>
+                </tr>
+
+                <tr>
+                    <th>
+                        @Html.LabelFor(model => model.active, "Active")
+                    </th>
+
+                    <td>
+                        @Html.DisplayFor(model => model.active)
+                    </td>
+                </tr>
+                <tr>
+                    <th>
+                        @Html.LabelFor(model => model.main_vendor, "Main Vendor")
+                    </th>
+
+                    <td>
+                        @Html.DisplayFor(model => model.main_vendor)
+                    </td>
+
+                </tr>
+
+
+                <tr>
+                    <th>
+                    @Html.LabelFor(model => model.ItemTaxCode, "Tax Code")
                     </th>
 
                     <td>
@@ -75,9 +114,10 @@
                     </td>
                 </tr>
 
+
                 <tr>
                     <th>
-                        @Html.LabelFor(model => model.TaxCodeType,"Item Code Type")
+                        @Html.LabelFor(model => model.TaxCodeType, "Tax Code Type")
                     </th>
 
                     <td>
@@ -87,7 +127,7 @@
 
                 <tr>
                     <th>
-                        @Html.LabelFor(model => model.ItemTaxUnit,"Item Tax Unit")
+                        @Html.LabelFor(model => model.ItemTaxUnit, "Tax Unit")
                     </th>
 
                     <td>
@@ -95,27 +135,11 @@
                     </td>
                 </tr>
 
-                <tr>
-                    <th>
-                        @Html.LabelFor(model => model.itemprice,"Item Price")
-                    </th>
 
-                    <td>
-                        @Html.DisplayFor(model => model.itemprice)
-                    </td>
-                </tr>
-                <tr>
-                    <th>
-                        @Html.LabelFor(model => model.itemcost,"Item Cost")
-                    </th>
 
-                    <td>
-                        @Html.DisplayFor(model => model.itemcost)
-                    </td>
-                </tr>
                 <tr>
                     <th>
-                        @Html.LabelFor(model => model.itembarcode,"Item Bar Code")
+                        @Html.LabelFor(model => model.itembarcode, "Item BarCode")
                     </th>
 
                     <td>
@@ -123,29 +147,11 @@
                     </td>
                 </tr>
 
-                <tr>
-                    <th>
-                        @Html.LabelFor(model => model.main_vendor,"Main Vendor")
-                    </th>
 
-                    <td>
-                        @Html.DisplayFor(model => model.main_vendor)
-                    </td>
-
-                </tr>
-                <tr>
-                    <th>
-                        @Html.LabelFor(model => model.active,"Active")
-                    </th>
-
-                    <td>
-                        @Html.DisplayFor(model => model.active)
-                    </td>
-                </tr>
 
                 <tr>
                     <th>
-                        @Html.LabelFor(model => model.rowcreateddate,"Row Created Date")
+                        @Html.LabelFor(model => model.rowcreateddate, "Row Created Date")
                     </th>
 
                     <td>
@@ -153,42 +159,9 @@
                     </td>
                 </tr>
 
-
-
-                @*<th>
-                        @Html.LabelFor(model => model.MachineIP)
-                    </th>
-
-                    <td>
-                        @Html.DisplayFor(model => model.MachineIP)
-                    </td>
-
-                    <th>
-                        @Html.LabelFor(model => model.MachineName)
-                    </th>
-
-                    <td>
-                        @Html.DisplayFor(model => model.MachineName)
-                    </td>
-
-                    <th>
-                        @Html.LabelFor(model => model.MachineUser)
-                    </th>
-
-                    <td>
-                        @Html.DisplayFor(model => model.MachineUser)
-                    </td>
-
-                    <th>
-                        @Html.LabelFor(model => model.userid)
-                    </th>
-
-                    <td>
-                        @Html.DisplayFor(model => model.userid)
-                    </td>*@
                 <tr>
                     <th>
-                        @Html.LabelFor(model => model.rowupdateddate,"Row Updated Date")
+                        @Html.LabelFor(model => model.rowupdateddate, "Row Updated Date")
                     </th>
 
                     <td>
@@ -198,164 +171,191 @@
 
 
                 @*<th>
-                        @Html.LabelFor(model => model.Machineipupdated)
-                    </th>
+            @Html.LabelFor(model => model.MachineIP)
+        </th>
 
-                    <td>
-                        @Html.DisplayFor(model => model.Machineipupdated)
-                    </td>
+        <td>
+            @Html.DisplayFor(model => model.MachineIP)
+        </td>
 
-                    <th>
-                        @Html.LabelFor(model => model.Machinenameupdated)
-                    </th>
+        <th>
+            @Html.LabelFor(model => model.MachineName)
+        </th>
 
-                    <td>
-                        @Html.DisplayFor(model => model.Machinenameupdated)
-                    </td>
+        <td>
+            @Html.DisplayFor(model => model.MachineName)
+        </td>
 
-                    <th>
-                        @Html.LabelFor(model => model.Machineuserupdated)
-                    </th>
+        <th>
+            @Html.LabelFor(model => model.MachineUser)
+        </th>
 
-                    <td>
-                        @Html.DisplayFor(model => model.Machineuserupdated)
-                    </td>
+        <td>
+            @Html.DisplayFor(model => model.MachineUser)
+        </td>
 
-                    <th>
-                        @Html.LabelFor(model => model.useridupdated)
-                    </th>
+        <th>
+            @Html.LabelFor(model => model.userid)
+        </th>
 
-                    <td>
-                        @Html.DisplayFor(model => model.useridupdated)
-                    </td>
+        <td>
+            @Html.DisplayFor(model => model.userid)
+        </td>*@
 
-                    <th>
-                        @Html.LabelFor(model => model.iabc)
-                    </th>
 
-                    <td>
-                        @Html.DisplayFor(model => model.iabc)
-                    </td>
+                @*<th>
+            @Html.LabelFor(model => model.Machineipupdated)
+        </th>
 
-                    <th>
-                        @Html.LabelFor(model => model.idef)
-                    </th>
+        <td>
+            @Html.DisplayFor(model => model.Machineipupdated)
+        </td>
 
-                    <td>
-                        @Html.DisplayFor(model => model.idef)
-                    </td>
+        <th>
+            @Html.LabelFor(model => model.Machinenameupdated)
+        </th>
 
-                    <th>
-                        @Html.LabelFor(model => model.ighi)
-                    </th>
+        <td>
+            @Html.DisplayFor(model => model.Machinenameupdated)
+        </td>
 
-                    <td>
-                        @Html.DisplayFor(model => model.ighi)
-                    </td>
+        <th>
+            @Html.LabelFor(model => model.Machineuserupdated)
+        </th>
 
-                    <th>
-                        @Html.LabelFor(model => model.ijkl)
-                    </th>
+        <td>
+            @Html.DisplayFor(model => model.Machineuserupdated)
+        </td>
 
-                    <td>
-                        @Html.DisplayFor(model => model.ijkl)
-                    </td>
+        <th>
+            @Html.LabelFor(model => model.useridupdated)
+        </th>
 
-                    <th>
-                        @Html.LabelFor(model => model.Sabc)
-                    </th>
+        <td>
+            @Html.DisplayFor(model => model.useridupdated)
+        </td>
 
-                    <td>
-                        @Html.DisplayFor(model => model.Sabc)
-                    </td>
+        <th>
+            @Html.LabelFor(model => model.iabc)
+        </th>
 
-                    <th>
-                        @Html.LabelFor(model => model.Sdef)
-                    </th>
+        <td>
+            @Html.DisplayFor(model => model.iabc)
+        </td>
 
-                    <td>
-                        @Html.DisplayFor(model => model.Sdef)
-                    </td>
+        <th>
+            @Html.LabelFor(model => model.idef)
+        </th>
 
-                    <th>
-                        @Html.LabelFor(model => model.Sghi)
-                    </th>
+        <td>
+            @Html.DisplayFor(model => model.idef)
+        </td>
 
-                    <td>
-                        @Html.DisplayFor(model => model.Sghi)
-                    </td>
+        <th>
+            @Html.LabelFor(model => model.ighi)
+        </th>
 
-                    <th>
-                        @Html.LabelFor(model => model.Sjkl)
-                    </th>
+        <td>
+            @Html.DisplayFor(model => model.ighi)
+        </td>
 
-                    <td>
-                        @Html.DisplayFor(model => model.Sjkl)
-                    </td>
+        <th>
+            @Html.LabelFor(model => model.ijkl)
+        </th>
 
-                    <th>
-                        @Html.LabelFor(model => model.Dabc)
-                    </th>
+        <td>
+            @Html.DisplayFor(model => model.ijkl)
+        </td>
 
-                    <td>
-                        @Html.DisplayFor(model => model.Dabc)
-                    </td>
+        <th>
+            @Html.LabelFor(model => model.Sabc)
+        </th>
 
-                    <th>
-                        @Html.LabelFor(model => model.tdef)
-                    </th>
+        <td>
+            @Html.DisplayFor(model => model.Sabc)
+        </td>
 
-                    <td>
-                        @Html.DisplayFor(model => model.tdef)
-                    </td>
+        <th>
+            @Html.LabelFor(model => model.Sdef)
+        </th>
 
-                    <th>
-                        @Html.LabelFor(model => model.Dghi)
-                    </th>
+        <td>
+            @Html.DisplayFor(model => model.Sdef)
+        </td>
 
-                    <td>
-                        @Html.DisplayFor(model => model.Dghi)
-                    </td>
+        <th>
+            @Html.LabelFor(model => model.Sghi)
+        </th>
 
-                    <th>
-                        @Html.LabelFor(model => model.Djkl)
-                    </th>
+        <td>
+            @Html.DisplayFor(model => model.Sghi)
+        </td>
 
-                    <td>
-                        @Html.DisplayFor(model => model.Djkl)
-                    </td>
+        <th>
+            @Html.LabelFor(model => model.Sjkl)
+        </th>
 
-                    <th>
-                        @Html.LabelFor(model => model.DECabc)
-                    </th>
+        <td>
+            @Html.DisplayFor(model => model.Sjkl)
+        </td>
 
-                    <td>
-                        @Html.DisplayFor(model => model.DECabc)
-                    </td>
+        <th>
+            @Html.LabelFor(model => model.Dabc)
+        </th>
 
-                    <th>
-                        @Html.LabelFor(model => model.DECdef)
-                    </th>
+        <td>
+            @Html.DisplayFor(model => model.Dabc)
+        </td>
 
-                    <td>
-                        @Html.DisplayFor(model => model.DECdef)
-                    </td>
+        <th>
+            @Html.LabelFor(model => model.tdef)
+        </th>
 
-                    <th>
-                        @Html.LabelFor(model => model.DECghi)
-                    </th>
+        <td>
+            @Html.DisplayFor(model => model.tdef)
+        </td>
 
-                    <td>
-                        @Html.DisplayFor(model => model.DECghi)
-                    </td>
+        <th>
+            @Html.LabelFor(model => model.Dghi)
+        </th>
 
-                    <th>
-                        @Html.LabelFor(model => model.DECjkl)
-                    </th>
+        <td>
+            @Html.DisplayFor(model => model.Dghi)
+        </td>
 
-                    <td>
-                        @Html.DisplayFor(model => model.DECjkl)
-                    </td>*@
+        <th>
+            @Html.LabelFor(model => model.Djkl)
+        </th>
+
+        <td>
+            @Html.DisplayFor(model => model.Djkl)
+        </td>
+
+
+
+        <th>
+            @Html.LabelFor(model => model.DECdef)
+        </th>
+
+        <td>
+            @Html.DisplayFor(model => model.DECdef)
+        </td>
+
+        <th>
+            @Html.LabelFor(model => model.DECghi)
+        </th>
+
+        <td>
+            @Html.DisplayFor(model => model.DECghi)
+        </td>
+
+        <th>
+            @Html.LabelFor(model => model.DECjkl)
+        </th>
+
+        <td>
+            @Html.DisplayFor(model => model.DECjkl)
+        </td>*@
 
 
             </tbody>
