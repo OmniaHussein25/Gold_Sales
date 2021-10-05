@@ -105,16 +105,28 @@ namespace Gold_Sales.Controllers
         }
 
         // POST: ItemUnits/Delete/5
-        [HttpPost, ActionName("Delete")]
-        [ValidateAntiForgeryToken]
-        public ActionResult DeleteConfirmed(int id)
-        {
-            ItemUnit itemUnit = db.ItemUnits.Find(id);
-            db.ItemUnits.Remove(itemUnit);
-            db.SaveChanges();
-            return RedirectToAction("Index");
-        }
+        //[HttpPost, ActionName("Delete")]
+        //[ValidateAntiForgeryToken]
+        //public ActionResult DeleteConfirmed(int id)
+        //{
+        //    ItemUnit itemUnit = db.ItemUnits.Find(id);
+        //    db.ItemUnits.Remove(itemUnit);
+        //    db.SaveChanges();
+        //    return RedirectToAction("Index");
+        //}
 
+        public JsonResult DeleteObj(int id)
+        {
+            bool res = false;
+            ItemUnit itemunit = db.ItemUnits.Find(id);
+            if (itemunit != null)
+            {
+                db.ItemUnits.Remove(itemunit);
+                db.SaveChanges();
+                res = true;
+            }
+            return Json(res, JsonRequestBehavior.AllowGet);
+        }
         protected override void Dispose(bool disposing)
         {
             if (disposing)

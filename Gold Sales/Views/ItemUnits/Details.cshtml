@@ -5,111 +5,130 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>Details</h2>
 
 <div>
-    <h4>ItemUnit</h4>
-    <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.itemunitname)
-        </dt>
+    <div class="table-responsive">
+        <table class="table">
+            <tbody>
+                <tr>
+                    <th>
+                        @Html.LabelFor(model => model.itemunitcode, "Item Unit Code")
+                    </th>
 
-        <dd>
-            @Html.DisplayFor(model => model.itemunitname)
-        </dd>
+                    <td>
+                        @Html.DisplayFor(model => model.itemunitcode)
+                    </td>
+                </tr>
+                <tr>
+                    <th>
+                        @Html.LabelFor(model => model.itemunitname, "Item Unit Name")
+                    </th>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.active)
-        </dt>
+                    <td>
+                        @Html.DisplayFor(model => model.itemunitname)
+                    </td>
+                </tr>
+                <tr>
+                    <th>
+                        @Html.LabelFor(model => model.active, "Active")
+                    </th>
 
-        <dd>
-            @Html.DisplayFor(model => model.active)
-        </dd>
+                    <td>
+                        @Html.DisplayFor(model => model.active)
+                    </td>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.rowcreateddate)
-        </dt>
+                </tr>
+                <tr>
+                    <th>
+                        @Html.LabelFor(model => model.rowcreateddate,"Row Created Date")
+                    </th>
 
-        <dd>
-            @Html.DisplayFor(model => model.rowcreateddate)
-        </dd>
+                    <td>
+                        @Html.DisplayFor(model => model.rowcreateddate)
+                    </td>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.MachineIP)
-        </dt>
+                </tr>
+                <tr>
+                    <th>
+                        @Html.LabelFor(model => model.rowupdateddate,"Row Updated Date")
+                    </th>
 
-        <dd>
+                    <td>
+                        @Html.DisplayFor(model => model.rowupdateddate)
+                    </td>
+                </tr>
+
+                @*<th>
+            @Html.LabelFor(model => model.MachineIP)
+        </th>
+
+        <td>
             @Html.DisplayFor(model => model.MachineIP)
-        </dd>
+        </td>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.MachineName)
-        </dt>
+        <th>
+            @Html.LabelFor(model => model.MachineName)
+        </th>
 
-        <dd>
+        <td>
             @Html.DisplayFor(model => model.MachineName)
-        </dd>
+        </td>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.MachineUser)
-        </dt>
+        <th>
+            @Html.LabelFor(model => model.MachineUser)
+        </th>
 
-        <dd>
+        <td>
             @Html.DisplayFor(model => model.MachineUser)
-        </dd>
+        </td>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.userid)
-        </dt>
+        <th>
+            @Html.LabelFor(model => model.userid)
+        </th>
 
-        <dd>
+        <td>
             @Html.DisplayFor(model => model.userid)
-        </dd>
+        </td>*@
 
-        <dt>
-            @Html.DisplayNameFor(model => model.rowupdateddate)
-        </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.rowupdateddate)
-        </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Machineipupdated)
-        </dt>
+                @*<th>
+            @Html.LabelFor(model => model.Machineipupdated)
+        </th>
 
-        <dd>
+        <td>
             @Html.DisplayFor(model => model.Machineipupdated)
-        </dd>
+        </td>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Machinenameupdated)
-        </dt>
+        <th>
+            @Html.LabelFor(model => model.Machinenameupdated)
+        </th>
 
-        <dd>
+        <td>
             @Html.DisplayFor(model => model.Machinenameupdated)
-        </dd>
+        </td>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Machineuserupdated)
-        </dt>
+        <th>
+            @Html.LabelFor(model => model.Machineuserupdated)
+        </th>
 
-        <dd>
+        <td>
             @Html.DisplayFor(model => model.Machineuserupdated)
-        </dd>
+        </td>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.useridupdated)
-        </dt>
+        <th>
+            @Html.LabelFor(model => model.useridupdated)
+        </th>
 
-        <dd>
+        <td>
             @Html.DisplayFor(model => model.useridupdated)
-        </dd>
-
-    </dl>
-</div>
-<p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.itemunitcode }) |
-    @Html.ActionLink("Back to List", "Index")
-</p>
+        </td>*@
+            </tbody>
+                    </table>
+    </div>
+    </div>
+    <p>
+        @Html.ActionLink("Edit", "Edit", new { id = Model.itemunitcode }, new { @class = "btn btn-success" })
+        @Html.ActionLink("Cancel", "Index", null, new { @class = "btn btn-primary" })
+       
+    </p>
