@@ -13,7 +13,7 @@ namespace Gold_Sales.Controllers
     public class BranchesController : Controller
     {
         private Gold_SalesEntities db = new Gold_SalesEntities();
-
+        //Branches
         // GET: Branches
         public ActionResult Index()
         {
