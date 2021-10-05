@@ -21,13 +21,13 @@ namespace Gold_Sales.Controllers
         }
 
         // GET: pos_trans/Details/5
-        public ActionResult Details(int? id)
+        public ActionResult Details(int? trans_id, string store_code)
         {
-            if (id == null)
+            if (trans_id == null  || store_code == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            pos_trans pos_trans = db.pos_trans.Find(id);
+            pos_trans pos_trans = db.pos_trans.Where(a => a.trans_id == trans_id &&  a.store_code == store_code).FirstOrDefault();
             if (pos_trans == null)
             {
                 return HttpNotFound();
@@ -59,13 +59,13 @@ namespace Gold_Sales.Controllers
         }
 
         // GET: pos_trans/Edit/5
-        public ActionResult Edit(int? id)
+        public ActionResult Edit(int? trans_id, string store_code)
         {
-            if (id == null)
+            if (trans_id == null || store_code == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            pos_trans pos_trans = db.pos_trans.Find(id);
+            pos_trans pos_trans = db.pos_trans.Where(a => a.trans_id == trans_id && a.store_code == store_code).FirstOrDefault();
             if (pos_trans == null)
             {
                 return HttpNotFound();
@@ -90,18 +90,30 @@ namespace Gold_Sales.Controllers
         }
 
         // GET: pos_trans/Delete/5
-        public ActionResult Delete(int? id)
+        ////public ActionResult Delete(int? id)
+        ////{
+        ////    if (id == null)
+        ////    {
+        ////        return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+        ////    }
+        ////    pos_trans pos_trans = db.pos_trans.Find(id);
+        ////    if (pos_trans == null)
+        ////    {
+        ////        return HttpNotFound();
+        ////    }
+        ////    return View(pos_trans);
+        ////}
+        public JsonResult DeleteObj(int? trans_id, string store_code)
         {
-            if (id == null)
+            bool res = false;
+            pos_trans pos_trans = db.pos_trans.Where(a => a.trans_id == trans_id && a.store_code == store_code).FirstOrDefault();
+            if (pos_trans != null)
             {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+                db.pos_trans.Remove(pos_trans);
+                db.SaveChanges();
+                res = true;
             }
-            pos_trans pos_trans = db.pos_trans.Find(id);
-            if (pos_trans == null)
-            {
-                return HttpNotFound();
-            }
-            return View(pos_trans);
+            return Json(res, JsonRequestBehavior.AllowGet);
         }
 
         // POST: pos_trans/Delete/5

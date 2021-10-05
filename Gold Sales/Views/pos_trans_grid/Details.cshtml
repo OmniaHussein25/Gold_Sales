@@ -5,319 +5,339 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>Details</h2>
-
-<div>
-    <h4>pos_trans_grid</h4>
-    <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.itemname)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.itemname)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.unit_code)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.unit_code)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.item_weight)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.item_weight)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.sale_price)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.sale_price)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.slae_cost)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.slae_cost)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.trans_date)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.trans_date)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.item_sold)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.item_sold)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.syncstatus)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.syncstatus)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.inventdimid)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.inventdimid)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.parmitemid)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.parmitemid)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.stockid)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.stockid)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.itemserial)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.itemserial)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.rowcreateddate)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.rowcreateddate)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.tax)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.tax)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.taxrate)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.taxrate)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.taxrates)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.taxrates)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.taxes)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.taxes)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.MachineIP)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.MachineIP)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.MachineUser)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.MachineUser)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.MachineName)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.MachineName)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.userid)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.userid)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.iabc)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.iabc)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.idef)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.idef)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.ighi)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.ighi)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.ijkl)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.ijkl)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Sabc)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Sabc)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Sdef)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Sdef)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Sghi)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Sghi)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Sjkl)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Sjkl)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Dabc)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Dabc)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Ddef)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Ddef)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Dghi)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Dghi)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Djkl)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Djkl)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.DECabc)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.DECabc)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.DECdef)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.DECdef)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.DECghi)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.DECghi)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.DECjkl)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.DECjkl)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.pos_trans.client_code)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.pos_trans.client_code)
-        </dd>
-
-    </dl>
+<div class="table-responsive">
+    <table class="table">
+        <tbody>
+
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.itemserial)
+                </th>
+
+                <td>
+                    @Html.DisplayFor(model => model.itemserial)
+                </td>
+            </tr>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.itemname)
+                </th>
+
+                <td>
+                    @Html.DisplayFor(model => model.itemname)
+                </td>
+
+            </tr>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.unit_code)
+                </th>
+
+                <td>
+                    @Html.DisplayFor(model => model.unit_code)
+                </td>
+
+            </tr>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.item_weight)
+                </th>
+
+                <td>
+                    @Html.DisplayFor(model => model.item_weight)
+                </td>
+
+            </tr>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.sale_price)
+                </th>
+
+                <td>
+                    @Html.DisplayFor(model => model.sale_price)
+                </td>
+            </tr>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.slae_cost)
+                </th>
+
+                <td>
+                    @Html.DisplayFor(model => model.slae_cost)
+                </td>
+            </tr>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.taxrate)
+                </th>
+
+                <td>
+                    @Html.DisplayFor(model => model.taxrate)
+                </td>
+            </tr>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.taxes)
+                </th>
+
+                <td>
+                    @Html.DisplayFor(model => model.taxes)
+                </td>
+            </tr>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.trans_date)
+                </th>
+
+                <td>
+                    @Html.DisplayFor(model => model.trans_date)
+                </td>
+            </tr>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.item_sold)
+                </th>
+
+                <td>
+                    @Html.DisplayFor(model => model.item_sold)
+                </td>
+            </tr>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.syncstatus)
+                </th>
+
+                <td>
+                    @Html.DisplayFor(model => model.syncstatus)
+                </td>
+            </tr>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.inventdimid)
+                </th>
+
+                <td>
+                    @Html.DisplayFor(model => model.inventdimid)
+                </td>
+            </tr>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.stockid)
+                </th>
+
+                <td>
+                    @Html.DisplayFor(model => model.stockid)
+                </td>
+            </tr>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.parmitemid)
+                </th>
+
+                <td>
+                    @Html.DisplayFor(model => model.parmitemid)
+                </td>
+
+            </tr>  
+    </table>
 </div>
 <p>
-    @Html.ActionLink("Edit", "Edit", new { /* id = Model.PrimaryKey */ }) |
-    @Html.ActionLink("Back to List", "Index")
+    @Html.ActionLink("Edit", "Edit", new { trans_id = Model.trans_id, linenum = Model.linenum, store_code = Model.store_code } , new { @class = "btn btn-success" }) 
+    @Html.ActionLink("Back to List", "Index",null,new { @class = "btn btn-primary" })
 </p>
+
+@*<th>
+        @Html.DisplayNameFor(model => model.rowcreateddate)
+    </th>
+
+    <td>
+        @Html.DisplayFor(model => model.rowcreateddate)
+    </td>
+
+    <th>
+        @Html.DisplayNameFor(model => model.tax)
+    </th>
+
+    <td>
+        @Html.DisplayFor(model => model.tax)
+    </td>
+
+    
+
+    <th>
+        @Html.DisplayNameFor(model => model.taxrates)
+    </th>
+
+    <td>
+        @Html.DisplayFor(model => model.taxrates)
+    </td>
+
+    
+
+    <th>
+        @Html.DisplayNameFor(model => model.MachineIP)
+    </th>
+
+    <td>
+        @Html.DisplayFor(model => model.MachineIP)
+    </td>
+
+    <th>
+        @Html.DisplayNameFor(model => model.MachineUser)
+    </th>
+
+    <td>
+        @Html.DisplayFor(model => model.MachineUser)
+    </td>
+
+    <th>
+        @Html.DisplayNameFor(model => model.MachineName)
+    </th>
+
+    <td>
+        @Html.DisplayFor(model => model.MachineName)
+    </td>
+
+    <th>
+        @Html.DisplayNameFor(model => model.userid)
+    </th>
+
+    <td>
+        @Html.DisplayFor(model => model.userid)
+    </td>
+
+    <th>
+        @Html.DisplayNameFor(model => model.iabc)
+    </th>
+
+    <td>
+        @Html.DisplayFor(model => model.iabc)
+    </td>
+
+    <th>
+        @Html.DisplayNameFor(model => model.idef)
+    </th>
+
+    <td>
+        @Html.DisplayFor(model => model.idef)
+    </td>
+
+    <th>
+        @Html.DisplayNameFor(model => model.ighi)
+    </th>
+
+    <td>
+        @Html.DisplayFor(model => model.ighi)
+    </td>
+
+    <th>
+        @Html.DisplayNameFor(model => model.ijkl)
+    </th>
+
+    <td>
+        @Html.DisplayFor(model => model.ijkl)
+    </td>
+
+    <th>
+        @Html.DisplayNameFor(model => model.Sabc)
+    </th>
+
+    <td>
+        @Html.DisplayFor(model => model.Sabc)
+    </td>
+
+    <th>
+        @Html.DisplayNameFor(model => model.Sdef)
+    </th>
+
+    <td>
+        @Html.DisplayFor(model => model.Sdef)
+    </td>
+
+    <th>
+        @Html.DisplayNameFor(model => model.Sghi)
+    </th>
+
+    <td>
+        @Html.DisplayFor(model => model.Sghi)
+    </td>
+
+    <th>
+        @Html.DisplayNameFor(model => model.Sjkl)
+    </th>
+
+    <td>
+        @Html.DisplayFor(model => model.Sjkl)
+    </td>
+
+    <th>
+        @Html.DisplayNameFor(model => model.Dabc)
+    </th>
+
+    <td>
+        @Html.DisplayFor(model => model.Dabc)
+    </td>
+
+    <th>
+        @Html.DisplayNameFor(model => model.Ddef)
+    </th>
+
+    <td>
+        @Html.DisplayFor(model => model.Ddef)
+    </td>
+
+    <th>
+        @Html.DisplayNameFor(model => model.Dghi)
+    </th>
+
+    <td>
+        @Html.DisplayFor(model => model.Dghi)
+    </td>
+
+    <th>
+        @Html.DisplayNameFor(model => model.Djkl)
+    </th>
+
+    <td>
+        @Html.DisplayFor(model => model.Djkl)
+    </td>
+
+    <th>
+        @Html.DisplayNameFor(model => model.DECabc)
+    </th>
+
+    <td>
+        @Html.DisplayFor(model => model.DECabc)
+    </td>
+
+    <th>
+        @Html.DisplayNameFor(model => model.DECdef)
+    </th>
+
+    <td>
+        @Html.DisplayFor(model => model.DECdef)
+    </td>
+
+    <th>
+        @Html.DisplayNameFor(model => model.DECghi)
+    </th>
+
+    <td>
+        @Html.DisplayFor(model => model.DECghi)
+    </td>
+
+    <th>
+        @Html.DisplayNameFor(model => model.DECjkl)
+    </th>
+
+    <td>
+        @Html.DisplayFor(model => model.DECjkl)
+    </td>
+
+    <th>
+        @Html.DisplayNameFor(model => model.pos_trans.client_code)
+    </th>
+
+    <td>
+        @Html.DisplayFor(model => model.pos_trans.client_code)
+    </td>*@
