@@ -20,5 +20,8 @@ namespace Gold_Sales.Models
         public Nullable<byte> active { get; set; }
         public Nullable<System.DateTime> deactivateddate { get; set; }
         public Nullable<System.DateTime> rowcreateddate { get; set; }
+    
+        public virtual FunctionGroup FunctionGroup { get; set; }
+        public virtual UserLocation UserLocation { get; set; }
     }
 }

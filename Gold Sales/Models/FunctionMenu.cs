@@ -14,6 +14,14 @@ namespace Gold_Sales.Models
     
     public partial class FunctionMenu
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public FunctionMenu()
+        {
+            this.FunctionGroupMenus = new HashSet<FunctionGroupMenu>();
+            this.SecAudits = new HashSet<SecAudit>();
+            this.UserLocationFunctions = new HashSet<UserLocationFunction>();
+        }
+    
         public int FunctionID { get; set; }
         public string FunctionName { get; set; }
         public string FunctionMenu1 { get; set; }
@@ -22,5 +30,12 @@ namespace Gold_Sales.Models
         public Nullable<bool> active { get; set; }
         public Nullable<System.DateTime> deactivateddate { get; set; }
         public Nullable<System.DateTime> rowcreateddate { get; set; }
+    
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<FunctionGroupMenu> FunctionGroupMenus { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<SecAudit> SecAudits { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<UserLocationFunction> UserLocationFunctions { get; set; }
     }
 }

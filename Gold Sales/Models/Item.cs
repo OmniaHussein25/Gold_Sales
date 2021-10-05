@@ -33,7 +33,7 @@ namespace Gold_Sales.Models
         public string itemgroupid { get; set; }
         public string itembarcode { get; set; }
         public string main_vendor { get; set; }
-        public Nullable<bool> active { get; set; }
+        public bool active { get; set; }
         public Nullable<System.DateTime> rowcreateddate { get; set; }
         public string MachineIP { get; set; }
         public string MachineName { get; set; }

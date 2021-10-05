@@ -26,5 +26,9 @@ namespace Gold_Sales.Models
         public string MachineName { get; set; }
         public string MachineUser { get; set; }
         public Nullable<System.DateTime> rowcreateddate { get; set; }
+    
+        public virtual FunctionGroup FunctionGroup { get; set; }
+        public virtual FunctionMenu FunctionMenu { get; set; }
+        public virtual UserLocation UserLocation { get; set; }
     }
 }

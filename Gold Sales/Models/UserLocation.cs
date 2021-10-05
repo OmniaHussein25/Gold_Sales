@@ -14,6 +14,14 @@ namespace Gold_Sales.Models
     
     public partial class UserLocation
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public UserLocation()
+        {
+            this.SecAudits = new HashSet<SecAudit>();
+            this.UserLocationFunctions = new HashSet<UserLocationFunction>();
+            this.UserLocFunGroups = new HashSet<UserLocFunGroup>();
+        }
+    
         public int UserLocationID { get; set; }
         public int userid { get; set; }
         public string InventLocationID { get; set; }
@@ -30,6 +38,12 @@ namespace Gold_Sales.Models
         public Nullable<System.DateTime> rowcreateddate { get; set; }
     
         public virtual InventLocation InventLocation { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<SecAudit> SecAudits { get; set; }
         public virtual user user { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<UserLocationFunction> UserLocationFunctions { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<UserLocFunGroup> UserLocFunGroups { get; set; }
     }
 }

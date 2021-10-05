@@ -14,11 +14,26 @@ namespace Gold_Sales.Models
     
     public partial class FunctionGroup
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public FunctionGroup()
+        {
+            this.FunctionGroupMenus = new HashSet<FunctionGroupMenu>();
+            this.SecAudits = new HashSet<SecAudit>();
+            this.UserLocFunGroups = new HashSet<UserLocFunGroup>();
+        }
+    
         public int FunctionGroupID { get; set; }
         public string FunctionGroupName { get; set; }
         public string FunctionGroupDesc { get; set; }
         public Nullable<bool> active { get; set; }
         public Nullable<System.DateTime> deactivateddate { get; set; }
         public Nullable<System.DateTime> rowcreateddate { get; set; }
+    
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<FunctionGroupMenu> FunctionGroupMenus { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<SecAudit> SecAudits { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<UserLocFunGroup> UserLocFunGroups { get; set; }
     }
 }
