@@ -143,6 +143,8 @@
     <Compile Include="Controllers\ItemTaxesController.cs" />
     <Compile Include="Controllers\ItemUnitsController.cs" />
     <Compile Include="Controllers\LogInController.cs" />
+    <Compile Include="Controllers\pos_transController.cs" />
+    <Compile Include="Controllers\pos_trans_gridController.cs" />
     <Compile Include="Controllers\TableTemplateController.cs" />
     <Compile Include="Controllers\TaxesController.cs" />
     <Compile Include="Controllers\vendorsController.cs" />
@@ -150,208 +152,208 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\Account.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
+      <DependentUpon>Gold_Sales.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\AccountDimension.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
+      <DependentUpon>Gold_Sales.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\AccountType.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
+      <DependentUpon>Gold_Sales.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Branch.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
+      <DependentUpon>Gold_Sales.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\City.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
+      <DependentUpon>Gold_Sales.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Company.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
+      <DependentUpon>Gold_Sales.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\CompanyEmp.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
+      <DependentUpon>Gold_Sales.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Currency.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
+      <DependentUpon>Gold_Sales.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\CurrencyRate.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
+      <DependentUpon>Gold_Sales.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Customer.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
+      <DependentUpon>Gold_Sales.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Dimension.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
+      <DependentUpon>Gold_Sales.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\DimensionType.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
+      <DependentUpon>Gold_Sales.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\FunctionGroup.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
+      <DependentUpon>Gold_Sales.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\FunctionGroupMenu.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
+      <DependentUpon>Gold_Sales.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\FunctionMenu.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
+      <DependentUpon>Gold_Sales.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\GARD.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
+      <DependentUpon>Gold_Sales.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\GARDDETAIL.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
+      <DependentUpon>Gold_Sales.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\GARDSTOCK.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
+      <DependentUpon>Gold_Sales.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\InventLocation.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\InventSite.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\INVENTTRANSFERLINE.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\INVENTTRANSFERTABLE.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\Invoice.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\Invoice_Details.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\Invoice_error.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\Invoice_Taxes.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\Item.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\ItemGroup.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\ItemTax.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\ItemUnit.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\Model1.Context.cs">
+    <Compile Include="Models\Gold_Sales.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>Model1.Context.tt</DependentUpon>
+      <DependentUpon>Gold_Sales.Context.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\Model1.cs">
+    <Compile Include="Models\Gold_Sales.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>Model1.tt</DependentUpon>
+      <DependentUpon>Gold_Sales.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Gold_Sales.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Gold_Sales.edmx</DependentUpon>
     </Compile>
+    <Compile Include="Models\InventLocation.cs">
+      <DependentUpon>Gold_Sales.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\InventSite.cs">
+      <DependentUpon>Gold_Sales.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\INVENTTRANSFERLINE.cs">
+      <DependentUpon>Gold_Sales.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\INVENTTRANSFERTABLE.cs">
+      <DependentUpon>Gold_Sales.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Invoice.cs">
+      <DependentUpon>Gold_Sales.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Invoice_Details.cs">
+      <DependentUpon>Gold_Sales.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Invoice_error.cs">
+      <DependentUpon>Gold_Sales.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Invoice_Taxes.cs">
+      <DependentUpon>Gold_Sales.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Item.cs">
+      <DependentUpon>Gold_Sales.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ItemGroup.cs">
+      <DependentUpon>Gold_Sales.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ItemTax.cs">
+      <DependentUpon>Gold_Sales.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ItemUnit.cs">
+      <DependentUpon>Gold_Sales.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\pos_trans.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
+      <DependentUpon>Gold_Sales.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\pos_trans_bk.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
+      <DependentUpon>Gold_Sales.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\pos_trans_grid.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
+      <DependentUpon>Gold_Sales.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\pos_trans_grid_bk.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
+      <DependentUpon>Gold_Sales.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\purchline.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
+      <DependentUpon>Gold_Sales.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\purchtable.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
+      <DependentUpon>Gold_Sales.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\SalesRep.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
+      <DependentUpon>Gold_Sales.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\SalesRepComm.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
+      <DependentUpon>Gold_Sales.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\SalesRepTarget.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
+      <DependentUpon>Gold_Sales.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\SecAudit.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
+      <DependentUpon>Gold_Sales.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\STOCK.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
+      <DependentUpon>Gold_Sales.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\StockDaily.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
+      <DependentUpon>Gold_Sales.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\sync.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
+      <DependentUpon>Gold_Sales.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\sync_details.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
+      <DependentUpon>Gold_Sales.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\sync_info.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
+      <DependentUpon>Gold_Sales.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\sync_info_toserver.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
+      <DependentUpon>Gold_Sales.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\sync_taxes.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
+      <DependentUpon>Gold_Sales.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\sysdiagram.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
+      <DependentUpon>Gold_Sales.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\sysversion.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
+      <DependentUpon>Gold_Sales.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\sysversionaction.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
+      <DependentUpon>Gold_Sales.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\sysversionaudit.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
+      <DependentUpon>Gold_Sales.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\sysversiondetail.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
+      <DependentUpon>Gold_Sales.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\sysversionLOG.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
+      <DependentUpon>Gold_Sales.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Tax.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
+      <DependentUpon>Gold_Sales.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\user.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
+      <DependentUpon>Gold_Sales.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\UserLocation.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
+      <DependentUpon>Gold_Sales.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\UserLocationFunction.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
+      <DependentUpon>Gold_Sales.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\UserLocFunGroup.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
+      <DependentUpon>Gold_Sales.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\UserLogin.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
+      <DependentUpon>Gold_Sales.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\vendor.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
+      <DependentUpon>Gold_Sales.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Voucher.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
+      <DependentUpon>Gold_Sales.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\VoucherGrid.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
+      <DependentUpon>Gold_Sales.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\VoucherType.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
+      <DependentUpon>Gold_Sales.tt</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -364,15 +366,15 @@
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
-    <Content Include="Models\Model1.Context.tt">
+    <Content Include="Models\Gold_Sales.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>Gold_Sales.edmx</DependentUpon>
-      <LastGenOutput>Model1.Context.cs</LastGenOutput>
+      <LastGenOutput>Gold_Sales.Context.cs</LastGenOutput>
     </Content>
-    <Content Include="Models\Model1.tt">
+    <Content Include="Models\Gold_Sales.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>Gold_Sales.edmx</DependentUpon>
-      <LastGenOutput>Model1.cs</LastGenOutput>
+      <LastGenOutput>Gold_Sales.cs</LastGenOutput>
     </Content>
     <Content Include="packages\Antlr.3.5.0.2\lib\Antlr3.Runtime.dll" />
     <Content Include="packages\Antlr.3.5.0.2\lib\Antlr3.Runtime.pdb" />
@@ -7191,6 +7193,16 @@
     <Content Include="Views\ItemTaxes\Details.cshtml" />
     <Content Include="Views\ItemTaxes\Edit.cshtml" />
     <Content Include="Views\ItemTaxes\Index.cshtml" />
+    <Content Include="Views\pos_trans\Create.cshtml" />
+    <Content Include="Views\pos_trans\Delete.cshtml" />
+    <Content Include="Views\pos_trans\Details.cshtml" />
+    <Content Include="Views\pos_trans\Edit.cshtml" />
+    <Content Include="Views\pos_trans\Index.cshtml" />
+    <Content Include="Views\pos_trans_grid\Create.cshtml" />
+    <Content Include="Views\pos_trans_grid\Delete.cshtml" />
+    <Content Include="Views\pos_trans_grid\Details.cshtml" />
+    <Content Include="Views\pos_trans_grid\Edit.cshtml" />
+    <Content Include="Views\pos_trans_grid\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

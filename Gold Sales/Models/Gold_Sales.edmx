@@ -866,7 +866,7 @@
           <Property Name="itemgroupid" Type="varchar" MaxLength="50" />
           <Property Name="itembarcode" Type="varchar" MaxLength="50" />
           <Property Name="main_vendor" Type="varchar" MaxLength="50" />
-          <Property Name="active" Type="bit" />
+          <Property Name="active" Type="bit" Nullable="false" />
           <Property Name="rowcreateddate" Type="smalldatetime" />
           <Property Name="MachineIP" Type="varchar" MaxLength="50" />
           <Property Name="MachineName" Type="varchar" MaxLength="50" />
@@ -2118,6 +2118,30 @@ warning 6013: The table/view 'Gold_Sales.dbo.z_extra_table0' does not have a pri
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="FK_FunctionGroupMenu_FunctionGroup">
+          <End Role="FunctionGroup" Type="Self.FunctionGroup" Multiplicity="0..1" />
+          <End Role="FunctionGroupMenu" Type="Self.FunctionGroupMenu" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="FunctionGroup">
+              <PropertyRef Name="FunctionGroupID" />
+            </Principal>
+            <Dependent Role="FunctionGroupMenu">
+              <PropertyRef Name="FunctionGroupID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_FunctionGroupMenu_FunctionMenu">
+          <End Role="FunctionMenu" Type="Self.FunctionMenu" Multiplicity="0..1" />
+          <End Role="FunctionGroupMenu" Type="Self.FunctionGroupMenu" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="FunctionMenu">
+              <PropertyRef Name="FunctionID" />
+            </Principal>
+            <Dependent Role="FunctionGroupMenu">
+              <PropertyRef Name="FunctionID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="FK_GARD_InventLocation">
           <End Role="InventLocation" Type="Self.InventLocation" Multiplicity="1" />
           <End Role="GARD" Type="Self.GARD" Multiplicity="*" />
@@ -2342,6 +2366,42 @@ warning 6013: The table/view 'Gold_Sales.dbo.z_extra_table0' does not have a pri
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="FK_SecAudit_FunctionGroup">
+          <End Role="FunctionGroup" Type="Self.FunctionGroup" Multiplicity="0..1" />
+          <End Role="SecAudit" Type="Self.SecAudit" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="FunctionGroup">
+              <PropertyRef Name="FunctionGroupID" />
+            </Principal>
+            <Dependent Role="SecAudit">
+              <PropertyRef Name="FunctionGroupID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_SecAudit_FunctionMenu">
+          <End Role="FunctionMenu" Type="Self.FunctionMenu" Multiplicity="0..1" />
+          <End Role="SecAudit" Type="Self.SecAudit" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="FunctionMenu">
+              <PropertyRef Name="FunctionID" />
+            </Principal>
+            <Dependent Role="SecAudit">
+              <PropertyRef Name="FunctionGroupID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_SecAudit_UserLocation">
+          <End Role="UserLocation" Type="Self.UserLocation" Multiplicity="0..1" />
+          <End Role="SecAudit" Type="Self.SecAudit" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="UserLocation">
+              <PropertyRef Name="UserLocationID" />
+            </Principal>
+            <Dependent Role="SecAudit">
+              <PropertyRef Name="UserLocationID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="FK_STOCK_InventLocation">
           <End Role="InventLocation" Type="Self.InventLocation" Multiplicity="0..1" />
           <End Role="STOCK" Type="Self.STOCK" Multiplicity="*" />
@@ -2387,6 +2447,54 @@ warning 6013: The table/view 'Gold_Sales.dbo.z_extra_table0' does not have a pri
             </Principal>
             <Dependent Role="UserLocation">
               <PropertyRef Name="userid" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_UserLocationFunction_FunctionMenu">
+          <End Role="FunctionMenu" Type="Self.FunctionMenu" Multiplicity="1" />
+          <End Role="UserLocationFunction" Type="Self.UserLocationFunction" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="FunctionMenu">
+              <PropertyRef Name="FunctionID" />
+            </Principal>
+            <Dependent Role="UserLocationFunction">
+              <PropertyRef Name="FunctionID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_UserLocationFunction_UserLocation">
+          <End Role="UserLocation" Type="Self.UserLocation" Multiplicity="1" />
+          <End Role="UserLocationFunction" Type="Self.UserLocationFunction" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="UserLocation">
+              <PropertyRef Name="UserLocationID" />
+            </Principal>
+            <Dependent Role="UserLocationFunction">
+              <PropertyRef Name="UserLocationID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_UserLocFunGroup_FunctionGroup">
+          <End Role="FunctionGroup" Type="Self.FunctionGroup" Multiplicity="0..1" />
+          <End Role="UserLocFunGroup" Type="Self.UserLocFunGroup" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="FunctionGroup">
+              <PropertyRef Name="FunctionGroupID" />
+            </Principal>
+            <Dependent Role="UserLocFunGroup">
+              <PropertyRef Name="FunctionGroupID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_UserLocFunGroup_UserLocation">
+          <End Role="UserLocation" Type="Self.UserLocation" Multiplicity="0..1" />
+          <End Role="UserLocFunGroup" Type="Self.UserLocFunGroup" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="UserLocation">
+              <PropertyRef Name="UserLocationID" />
+            </Principal>
+            <Dependent Role="UserLocFunGroup">
+              <PropertyRef Name="UserLocationID" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -2632,6 +2740,14 @@ warning 6013: The table/view 'Gold_Sales.dbo.z_extra_table0' does not have a pri
             <End Role="DimensionType" EntitySet="DimensionType" />
             <End Role="Dimension" EntitySet="Dimension" />
           </AssociationSet>
+          <AssociationSet Name="FK_FunctionGroupMenu_FunctionGroup" Association="Self.FK_FunctionGroupMenu_FunctionGroup">
+            <End Role="FunctionGroup" EntitySet="FunctionGroup" />
+            <End Role="FunctionGroupMenu" EntitySet="FunctionGroupMenu" />
+          </AssociationSet>
+          <AssociationSet Name="FK_FunctionGroupMenu_FunctionMenu" Association="Self.FK_FunctionGroupMenu_FunctionMenu">
+            <End Role="FunctionMenu" EntitySet="FunctionMenu" />
+            <End Role="FunctionGroupMenu" EntitySet="FunctionGroupMenu" />
+          </AssociationSet>
           <AssociationSet Name="FK_GARD_InventLocation" Association="Self.FK_GARD_InventLocation">
             <End Role="InventLocation" EntitySet="InventLocation" />
             <End Role="GARD" EntitySet="GARD" />
@@ -2700,6 +2816,18 @@ warning 6013: The table/view 'Gold_Sales.dbo.z_extra_table0' does not have a pri
             <End Role="SalesRep" EntitySet="SalesRep" />
             <End Role="SalesRepTarget" EntitySet="SalesRepTarget" />
           </AssociationSet>
+          <AssociationSet Name="FK_SecAudit_FunctionGroup" Association="Self.FK_SecAudit_FunctionGroup">
+            <End Role="FunctionGroup" EntitySet="FunctionGroup" />
+            <End Role="SecAudit" EntitySet="SecAudit" />
+          </AssociationSet>
+          <AssociationSet Name="FK_SecAudit_FunctionMenu" Association="Self.FK_SecAudit_FunctionMenu">
+            <End Role="FunctionMenu" EntitySet="FunctionMenu" />
+            <End Role="SecAudit" EntitySet="SecAudit" />
+          </AssociationSet>
+          <AssociationSet Name="FK_SecAudit_UserLocation" Association="Self.FK_SecAudit_UserLocation">
+            <End Role="UserLocation" EntitySet="UserLocation" />
+            <End Role="SecAudit" EntitySet="SecAudit" />
+          </AssociationSet>
           <AssociationSet Name="FK_STOCK_InventLocation" Association="Self.FK_STOCK_InventLocation">
             <End Role="InventLocation" EntitySet="InventLocation" />
             <End Role="STOCK" EntitySet="STOCK" />
@@ -2715,6 +2843,22 @@ warning 6013: The table/view 'Gold_Sales.dbo.z_extra_table0' does not have a pri
           <AssociationSet Name="FK_UserLocation_users" Association="Self.FK_UserLocation_users">
             <End Role="users" EntitySet="users" />
             <End Role="UserLocation" EntitySet="UserLocation" />
+          </AssociationSet>
+          <AssociationSet Name="FK_UserLocationFunction_FunctionMenu" Association="Self.FK_UserLocationFunction_FunctionMenu">
+            <End Role="FunctionMenu" EntitySet="FunctionMenu" />
+            <End Role="UserLocationFunction" EntitySet="UserLocationFunction" />
+          </AssociationSet>
+          <AssociationSet Name="FK_UserLocationFunction_UserLocation" Association="Self.FK_UserLocationFunction_UserLocation">
+            <End Role="UserLocation" EntitySet="UserLocation" />
+            <End Role="UserLocationFunction" EntitySet="UserLocationFunction" />
+          </AssociationSet>
+          <AssociationSet Name="FK_UserLocFunGroup_FunctionGroup" Association="Self.FK_UserLocFunGroup_FunctionGroup">
+            <End Role="FunctionGroup" EntitySet="FunctionGroup" />
+            <End Role="UserLocFunGroup" EntitySet="UserLocFunGroup" />
+          </AssociationSet>
+          <AssociationSet Name="FK_UserLocFunGroup_UserLocation" Association="Self.FK_UserLocFunGroup_UserLocation">
+            <End Role="UserLocation" EntitySet="UserLocation" />
+            <End Role="UserLocFunGroup" EntitySet="UserLocFunGroup" />
           </AssociationSet>
           <AssociationSet Name="FK_UserLogins_users" Association="Self.FK_UserLogins_users">
             <End Role="users" EntitySet="users" />
@@ -3077,6 +3221,9 @@ warning 6013: The table/view 'Gold_Sales.dbo.z_extra_table0' does not have a pri
           <Property Name="active" Type="Boolean" />
           <Property Name="deactivateddate" Type="DateTime" Precision="0" />
           <Property Name="rowcreateddate" Type="DateTime" Precision="0" />
+          <NavigationProperty Name="FunctionGroupMenus" Relationship="Self.FK_FunctionGroupMenu_FunctionGroup" FromRole="FunctionGroup" ToRole="FunctionGroupMenu" />
+          <NavigationProperty Name="SecAudits" Relationship="Self.FK_SecAudit_FunctionGroup" FromRole="FunctionGroup" ToRole="SecAudit" />
+          <NavigationProperty Name="UserLocFunGroups" Relationship="Self.FK_UserLocFunGroup_FunctionGroup" FromRole="FunctionGroup" ToRole="UserLocFunGroup" />
         </EntityType>
         <EntityType Name="FunctionGroupMenu">
           <Key>
@@ -3088,6 +3235,8 @@ warning 6013: The table/view 'Gold_Sales.dbo.z_extra_table0' does not have a pri
           <Property Name="active" Type="Boolean" />
           <Property Name="deactivateddate" Type="DateTime" Precision="0" />
           <Property Name="rowcreateddate" Type="DateTime" Precision="0" />
+          <NavigationProperty Name="FunctionGroup" Relationship="Self.FK_FunctionGroupMenu_FunctionGroup" FromRole="FunctionGroupMenu" ToRole="FunctionGroup" />
+          <NavigationProperty Name="FunctionMenu" Relationship="Self.FK_FunctionGroupMenu_FunctionMenu" FromRole="FunctionGroupMenu" ToRole="FunctionMenu" />
         </EntityType>
         <EntityType Name="FunctionMenu">
           <Key>
@@ -3101,6 +3250,9 @@ warning 6013: The table/view 'Gold_Sales.dbo.z_extra_table0' does not have a pri
           <Property Name="active" Type="Boolean" />
           <Property Name="deactivateddate" Type="DateTime" Precision="0" />
           <Property Name="rowcreateddate" Type="DateTime" Precision="0" />
+          <NavigationProperty Name="FunctionGroupMenus" Relationship="Self.FK_FunctionGroupMenu_FunctionMenu" FromRole="FunctionMenu" ToRole="FunctionGroupMenu" />
+          <NavigationProperty Name="SecAudits" Relationship="Self.FK_SecAudit_FunctionMenu" FromRole="FunctionMenu" ToRole="SecAudit" />
+          <NavigationProperty Name="UserLocationFunctions" Relationship="Self.FK_UserLocationFunction_FunctionMenu" FromRole="FunctionMenu" ToRole="UserLocationFunction" />
         </EntityType>
         <EntityType Name="GARD">
           <Key>
@@ -3634,7 +3786,7 @@ warning 6013: The table/view 'Gold_Sales.dbo.z_extra_table0' does not have a pri
           <Property Name="itemgroupid" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="itembarcode" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="main_vendor" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="active" Type="Boolean" />
+          <Property Name="active" Type="Boolean" Nullable="false" />
           <Property Name="rowcreateddate" Type="DateTime" Precision="0" />
           <Property Name="MachineIP" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="MachineName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
@@ -4018,6 +4170,9 @@ warning 6013: The table/view 'Gold_Sales.dbo.z_extra_table0' does not have a pri
           <Property Name="MachineName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="MachineUser" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="rowcreateddate" Type="DateTime" Precision="0" />
+          <NavigationProperty Name="FunctionGroup" Relationship="Self.FK_SecAudit_FunctionGroup" FromRole="SecAudit" ToRole="FunctionGroup" />
+          <NavigationProperty Name="FunctionMenu" Relationship="Self.FK_SecAudit_FunctionMenu" FromRole="SecAudit" ToRole="FunctionMenu" />
+          <NavigationProperty Name="UserLocation" Relationship="Self.FK_SecAudit_UserLocation" FromRole="SecAudit" ToRole="UserLocation" />
         </EntityType>
         <EntityType Name="STOCK">
           <Key>
@@ -4438,7 +4593,10 @@ warning 6013: The table/view 'Gold_Sales.dbo.z_extra_table0' does not have a pri
           <Property Name="deactivateddate" Type="DateTime" Precision="0" />
           <Property Name="rowcreateddate" Type="DateTime" Precision="0" />
           <NavigationProperty Name="InventLocation" Relationship="Self.FK_UserLocation_Branch" FromRole="UserLocation" ToRole="InventLocation" />
+          <NavigationProperty Name="SecAudits" Relationship="Self.FK_SecAudit_UserLocation" FromRole="UserLocation" ToRole="SecAudit" />
           <NavigationProperty Name="user" Relationship="Self.FK_UserLocation_users" FromRole="UserLocation" ToRole="users" />
+          <NavigationProperty Name="UserLocationFunctions" Relationship="Self.FK_UserLocationFunction_UserLocation" FromRole="UserLocation" ToRole="UserLocationFunction" />
+          <NavigationProperty Name="UserLocFunGroups" Relationship="Self.FK_UserLocFunGroup_UserLocation" FromRole="UserLocation" ToRole="UserLocFunGroup" />
         </EntityType>
         <EntityType Name="UserLocationFunction">
           <Key>
@@ -4451,6 +4609,8 @@ warning 6013: The table/view 'Gold_Sales.dbo.z_extra_table0' does not have a pri
           <Property Name="active" Type="Byte" />
           <Property Name="deactivateddate" Type="DateTime" Precision="0" />
           <Property Name="rowcreateddate" Type="DateTime" Precision="0" />
+          <NavigationProperty Name="FunctionMenu" Relationship="Self.FK_UserLocationFunction_FunctionMenu" FromRole="UserLocationFunction" ToRole="FunctionMenu" />
+          <NavigationProperty Name="UserLocation" Relationship="Self.FK_UserLocationFunction_UserLocation" FromRole="UserLocationFunction" ToRole="UserLocation" />
         </EntityType>
         <EntityType Name="UserLocFunGroup">
           <Key>
@@ -4462,6 +4622,8 @@ warning 6013: The table/view 'Gold_Sales.dbo.z_extra_table0' does not have a pri
           <Property Name="active" Type="Byte" />
           <Property Name="deactivateddate" Type="DateTime" Precision="0" />
           <Property Name="rowcreateddate" Type="DateTime" Precision="0" />
+          <NavigationProperty Name="FunctionGroup" Relationship="Self.FK_UserLocFunGroup_FunctionGroup" FromRole="UserLocFunGroup" ToRole="FunctionGroup" />
+          <NavigationProperty Name="UserLocation" Relationship="Self.FK_UserLocFunGroup_UserLocation" FromRole="UserLocFunGroup" ToRole="UserLocation" />
         </EntityType>
         <EntityType Name="UserLogin">
           <Key>
@@ -4876,6 +5038,78 @@ warning 6013: The table/view 'Gold_Sales.dbo.z_extra_table0' does not have a pri
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="FK_FunctionGroupMenu_FunctionGroup">
+          <End Role="FunctionGroup" Type="Self.FunctionGroup" Multiplicity="0..1" />
+          <End Role="FunctionGroupMenu" Type="Self.FunctionGroupMenu" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="FunctionGroup">
+              <PropertyRef Name="FunctionGroupID" />
+            </Principal>
+            <Dependent Role="FunctionGroupMenu">
+              <PropertyRef Name="FunctionGroupID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_SecAudit_FunctionGroup">
+          <End Role="FunctionGroup" Type="Self.FunctionGroup" Multiplicity="0..1" />
+          <End Role="SecAudit" Type="Self.SecAudit" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="FunctionGroup">
+              <PropertyRef Name="FunctionGroupID" />
+            </Principal>
+            <Dependent Role="SecAudit">
+              <PropertyRef Name="FunctionGroupID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_UserLocFunGroup_FunctionGroup">
+          <End Role="FunctionGroup" Type="Self.FunctionGroup" Multiplicity="0..1" />
+          <End Role="UserLocFunGroup" Type="Self.UserLocFunGroup" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="FunctionGroup">
+              <PropertyRef Name="FunctionGroupID" />
+            </Principal>
+            <Dependent Role="UserLocFunGroup">
+              <PropertyRef Name="FunctionGroupID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_FunctionGroupMenu_FunctionMenu">
+          <End Role="FunctionMenu" Type="Self.FunctionMenu" Multiplicity="0..1" />
+          <End Role="FunctionGroupMenu" Type="Self.FunctionGroupMenu" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="FunctionMenu">
+              <PropertyRef Name="FunctionID" />
+            </Principal>
+            <Dependent Role="FunctionGroupMenu">
+              <PropertyRef Name="FunctionID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_SecAudit_FunctionMenu">
+          <End Role="FunctionMenu" Type="Self.FunctionMenu" Multiplicity="0..1" />
+          <End Role="SecAudit" Type="Self.SecAudit" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="FunctionMenu">
+              <PropertyRef Name="FunctionID" />
+            </Principal>
+            <Dependent Role="SecAudit">
+              <PropertyRef Name="FunctionGroupID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_UserLocationFunction_FunctionMenu">
+          <End Role="FunctionMenu" Type="Self.FunctionMenu" Multiplicity="1" />
+          <End Role="UserLocationFunction" Type="Self.UserLocationFunction" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="FunctionMenu">
+              <PropertyRef Name="FunctionID" />
+            </Principal>
+            <Dependent Role="UserLocationFunction">
+              <PropertyRef Name="FunctionID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="FK_GARD_InventLocation">
           <End Role="InventLocation" Type="Self.InventLocation" Multiplicity="1" />
           <End Role="GARD" Type="Self.GARD" Multiplicity="*" />
@@ -5136,6 +5370,18 @@ warning 6013: The table/view 'Gold_Sales.dbo.z_extra_table0' does not have a pri
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="FK_SecAudit_UserLocation">
+          <End Role="UserLocation" Type="Self.UserLocation" Multiplicity="0..1" />
+          <End Role="SecAudit" Type="Self.SecAudit" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="UserLocation">
+              <PropertyRef Name="UserLocationID" />
+            </Principal>
+            <Dependent Role="SecAudit">
+              <PropertyRef Name="UserLocationID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="FK_UserLocation_users">
           <End Role="users" Type="Self.user" Multiplicity="1" />
           <End Role="UserLocation" Type="Self.UserLocation" Multiplicity="*" />
@@ -5145,6 +5391,30 @@ warning 6013: The table/view 'Gold_Sales.dbo.z_extra_table0' does not have a pri
             </Principal>
             <Dependent Role="UserLocation">
               <PropertyRef Name="userid" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_UserLocationFunction_UserLocation">
+          <End Role="UserLocation" Type="Self.UserLocation" Multiplicity="1" />
+          <End Role="UserLocationFunction" Type="Self.UserLocationFunction" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="UserLocation">
+              <PropertyRef Name="UserLocationID" />
+            </Principal>
+            <Dependent Role="UserLocationFunction">
+              <PropertyRef Name="UserLocationID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_UserLocFunGroup_UserLocation">
+          <End Role="UserLocation" Type="Self.UserLocation" Multiplicity="0..1" />
+          <End Role="UserLocFunGroup" Type="Self.UserLocFunGroup" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="UserLocation">
+              <PropertyRef Name="UserLocationID" />
+            </Principal>
+            <Dependent Role="UserLocFunGroup">
+              <PropertyRef Name="UserLocationID" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -5284,6 +5554,30 @@ warning 6013: The table/view 'Gold_Sales.dbo.z_extra_table0' does not have a pri
             <End Role="DimensionType" EntitySet="DimensionTypes" />
             <End Role="Dimension" EntitySet="Dimensions" />
           </AssociationSet>
+          <AssociationSet Name="FK_FunctionGroupMenu_FunctionGroup" Association="Self.FK_FunctionGroupMenu_FunctionGroup">
+            <End Role="FunctionGroup" EntitySet="FunctionGroups" />
+            <End Role="FunctionGroupMenu" EntitySet="FunctionGroupMenus" />
+          </AssociationSet>
+          <AssociationSet Name="FK_SecAudit_FunctionGroup" Association="Self.FK_SecAudit_FunctionGroup">
+            <End Role="FunctionGroup" EntitySet="FunctionGroups" />
+            <End Role="SecAudit" EntitySet="SecAudits" />
+          </AssociationSet>
+          <AssociationSet Name="FK_UserLocFunGroup_FunctionGroup" Association="Self.FK_UserLocFunGroup_FunctionGroup">
+            <End Role="FunctionGroup" EntitySet="FunctionGroups" />
+            <End Role="UserLocFunGroup" EntitySet="UserLocFunGroups" />
+          </AssociationSet>
+          <AssociationSet Name="FK_FunctionGroupMenu_FunctionMenu" Association="Self.FK_FunctionGroupMenu_FunctionMenu">
+            <End Role="FunctionMenu" EntitySet="FunctionMenus" />
+            <End Role="FunctionGroupMenu" EntitySet="FunctionGroupMenus" />
+          </AssociationSet>
+          <AssociationSet Name="FK_SecAudit_FunctionMenu" Association="Self.FK_SecAudit_FunctionMenu">
+            <End Role="FunctionMenu" EntitySet="FunctionMenus" />
+            <End Role="SecAudit" EntitySet="SecAudits" />
+          </AssociationSet>
+          <AssociationSet Name="FK_UserLocationFunction_FunctionMenu" Association="Self.FK_UserLocationFunction_FunctionMenu">
+            <End Role="FunctionMenu" EntitySet="FunctionMenus" />
+            <End Role="UserLocationFunction" EntitySet="UserLocationFunctions" />
+          </AssociationSet>
           <AssociationSet Name="FK_GARD_InventLocation" Association="Self.FK_GARD_InventLocation">
             <End Role="InventLocation" EntitySet="InventLocations" />
             <End Role="GARD" EntitySet="GARDs" />
@@ -5364,9 +5658,21 @@ warning 6013: The table/view 'Gold_Sales.dbo.z_extra_table0' does not have a pri
             <End Role="SalesRep" EntitySet="SalesReps" />
             <End Role="SalesRepTarget" EntitySet="SalesRepTargets" />
           </AssociationSet>
+          <AssociationSet Name="FK_SecAudit_UserLocation" Association="Self.FK_SecAudit_UserLocation">
+            <End Role="UserLocation" EntitySet="UserLocations" />
+            <End Role="SecAudit" EntitySet="SecAudits" />
+          </AssociationSet>
           <AssociationSet Name="FK_UserLocation_users" Association="Self.FK_UserLocation_users">
             <End Role="users" EntitySet="users" />
             <End Role="UserLocation" EntitySet="UserLocations" />
+          </AssociationSet>
+          <AssociationSet Name="FK_UserLocationFunction_UserLocation" Association="Self.FK_UserLocationFunction_UserLocation">
+            <End Role="UserLocation" EntitySet="UserLocations" />
+            <End Role="UserLocationFunction" EntitySet="UserLocationFunctions" />
+          </AssociationSet>
+          <AssociationSet Name="FK_UserLocFunGroup_UserLocation" Association="Self.FK_UserLocFunGroup_UserLocation">
+            <End Role="UserLocation" EntitySet="UserLocations" />
+            <End Role="UserLocFunGroup" EntitySet="UserLocFunGroups" />
           </AssociationSet>
           <AssociationSet Name="FK_UserLogins_users" Association="Self.FK_UserLogins_users">
             <End Role="users" EntitySet="users" />
