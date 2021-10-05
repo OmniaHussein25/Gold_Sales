@@ -206,11 +206,6 @@
       <DependentUpon>Gold_Sales.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Gold_Sales.Context.cs" />
-    <Compile Include="Models\Gold_Sales.Context1.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Gold_Sales.Context.tt</DependentUpon>
-    </Compile>
     <Compile Include="Models\Gold_Sales.cs" />
     <Compile Include="Models\Gold_Sales.Designer.cs">
       <DependentUpon>Gold_Sales.cs</DependentUpon>
@@ -371,10 +366,6 @@
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
-    <Content Include="Models\Gold_Sales.Context.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>Gold_Sales.Context1.cs</LastGenOutput>
-    </Content>
     <Content Include="Models\Gold_Sales.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>Gold_Sales1.cs</LastGenOutput>
