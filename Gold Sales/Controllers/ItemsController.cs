@@ -7,6 +7,7 @@ using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using Gold_Sales.Models;
+using System.Web.Mvc.Html;
 
 namespace Gold_Sales.Controllers
 {
@@ -40,7 +41,7 @@ namespace Gold_Sales.Controllers
         public ActionResult Create()
         {
             ViewBag.itemgroupid = new SelectList(db.ItemGroups, "ItemGroupID", "ItemGroupname");
-            ViewBag.itemunitcode = new SelectList(db.ItemUnits, "itemunitcode", "itemunitname");
+            ViewBag.itemunitcode = new SelectList(db.ItemUnits, "itemunitcode", "itemunitcode");
             return View();
         }
 
@@ -53,13 +54,15 @@ namespace Gold_Sales.Controllers
         {
             if (ModelState.IsValid)
             {
+                item.rowcreateddate = DateTime.Now;
+                item.rowupdateddate = DateTime.Now;
                 db.Items.Add(item);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
 
             ViewBag.itemgroupid = new SelectList(db.ItemGroups, "ItemGroupID", "ItemGroupname", item.itemgroupid);
-            ViewBag.itemunitcode = new SelectList(db.ItemUnits, "itemunitcode", "itemunitname", item.itemunitcode);
+            ViewBag.itemunitcode = new SelectList(db.ItemUnits, "itemunitcode", "itemunitcode", item.itemunitcode);
             return View(item);
         }
 
@@ -76,7 +79,7 @@ namespace Gold_Sales.Controllers
                 return HttpNotFound();
             }
             ViewBag.itemgroupid = new SelectList(db.ItemGroups, "ItemGroupID", "ItemGroupname", item.itemgroupid);
-            ViewBag.itemunitcode = new SelectList(db.ItemUnits, "itemunitcode", "itemunitname", item.itemunitcode);
+            ViewBag.itemunitcode = new SelectList(db.ItemUnits, "itemunitcode", "itemunitcode", item.itemunitcode);
             return View(item);
         }
 
@@ -89,12 +92,13 @@ namespace Gold_Sales.Controllers
         {
             if (ModelState.IsValid)
             {
+                item.rowupdateddate = DateTime.Now;
                 db.Entry(item).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
             ViewBag.itemgroupid = new SelectList(db.ItemGroups, "ItemGroupID", "ItemGroupname", item.itemgroupid);
-            ViewBag.itemunitcode = new SelectList(db.ItemUnits, "itemunitcode", "itemunitname", item.itemunitcode);
+            ViewBag.itemunitcode = new SelectList(db.ItemUnits, "itemunitcode", "itemunitcode", item.itemunitcode);
             return View(item);
         }
 

@@ -1,0 +1,134 @@
+﻿@model Gold_Sales.Models.ItemUnit
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<div>
+    <div class="table-responsive">
+        <table class="table">
+            <tbody>
+                <tr>
+                    <th>
+                        @Html.LabelFor(model => model.itemunitcode, "Item Unit Code")
+                    </th>
+
+                    <td>
+                        @Html.DisplayFor(model => model.itemunitcode)
+                    </td>
+                </tr>
+                <tr>
+                    <th>
+                        @Html.LabelFor(model => model.itemunitname, "Item Unit Name")
+                    </th>
+
+                    <td>
+                        @Html.DisplayFor(model => model.itemunitname)
+                    </td>
+                </tr>
+                <tr>
+                    <th>
+                        @Html.LabelFor(model => model.active, "Active")
+                    </th>
+
+                    <td>
+                        @Html.DisplayFor(model => model.active)
+                    </td>
+
+                </tr>
+                <tr>
+                    <th>
+                        @Html.LabelFor(model => model.rowcreateddate,"Row Created Date")
+                    </th>
+
+                    <td>
+                        @Html.DisplayFor(model => model.rowcreateddate)
+                    </td>
+
+                </tr>
+                <tr>
+                    <th>
+                        @Html.LabelFor(model => model.rowupdateddate,"Row Updated Date")
+                    </th>
+
+                    <td>
+                        @Html.DisplayFor(model => model.rowupdateddate)
+                    </td>
+                </tr>
+
+                @*<th>
+            @Html.LabelFor(model => model.MachineIP)
+        </th>
+
+        <td>
+            @Html.DisplayFor(model => model.MachineIP)
+        </td>
+
+        <th>
+            @Html.LabelFor(model => model.MachineName)
+        </th>
+
+        <td>
+            @Html.DisplayFor(model => model.MachineName)
+        </td>
+
+        <th>
+            @Html.LabelFor(model => model.MachineUser)
+        </th>
+
+        <td>
+            @Html.DisplayFor(model => model.MachineUser)
+        </td>
+
+        <th>
+            @Html.LabelFor(model => model.userid)
+        </th>
+
+        <td>
+            @Html.DisplayFor(model => model.userid)
+        </td>*@
+
+
+
+                @*<th>
+            @Html.LabelFor(model => model.Machineipupdated)
+        </th>
+
+        <td>
+            @Html.DisplayFor(model => model.Machineipupdated)
+        </td>
+
+        <th>
+            @Html.LabelFor(model => model.Machinenameupdated)
+        </th>
+
+        <td>
+            @Html.DisplayFor(model => model.Machinenameupdated)
+        </td>
+
+        <th>
+            @Html.LabelFor(model => model.Machineuserupdated)
+        </th>
+
+        <td>
+            @Html.DisplayFor(model => model.Machineuserupdated)
+        </td>
+
+        <th>
+            @Html.LabelFor(model => model.useridupdated)
+        </th>
+
+        <td>
+            @Html.DisplayFor(model => model.useridupdated)
+        </td>*@
+            </tbody>
+                    </table>
+    </div>
+    </div>
+    <p>
+        @Html.ActionLink("Edit", "Edit", new { id = Model.itemunitcode }, new { @class = "btn btn-success" })
+        @Html.ActionLink("Cancel", "Index", null, new { @class = "btn btn-primary" })
+       
+    </p>
