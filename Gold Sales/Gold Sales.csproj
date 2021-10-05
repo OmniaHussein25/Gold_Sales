@@ -137,6 +137,7 @@
     <Compile Include="Controllers\CustomersController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\LogInController.cs" />
+    <Compile Include="Controllers\pos_transController.cs" />
     <Compile Include="Controllers\pos_trans_gridController.cs" />
     <Compile Include="Controllers\TableTemplateController.cs" />
     <Compile Include="Controllers\vendorsController.cs" />
@@ -6928,6 +6929,11 @@
     <Content Include="Views\pos_trans_grid\Details.cshtml" />
     <Content Include="Views\pos_trans_grid\Edit.cshtml" />
     <Content Include="Views\pos_trans_grid\Index.cshtml" />
+    <Content Include="Views\pos_trans\Create.cshtml" />
+    <Content Include="Views\pos_trans\Delete.cshtml" />
+    <Content Include="Views\pos_trans\Details.cshtml" />
+    <Content Include="Views\pos_trans\Edit.cshtml" />
+    <Content Include="Views\pos_trans\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

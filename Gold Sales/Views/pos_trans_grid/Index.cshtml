@@ -17,6 +17,7 @@
 
                             <thead>
                                 <tr>
+                                   
                                     <th>
                                         @Html.DisplayNameFor(model => model.itemserial)
                                     </th>
@@ -270,11 +271,8 @@
 
 
                                             @Html.ActionLink(" ", "Edit", new { trans_id = item.trans_id, linenum = item.linenum, store_code = item.store_code }, new { @class = "btn btn-round btn-warning glyphicon glyphicon-edit" })
-                                            @Html.ActionLink(" ", "Details", new { id = item.trans_id, lineNumber = item.linenum, storeCode = item.store_code }, new { @class = "btn btn-round btn-info glyphicon glyphicon-info-sign" })
-                                            @*@Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })*@
-                                            <a href="#" class="btn btn-round btn-danger glyphicon glyphicon-trash" onclick="ConfirmDelete(@item.trans_id)"> </a>
-
-
+                                            @Html.ActionLink(" ", "Details", new { trans_id = item.trans_id, linenum = item.linenum, store_code = item.store_code }, new { @class = "btn btn-round btn-info glyphicon glyphicon-info-sign" })                                            
+                                            <a href="#" class="btn btn-round btn-danger glyphicon glyphicon-trash" onclick="ConfirmDelete(@item.trans_id,@item.linenum,@item.store_code)"> </a>
 
                                         </td>
 
@@ -321,25 +319,28 @@
 
 <script>
 
-    var ConfirmDelete = function (id) {
+    var ConfirmDelete = function (trans_id,linenum,store_code) {
 
-        $("#hiddenId").val(id);
+        $("#hiddenId1").val(trans_id);
+        $("#hiddenId2").val(linenum);
+        $("#hiddenId3").val(store_code);
         $("#myModal").modal('show');
 
     }
 
     var DeleteObj = function () {
         //debugger
-
+       
         $("#loaderDiv").show();
 
-        var cityid = $("#hiddenId").val();
-
+        var itemid1 = $("#hiddenId1").val();
+        var itemid2 = $("#hiddenId2").val();
+        var itemid3 = $("#hiddenId3").val();
         $.ajax({
 
             type: "POST",
-            url: "/TableTemplate/DeleteObj",
-            data: { id: cityid },
+            url: "/pos_trans_grid/DeleteConfirmed",
+            data: { trans_id: itemid1 , linenum: itemid2 , Sstore_code: itemid3 },
             dataType: "json",
             success: function (result) {
                 $("#loaderDiv").hide();

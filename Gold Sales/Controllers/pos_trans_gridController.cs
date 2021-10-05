@@ -22,13 +22,13 @@ namespace Gold_Sales.Controllers
         }
 
         // GET: pos_trans_grid/Details/5
-        public ActionResult Details(int? id)
+        public ActionResult Details(int? trans_id, int? linenum, string store_code)
         {
-            if (id == null)
+            if (trans_id == null || linenum == null || store_code == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            pos_trans_grid pos_trans_grid = db.pos_trans_grid.Find(id);
+            pos_trans_grid pos_trans_grid = db.pos_trans_grid.Where(a => a.trans_id == trans_id && a.linenum == linenum && a.store_code == store_code).FirstOrDefault();
             if (pos_trans_grid == null)
             {
                 return HttpNotFound();
@@ -39,7 +39,8 @@ namespace Gold_Sales.Controllers
         // GET: pos_trans_grid/Create
         public ActionResult Create()
         {
-            ViewBag.trans_id = new SelectList(db.pos_trans, "trans_id", "client_code");
+            ViewBag.trans_id = new SelectList(db.pos_trans, "trans_id", "trans_id");
+            ViewBag.store_code = new SelectList(db.pos_trans, "store_code", "store_code");
             return View();
         }
 
@@ -57,7 +58,8 @@ namespace Gold_Sales.Controllers
                 return RedirectToAction("Index");
             }
 
-            ViewBag.trans_id = new SelectList(db.pos_trans, "trans_id", "client_code", pos_trans_grid.trans_id);
+            ViewBag.trans_id = new SelectList(db.pos_trans, "trans_id", "trans_id", pos_trans_grid.trans_id);
+            ViewBag.store_code = new SelectList(db.pos_trans, "store_code", "store_code", pos_trans_grid.store_code);
             return View(pos_trans_grid);
         }
 
@@ -96,13 +98,13 @@ namespace Gold_Sales.Controllers
         }
 
         // GET: pos_trans_grid/Delete/5
-        public ActionResult Delete(int? id)
+        public ActionResult Delete(int? trans_id, int? linenum, string store_code)
         {
-            if (id == null)
+            if (trans_id == null || linenum == null || store_code == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            pos_trans_grid pos_trans_grid = db.pos_trans_grid.Find(id);
+            pos_trans_grid pos_trans_grid = db.pos_trans_grid.Where(a => a.trans_id == trans_id && a.linenum == linenum && a.store_code == store_code).FirstOrDefault();
             if (pos_trans_grid == null)
             {
                 return HttpNotFound();
@@ -111,15 +113,29 @@ namespace Gold_Sales.Controllers
         }
 
         // POST: pos_trans_grid/Delete/5
-        [HttpPost, ActionName("Delete")]
-        [ValidateAntiForgeryToken]
-        public ActionResult DeleteConfirmed(int id)
-        {
-            pos_trans_grid pos_trans_grid = db.pos_trans_grid.Find(id);
-            db.pos_trans_grid.Remove(pos_trans_grid);
-            db.SaveChanges();
-            return RedirectToAction("Index");
-        }
+        //[HttpPost, ActionName("Delete")]
+        //[ValidateAntiForgeryToken]
+        //public ActionResult DeleteConfirmed(int? trans_id, int? linenum, string store_code)
+        //{
+        //    pos_trans_grid pos_trans_grid = db.pos_trans_grid.Where(a => a.trans_id == trans_id && a.linenum == linenum && a.store_code == store_code).FirstOrDefault();
+
+        //    db.pos_trans_grid.Remove(pos_trans_grid);
+        //    db.SaveChanges();
+        //    return RedirectToAction("Index");
+        //}
+            public JsonResult DeleteConfirmed(int? trans_id, int? linenum, string store_code)
+            {
+                bool res = false;
+               // pos_trans_grid postransgrid = db.pos_trans_grid.Find(trans_id,linenum,store_code);
+            pos_trans_grid postransgrid = db.pos_trans_grid.Where(a => a.trans_id == trans_id && a.linenum == linenum && a.store_code == store_code).FirstOrDefault();
+            if (postransgrid != null)
+                {
+                    db.pos_trans_grid.Remove(postransgrid);
+                    db.SaveChanges();
+                    res = true;
+                }
+                return Json(res, JsonRequestBehavior.AllowGet);
+            }
 
         protected override void Dispose(bool disposing)
         {

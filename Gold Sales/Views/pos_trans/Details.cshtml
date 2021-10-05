@@ -1,90 +1,16 @@
-﻿@model Gold_Sales.Models.pos_trans_grid
+﻿@model Gold_Sales.Models.pos_trans
 
 @{
     ViewBag.Title = "Details";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
+
 <div class="table-responsive">
     <table class="table">
         <tbody>
-
             <tr>
-                <th>
-                    @Html.DisplayNameFor(model => model.itemserial)
-                </th>
 
-                <td>
-                    @Html.DisplayFor(model => model.itemserial)
-                </td>
-            </tr>
-            <tr>
-                <th>
-                    @Html.DisplayNameFor(model => model.itemname)
-                </th>
-
-                <td>
-                    @Html.DisplayFor(model => model.itemname)
-                </td>
-
-            </tr>
-            <tr>
-                <th>
-                    @Html.DisplayNameFor(model => model.unit_code)
-                </th>
-
-                <td>
-                    @Html.DisplayFor(model => model.unit_code)
-                </td>
-
-            </tr>
-            <tr>
-                <th>
-                    @Html.DisplayNameFor(model => model.item_weight)
-                </th>
-
-                <td>
-                    @Html.DisplayFor(model => model.item_weight)
-                </td>
-
-            </tr>
-            <tr>
-                <th>
-                    @Html.DisplayNameFor(model => model.sale_price)
-                </th>
-
-                <td>
-                    @Html.DisplayFor(model => model.sale_price)
-                </td>
-            </tr>
-            <tr>
-                <th>
-                    @Html.DisplayNameFor(model => model.slae_cost)
-                </th>
-
-                <td>
-                    @Html.DisplayFor(model => model.slae_cost)
-                </td>
-            </tr>
-            <tr>
-                <th>
-                    @Html.DisplayNameFor(model => model.taxrate)
-                </th>
-
-                <td>
-                    @Html.DisplayFor(model => model.taxrate)
-                </td>
-            </tr>
-            <tr>
-                <th>
-                    @Html.DisplayNameFor(model => model.taxes)
-                </th>
-
-                <td>
-                    @Html.DisplayFor(model => model.taxes)
-                </td>
-            </tr>
-            <tr>
                 <th>
                     @Html.DisplayNameFor(model => model.trans_date)
                 </th>
@@ -95,11 +21,56 @@
             </tr>
             <tr>
                 <th>
-                    @Html.DisplayNameFor(model => model.item_sold)
+                    @Html.DisplayNameFor(model => model.client_code)
                 </th>
 
                 <td>
-                    @Html.DisplayFor(model => model.item_sold)
+                    @Html.DisplayFor(model => model.client_code)
+                </td>
+            </tr>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.trans_total)
+                </th>
+
+                <td>
+                    @Html.DisplayFor(model => model.trans_total)
+                </td>
+            </tr>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.remarks)
+                </th>
+
+                <td>
+                    @Html.DisplayFor(model => model.remarks)
+                </td>
+            </tr>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.trans_total_21)
+                </th>
+
+                <td>
+                    @Html.DisplayFor(model => model.trans_total_21)
+                </td>
+            </tr>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.trans_toatl_18)
+                </th>
+
+                <td>
+                    @Html.DisplayFor(model => model.trans_toatl_18)
+                </td>
+            </tr>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.canceled)
+                </th>
+
+                <td>
+                    @Html.DisplayFor(model => model.canceled)
                 </td>
             </tr>
             <tr>
@@ -113,68 +84,79 @@
             </tr>
             <tr>
                 <th>
-                    @Html.DisplayNameFor(model => model.inventdimid)
+                    @Html.DisplayNameFor(model => model.inventsiteid)
                 </th>
 
                 <td>
-                    @Html.DisplayFor(model => model.inventdimid)
+                    @Html.DisplayFor(model => model.inventsiteid)
                 </td>
             </tr>
             <tr>
                 <th>
-                    @Html.DisplayNameFor(model => model.stockid)
+                    @Html.DisplayNameFor(model => model.axsync)
                 </th>
 
                 <td>
-                    @Html.DisplayFor(model => model.stockid)
+                    @Html.DisplayFor(model => model.axsync)
                 </td>
             </tr>
             <tr>
                 <th>
-                    @Html.DisplayNameFor(model => model.parmitemid)
+                    @Html.DisplayNameFor(model => model.returnorder)
                 </th>
 
                 <td>
-                    @Html.DisplayFor(model => model.parmitemid)
+                    @Html.DisplayFor(model => model.returnorder)
                 </td>
+            </tr>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.closure_date)
+                </th>
 
-            </tr>  
+                <td>
+                    @Html.DisplayFor(model => model.closure_date)
+                </td>
+            </tr>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.rowcreateddate)
+                </th>
+
+                <td>
+                    @Html.DisplayFor(model => model.rowcreateddate)
+                </td>
+            </tr>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.total_weight)
+                </th>
+
+                <td>
+                    @Html.DisplayFor(model => model.total_weight)
+                </td>
+            </tr>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.total_line)
+                </th>
+
+                <td>
+                    @Html.DisplayFor(model => model.total_line)
+                </td>
+            </tr>
+
+
+        </tbody>
     </table>
 </div>
+
 <p>
-    @Html.ActionLink("Edit", "Edit", new { trans_id = Model.trans_id, linenum = Model.linenum, store_code = Model.store_code } , new { @class = "btn btn-success" }) 
-    @Html.ActionLink("Back to List", "Index",null,new { @class = "btn btn-primary" })
+    @Html.ActionLink("Edit", "Edit", new { trans_id = Model.trans_id, store_code = Model.store_code }, new { @class = "btn btn-success" })
+    @Html.ActionLink("Back to List", "Index", null, new { @class = "btn btn-primary" })
 </p>
 
 @*<th>
-        @Html.DisplayNameFor(model => model.rowcreateddate)
-    </th>
-
-    <td>
-        @Html.DisplayFor(model => model.rowcreateddate)
-    </td>
-
-    <th>
-        @Html.DisplayNameFor(model => model.tax)
-    </th>
-
-    <td>
-        @Html.DisplayFor(model => model.tax)
-    </td>
-
-    
-
-    <th>
-        @Html.DisplayNameFor(model => model.taxrates)
-    </th>
-
-    <td>
-        @Html.DisplayFor(model => model.taxrates)
-    </td>
-
-    
-
-    <th>
         @Html.DisplayNameFor(model => model.MachineIP)
     </th>
 
@@ -191,11 +173,11 @@
     </td>
 
     <th>
-        @Html.DisplayNameFor(model => model.MachineName)
+        @Html.DisplayNameFor(model => model.Machinename)
     </th>
 
     <td>
-        @Html.DisplayFor(model => model.MachineName)
+        @Html.DisplayFor(model => model.Machinename)
     </td>
 
     <th>
@@ -204,6 +186,38 @@
 
     <td>
         @Html.DisplayFor(model => model.userid)
+    </td>
+
+    <th>
+        @Html.DisplayNameFor(model => model.MachineIPupdated)
+    </th>
+
+    <td>
+        @Html.DisplayFor(model => model.MachineIPupdated)
+    </td>
+
+    <th>
+        @Html.DisplayNameFor(model => model.MachineUserupdated)
+    </th>
+
+    <td>
+        @Html.DisplayFor(model => model.MachineUserupdated)
+    </td>
+
+    <th>
+        @Html.DisplayNameFor(model => model.MachineNameupdated)
+    </th>
+
+    <td>
+        @Html.DisplayFor(model => model.MachineNameupdated)
+    </td>
+
+    <th>
+        @Html.DisplayNameFor(model => model.useridupdated)
+    </th>
+
+    <td>
+        @Html.DisplayFor(model => model.useridupdated)
     </td>
 
     <th>
@@ -332,12 +346,4 @@
 
     <td>
         @Html.DisplayFor(model => model.DECjkl)
-    </td>
-
-    <th>
-        @Html.DisplayNameFor(model => model.pos_trans.client_code)
-    </th>
-
-    <td>
-        @Html.DisplayFor(model => model.pos_trans.client_code)
     </td>*@
